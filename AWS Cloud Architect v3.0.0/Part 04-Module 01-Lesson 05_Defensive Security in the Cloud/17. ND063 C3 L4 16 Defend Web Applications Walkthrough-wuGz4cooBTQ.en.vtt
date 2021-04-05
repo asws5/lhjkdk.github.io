@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.790
+Let's explore using the AWS WAF products to defend a web application.
+
+00:00:06.830 --> 00:00:12.420
+I have a simple website which is accessible via AWS CloudFront.
+
+00:00:12.420 --> 00:00:15.930
+I'm going to set up the AWS WAF to block any attempts
+
+00:00:15.930 --> 00:00:19.475
+to exploit vulnerabilities that my web application may have.
+
+00:00:19.475 --> 00:00:21.775
+So from the AWS console,
+
+00:00:21.775 --> 00:00:24.380
+I'm going to go to the WAF service page.
+
+00:00:24.380 --> 00:00:28.775
+From this page, I'm going to create a new Web ACL.
+
+00:00:28.775 --> 00:00:32.810
+A Web ACL is a collection of rules that will determine
+
+00:00:32.810 --> 00:00:36.995
+the logic by which the WAF will allow or deny requests,
+
+00:00:36.995 --> 00:00:43.890
+and that ACL is associated with one or more specific application endpoints.
+
+00:00:45.590 --> 00:00:49.990
+Somebody give my Web ACL a name.
+
+00:00:53.210 --> 00:00:56.515
+When setting up the Web ACL,
+
+00:00:56.515 --> 00:01:00.560
+I will need to specify a resource types so that the WAF
+
+00:01:00.560 --> 00:01:05.035
+knows that it is global or specific to a region.
+
+00:01:05.035 --> 00:01:07.860
+So if I choose CloudFront,
+
+00:01:07.860 --> 00:01:13.639
+the WAF will be applied to CloudFront which is a globally available resource.
+
+00:01:14.330 --> 00:01:19.070
+It's a different Web ACLs so I refresh the page.
+
+00:01:19.070 --> 00:01:21.685
+If I choose regional resources,
+
+00:01:21.685 --> 00:01:25.960
+then I can put the WAF in front of resources such as API Gateway or
+
+00:01:25.960 --> 00:01:31.100
+an EC2 application load balancer that I may have in my account,
+
+00:01:31.100 --> 00:01:35.180
+and I would have choose a region where they live.
+
+00:01:36.380 --> 00:01:40.950
+So I'm going to go back to CloudFront distributions
+
+00:01:40.950 --> 00:01:45.880
+and I'm going to give my Web ACL a name.
+
+00:01:49.910 --> 00:01:55.460
+Now, I can choose which applications to associate the ACL with.
+
+00:01:55.460 --> 00:02:02.815
+So as you can see I have a list of CloudFront sites that I can choose from in my account.
+
+00:02:02.815 --> 00:02:06.550
+So I'm going to choose the site.
+
+00:02:08.450 --> 00:02:12.740
+So next I will add an initial set of rules and
+
+00:02:12.740 --> 00:02:16.950
+decide what action to take if the requests don't match the rules.
+
+00:02:16.950 --> 00:02:22.355
+So I'm going to choose to use managed rule groups,
+
+00:02:22.355 --> 00:02:28.170
+and as you can see I have a number of option for managed rule groups.
+
+00:02:28.450 --> 00:02:34.855
+AWS provides a set of rule groups and other vendors also provide.
+
+00:02:34.855 --> 00:02:39.390
+For example, Fortinet, Cyber Security Cloud, or GeoGuard.
+
+00:02:39.390 --> 00:02:43.750
+I'm going to go with the AWS managed rule groups set.
+
+00:02:44.570 --> 00:02:51.090
+I encourage you to get familiar with the different sets of managed rule groups.
+
+00:02:51.250 --> 00:02:56.735
+For the AWS managed rule groups I can basically turn them on or off.
+
+00:02:56.735 --> 00:02:58.910
+They're all off by default.
+
+00:02:58.910 --> 00:03:02.900
+For the other third party managed rule groups you're going to
+
+00:03:02.900 --> 00:03:06.875
+have to subscribe to them from the marketplace.
+
+00:03:06.875 --> 00:03:11.150
+So if I go into the AWS managed rule group like you see here,
+
+00:03:11.150 --> 00:03:15.950
+I'll choose one related to IP reputation.
+
+00:03:15.950 --> 00:03:19.535
+What this will do is it'll block any bot or
+
+00:03:19.535 --> 00:03:24.709
+other traffic known by Amazon to becoming from threatening sources.
+
+00:03:24.709 --> 00:03:27.605
+So I'm going to have to explicitly enable it,
+
+00:03:27.605 --> 00:03:33.725
+and if the rules action to count setting is set,
+
+00:03:33.725 --> 00:03:36.200
+the rule is not going to block any traffic,
+
+00:03:36.200 --> 00:03:41.760
+it's just going to count any web requests that end up matching the rule.
+
+00:03:44.510 --> 00:03:49.130
+So I can also set the priority of rules.
+
+00:03:49.130 --> 00:03:52.790
+So if I have multiple rules that I've selected, I can order them.
+
+00:03:52.790 --> 00:04:00.515
+I can also set up CloudWatch metrics to see how many rules matched.
+
+00:04:00.515 --> 00:04:04.460
+Another valuable feature when you have multiple accounts that
+
+00:04:04.460 --> 00:04:08.320
+need to be defended is the AWS Firewall Manager.
+
+00:04:08.320 --> 00:04:11.595
+Now, AWS Firewall Manager allows you to set
+
+00:04:11.595 --> 00:04:17.645
+organization-wide policies for the WAF and security groups.
+
+00:04:17.645 --> 00:04:21.590
+So in this way you can manage WAF policies and
+
+00:04:21.590 --> 00:04:29.150
+security groups centrally and apply them to other AWS accounts that you own or manage.
+
+00:04:29.150 --> 00:04:33.380
+I highly encourage DevOps and Cloud engineering teams to
+
+00:04:33.380 --> 00:04:37.865
+investigate this feature further to understand that the value it provides.
+
+00:04:37.865 --> 00:04:40.410
+That wraps it up for this lesson.
+
+00:04:40.410 --> 00:04:43.940
+We've looked at a number of methods to ensure that your web applications are
+
+00:04:43.940 --> 00:04:48.990
+protected when exposed to the wild and scary place we call the Internet.
+

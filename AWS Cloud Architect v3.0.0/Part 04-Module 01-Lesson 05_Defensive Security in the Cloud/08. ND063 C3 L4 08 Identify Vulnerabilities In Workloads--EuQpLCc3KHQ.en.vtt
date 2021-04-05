@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.175
+In addition to checking our AWS environment for insecure configurations,
+
+00:00:05.175 --> 00:00:10.230
+we also wanted to detect vulnerabilities in our server and container-based workloads.
+
+00:00:10.230 --> 00:00:16.635
+Scanning Instances and Containers is important to see if known OS Vulnerabilities exist.
+
+00:00:16.635 --> 00:00:23.655
+Examples include vulnerabilities to Django framework or OpenSSL libraries.
+
+00:00:23.655 --> 00:00:26.820
+We can also verify that best practices around
+
+00:00:26.820 --> 00:00:30.585
+system administration and configuration are being followed.
+
+00:00:30.585 --> 00:00:37.610
+Enabling a server to Allow SSH Password Login is an example of a best practice violation.
+
+00:00:37.610 --> 00:00:41.734
+Ensuring that instances are launched from the latest image,
+
+00:00:41.734 --> 00:00:44.450
+patched regularly, and have
+
+00:00:44.450 --> 00:00:49.355
+basic security hardening will reduce the chance of vulnerabilities being found.
+
+00:00:49.355 --> 00:00:53.240
+The AWS Inspector service is intended to specifically
+
+00:00:53.240 --> 00:00:57.505
+analyze and report on vulnerabilities on EC2 Instances.
+
+00:00:57.505 --> 00:00:59.585
+Using Inspector to perform
+
+00:00:59.585 --> 00:01:02.120
+operating system vulnerability scanning does
+
+00:01:02.120 --> 00:01:05.590
+require an agent to be installed on the Instances.
+
+00:01:05.590 --> 00:01:08.040
+Outside of AWS, there are many,
+
+00:01:08.040 --> 00:01:13.130
+many products and vendors that provide varying levels of OS vulnerability scanning.
+
+00:01:13.130 --> 00:01:15.740
+Since this concept is not new to the Cloud,
+
+00:01:15.740 --> 00:01:17.870
+many security teams opt to use
+
+00:01:17.870 --> 00:01:22.460
+existing products to achieve OS level vulnerability scanning.
+
+00:01:22.460 --> 00:01:25.310
+AWS Inspector provides insight into
+
+00:01:25.310 --> 00:01:32.640
+the following operating system vulnerabilities: CIS Benchmark for Linux and Windows,
+
+00:01:32.640 --> 00:01:36.195
+AWS Security Best Practices,
+
+00:01:36.195 --> 00:01:41.160
+and Common Vulnerabilities and Exposures or CVE findings.
+
+00:01:41.160 --> 00:01:46.340
+Inspector can also provide a report on network reachability from the public Internet
+
+00:01:46.340 --> 00:01:52.645
+to instances and load balancers along with specific ports that are reachable.
+
+00:01:52.645 --> 00:01:57.450
+The type of scanning that inspector provides is considered Static Scanning,
+
+00:01:57.450 --> 00:02:01.580
+and that it can be scheduled to run and provide a set of findings.
+
+00:02:01.580 --> 00:02:04.670
+It is not intended for dynamic scanning to catch
+
+00:02:04.670 --> 00:02:08.405
+changes to configuration or other suspicious activity.
+
+00:02:08.405 --> 00:02:10.220
+That is dynamic scanning,
+
+00:02:10.220 --> 00:02:12.350
+and we will cover that next.
+
+00:02:12.350 --> 00:02:17.600
+Container vulnerability monitoring can also be static or dynamic.
+
+00:02:17.600 --> 00:02:19.365
+As of this recording,
+
+00:02:19.365 --> 00:02:24.035
+AWS does not provide any built-in tools to perform scanning on containers.
+
+00:02:24.035 --> 00:02:26.690
+However, it would not be surprising if they start
+
+00:02:26.690 --> 00:02:29.830
+providing these types of tools natively in the future.
+
+00:02:29.830 --> 00:02:32.900
+For checking container images for vulnerabilities,
+
+00:02:32.900 --> 00:02:36.745
+there are a number of open source and commercial vendor tools.
+
+00:02:36.745 --> 00:02:41.415
+Open source tools, include Clair and [inaudible] Trivy ,
+
+00:02:41.415 --> 00:02:43.400
+and vendor products are many,
+
+00:02:43.400 --> 00:02:47.000
+including AquaSec, Sysdig, and Twistlock.
+
+00:02:47.000 --> 00:02:49.175
+In addition to Container Image Scanning,
+
+00:02:49.175 --> 00:02:51.320
+commercial vendor products generally provide
+
+00:02:51.320 --> 00:02:55.520
+Dynamic Container Monitoring once containers are deployed and running.
+
+00:02:55.520 --> 00:02:58.310
+Now that we have looked at methods and solutions for
+
+00:02:58.310 --> 00:03:01.345
+monitoring your Cloud environments for vulnerabilities,
+
+00:03:01.345 --> 00:03:04.500
+you will have a chance to try this on your own.
+

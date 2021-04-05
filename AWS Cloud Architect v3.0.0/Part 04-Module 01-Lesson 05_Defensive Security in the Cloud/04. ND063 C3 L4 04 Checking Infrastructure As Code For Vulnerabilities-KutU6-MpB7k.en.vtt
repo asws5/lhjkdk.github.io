@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.430
+With any software that is developed,
+
+00:00:02.430 --> 00:00:06.450
+the cost to remediate the impact of finding defects is
+
+00:00:06.450 --> 00:00:11.880
+much lower when identified earlier in the life cycle rather than later.
+
+00:00:11.880 --> 00:00:15.240
+This is why it is highly advisable to perform
+
+00:00:15.240 --> 00:00:21.210
+some static code analysis on any application code prior to deployment and runtime.
+
+00:00:21.210 --> 00:00:23.370
+Static code analysis for finding
+
+00:00:23.370 --> 00:00:27.730
+application security vulnerabilities is not a new concept.
+
+00:00:27.830 --> 00:00:31.350
+However, this concept also applies to code that
+
+00:00:31.350 --> 00:00:35.085
+defines Cloud infrastructure or infrastructure as code.
+
+00:00:35.085 --> 00:00:38.220
+Infrastructure's code should be tested prior to
+
+00:00:38.220 --> 00:00:41.460
+deployment to ensure that it won't do what it is intended to
+
+00:00:41.460 --> 00:00:48.395
+do and also ensure that any potentially insecure configurations are identified early on.
+
+00:00:48.395 --> 00:00:51.470
+These insecure configurations should be
+
+00:00:51.470 --> 00:00:54.790
+treated as vulnerabilities and fixed prior to running.
+
+00:00:54.790 --> 00:00:59.405
+Many times, organizations will check these configurations post deployment.
+
+00:00:59.405 --> 00:01:03.200
+However, it is important to add this check during the development phase to
+
+00:01:03.200 --> 00:01:07.280
+ensure that vulnerabilities are investigated and remediated.
+
+00:01:07.280 --> 00:01:11.525
+When implementing infrastructure as code scanning in your DevOps pipeline,
+
+00:01:11.525 --> 00:01:14.900
+there are few additional considerations to keep in mind.
+
+00:01:14.900 --> 00:01:19.460
+Scan code for operating system or VM and
+
+00:01:19.460 --> 00:01:25.185
+container image configuration in addition to Cloud or AWS configuration.
+
+00:01:25.185 --> 00:01:30.560
+Dockerfiles, Ansible, Puppet, Chef should all ensure that
+
+00:01:30.560 --> 00:01:32.570
+configurations are inline with
+
+00:01:32.570 --> 00:01:36.685
+security standards that have been established by the organization.
+
+00:01:36.685 --> 00:01:40.040
+The code scan step may happen on check-in
+
+00:01:40.040 --> 00:01:43.805
+or prior to deploying depending on the tool selected.
+
+00:01:43.805 --> 00:01:47.695
+For example, during a Terraform plan.
+
+00:01:47.695 --> 00:01:50.810
+If security-related violations are found,
+
+00:01:50.810 --> 00:01:53.120
+your process should be set up to notify
+
+00:01:53.120 --> 00:01:57.355
+the appropriate parties and halt the pipeline from progressing.
+
+00:01:57.355 --> 00:02:00.470
+There are many open source projects which allow you to
+
+00:02:00.470 --> 00:02:03.800
+construct security policies and then check Terraform or
+
+00:02:03.800 --> 00:02:08.300
+CloudFormation template code for any security-related configurations
+
+00:02:08.300 --> 00:02:13.450
+which are out of compliance with your security requirements as defined in the policies.
+
+00:02:13.450 --> 00:02:15.665
+In addition to open source options,
+
+00:02:15.665 --> 00:02:19.280
+many of the major commercial Cloud security products
+
+00:02:19.280 --> 00:02:23.470
+offer infrastructure's code scanning as part of their product platform.
+
+00:02:23.470 --> 00:02:28.205
+Next, let's go ahead and walk through an example of using a framework called
+
+00:02:28.205 --> 00:02:31.130
+Open Policy Agent with an open source tool called
+
+00:02:31.130 --> 00:02:35.490
+Regula to check a Terraform template for compliance.
+

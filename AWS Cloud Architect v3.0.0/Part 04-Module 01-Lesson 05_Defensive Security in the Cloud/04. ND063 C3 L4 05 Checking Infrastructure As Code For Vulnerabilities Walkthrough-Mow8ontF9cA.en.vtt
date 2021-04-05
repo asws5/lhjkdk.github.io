@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.755
+In this walkthrough, we will scan
+
+00:00:01.755 --> 00:00:06.390
+a simple terraform template using an open source tool called Regula.
+
+00:00:06.390 --> 00:00:09.750
+I have written a piece of terraform code which will
+
+00:00:09.750 --> 00:00:13.395
+deploy a few resources to an AWS account.
+
+00:00:13.395 --> 00:00:16.110
+Prior to applying terraform code,
+
+00:00:16.110 --> 00:00:19.365
+engineers will run what is called a terraform plan,
+
+00:00:19.365 --> 00:00:24.825
+which will show us a complete set of details about what cloud resources will be deployed,
+
+00:00:24.825 --> 00:00:27.120
+changed, or stay the same.
+
+00:00:27.120 --> 00:00:29.010
+This tool called Regula,
+
+00:00:29.010 --> 00:00:32.625
+which will automatically execute the terraform plan,
+
+00:00:32.625 --> 00:00:34.755
+scan the result of the plan,
+
+00:00:34.755 --> 00:00:37.190
+and check to ensure that what will be
+
+00:00:37.190 --> 00:00:40.865
+deployed is in compliance with our security policies.
+
+00:00:40.865 --> 00:00:42.890
+If the check fails,
+
+00:00:42.890 --> 00:00:47.920
+then we will need to remediate the out of compliance configuration in our terraform code.
+
+00:00:47.920 --> 00:00:49.625
+Once all looks good,
+
+00:00:49.625 --> 00:00:52.985
+it is safe to deploy to our AWS environment.
+
+00:00:52.985 --> 00:00:56.900
+Let's take a look at my terraform code that I would like to run.
+
+00:00:56.900 --> 00:01:03.145
+As you can see, I have a simple template that is intended to deploy in IAM user policy.
+
+00:01:03.145 --> 00:01:06.424
+The policy is purposely overly permissive,
+
+00:01:06.424 --> 00:01:11.170
+allowing full access to all services akin to full admin access.
+
+00:01:11.170 --> 00:01:16.445
+Our goal should be to identify these types of vulnerabilities prior to deployment.
+
+00:01:16.445 --> 00:01:19.444
+Now I will go to my local environment
+
+00:01:19.444 --> 00:01:23.885
+and use the Regula tool to detect this vulnerability.
+
+00:01:23.885 --> 00:01:29.465
+I'll set up my environment and clone the repo containing the Regula tool.
+
+00:01:29.465 --> 00:01:33.810
+I have my terraform code in this local directory.
+
+00:01:35.840 --> 00:01:40.230
+I'm going to run the command to set up my local environment.
+
+00:01:44.260 --> 00:01:48.060
+I already have the tool downloaded.
+
+00:01:49.600 --> 00:01:56.520
+Now we'll run the regular tool to check to see which rules were violated.
+
+00:02:00.400 --> 00:02:04.340
+So I'm only going to run the AWS rules.
+
+00:02:04.340 --> 00:02:08.790
+They have rules for Azure and GCP also.
+
+00:02:08.790 --> 00:02:13.790
+So the regular tool will run the terraform in it and plan for me,
+
+00:02:13.790 --> 00:02:17.030
+and then it will provide a report.
+
+00:02:17.030 --> 00:02:19.900
+So let's look at the summary of the report.
+
+00:02:19.900 --> 00:02:24.730
+It looks like one of the preconfigured rules has failed.
+
+00:02:24.730 --> 00:02:28.130
+I'm going to run the tool again with an output filter just to
+
+00:02:28.130 --> 00:02:32.820
+see the output of the rules.
+
+00:02:35.060 --> 00:02:40.165
+Let's scroll up and find the rule check that failed.
+
+00:02:40.165 --> 00:02:45.630
+As you can see that iam_admin_policy rule check failed.
+
+00:02:45.630 --> 00:02:49.505
+What this indicates is that I have an iam_policy resource
+
+00:02:49.505 --> 00:02:53.815
+in my terraform code that has admin access.
+
+00:02:53.815 --> 00:02:58.535
+Let's fix my terraform code to make it a little more specific.
+
+00:02:58.535 --> 00:03:01.505
+I'll change the first wildcard to S3,
+
+00:03:01.505 --> 00:03:06.484
+which effectively means that the user will be able to run any action related to S3,
+
+00:03:06.484 --> 00:03:09.620
+but no longer has admin access.
+
+00:03:09.620 --> 00:03:15.835
+I'm going to go back to the tool and run it again after the code has been fixed.
+
+00:03:15.835 --> 00:03:19.925
+Let's run the tool again and see if it passes this time.
+
+00:03:19.925 --> 00:03:26.750
+I've placed the remediated code in a separate directory called terraform fixed.
+
+00:03:26.750 --> 00:03:30.150
+We'll run the tool against that directory.
+
+00:03:32.030 --> 00:03:35.360
+Let's take a look at the output and we can look at
+
+00:03:35.360 --> 00:03:38.950
+the summary and we see that it passed this time.
+
+00:03:38.950 --> 00:03:42.910
+None of the rules failed, all of them passed.
+
+00:03:42.910 --> 00:03:47.285
+This particular tool has a number of pre-written rule policies for
+
+00:03:47.285 --> 00:03:53.180
+AWS and other cloud providers such as Azure and GCP.
+
+00:03:53.180 --> 00:03:57.560
+I highly encourage you to read up on this project and other tools which have
+
+00:03:57.560 --> 00:04:03.750
+preconfigured or customizable checks for Infrastructure as code testing and compliance.
+

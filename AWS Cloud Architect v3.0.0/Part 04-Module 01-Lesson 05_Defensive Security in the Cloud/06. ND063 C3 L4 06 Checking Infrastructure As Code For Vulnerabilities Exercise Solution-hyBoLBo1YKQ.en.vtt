@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.700
+In this exercise, you went through the process of scanning
+
+00:00:02.700 --> 00:00:07.650
+Terraform code and identifying a misconfiguration with the regular tool.
+
+00:00:07.650 --> 00:00:10.620
+Since the steps in this exercise were very
+
+00:00:10.620 --> 00:00:13.815
+similar to the walk through which I had previously demonstrated,
+
+00:00:13.815 --> 00:00:17.910
+you may refer to that for a step-by-step solution to this exercise.
+
+00:00:17.910 --> 00:00:21.060
+For this exercise, when you ran the regular tool,
+
+00:00:21.060 --> 00:00:25.770
+initially your output should have contained JSON statements like the above.
+
+00:00:25.770 --> 00:00:30.505
+You should have seen the summary portion which indicated that rules had failed.
+
+00:00:30.505 --> 00:00:36.905
+You would have also identified the failed rule by the indication of a valid key of false.
+
+00:00:36.905 --> 00:00:40.925
+You should have remediated the vulnerability in your Terraform code
+
+00:00:40.925 --> 00:00:45.445
+by changing the policy so that no longer allowed admin access.
+
+00:00:45.445 --> 00:00:49.925
+You may have updated the action portion of the policy from an allow
+
+00:00:49.925 --> 00:00:54.430
+all wildcard to a specific action or set of actions.
+
+00:00:54.430 --> 00:00:56.315
+Once the fix was made,
+
+00:00:56.315 --> 00:00:58.520
+you ran the regular tool again.
+
+00:00:58.520 --> 00:01:03.430
+You should have seen the summary portion which indicated that all rules have now passed.
+
+00:01:03.430 --> 00:01:07.460
+The applicable rule that previously failed would now
+
+00:01:07.460 --> 00:01:12.830
+show as a valid Terraform template according to the IAM admin policy rule.
+

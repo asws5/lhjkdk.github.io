@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.400
+So in addition to CloudWatch,
+
+00:00:02.400 --> 00:00:06.524
+we can also use GuardDuty to analyze
+
+00:00:06.524 --> 00:00:13.305
+our event sources and notify of any suspicious behavior activity.
+
+00:00:13.305 --> 00:00:16.290
+So I'm going to go through GuardDuty and look at some of
+
+00:00:16.290 --> 00:00:19.635
+the finding types that it generates.
+
+00:00:19.635 --> 00:00:21.360
+So from my console,
+
+00:00:21.360 --> 00:00:24.150
+I'm going to go into GuardDuty just to get a feel for
+
+00:00:24.150 --> 00:00:27.945
+the types of events that GuardDuty can identify.
+
+00:00:27.945 --> 00:00:31.830
+Now, I've gone ahead and generated some sample events,
+
+00:00:31.830 --> 00:00:34.245
+so these are all dummy events.
+
+00:00:34.245 --> 00:00:36.690
+Let's take a look at some of them.
+
+00:00:36.690 --> 00:00:43.910
+So the first one I'm going to look at is a denial-of-service attack.
+
+00:00:43.910 --> 00:00:50.345
+So the GuardDuty has identified that there
+
+00:00:50.345 --> 00:00:57.125
+may be a denial-of-service attack originating from one of my EC2 instances.
+
+00:00:57.125 --> 00:01:02.300
+So that indicates that the EC2 instance may have been compromised.
+
+00:01:02.300 --> 00:01:08.660
+There is either a malicious piece of code or an individual who's logged into
+
+00:01:08.660 --> 00:01:16.645
+that instance and has initiated a denial-of-service attack on some external entity,
+
+00:01:16.645 --> 00:01:19.415
+so we need to investigate that further.
+
+00:01:19.415 --> 00:01:22.610
+Let's take a look at another type of attack.
+
+00:01:22.610 --> 00:01:25.145
+Here's something similar.
+
+00:01:25.145 --> 00:01:29.000
+So this is a cryptocurrency,
+
+00:01:29.000 --> 00:01:34.220
+Bitcoin mining tool that may be on one of my EC2 instances,
+
+00:01:34.220 --> 00:01:38.840
+so GuardDuty has identified that as an anomalous activity and it's
+
+00:01:38.840 --> 00:01:44.750
+communicating with some outbound entity which is a known Bitcoin related IP address.
+
+00:01:44.750 --> 00:01:47.715
+So that's how GuardDuty as identified it.
+
+00:01:47.715 --> 00:01:52.190
+Again, this indicates that that instance may have been compromised.
+
+00:01:52.190 --> 00:01:59.725
+So it's definitely a high severity incident that needs to be researched right away.
+
+00:01:59.725 --> 00:02:06.850
+So one of the other example findings could be something like an SSH brute force attack,
+
+00:02:06.850 --> 00:02:10.765
+which means that some external IP address
+
+00:02:10.765 --> 00:02:14.710
+is trying to perform a brute force attack against an instance,
+
+00:02:14.710 --> 00:02:18.580
+trying to crack the password and login using SSH.
+
+00:02:18.580 --> 00:02:22.735
+So it's something that is good to have
+
+00:02:22.735 --> 00:02:27.985
+visibility into and be aware of when somebody is trying to do something like that.
+
+00:02:27.985 --> 00:02:34.630
+So it's a best practice to put these type of tools in place because they can really
+
+00:02:34.630 --> 00:02:37.000
+assist you in monitoring all of
+
+00:02:37.000 --> 00:02:41.640
+these different data streams and event streams for security monitoring.
+
+00:02:41.640 --> 00:02:44.930
+So you should have a better feel now for how to do
+
+00:02:44.930 --> 00:02:49.860
+security event auditing and monitoring within AWS.
+

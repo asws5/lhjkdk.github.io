@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.440
+In this lesson, we have looked at various methods and capabilities in the Cloud to defend
+
+00:00:04.440 --> 00:00:06.825
+your Cloud infrastructure and applications
+
+00:00:06.825 --> 00:00:10.275
+against misconfigurations, vulnerabilities, and attacks.
+
+00:00:10.275 --> 00:00:14.280
+You should now have a better feel for best practices and recommendations
+
+00:00:14.280 --> 00:00:18.875
+for identifying vulnerabilities prior to deployment in your infrastructure code.
+
+00:00:18.875 --> 00:00:23.840
+You should also be more aware of the different types of scanning that can be done to
+
+00:00:23.840 --> 00:00:26.360
+identify misconfigurations that could be to
+
+00:00:26.360 --> 00:00:29.705
+vulnerabilities and breaches in a live environment.
+
+00:00:29.705 --> 00:00:35.660
+We also introduced operational security event sources in an AWS environment,
+
+00:00:35.660 --> 00:00:40.295
+and how those sources can be used to detect and audit activity of interest.
+
+00:00:40.295 --> 00:00:44.510
+Finally, we examined how web application firewalls can be
+
+00:00:44.510 --> 00:00:49.310
+used to defend Cloud environments and applications from exploitation.
+
+00:00:49.310 --> 00:00:53.255
+I hope that these concepts can be a value when designing,
+
+00:00:53.255 --> 00:00:56.940
+deploying, and securing your Cloud workloads.
+

@@ -1,0 +1,283 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Security Event Monitoring</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Defensive Security in the Cloud</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Defensive Security.html">01. Defensive Security</a>
+    </li>
+    <li class="">
+      <a href="02. Common Threat Vectors.html">02. Common Threat Vectors</a>
+    </li>
+    <li class="">
+      <a href="03. Defensive Security in the Cloud.html">03. Defensive Security in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="04. Infrastructure.html">04. Infrastructure</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise Infrastructure.html">05. Exercise: Infrastructure</a>
+    </li>
+    <li class="">
+      <a href="06. Solution Infastructure.html">06. Solution: Infastructure</a>
+    </li>
+    <li class="">
+      <a href="07. Identify Vulnerabilities.html">07. Identify Vulnerabilities</a>
+    </li>
+    <li class="">
+      <a href="08. Vulnerabilities on Instances and Containers.html">08. Vulnerabilities on Instances and Containers</a>
+    </li>
+    <li class="">
+      <a href="09. Vulnerabilities Quizzes.html">09. Vulnerabilities Quizzes</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise Vulnerabilities.html">10. Exercise: Vulnerabilities</a>
+    </li>
+    <li class="">
+      <a href="11. Solution Vulnerabilities.html">11. Solution: Vulnerabilities</a>
+    </li>
+    <li class="">
+      <a href="12. Security Event Monitoring.html">12. Security Event Monitoring</a>
+    </li>
+    <li class="">
+      <a href="13. Security Event Sources.html">13. Security Event Sources</a>
+    </li>
+    <li class="">
+      <a href="14. Security Event Quizzes.html">14. Security Event Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Security Event.html">15. Exercise: Security Event</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Security Event.html">16. Solution: Security Event</a>
+    </li>
+    <li class="">
+      <a href="17. Defend Web Applications.html">17. Defend Web Applications</a>
+    </li>
+    <li class="">
+      <a href="18. Defense Quizzes.html">18. Defense Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Conclusion.html">19. Lesson Conclusion</a>
+    </li>
+    <li class="">
+      <a href="20. Course Recap.html">20. Course Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Congratulations!.html">21. Congratulations!</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">12. Security Event Monitoring</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Security Event Sources Heading</p></h3>
+  <div>
+  <h2 id="security-information-and-event-monitoring-sources-in-aws">Security Information and Event Monitoring Sources in AWS</h2>
+<p>Security information and event monitoring is a fundamental pillar of information security.</p>
+<p>As you start operationalizing and deploying workloads to cloud environments, it is critical that there is insight into activity and events related to the cloud accounts or applications.</p>
+<p>It is important to have this monitoring in place in order to:</p>
+<ol>
+<li>Identify any suspicious activity in cloud accounts, servers, networks, and applications.</li>
+<li>Provide auditability, and traceability for forensics and root cause analysis.</li>
+</ol>
+<p>We will look at some of the event sources available in AWS and methods to monitor these sources.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L4 10 Security Event Sources Video</p></h3>
+  <video controls>
+  <source src="12. ND063 C3 L4 10 Security Event Sources Video-LtvnPBGz0KI.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="12. ND063 C3 L4 10 Security Event Sources Video-LtvnPBGz0KI.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Security Event Sources Notes</p></h3>
+  <div>
+  <h3 id="security-event-sources-in-aws">Security Event Sources in AWS</h3>
+<p>Security information and event monitoring is a pillar of information security.</p>
+<p>As you operationalize your workloads in the cloud it is critical that you have insight into activity and security events related to the cloud accounts and applications.</p>
+<p>This type of security monitoring is important in order to:</p>
+<ul>
+<li>Identify any anomalous or suspicious activity in cloud accounts, servers, networks, and applications</li>
+<li>Provide traceability for forensics and root cause analysis.</li>
+<li>Provide auditability for access to sensitive data or actions</li>
+</ul>
+<h4 id="event-sources-available-in-aws">Event Sources Available in AWS</h4>
+<p>Let's look at some of the event sources we should be looking at in AWS.</p>
+<h5 id="cloudtrail">CloudTrail</h5>
+<p>AWS CloudTrail is the source of activity logging within an AWS account.  Any API activity, console usage, cross account access etc will be recorded in CloudTrail. CloudTrail will log all activity and allow you to search these logs for 90 days. </p>
+<p>However it is highly recommended to configure CloudTrail logs in all accounts and all regions to be written to S3 buckets, preferably a central S3 bucket in a dedicated security account. These logs can then be examined later or ingested by a log analysis or SIEM tool.</p>
+<p><strong>CloudTrail is by far the most valuable tool to monitor and audit activity in your AWS account</strong>.  </p>
+<h5 id="vpc-flow-logs">VPC Flow Logs</h5>
+<p>When VPC flow logs provide insight into network activity including:</p>
+<ul>
+<li>Connection attempts or rejects, allows or denies</li>
+<li>Source and destination IPs, ports</li>
+<li>Packets and byte counts</li>
+</ul>
+<p>It is important to note that VPC flow logs do not provide visibility into actual traffic content or payload.</p>
+<p>If you need visibility into network traffic content in order to perform more sophisticated detection of activity you can enable VPC traffic mirroring.  Once VPC traffic mirroring is enabled, you can ship this data to third party network monitoring tools.</p>
+<p>For more details regarding network mirroring please <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/flow-log.html" rel="noopener noreferrer" target="_blank">refer to AWS documentation</a></p>
+<h5 id="s3-bucket-logs">S3 Bucket Logs</h5>
+<p>Any changes to an S3 bucket's configuration will be logged as API calls in CloudTrail.</p>
+<p>From a security standpoint it is important to be aware of attempts to read or write objects to S3 buckets - especially those that contain sensitive or critical data. Object level logging is optional and can be enabled either through CloudTrail or the S3 bucket's settings.  All calls to read or write data will appear in CloudTrail.</p>
+<h5 id="aws-config-logs">AWS Config logs</h5>
+<p>Config logs record all state changes for any resources that are being monitored by AWS Config. These logs should be sent to a log analysis tool to gain deeper visibility into configuration state changes.</p>
+<h5 id="dns-logs">DNS logs</h5>
+<p>DNS query logging is also available in AWS Route53. Regardless of your choice to enable DNS query logging, AWS does maintain these logs behind the scenes and will use them for identifying suspicious activity.</p>
+<h5 id="ec2-instance-server-logs">EC2 Instance Server Logs</h5>
+<p>System logs from your Linux and Windows instances are also critical to identifying suspicious activity or auditing. These logs can be sent to cloudwatch logs or other log analysis tools or products that provide intrusion detection and dynamic host based security event monitoring.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="13. Security Event Sources.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Security Event Monitoring')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

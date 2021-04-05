@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.930
+In this exercise, your goal was to get a better understanding
+
+00:00:03.930 --> 00:00:07.950
+of how to view user activity in AWS CloudTrail.
+
+00:00:07.950 --> 00:00:12.030
+I'm going to check CloudTrail in my account and show you how I
+
+00:00:12.030 --> 00:00:16.560
+searched for specific security-related events that are of interest to me.
+
+00:00:16.560 --> 00:00:18.585
+So in my AWS account,
+
+00:00:18.585 --> 00:00:21.810
+I'll go into the CloudTrail event history page.
+
+00:00:21.810 --> 00:00:29.250
+Here I would like to know when an S3 bucket encryption setting was changed.
+
+00:00:29.250 --> 00:00:33.465
+I can first search on resource type,
+
+00:00:33.465 --> 00:00:39.580
+and here I will select S3 as my resource type.
+
+00:00:39.580 --> 00:00:45.025
+This will show me all actions related to S3 buckets in my account.
+
+00:00:45.025 --> 00:00:51.450
+Now, I can search for a specific event name in the filter.
+
+00:00:51.450 --> 00:00:54.620
+So I wanted to know when the encryption setting was
+
+00:00:54.620 --> 00:00:57.610
+turned off on any S3 buckets in my account,
+
+00:00:57.610 --> 00:01:02.390
+so I'm going to search for the delete bucket encryption event name.
+
+00:01:02.390 --> 00:01:06.110
+So in the search results you can see that there were
+
+00:01:06.110 --> 00:01:12.420
+three events which were the delete bucket encryption.
+
+00:01:12.470 --> 00:01:19.860
+I can expand the results and see details about each event.
+
+00:01:20.210 --> 00:01:26.390
+Notice I can see which user executed the action,
+
+00:01:26.390 --> 00:01:29.510
+what their source IP address was,
+
+00:01:29.510 --> 00:01:33.235
+and you're in which resource, which S3 bucket,
+
+00:01:33.235 --> 00:01:35.640
+they perform the action on,
+
+00:01:35.640 --> 00:01:41.015
+and I can see a lot more details about the event if I need to.
+
+00:01:41.015 --> 00:01:49.649
+I highly recommend that you use a combination of CloudTrail, AWS config, CloudWatch,
+
+00:01:49.649 --> 00:01:52.460
+and other tools if possible to monitor
+
+00:01:52.460 --> 00:01:58.770
+your AWS account for security-related changes to any of your resources.
+

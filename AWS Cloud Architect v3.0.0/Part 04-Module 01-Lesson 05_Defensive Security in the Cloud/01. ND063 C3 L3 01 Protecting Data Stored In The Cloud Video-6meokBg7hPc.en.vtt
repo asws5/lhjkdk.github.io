@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.390
+So far, we focused on controlling and restricting access to
+
+00:00:03.390 --> 00:00:06.945
+Cloud management plane and Cloud infrastructure components.
+
+00:00:06.945 --> 00:00:09.465
+Looking at it from a security perspective,
+
+00:00:09.465 --> 00:00:11.610
+the goal was to minimize the risk of
+
+00:00:11.610 --> 00:00:16.169
+a malicious actor being able to access our network and servers,
+
+00:00:16.169 --> 00:00:18.435
+invoke the AWS API,
+
+00:00:18.435 --> 00:00:24.015
+and ultimately perform destructive or unauthorized actions in our environments.
+
+00:00:24.015 --> 00:00:26.085
+Going one step further,
+
+00:00:26.085 --> 00:00:29.430
+it is crucial that the data we are storing in the Cloud is
+
+00:00:29.430 --> 00:00:34.075
+encrypted and that the encryption keys are correctly managed.
+
+00:00:34.075 --> 00:00:40.400
+In the event that they were to be a vulnerability to our network or AWS account settings,
+
+00:00:40.400 --> 00:00:46.140
+we want to reduce the risk of data being readable by an unauthorized party.
+

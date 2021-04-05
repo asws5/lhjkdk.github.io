@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.490
+Now, that we have discussed some of the log and
+
+00:00:02.490 --> 00:00:05.370
+event sources available in your Cloud environment,
+
+00:00:05.370 --> 00:00:09.105
+let's look at some methods to identify suspicious activity.
+
+00:00:09.105 --> 00:00:12.180
+AWS GuardDuty can monitor CloudTrail,
+
+00:00:12.180 --> 00:00:16.500
+DNS, and VPC flow logs to identify suspicious activity.
+
+00:00:16.500 --> 00:00:23.520
+A few examples of activity that GuardDuty can identify include SSH, brute-force attempts,
+
+00:00:23.520 --> 00:00:29.280
+or API calls from IP addresses that are on threat lists or traffic that is
+
+00:00:29.280 --> 00:00:32.730
+destined for cryptocurrency-related IP addresses
+
+00:00:32.730 --> 00:00:35.810
+from an EC2 instance in your environment.
+
+00:00:35.810 --> 00:00:40.930
+Log sources can be sent to SEIM tools for creating security dashboards.
+
+00:00:40.930 --> 00:00:45.320
+Many commercial tools have out of the box features to look at Cloud native logs,
+
+00:00:45.320 --> 00:00:50.420
+such as CloudTrail and VPC flow logs and identify anomalous activity.
+
+00:00:50.420 --> 00:00:54.460
+Example vendor tools include Splunk and sumo logic.
+
+00:00:54.460 --> 00:00:57.590
+CloudTrail logs can be sent to CloudWatch and
+
+00:00:57.590 --> 00:01:01.505
+custom alarms can be set up to monitor specific event types.
+
+00:01:01.505 --> 00:01:06.680
+An example use case for this is for an admin to be notified when a security group is
+
+00:01:06.680 --> 00:01:12.070
+modified or the root user e-mail is used to login to the AWS account.
+
+00:01:12.070 --> 00:01:17.660
+Next, we will take a closer look at CloudTrail logs and GuardDuty finding types.
+

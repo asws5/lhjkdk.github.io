@@ -1,0 +1,411 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Securing the Recipe Vault Web Application</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Secure the Recipe Vault Web Application</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Setup.html">01. Setup</a>
+    </li>
+    <li class="">
+      <a href="02. Exercise 1 Deploy Project Environment.html">02. Exercise 1: Deploy Project Environment</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 2 Enable Security Monitoring.html">03. Exercise 2: Enable Security Monitoring</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 3 Attack Simulation.html">04. Exercise 3: Attack Simulation</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 4 Implement Security Hardening.html">05. Exercise 4: Implement Security Hardening</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 5 Designing a DevSecOps Pipeline.html">06. Exercise 5: Designing a DevSecOps Pipeline</a>
+    </li>
+    <li class="">
+      <a href="07. Exercises 6 and 7.html">07. Exercises 6 and 7</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Securing the Recipe Vault Web Application.html">Project Description - Securing the Recipe Vault Web Application</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Securing the Recipe Vault Web Application.html">Project Rubric - Securing the Recipe Vault Web Application</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Securing the Recipe Vault Web Application</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Section 1: Security Monitoring</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Clearly identify network and server-level vulnerabilities</p>
+        </td>
+        <td>
+          <p>Student has submitted: </p>
+<ul>
+<li>A text file, titled <strong>E1T4.txt</strong>, showing that the student was able assess the initial deployment architecture to identify some obvious security vulnerabilities.</li>
+<li>A screenshot, titled <strong>E2T2_inspector.png</strong>, of the inspector that shows server vulnerabilities and misconfigurations. </li>
+<li>A screenshot, titled <strong>E4T3_inspector.png</strong>, of the inspector after they have remediated the vulnerabilities showing that the fixes made reduced overall vulnerabilities.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Implement and be alerted on suspicious activity</p>
+        </td>
+        <td>
+          <p>Student has submitted:</p>
+<ul>
+<li>A screenshot, titled <strong>E3T1.png</strong>, of Guard Duty showing that an ssh brute force attack was detected.</li>
+<li>A text file, titled <strong>E3T1.txt</strong>, which answers the questions in Exercise 3 Task 1 illustrating that the student was able to correlate the event with the detection and understand from AWS documentation of GuardDuty that the nature of the suspicious traffic is from VPC flow logs.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Set Up monitoring for assessment of AWS security configuration</p>
+        </td>
+        <td>
+          <p>Student has submitted:</p>
+<ul>
+<li>A screenshot, titled <strong>E2T2_securityhub.png</strong>, of AWS Security Hub that shows the number of vulnerabilities in Exercise 2, Task 2 which is <strong>before</strong> they have implemented their changes.</li>
+<li>A screenshot, titled <strong>E2T2_config.png</strong>, of AWS Config that shows the number of vulnerabilities in Exercise 2, Task 2 which is <strong>before</strong> they have implemented their changes.</li>
+<li>A screenshot titled, <strong>E4T3_securityhub.png</strong>, of AWS Security Hub that shows that shows the number of vulnerabilities in Exercise 4, Task 3 which is <strong>after</strong> they have implemented their changes.</li>
+<li>A screenshot, titled <strong>E4T3_config.png</strong>, of AWS Config that shows the number of vulnerabilities in Exercise 4, Task 3 which is <strong>after</strong> they have implemented their changes.</li>
+<li>A text file, titled **E2T2.txt ** which provides recommendations on how to remediate the vulnerabilities.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Section 2: Apply Cloud Security Hardening</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Create a plan to implement security hardening</p>
+        </td>
+        <td>
+          <p>Student has submitted:</p>
+<ul>
+<li>A text file title, <strong>E4T1.txt</strong>, that illustrates their remediation plan.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Set up default encryption on S3 buckets</p>
+        </td>
+        <td>
+          <p>Screenshots or updates to the code show that default encryption has been turned on for S3.</p>
+<p>Student has submitted <strong>one of</strong>:</p>
+<ul>
+<li>A screenshot, titled <strong>E4T2_s3encryption.png</strong>, showing that default encryption has been enabled.</li>
+<li>A code file, titled <strong>c3-s3_solution.yml</strong>, showing that default encryption has been enabled.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Harden the environment's network access controls</p>
+        </td>
+        <td>
+          <p>Student has updated code or environment  to restrict network access to the environment and reduce the internet-facing attack surface.</p>
+<p>Student has submitted <strong>one of the following bullet points</strong>:</p>
+<ul>
+<li>Two screenshots, titled <strong>E4T2_networksg.png</strong>, of changes to security group rules to only accept traffic from specific ports and another title <strong>E4T2_sshattempt.png</strong> which is a screenshot of their SSH attempt.</li>
+<li>A code file, titled <strong>c3-app_solution.yml</strong>, of changes to security group rules to only accept traffic from specific ports.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Update authorization policies to be "least privilege"</p>
+        </td>
+        <td>
+          <p>Student has submitted <strong>one of</strong>:</p>
+<ul>
+<li>A screenshot, titled <strong>E4T2_s3policy.png</strong>, for the IAM policy showing that they only have access to the specific resources.</li>
+<li>A code file, titled <strong>c3-app_solution.yml</strong>,  for the IAM policy showing that they only have access to the specific resources.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Section 3: Security Testing</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Simulate a brute force attack and observe security controls in action</p>
+        </td>
+        <td>
+          <p>Student has submitted:</p>
+<ul>
+<li>A screenshot, titled <strong>E3T1_guardduty.png</strong>, showing that Guard Duty was able to detect the attack.</li>
+<li>A screenshot, titled <strong>E4T2_sshbruteforce.png</strong>, showing that after remediation of the SSH vulnerability, the brute force attack no longer worked.</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Simulate an attacker that has breached an instance stolen API keys, observe the impact, and monitor events generated</p>
+        </td>
+        <td>
+          <p>Student has submitted: </p>
+<ul>
+<li>A screenshot, titled <strong>E3T2_s3breach.png</strong>, showing output of the command allowing the attacker to steal secret data from the S3 bucket.</li>
+<li>A screenshot, titled <strong>E4T2_s3steal.png</strong>, showing output of the command denying the attacker access to the S3 bucket.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Section 4: DevSecOps Pipeline Design</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Incorporate cloud security checks into a basic cloud deployment pipeline</p>
+        </td>
+        <td>
+          <p>Student has submitted:</p>
+<ul>
+<li>A screenshot or ppt, titled <strong>DevSecOpsPipeline.[ppt or png]</strong>, showing a design that has: <ul>
+<li>Steps to scan infrastructure as code </li>
+<li>AMI / containers prior to deployment</li>
+<li>Cloud configuration and server vulnerabilities post-deployment</li></ul></li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Select tools and document DevSecOps pipeline</p>
+        </td>
+        <td>
+          <p>Student has submitted:</p>
+<ul>
+<li>A text file, titled <strong>E5T2.txt</strong>, which lists tools as well as example vulnerabilities that can be identified with each tool.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ol>
+<li>Students demonstrate that they can make and apply changes using cloud formation templates instead of through the console.</li>
+<li>Students are able to research, identify, and demonstrate defense of application security vulnerabilities (OWASP top 10)  using a WAF</li>
+<li>Students are able to brainstorm and suggest additional hardening opportunities beyond what is done in the project</li>
+</ol></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Securing the Recipe Vault Web Application')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

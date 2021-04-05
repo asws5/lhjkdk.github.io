@@ -1,0 +1,306 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 4: Implement Security Hardening</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Secure the Recipe Vault Web Application</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Setup.html">01. Setup</a>
+    </li>
+    <li class="">
+      <a href="02. Exercise 1 Deploy Project Environment.html">02. Exercise 1: Deploy Project Environment</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 2 Enable Security Monitoring.html">03. Exercise 2: Enable Security Monitoring</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 3 Attack Simulation.html">04. Exercise 3: Attack Simulation</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 4 Implement Security Hardening.html">05. Exercise 4: Implement Security Hardening</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 5 Designing a DevSecOps Pipeline.html">06. Exercise 5: Designing a DevSecOps Pipeline</a>
+    </li>
+    <li class="">
+      <a href="07. Exercises 6 and 7.html">07. Exercises 6 and 7</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Securing the Recipe Vault Web Application.html">Project Description - Securing the Recipe Vault Web Application</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Securing the Recipe Vault Web Application.html">Project Rubric - Securing the Recipe Vault Web Application</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Exercise 4: Implement Security Hardening</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="exercise-4---implement-security-hardening">Exercise 4 - Implement Security Hardening</h2>
+<p><strong><em>Deliverables for Exercise 4:</em></strong></p>
+<ul>
+<li><strong>E4T1.txt</strong> - Answer to the prompts in Exercise 4, Task 1.</li>
+<li><strong>E4T2_sshbruteforce.png</strong> - Screenshot of terminal window showing the brute force attack and the remediation.</li>
+<li><strong>E4T2_networksg.png</strong> - Screenshot of the security group change. </li>
+<li><strong>E4T2_sshattempt.png</strong> - Screenshot of your SSH attempt.</li>
+<li><strong>E4T2_s3iampolicy.png</strong> - Screenshot of the updated IAM policy.</li>
+<li><strong>E4T2_s3copy.png</strong> - Screenshot of the failed copy attempt.</li>
+<li><strong>E4T2_s3encryption.png</strong> - screenshot of the S3 bucket policy</li>
+<li><strong>E4T3_securityhub.png</strong> - Screenshot of Security Hub after reevaluating the number of findings.</li>
+<li><strong>E4T3_config.png</strong> - Screenshot of Config after reevaluating the number of findings.</li>
+<li><strong>E4T3_inspector.png</strong> - Screenshot of Inspector after reevaluating the number of findings.</li>
+<li><strong>E4T4.txt</strong> - Answers from prompts in Exercise 4, Task 4.</li>
+<li><em>Optional</em> <strong>c3-app_solution.yml</strong> and <strong>c3-s3_solution.yml</strong> - Updated cloud formation templates which reflect changes made in E4 tasks related to AWS configuration changes.</li>
+<li><em>Optional</em> <strong>E4T5.txt</strong> - Additional hardening suggestions from Exercise 4, Task 5.</li>
+</ul>
+<h3 id="task-1---remediation-plan">Task 1 - Remediation plan</h3>
+<p>As a Cloud Architect, you have been asked to apply security best practices to the environment so that it can withstand attacks and be more secure.</p>
+<ol>
+<li>Identify 2-3 changes that can be made to our environment to prevent an SSH brute force attack from the internet.</li>
+<li>Neither instance should have had access to the secret recipes bucket; even in the instance that API credentials were compromised how could we have prevented access to sensitive data?</li>
+</ol>
+<p>Submit answer in E4T1.txt</p>
+<p><strong>Deliverables:</strong></p>
+<ul>
+<li><strong>E4T1.txt</strong> - Answer to the prompts in Exercise 4, Task 1.</li>
+</ul>
+<h3 id="task-2---hardening">Task 2 - Hardening</h3>
+<h4 id="remove-ssh-vulnerability-on-the-application-instance">Remove SSH Vulnerability on the Application Instance</h4>
+<ol>
+<li>To disable SSH password login on the application server instance.</li>
+</ol>
+<pre><code># open the file /etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
+
+# Find this line:
+PasswordAuthentication yes
+
+# change it to:
+PasswordAuthentication no
+
+# save and exit
+
+#restart SSH server
+sudo service ssh restart</code></pre>
+<ol start="2">
+<li><p>Test that this made a difference.  Run the brute force attack again from Exercise 3, Task 1.  </p></li>
+<li><p>Take a screenshot of the terminal window where you ran the attack highlighting the remediation and name it E4T2_sshbruteforce.png.</p></li>
+</ol>
+<p><strong>Deliverables:</strong></p>
+<ul>
+<li><strong>E4T2_sshbruteforce.png</strong> - Screenshot of terminal window showing the brute force attack and the remediation.</li>
+</ul>
+<h4 id="apply-network-controls-to-restrict-application-server-traffic">Apply Network Controls to Restrict Application Server Traffic</h4>
+<ol>
+<li>Update the security group which is assigned to the web application instance. Any method you use to do this is acceptable. The requirement is that we only allow connections to port 5000 from the public subnet where the application load balancer resides.</li>
+<li>Test that the change worked by attempting to make an SSH connection to the web application instance using its public URL.</li>
+<li>Submit a screenshot of the security group change and your SSH attempt.</li>
+</ol>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li><strong>E4T2_networksg.png</strong> - Screenshot of the security group change. </li>
+<li><strong>E4T2_sshattempt.png</strong> - Screenshot of your SSH attempt.</li>
+</ul>
+<h4 id="least-privilege-access-to-s3">Least Privilege Access to S3</h4>
+<ol>
+<li>Update the IAM policy for the instance profile role used by the web application instance to only allow read access to the free recipes S3 bucket.</li>
+<li>Test the change by using the attack instance to attempt to copy the secret recipes.</li>
+<li>Submit a screenshot of the updated IAM policy and the attempt to copy the files. </li>
+</ol>
+<p>** Deliverables:**</p>
+<ul>
+<li><strong>E4T2_s3iampolicy.png</strong> - Screenshot of the updated IAM policy.</li>
+<li><strong>E4T2_s3copy.png</strong> - Screenshot of the failed copy attempt.</li>
+</ul>
+<h4 id="apply-default-server-side-encryption-to-the-s3-bucket">Apply Default Server-side Encryption to the S3 Bucket</h4>
+<p>This will cause the S3 service to encrypt any objects that are stored going forward by default.<br />
+Use the below guide to enable this on both S3 buckets.   <br />
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html" rel="noopener noreferrer" target="_blank">Amazon S3 Default Encryption for S3 Buckets</a></p>
+<p>Capture the screenshot of the secret recipes bucket showing that default encryption has been enabled.</p>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li><strong>E4T2_s3encryption.png</strong> - Screenshot of the S3 bucket policy.</li>
+</ul>
+<h3 id="task-3-check-monitoring-tools-to-see-if-the-changes-that-were-made-have-reduced-the-number-of-findings">Task 3: Check Monitoring Tools to see if the Changes that were made have Reduced the Number of Findings</h3>
+<ol>
+<li>Go to AWS inspector and run the inspector scan that was run in Exercise 2.</li>
+<li>After 20-30 mins - check Security Hub to see if the finding count reduced.</li>
+<li>Check AWS Config rules to see if any of the rules are now in compliance.</li>
+<li>Submit screenshots of Inspector, Security Hub, and AWS Config titled E4T3_inspector.png, E4T3_securityhub.png, and E4T3_config.png respectively.</li>
+</ol>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li><strong>E4T3_securityhub.png</strong> - Screenshot of Security Hub after reevaluating the number of findings.</li>
+<li><strong>E4T3_config.png</strong> - Screenshot of Config after reevaluating the number of findings.</li>
+<li><strong>E4T3_inspector.png</strong> - Screenshot of Inspector after reevaluating the number of findings.</li>
+</ul>
+<h3 id="task-4-questions-and-analysis">Task 4: Questions and Analysis</h3>
+<ol>
+<li>What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance.</li>
+<li>Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.</li>
+<li>Will applying default encryption setting to the s3 buckets encrypt the data that already exists?</li>
+<li>The changes you made above were done through the console or CLI; describe the outcome if the original cloud formation templates are applied to this environment?</li>
+</ol>
+<p>Submit your answers in E4T4.txt.</p>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li><strong>E4T4.txt</strong> - Answers from prompts in Exercise 4, Task 4.</li>
+</ul>
+<h3 id="_optional-standout-suggestion_-task-5---additional-hardening"><em>Optional Standout Suggestion</em> Task 5 - Additional Hardening</h3>
+<p>Make changes to the environment by updating the cloud formation template. You would do this by copying c3-app.yml and c3-s3.yml and putting your new code into c3-app_solution.yml and c3-s3_solution.yml.<br />
+Brainstorm and list additional hardening suggestions aside from those implemented that would protect the data in this environment. Submit your answers in E4T5.txt.</p>
+<p><strong>Deliverables</strong>:</p>
+<ul>
+<li><em>Optional</em> <strong>c3-app_solution.yml</strong> and <strong>c3-s3_solution.yml</strong> - updated cloud formation templates which reflect changes made in E4 tasks related to AWS configuration changes.</li>
+<li><em>Optional</em> <strong>E4T5.txt</strong> - Additional hardening suggestions from Exercise 4, Task 5.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Exercise 5 Designing a DevSecOps Pipeline.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Exercise 4: Implement Security Hardening')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

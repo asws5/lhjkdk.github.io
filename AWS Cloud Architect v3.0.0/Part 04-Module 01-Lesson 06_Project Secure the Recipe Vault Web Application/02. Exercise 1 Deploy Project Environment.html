@@ -1,0 +1,375 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 1: Deploy Project Environment</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Secure the Recipe Vault Web Application</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Setup.html">01. Setup</a>
+    </li>
+    <li class="">
+      <a href="02. Exercise 1 Deploy Project Environment.html">02. Exercise 1: Deploy Project Environment</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 2 Enable Security Monitoring.html">03. Exercise 2: Enable Security Monitoring</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 3 Attack Simulation.html">04. Exercise 3: Attack Simulation</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 4 Implement Security Hardening.html">05. Exercise 4: Implement Security Hardening</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 5 Designing a DevSecOps Pipeline.html">06. Exercise 5: Designing a DevSecOps Pipeline</a>
+    </li>
+    <li class="">
+      <a href="07. Exercises 6 and 7.html">07. Exercises 6 and 7</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Securing the Recipe Vault Web Application.html">Project Description - Securing the Recipe Vault Web Application</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Securing the Recipe Vault Web Application.html">Project Rubric - Securing the Recipe Vault Web Application</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Exercise 1: Deploy Project Environment</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="exercise-1---deploy-project-environment">Exercise 1 - Deploy Project Environment</h2>
+<p><strong><em>Deliverables for Exercise 1:</em></strong></p>
+<ul>
+<li><strong>E1T4.txt</strong> - Text file identifying 2 poor security practices with justification. </li>
+</ul>
+<h3 id="task-1--review-architecture-diagram">Task 1:  Review Architecture Diagram</h3>
+<p>In this task, the objective is to familiarize yourself with the starting architecture diagram. An architecture diagram has been provided which reflects the resources that will be deployed in your AWS account.</p>
+<p>The diagram file, title <code>AWS-WebServiceDiagram-v1-insecure.png</code>, can be found in the <em>starter</em> directory in <a href="https://github.com/udacity/nd063-c3-design-for-security-project-starter" rel="noopener noreferrer" target="_blank">this repo</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/aws-webservicediagram-v1-insecure.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="expected-user-flow">Expected user flow:</h4>
+<ul>
+<li>Clients will invoke a public-facing web service to pull free recipes.  </li>
+<li>The web service is hosted by an HTTP load balancer listening on port 80.</li>
+<li>The web service is forwarding requests to the web application instance which listens on port 5000.</li>
+<li>The web application instance will, in turn, use the public-facing AWS API to pull recipe files from the S3 bucket hosting free recipes. An IAM role and policy will provide the web app instance permissions required to access objects in the S3 bucket.</li>
+<li>Another S3 bucket is used as a vault to store secret recipes; there are privileged users who would need access to this bucket. The web application server does not need access to this bucket.</li>
+</ul>
+<h4 id="attack-flow">Attack flow:</h4>
+<ul>
+<li>Scripts simulating an attack will be run from a separate instance which is in an un-trusted subnet.</li>
+<li>The scripts will attempt to break into the web application instance using the public IP and attempt to access data in the secret recipe S3 bucket.</li>
+</ul>
+<h3 id="task-2-review-cloudformation-template">Task 2: Review CloudFormation Template</h3>
+<p>In this task, the objective is to familiarize yourself with the starter code and to get you up and running quickly. Spend a few minutes going through the .yml files in the <em>starter</em> folder to get a feel for how parts of the code will map to the components in the architecture diagram. </p>
+<p>Additionally, we have provided a CloudFormation template which will deploy the following resources in AWS:</p>
+<h4 id="vpc-stack-for-the-underlying-network">VPC Stack for the underlying network:</h4>
+<ul>
+<li>A VPC with 2 public subnets, one private subnet, and internet gateways etc for internet access.</li>
+</ul>
+<h4 id="s3-bucket-stack">S3 bucket stack:</h4>
+<ul>
+<li>2 S3 buckets that will contain data objects for the application.</li>
+</ul>
+<h4 id="application-stack">Application stack:</h4>
+<ul>
+<li>An EC2 instance that will act as an external attacker from which we will test the ability of our environment to handle threats</li>
+<li>An EC2 instance that will be running a simple web service.</li>
+<li>Application LoadBalancer</li>
+<li>Security groups</li>
+<li>IAM role</li>
+</ul>
+<h3 id="task-3-deployment-of-initial-infrastructure">Task 3: Deployment of Initial Infrastructure</h3>
+<p>In this task, the objective is to deploy the CloudFormation stacks that will create the below environment.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/aws-webservicediagram-v1-insecure.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>We will utilize the AWS CLI in this guide, however you are welcome to use the AWS console to deploy the CloudFormation templates.</p>
+<h4 id="1-from-the-root-directory-of-the-repository---execute-the-below-command-to-deploy-the-templates">1. From the root directory of the repository - execute the below command to deploy the templates.</h4>
+<h5 id="deploy-the-s3-buckets">Deploy the S3 buckets</h5>
+<pre><code>aws cloudformation create-stack --region us-east-1 --stack-name c3-s3 --template-body file://starter/c3-s3.yml</code></pre>
+<p>Expected example output:</p>
+<pre><code>{
+    "StackId": "arn:aws:cloudformation:us-east-1:4363053XXXXXX:stack/c3-s3/70dfd370-2118-11ea-aea4-12d607a4fd1c"
+}</code></pre>
+<h5 id="deploy-the-vpc-and-subnets">Deploy the VPC and Subnets</h5>
+<pre><code>aws cloudformation create-stack --region us-east-1 --stack-name c3-vpc --template-body file://starter/c3-vpc.yml</code></pre>
+<p>Expected example output:</p>
+<pre><code>{
+    "StackId": "arn:aws:cloudformation:us-east-1:4363053XXXXXX:stack/c3-vpc/70dfd370-2118-11ea-aea4-12d607a4fd1c"
+}</code></pre>
+<h5 id="deploy-the-application-stack">Deploy the Application Stack</h5>
+<p>You will need to specify a pre-existing key-pair name. Make sure you've created a key before this step. Your key's region must exist in the same the region that you plan to deploy your stack.</p>
+<pre><code>aws cloudformation create-stack --region us-east-1 --stack-name c3-app --template-body file://starter/c3-app.yml --parameters ParameterKey=KeyPair,ParameterValue=&lt;add your key pair name here&gt; --capabilities CAPABILITY_IAM</code></pre>
+<p>Expected example output:</p>
+<pre><code>{
+    "StackId": "arn:aws:cloudformation:us-east-1:4363053XXXXXX:stack/c3-app/70dfd370-2118-11ea-aea4-12d607a4fd1c"
+}</code></pre>
+<p>Expected example AWS Console status: <br />
+<a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks" rel="noopener noreferrer" target="_blank">https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cloudformation-status.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="2-once-you-see-status-is-create_complete-for-all-3-stacks-obtain-the-required-parameters-needed-for-the-project">2. Once you see Status is CREATE_COMPLETE for all 3 stacks, obtain the required parameters needed for the project.</h4>
+<p>Obtain the name of the S3 bucket by navigating to the Outputs section of the stack:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/s3stack-output.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Note down the names of the two other buckets that have been created, one for free recipes and one for secret recipes.  You will need the bucket names to upload example recipe data to the buckets and to run the attack scripts.</p>
+<ul>
+<li>You will need the Application Load Balancer endpoint to test the web service - ApplicationURL</li>
+<li>You will need the web application EC2 instance public IP address to simulate the attack - ApplicationInstanceIP</li>
+<li>You will need the public IP address of the attack instance from which to run the attack scripts - AttackInstanceIP</li>
+</ul>
+<p>You can get these from the Outputs section of the <strong>c3-app</strong> stack.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/outputs.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="3--upload-data-to-s3-buckets">3.  Upload data to S3 buckets</h4>
+<p>Upload the free recipes to the free recipe S3 bucket from step 2. Do this by typing this command into the console (you will replace <code>&lt;BucketNameRecipesFree&gt;</code> with your bucket name):</p>
+<p>Example:  </p>
+<pre><code>aws s3 cp free_recipe.txt s3://&lt;BucketNameRecipesFree&gt;/ --region us-east-1</code></pre>
+<p>Upload the secret recipes to the secret recipe S3 bucket from step 2. Do this by typing this command into the console (you will replace <code>&lt;BucketNameRecipesSecret&gt;</code> with your bucket name):</p>
+<p>Example:  </p>
+<pre><code>aws s3 cp secret_recipe.txt s3://&lt;BucketNameRecipesSecret&gt;/ --region us-east-1</code></pre>
+<h4 id="4-test-the-application">4. Test the application</h4>
+<p>Invoke the web service using the application load balancer URL:</p>
+<pre><code>http://&lt;ApplicationURL&gt;/free_recipe</code></pre>
+<p>You should receive a recipe for banana bread.</p>
+<p>The AMIs specified in the cloud formation template exist in the us-east-1 (N. Virginia) region.  You will need to set this as your default region when deploying resources for this project.</p>
+<h3 id="task-4--identify-bad-practices">Task 4:  Identify Bad Practices</h3>
+<p>Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security. List these 2 practices, and a justification for your choices, in the text file named E1T4.txt.</p>
+<p><strong>Deliverables:</strong> </p>
+<ul>
+<li><strong>E1T4.txt</strong> - Text file identifying 2 poor security practices with justification. </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Exercise 2 Enable Security Monitoring.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Exercise 1: Deploy Project Environment')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

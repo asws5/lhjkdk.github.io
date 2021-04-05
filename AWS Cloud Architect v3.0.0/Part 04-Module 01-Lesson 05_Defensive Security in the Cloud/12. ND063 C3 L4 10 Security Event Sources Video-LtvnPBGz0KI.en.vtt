@@ -1,0 +1,214 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+Security information and event management is
+
+00:00:02.730 --> 00:00:05.725
+a fundamental pillar of information security.
+
+00:00:05.725 --> 00:00:10.605
+As you start operationalizing and deploying workloads to a cloud environment,
+
+00:00:10.605 --> 00:00:13.050
+it is critical that there is insight into
+
+00:00:13.050 --> 00:00:17.160
+activity and events related to cloud accounts or applications.
+
+00:00:17.160 --> 00:00:20.430
+It is important to have this monitoring in place,
+
+00:00:20.430 --> 00:00:25.830
+in order to identify any anomalous or suspicious activity in cloud accounts,
+
+00:00:25.830 --> 00:00:28.485
+servers, networks, and applications.
+
+00:00:28.485 --> 00:00:33.675
+Also to provide traceability for forensics and root cause analysis,
+
+00:00:33.675 --> 00:00:38.615
+and auditability for access to sensitive data or actions.
+
+00:00:38.615 --> 00:00:41.750
+Let's look at some of the events sources available in
+
+00:00:41.750 --> 00:00:45.490
+AWS and methods to monitor these sources.
+
+00:00:45.490 --> 00:00:47.775
+Let's start with CloudTrail.
+
+00:00:47.775 --> 00:00:52.775
+CloudTrail is the source of activity logging within an AWS account.
+
+00:00:52.775 --> 00:00:56.390
+Any API activity, console usage,
+
+00:00:56.390 --> 00:00:59.219
+cross account access, etc,
+
+00:00:59.219 --> 00:01:01.850
+will be recorded in CloudTrail.
+
+00:01:01.850 --> 00:01:08.390
+CloudTrail will log all activity and allow you to search these logs for 90 days.
+
+00:01:08.390 --> 00:01:12.950
+However, it is highly recommended to set up CloudTrail logs
+
+00:01:12.950 --> 00:01:17.525
+in all accounts and all regions to be written to S3 buckets,
+
+00:01:17.525 --> 00:01:23.060
+preferably to a central S3 bucket in a dedicated security account.
+
+00:01:23.060 --> 00:01:26.180
+These logs can then be examined later or
+
+00:01:26.180 --> 00:01:30.935
+ingested by a log analysis or a SIEM tool such as Elasticsearch,
+
+00:01:30.935 --> 00:01:33.210
+Splunk or Sumo Logic.
+
+00:01:33.210 --> 00:01:36.320
+CloudTrail is by far the most valuable tool to
+
+00:01:36.320 --> 00:01:39.895
+monitor and audit activity in your AWS account.
+
+00:01:39.895 --> 00:01:46.205
+CloudTrail provides many capabilities for saving and sending log events to other sources.
+
+00:01:46.205 --> 00:01:48.515
+When VPC Flow Logs are enabled,
+
+00:01:48.515 --> 00:01:52.480
+you will have insight into some metrics related to network activity.
+
+00:01:52.480 --> 00:01:55.825
+For example, connection attempts, rejects,
+
+00:01:55.825 --> 00:02:01.685
+allows or denies, source and destination IPs and ports,
+
+00:02:01.685 --> 00:02:04.405
+and packet and byte counts.
+
+00:02:04.405 --> 00:02:08.210
+It is important to note that VPC Flow Logs do not provide
+
+00:02:08.210 --> 00:02:12.050
+visibility into actual traffic content or payload.
+
+00:02:12.050 --> 00:02:15.890
+If you need visibility into network traffic content in order
+
+00:02:15.890 --> 00:02:19.235
+to perform more sophisticated detection of activity,
+
+00:02:19.235 --> 00:02:22.045
+you can enable VPC traffic mirroring.
+
+00:02:22.045 --> 00:02:25.130
+Once VPC traffic mirroring is enabled,
+
+00:02:25.130 --> 00:02:30.445
+you can ship this data to third party network monitoring tools for further analysis.
+
+00:02:30.445 --> 00:02:36.500
+Any changes to an S3 buckets configuration will be logged as API calls by CloudTrail.
+
+00:02:36.500 --> 00:02:39.290
+But what about reading and writing data?
+
+00:02:39.290 --> 00:02:41.990
+From a security standpoint,
+
+00:02:41.990 --> 00:02:46.760
+it is important to be aware of attempts to read or write objects to S3 buckets,
+
+00:02:46.760 --> 00:02:50.510
+especially those that contains sensitive or critical data.
+
+00:02:50.510 --> 00:02:54.170
+Object level logging is optional and can be enabled either
+
+00:02:54.170 --> 00:02:57.664
+through CloudTrail or the S3 bucket settings.
+
+00:02:57.664 --> 00:03:02.230
+All calls to read or write data can then be recorded through CloudTrail.
+
+00:03:02.230 --> 00:03:06.545
+S3 also provides an option to log calls to access objects
+
+00:03:06.545 --> 00:03:12.220
+stored in S3 directly to a log file which resembles a web server access log.
+
+00:03:12.220 --> 00:03:17.540
+The benefit to using CloudTrail is that these read or write actions can be integrated
+
+00:03:17.540 --> 00:03:22.705
+and monitored using the same methods that would be used to monitor the CloudTrail feed.
+
+00:03:22.705 --> 00:03:26.330
+AWS Config logs record all state changes for
+
+00:03:26.330 --> 00:03:30.080
+any resources that are being monitored by AWS Config.
+
+00:03:30.080 --> 00:03:33.680
+These logs can be sent to a log analysis tool to
+
+00:03:33.680 --> 00:03:37.070
+gain deeper visibility into configuration state changes.
+
+00:03:37.070 --> 00:03:39.860
+If using Route 53 for DNS,
+
+00:03:39.860 --> 00:03:42.845
+DNS Query logging is also available.
+
+00:03:42.845 --> 00:03:46.340
+This can be useful if your security program needs to monitor
+
+00:03:46.340 --> 00:03:50.555
+DNS queries for domains that are setup in AWS Route 53.
+
+00:03:50.555 --> 00:03:54.050
+Regardless of your choice to enable DNS Query logging,
+
+00:03:54.050 --> 00:03:57.485
+AWS does maintain these logs behind the scenes,
+
+00:03:57.485 --> 00:04:00.685
+and we'll use them for identifying suspicious activity.
+
+00:04:00.685 --> 00:04:04.160
+Operating system and security logs are also critical
+
+00:04:04.160 --> 00:04:07.805
+to identifying suspicious activity or auditing usage.
+
+00:04:07.805 --> 00:04:12.200
+These logs can be sent to CloudWatch Logs or other log analysis tools
+
+00:04:12.200 --> 00:04:14.900
+or products that provide intrusion detection
+
+00:04:14.900 --> 00:04:18.095
+and dynamic host space security event monitoring.
+
+00:04:18.095 --> 00:04:22.250
+As you can see, there are many events sources to gain data from.
+
+00:04:22.250 --> 00:04:27.670
+You'll choose different sources to detect different events and gain new insights.
+
+00:04:27.670 --> 00:04:32.520
+Next, we'll look at how to monitor some of the data from these sources.
+

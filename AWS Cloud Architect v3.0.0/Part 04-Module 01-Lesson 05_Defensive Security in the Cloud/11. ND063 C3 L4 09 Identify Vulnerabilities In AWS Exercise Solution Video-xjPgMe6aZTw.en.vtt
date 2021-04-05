@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.655
+In this exercise, you were able to get a feel for how
+
+00:00:03.655 --> 00:00:08.590
+AWS config can help identify vulnerabilities in your AWS account.
+
+00:00:08.590 --> 00:00:13.925
+I'll go through this exercise in my account by setting up some example config rules.
+
+00:00:13.925 --> 00:00:17.470
+So I have logged into my AWS account and
+
+00:00:17.470 --> 00:00:21.760
+from the console page I will go to the AWS config service.
+
+00:00:21.760 --> 00:00:26.480
+Let's first check the settings for AWS config.
+
+00:00:26.480 --> 00:00:30.640
+As you can see, I have config recording on and I have
+
+00:00:30.640 --> 00:00:35.170
+chosen to record only the S3 bucket resources.
+
+00:00:35.170 --> 00:00:38.510
+Let's take a look at my rules.
+
+00:00:38.650 --> 00:00:42.755
+I have added one rule to check for compliance.
+
+00:00:42.755 --> 00:00:46.310
+This rule will check S3 buckets in my account to
+
+00:00:46.310 --> 00:00:50.165
+ensure that they have the server side encryption setting enabled.
+
+00:00:50.165 --> 00:00:51.890
+If I go into the rule,
+
+00:00:51.890 --> 00:00:56.945
+I can see details about which resources are out of compliance.
+
+00:00:56.945 --> 00:01:01.055
+I originally had a four buckets which were out of compliance.
+
+00:01:01.055 --> 00:01:04.670
+So I had remediated the issue on two of those buckets,
+
+00:01:04.670 --> 00:01:09.210
+to ensure that they have default server-side encryption enabled.
+
+00:01:11.510 --> 00:01:15.125
+After having remediated the vulnerability,
+
+00:01:15.125 --> 00:01:18.750
+the rule compliance change to compliant from non compliant.
+
+00:01:18.750 --> 00:01:22.130
+I can go to the newly compliant resource to see
+
+00:01:22.130 --> 00:01:28.560
+the timeline and what specific configuration items may have changed.
+
+00:01:31.400 --> 00:01:35.225
+This shows my timeline and this is when
+
+00:01:35.225 --> 00:01:38.840
+there was a change to put the resource in compliance.
+
+00:01:38.840 --> 00:01:40.565
+Let's see what changed.
+
+00:01:40.565 --> 00:01:48.920
+As you can see, this bucket had server-side encryption enabled and went into compliance.
+
+00:01:48.920 --> 00:01:51.620
+AWS config is a powerful tool to track
+
+00:01:51.620 --> 00:01:56.590
+configuration changes and compliance violations in your AWS account.
+
+00:01:56.590 --> 00:02:00.499
+I encourage you to explore the AWS config dashboard,
+
+00:02:00.499 --> 00:02:05.190
+conformance packs, and rule aggregation features in more depth.
+

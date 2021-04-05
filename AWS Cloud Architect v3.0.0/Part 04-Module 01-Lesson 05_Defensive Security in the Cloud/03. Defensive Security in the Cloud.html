@@ -1,0 +1,426 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Defensive Security in the Cloud</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Defensive Security in the Cloud</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Defensive Security.html">01. Defensive Security</a>
+    </li>
+    <li class="">
+      <a href="02. Common Threat Vectors.html">02. Common Threat Vectors</a>
+    </li>
+    <li class="">
+      <a href="03. Defensive Security in the Cloud.html">03. Defensive Security in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="04. Infrastructure.html">04. Infrastructure</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise Infrastructure.html">05. Exercise: Infrastructure</a>
+    </li>
+    <li class="">
+      <a href="06. Solution Infastructure.html">06. Solution: Infastructure</a>
+    </li>
+    <li class="">
+      <a href="07. Identify Vulnerabilities.html">07. Identify Vulnerabilities</a>
+    </li>
+    <li class="">
+      <a href="08. Vulnerabilities on Instances and Containers.html">08. Vulnerabilities on Instances and Containers</a>
+    </li>
+    <li class="">
+      <a href="09. Vulnerabilities Quizzes.html">09. Vulnerabilities Quizzes</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise Vulnerabilities.html">10. Exercise: Vulnerabilities</a>
+    </li>
+    <li class="">
+      <a href="11. Solution Vulnerabilities.html">11. Solution: Vulnerabilities</a>
+    </li>
+    <li class="">
+      <a href="12. Security Event Monitoring.html">12. Security Event Monitoring</a>
+    </li>
+    <li class="">
+      <a href="13. Security Event Sources.html">13. Security Event Sources</a>
+    </li>
+    <li class="">
+      <a href="14. Security Event Quizzes.html">14. Security Event Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Security Event.html">15. Exercise: Security Event</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Security Event.html">16. Solution: Security Event</a>
+    </li>
+    <li class="">
+      <a href="17. Defend Web Applications.html">17. Defend Web Applications</a>
+    </li>
+    <li class="">
+      <a href="18. Defense Quizzes.html">18. Defense Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Conclusion.html">19. Lesson Conclusion</a>
+    </li>
+    <li class="">
+      <a href="20. Course Recap.html">20. Course Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Congratulations!.html">21. Congratulations!</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Defensive Security in the Cloud</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="defensive-security-in-the-cloud">Defensive Security in the Cloud</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L4 03 Developing Your Intuition About Defensive Security In The Could</p></h3>
+  <video controls>
+  <source src="03. ND063 C3 L4 03 Developing Your Intuition About Defensive Security In The Could-npaiCKoFNPc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND063 C3 L4 03 Developing Your Intuition About Defensive Security In The Could-npaiCKoFNPc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Developing Your Intuition About Defensive Security in the Cloud Summary</p></h3>
+  <div>
+  <h2 id="defensive-security-in-the-cloud">Defensive Security In The Cloud</h2>
+<p>One of the most widely accepted benefits of leveraging public cloud services for running applications is the speed and agility with which we can deploy new infrastructure and environments.</p>
+<p>Agility and speed of change bring challenges to security and stability.</p>
+<p>In the first few lessons we focused on designing cloud environments securely. We now want to get a better sense of how to keep those environments once they are deployed.</p>
+<h3 id="important-considerations-for-defensive-security">Important Considerations for Defensive Security</h3>
+<h4 id="understanding-of-threat-landscape">Understanding of Threat Landscape</h4>
+<p>The first step is to have a <strong>firm understanding of the threat landscape</strong>. Quantify specific vulnerabilities that could increase risk and lead to exploitations. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Identify Misconfigurations and Vulnerabilities</p></h3>
+  <div>
+  <h4 id="identify-misconfigurations-and-vulnerabilities">Identify Misconfigurations and Vulnerabilities</h4>
+<p>The second key item is to ensure checks and processes are in place to scan for <strong>misconfigurations and vulnerabilities</strong>. <br />
+These processes should be designed to assess each part of the application stack from the code all the way to the core cloud infrastructure services.  </p>
+<p>When it comes to the cloud, some of the most obvious vulnerabilities include:</p>
+<ul>
+<li>Server instances without any OS hardening</li>
+<li>Exposure of AWS API keys and other secrets</li>
+<li>Overly permissive firewall rules and IAM policies</li>
+</ul>
+<p>Identification of these types of vulnerabilities needs to happen during all phases starting from initial deployment of a dev environment all the way to post production. Identification and remediation of vulnerabilities earlier drastically reduces risk of exploitation.</p>
+<p>We call this idea "<strong>shift left</strong>".</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Identify Misconfigurations and Vulnerabilities</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/4.-identify-misconfiguration-and-vulnerabilities.png" alt="
+**Shift Left**: Reduce Risk and Cost to Fix by Identifying Vulnerabilities Early On" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Shift Left</strong>: Reduce Risk and Cost to Fix by Identifying Vulnerabilities Early On</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Intuition Key Terms</p></h3>
+  <div>
+  <h4 id="identify-suspicious-activity">Identify Suspicious Activity</h4>
+<p>Lastly we want to be able to identify suspicious activity so that active threats can be identified and remediated as soon as possible.  </p>
+<p>It is critical that tools and processes for defensive threat detection are checking all layers of the stack.</p>
+<p>As an architect it is essential that you design environments with the right tools in place for threat defense and monitoring.</p>
+<h3 id="key-terms">Key Terms</h3>
+<h4 id="threat-landscape">Threat Landscape</h4>
+<p>Identify potential attack vectors and quantify potential exploitation and worst case blast radius.</p>
+<h4 id="shift-left">Shift Left</h4>
+<p>Identifying security vulnerabilities and misconfigurations in the early phases of an application or environment's lifecycle.</p>
+<h4 id="public-facing">Public Facing</h4>
+<p>Any resources which are accessible from the internet, such as web applications, public facing infrastructure, or the AWS console and API.</p>
+<h4 id="owasp-top-10">OWASP Top 10</h4>
+<p>A widely accepted set of vulnerabilities which can lead to exploitation of web applications.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Scenarios and Concepts</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match each below scenario with the most appropriate concept that it would be an example of.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Shift Left</p></button>
+  <button class="btn btn-primary"><p>Threat Detection</p></button>
+  <button class="btn btn-primary"><p>Malicious Activity</p></button>
+  <button class="btn btn-primary"><p>Misconfiguration</p></button>
+  <button class="btn btn-primary"><p>Malware</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Scenario</p>
+      </th>
+      <th>
+        <p>Concept</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>A hacker is attempting a DDoS attack on your web application.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Scan a CloudFormation template, prior to deploying a development environment, for any security groups rules that allow all source IPs and all ports.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Scanning logs for suspicious activity.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>A public facing instance has been deployed allowing inbound connections and this is out of compliance with an organization's security standards.</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Scenario</p>
+        </th>
+        <th>
+          <p>Concept</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>Scan a CloudFormation template, prior to deploying a development environment, for any security groups rules that allow all source IPs and all ports.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Shift Left</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Scanning logs for suspicious activity.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Threat Detection</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>A hacker is attempting a DDoS attack on your web application.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Malicious Activity</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>A public facing instance has been deployed allowing inbound connections and this is out of compliance with an organization's security standards.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Misconfiguration</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Developing Your Intuition About Defensive Security in the Cloud Quiz 2</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the below processes attempt to adopt a "shift left" or DevSecOps paradigm when it comes to security?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012660" id="rbk1">
+      <label for="rbk1"><p>Adding penetration or other security testing to a QA test cycle.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012660" id="rbk2">
+      <label for="rbk2"><p>Installing anti-malware on a production instance.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012660" id="rbk3">
+      <label for="rbk3"><p>Automating application deployments.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012660" id="rbk4">
+      <label for="rbk4"><p>Scanning a code repository for API keys that have been hard coded.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Adding penetration or other security testing to a QA test cycle.</li>
+      <li>Scanning a code repository for API keys that have been hard coded.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Infrastructure.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Defensive Security in the Cloud')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

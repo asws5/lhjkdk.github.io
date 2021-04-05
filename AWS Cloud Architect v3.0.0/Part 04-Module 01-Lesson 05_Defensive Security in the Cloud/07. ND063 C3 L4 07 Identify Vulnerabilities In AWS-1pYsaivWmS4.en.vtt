@@ -1,0 +1,205 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.960
+Now I will go over the various types of vulnerability monitoring that is
+
+00:00:03.960 --> 00:00:08.620
+recommended in Cloud environments and tooling options that can support this.
+
+00:00:08.620 --> 00:00:10.980
+When anything is setup, configured,
+
+00:00:10.980 --> 00:00:13.000
+or provisioned in a Cloud environment,
+
+00:00:13.000 --> 00:00:16.639
+ranging from infrastructure resources to platform services,
+
+00:00:16.639 --> 00:00:19.045
+to identity and access policies,
+
+00:00:19.045 --> 00:00:21.965
+it is important to verify that configurations
+
+00:00:21.965 --> 00:00:25.315
+are in accordance with security best practices.
+
+00:00:25.315 --> 00:00:29.615
+If a configuration is out of compliance with security standards,
+
+00:00:29.615 --> 00:00:34.010
+it needs to be identified as a vulnerability and remediated.
+
+00:00:34.010 --> 00:00:39.635
+A few basic examples of detecting and remediating vulnerabilities might include
+
+00:00:39.635 --> 00:00:46.010
+discovery of an IAM role that uses a policy that allows admin access,
+
+00:00:46.010 --> 00:00:50.275
+and we can change the policy to be a least privileged policy.
+
+00:00:50.275 --> 00:00:55.170
+Disk storage has been provisioned without volume encryption enabled.
+
+00:00:55.170 --> 00:01:00.820
+So we can work with teams to ensure that unencrypted disks are reprovisioned with
+
+00:01:00.820 --> 00:01:04.330
+encryption or a server instance has been
+
+00:01:04.330 --> 00:01:09.115
+created and configured to allow RDP connections from the public Internet.
+
+00:01:09.115 --> 00:01:14.094
+So we can restrict RDP only to internal networks.
+
+00:01:14.094 --> 00:01:20.240
+AWS Config provides checks that can help us identify these types of misconfigurations.
+
+00:01:20.240 --> 00:01:23.800
+AWS Config collects configuration snapshots of
+
+00:01:23.800 --> 00:01:28.284
+many of the core infrastructure services that AWS provides.
+
+00:01:28.284 --> 00:01:30.460
+When Config is enabled,
+
+00:01:30.460 --> 00:01:34.699
+you will have insight into how a particular resource is configured,
+
+00:01:34.699 --> 00:01:38.570
+when it is changed and what was changed.
+
+00:01:38.570 --> 00:01:44.110
+The configuration snapshot serves as an input to rules which evaluate whether
+
+00:01:44.110 --> 00:01:46.570
+the configuration is in compliance or out of
+
+00:01:46.570 --> 00:01:49.865
+compliance with the conditions specified in the rule.
+
+00:01:49.865 --> 00:01:54.520
+Configuration snapshots can be processed by rules which evaluate whether
+
+00:01:54.520 --> 00:01:56.920
+the configuration is in compliance or out of
+
+00:01:56.920 --> 00:01:59.930
+compliance with the conditions specified in the rule.
+
+00:01:59.930 --> 00:02:03.040
+A basic example of a rule could be to identify
+
+00:02:03.040 --> 00:02:06.205
+any security group that allows RDP access from
+
+00:02:06.205 --> 00:02:13.280
+all IP addresses or 0.0.0.0/0 on port 3389.
+
+00:02:13.280 --> 00:02:16.930
+AWS provides a decent number of rules out of the box
+
+00:02:16.930 --> 00:02:20.850
+which are based on standard security recommendation benchmarks.
+
+00:02:20.850 --> 00:02:26.750
+Rules can be set up to evaluate on configuration change or on a cron schedule.
+
+00:02:26.750 --> 00:02:30.425
+Since all rules are based on Lambda functions,
+
+00:02:30.425 --> 00:02:34.745
+AWS provides the ability to create custom rules that evaluate
+
+00:02:34.745 --> 00:02:39.820
+a specific criteria which may not be available as a rule out of the box.
+
+00:02:39.820 --> 00:02:43.535
+This also allows custom rules which can check compliance
+
+00:02:43.535 --> 00:02:47.585
+of resources outside the folder of AWS Config.
+
+00:02:47.585 --> 00:02:51.560
+Results of Config rules from multiple accounts can
+
+00:02:51.560 --> 00:02:55.490
+also be sent to a central AWS account for analysis.
+
+00:02:55.490 --> 00:02:59.315
+It is strongly recommended to set up AWS Config rules for
+
+00:02:59.315 --> 00:03:03.985
+any security or compliance requirements that your organization has.
+
+00:03:03.985 --> 00:03:07.760
+Security Hub is a service within AWS which aggregates
+
+00:03:07.760 --> 00:03:12.040
+findings from other security tools into a single pane of glass.
+
+00:03:12.040 --> 00:03:17.015
+Security monitoring services such as AWS Config, Inspector,
+
+00:03:17.015 --> 00:03:23.490
+GuardDuty and many open source and commercial tools integrate findings with Security Hub.
+
+00:03:23.690 --> 00:03:28.040
+Security Hub can also be enabled to provide a tone key set of
+
+00:03:28.040 --> 00:03:32.075
+Config rules that will check the AWS account against the CIS,
+
+00:03:32.075 --> 00:03:36.355
+AWS foundations and PCI DSS checks.
+
+00:03:36.355 --> 00:03:40.955
+Outside of AWS, there are many products that can integrate into
+
+00:03:40.955 --> 00:03:43.160
+AWS accounts and monitor
+
+00:03:43.160 --> 00:03:48.395
+the security and compliance posture of your AWS account level configuration.
+
+00:03:48.395 --> 00:03:52.610
+A number of open source products can perform one-time in-depth
+
+00:03:52.610 --> 00:03:57.550
+checks and can also be set up to run on a regular cadence.
+
+00:03:57.550 --> 00:04:02.655
+Examples of open source tools include: Prowler,
+
+00:04:02.655 --> 00:04:06.510
+Scout2, CloudSploit, Cloud Custodian.
+
+00:04:06.510 --> 00:04:09.500
+Some commercial products which can also provide
+
+00:04:09.500 --> 00:04:12.754
+monitoring of your Cloud security footprint include,
+
+00:04:12.754 --> 00:04:18.305
+Fugue, Palo Altos, PRISMA Cloud, Cloud Conformity etc.
+
+00:04:18.305 --> 00:04:21.875
+Many of these products provide a rich set of capabilities and features,
+
+00:04:21.875 --> 00:04:25.340
+including real-time detection of configuration changes in
+
+00:04:25.340 --> 00:04:30.530
+your Cloud environment and automatic remediation capabilities as well.
+
+00:04:30.530 --> 00:04:33.140
+Next, we will explore methods to identify
+
+00:04:33.140 --> 00:04:38.189
+vulnerabilities within server and container-based Cloud workloads
+

@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.965
+Before we delve into tools and techniques,
+
+00:00:01.965 --> 00:00:06.690
+let's first get a better feel for common threat vectors that affect Cloud environments.
+
+00:00:06.690 --> 00:00:09.435
+This is not intended to be a comprehensive list.
+
+00:00:09.435 --> 00:00:11.580
+Rather, it is a high level look at
+
+00:00:11.580 --> 00:00:14.100
+the most obvious and easy paths that
+
+00:00:14.100 --> 00:00:17.970
+an attacker can take to exploit and gain access to Cloud resources.
+
+00:00:17.970 --> 00:00:20.625
+Let's first look at several external threats,
+
+00:00:20.625 --> 00:00:23.280
+meaning actors who are on the Internet and do not have
+
+00:00:23.280 --> 00:00:26.865
+access to the private network space of our Cloud environment.
+
+00:00:26.865 --> 00:00:31.725
+The first external threat is to public-facing web applications.
+
+00:00:31.725 --> 00:00:35.820
+Attackers will attempt to exploit application related vulnerabilities,
+
+00:00:35.820 --> 00:00:39.555
+such as those found in the OWASP top 10.
+
+00:00:39.555 --> 00:00:43.700
+Cloud architects and engineers designing Cloud environments need to
+
+00:00:43.700 --> 00:00:48.170
+ensure that any external web applications are defended appropriately.
+
+00:00:48.170 --> 00:00:52.520
+Another external threat is to public-facing Cloud infrastructure.
+
+00:00:52.520 --> 00:00:54.680
+Aside from web applications,
+
+00:00:54.680 --> 00:00:58.460
+any others server infrastructure such as database servers,
+
+00:00:58.460 --> 00:01:04.550
+bastion hosts, and other infrastructure are prime targets for attackers.
+
+00:01:04.550 --> 00:01:08.300
+Any resources such as these need to have additional hardening in
+
+00:01:08.300 --> 00:01:12.665
+isolation from other internal resources that hosts sensitive data.
+
+00:01:12.665 --> 00:01:16.730
+At a high level, the use of these types of resources and exposing
+
+00:01:16.730 --> 00:01:21.040
+them to the Internet should be avoided, limited and restricted.
+
+00:01:21.040 --> 00:01:26.975
+Another external threat is the AWS API and console or the management plane.
+
+00:01:26.975 --> 00:01:31.100
+Due to the inherent nature of the public cloud being public,
+
+00:01:31.100 --> 00:01:35.740
+access to the AWS API and services is public-facing.
+
+00:01:35.740 --> 00:01:38.090
+If this axis is compromised,
+
+00:01:38.090 --> 00:01:42.215
+an attacker could gain control of your environment from anywhere.
+
+00:01:42.215 --> 00:01:44.825
+What about internal threats?
+
+00:01:44.825 --> 00:01:48.110
+If an attacker or a piece of malicious software is
+
+00:01:48.110 --> 00:01:51.169
+deployed or has gained access to the private networks,
+
+00:01:51.169 --> 00:01:54.920
+that are connected to either Cloud or on-premise IP space,
+
+00:01:54.920 --> 00:02:00.065
+we again need to ensure that Cloud hosts are hardened and restrict access.
+
+00:02:00.065 --> 00:02:04.760
+Internal attackers may also have gained access to instances in hosts running in
+
+00:02:04.760 --> 00:02:11.460
+the Cloud and we'll attempt to install and run malware or access data on Cloud instances.
+
+00:02:11.500 --> 00:02:14.435
+Going back to the AWS API,
+
+00:02:14.435 --> 00:02:17.660
+it can also become a target if attackers gain access to
+
+00:02:17.660 --> 00:02:24.455
+internal code repositories or instances that mistakenly hold API keys, and other secrets.
+
+00:02:24.455 --> 00:02:30.420
+This again, would lead to a compromise of AWS services tied to the API.
+

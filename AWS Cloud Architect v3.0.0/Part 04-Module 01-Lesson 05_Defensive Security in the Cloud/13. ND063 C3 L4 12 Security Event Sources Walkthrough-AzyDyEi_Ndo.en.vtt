@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.510
+In this walkthrough, I'm going to examine CloudTrail logs and
+
+00:00:03.510 --> 00:00:07.625
+attempt to set up monitoring in CloudWatch for a specific event type.
+
+00:00:07.625 --> 00:00:10.625
+Let's take a look at the CloudTrail settings.
+
+00:00:10.625 --> 00:00:18.495
+For this walkthrough, I have enabled CloudTrail to send logs to CloudWatch logs.
+
+00:00:18.495 --> 00:00:21.120
+Let's see how that looks.
+
+00:00:21.120 --> 00:00:24.285
+So in my CloudTrail settings,
+
+00:00:24.285 --> 00:00:31.490
+I've enabled CloudTrail events to be logged in CloudWatch logs.
+
+00:00:31.490 --> 00:00:35.970
+So I'm going to look for this log group in CloudWatch logs.
+
+00:00:37.180 --> 00:00:40.310
+So let's go to CloudWatch.
+
+00:00:40.310 --> 00:00:43.460
+On my CloudWatch logs,
+
+00:00:43.460 --> 00:00:47.630
+I have a log group where all my CloudTrail events are sent.
+
+00:00:47.630 --> 00:00:52.760
+I've also set up a metric filter which is designed
+
+00:00:52.760 --> 00:00:57.845
+to identify any events related to S3 bucket encryption.
+
+00:00:57.845 --> 00:01:00.455
+So let's take a look at that filter.
+
+00:01:00.455 --> 00:01:05.240
+So this filter will flag any events which are
+
+00:01:05.240 --> 00:01:12.250
+named PutBucket Encryption or DeleteBucketEncryption.
+
+00:01:12.250 --> 00:01:16.865
+So this can provide monitoring on changes or removal
+
+00:01:16.865 --> 00:01:23.390
+to the S3 bucket encryption settings on any of the S3 buckets in my account.
+
+00:01:23.390 --> 00:01:34.335
+So I'm going to go into this metric and as you can see in the last three hours,
+
+00:01:34.335 --> 00:01:36.530
+I'm going to change the graph.
+
+00:01:36.530 --> 00:01:40.475
+So it shows me the total number of calls,
+
+00:01:40.475 --> 00:01:44.510
+I'm going to choose sum and this is going
+
+00:01:44.510 --> 00:01:49.565
+to show me that total number of calls in any given period.
+
+00:01:49.565 --> 00:01:52.950
+So as you can see earlier today,
+
+00:01:53.200 --> 00:01:57.210
+this metric was triggered a couple times.
+
+00:01:57.210 --> 00:02:07.785
+So we've seen how to use CloudWatch logs to search for events coming out of CloudTrail
+
+00:02:07.785 --> 00:02:12.970
+and we can take these metrics and create alarms when something
+
+00:02:12.970 --> 00:02:20.560
+happens and get notified or we can create custom dashboards that will show these metrics.
+
+00:02:20.560 --> 00:02:27.725
+So it's a very powerful way to be notified of when certain security events occur.
+
+00:02:27.725 --> 00:02:29.680
+So in this walkthrough,
+
+00:02:29.680 --> 00:02:34.300
+we've gotten a chance to examine how CloudTrail logs can
+
+00:02:34.300 --> 00:02:39.830
+be monitored using CloudWatch metrics.
+
+00:02:39.830 --> 00:02:43.880
+Next, we'll take a look at how we
+
+00:02:43.880 --> 00:02:49.380
+can identify suspicious activity using the GuardDuty service.
+

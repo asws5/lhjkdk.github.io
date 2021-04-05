@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.050
+In this course, we introduced fundamental concepts to help you design,
+
+00:00:04.050 --> 00:00:08.550
+deploy, and run Cloud workloads with security in mind.
+
+00:00:08.550 --> 00:00:12.435
+We emphasized three critical design considerations,
+
+00:00:12.435 --> 00:00:15.090
+when it comes to architecting Cloud environments.
+
+00:00:15.090 --> 00:00:19.200
+First, we focused on accessing the Cloud management plane,
+
+00:00:19.200 --> 00:00:22.855
+and how to properly restrict who can do what in the Cloud.
+
+00:00:22.855 --> 00:00:28.475
+We investigated best practices for identity and permissions management in AWS.
+
+00:00:28.475 --> 00:00:32.480
+Secondly, you focused on ensuring security controls are put
+
+00:00:32.480 --> 00:00:36.505
+in place with respect to gaining access to Cloud infrastructure,
+
+00:00:36.505 --> 00:00:39.575
+Cloud Instances, and Cloud Private Networks.
+
+00:00:39.575 --> 00:00:42.770
+The third core principle we looked at was ensuring that
+
+00:00:42.770 --> 00:00:46.100
+data stored in the Cloud is protected using encryption,
+
+00:00:46.100 --> 00:00:49.525
+and best practices around managing this encryption.
+
+00:00:49.525 --> 00:00:54.170
+Lastly, we looked at techniques to defend Cloud applications from attack,
+
+00:00:54.170 --> 00:00:56.120
+and ensure that we have visibility into
+
+00:00:56.120 --> 00:01:00.540
+the security posture and activity of our Cloud environments.
+

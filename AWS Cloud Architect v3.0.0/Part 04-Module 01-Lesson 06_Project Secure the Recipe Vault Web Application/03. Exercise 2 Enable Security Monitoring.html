@@ -1,0 +1,307 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise 2: Enable Security Monitoring</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Secure the Recipe Vault Web Application</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Setup.html">01. Setup</a>
+    </li>
+    <li class="">
+      <a href="02. Exercise 1 Deploy Project Environment.html">02. Exercise 1: Deploy Project Environment</a>
+    </li>
+    <li class="">
+      <a href="03. Exercise 2 Enable Security Monitoring.html">03. Exercise 2: Enable Security Monitoring</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise 3 Attack Simulation.html">04. Exercise 3: Attack Simulation</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 4 Implement Security Hardening.html">05. Exercise 4: Implement Security Hardening</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise 5 Designing a DevSecOps Pipeline.html">06. Exercise 5: Designing a DevSecOps Pipeline</a>
+    </li>
+    <li class="">
+      <a href="07. Exercises 6 and 7.html">07. Exercises 6 and 7</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Securing the Recipe Vault Web Application.html">Project Description - Securing the Recipe Vault Web Application</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Securing the Recipe Vault Web Application.html">Project Rubric - Securing the Recipe Vault Web Application</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Exercise 2: Enable Security Monitoring</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="exercise-2-enable-security-monitoring">Exercise 2: Enable Security Monitoring</h2>
+<p><strong><em>Deliverables for Exercise 2:</em></strong></p>
+<ul>
+<li><strong>E2T2_config.png</strong> - Screenshot of AWS Config showing non-compliant rules.</li>
+<li><strong>E2T2_inspector.png</strong> - Screenshot of AWS Inspector showing scan results.</li>
+<li><strong>E2T2_securityhub.png</strong> - Screenshot of AWS Security Hub showing compliance standards for CIS foundations.</li>
+<li><strong>E2T2.txt</strong> - Provide recommendations on how to remediate the vulnerabilities.</li>
+</ul>
+<h3 id="task-1-enable-security-monitoring-using-aws-native-tools">Task 1: Enable Security Monitoring using AWS Native Tools</h3>
+<p>First, we will set up security monitoring to ensure that the AWS account and environment configuration is in compliance with the CIS standards for cloud security.</p>
+<h4 id="1-enable-aws-config-skip-this-step-if-you-already-have-it-enabled">1. Enable AWS Config (skip this step if you already have it enabled)</h4>
+<p>a. See below screenshot for the initial settings.  </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/config-enable.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>b. On the Rules page, click <strong>Skip</strong>.  <br />
+ c. On the Review page, click <strong>Confirm</strong>.</p>
+<h4 id="2-enable-aws-security-hub">2. Enable AWS Security Hub</h4>
+<p>a. From the Security Hub landing page, click <strong>Go To Security Hub</strong>.  <br />
+b. On the next page, click <strong>Enable Security Hub</strong></p>
+<h4 id="3-enable-aws-inspector-scan">3. Enable AWS Inspector scan</h4>
+<p>a. From the Inspector service landing page, leave the defaults and click <strong>Advanced setup</strong>.  </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/inspector-setup-runonce.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>b. Uncheck <strong>All Instances</strong> and <strong>Install Agents</strong>.  <br />
+ c. Choose Name for Key and ‘Web Service Instance - C3’ for value, click <strong>Next</strong>.  </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/inspector-setup-2.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>d. Edit the rules packages as seen in the screenshot below.  </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/inspector-setup-3.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>e. Uncheck <strong>Assessment Schedule</strong>.  <br />
+ f. Set a duration of 15 minutes.  <br />
+g. Click <strong>Next</strong> and <strong>Create</strong>.</p>
+<h4 id="4-enable-aws-guard-duty">4. Enable AWS Guard Duty</h4>
+<p>a. After 1-2 hours, data will populate in these tools giving you a glimpse of security vulnerabilities in your environment.</p>
+<h3 id="task-2-identify-and-triage-vulnerabilities">Task 2: Identify and Triage Vulnerabilities</h3>
+<p>Please submit screenshots of:</p>
+<ul>
+<li>AWS Config - showing non-compliant rules</li>
+<li>AWS Inspector - showing scan results</li>
+<li>AWS Security Hub - showing compliance standards for CIS foundations.</li>
+</ul>
+<p>Name the files E2T2_config.png, E2T2_inspector.png, E2T2_securityhub.png respectively.</p>
+<p>Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project. Provide recommendations on how to remediate the vulnerabilities. Submit your findings in E2T2.txt</p>
+<p><strong>Deliverables:</strong> </p>
+<ul>
+<li><strong>E2T2_config.png</strong> - Screenshot of AWS Config showing non-compliant rules.</li>
+<li><strong>E2T2_inspector.png</strong> - Screenshot of AWS Inspector showing scan results.</li>
+<li><strong>E2T2_securityhub.png</strong> - Screenshot of AWS Security Hub showing compliance standards for CIS foundations.</li>
+<li><strong>E2T2.txt</strong> - Provide recommendations on how to remediate the vulnerabilities.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Exercise 3 Attack Simulation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Exercise 2: Enable Security Monitoring')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

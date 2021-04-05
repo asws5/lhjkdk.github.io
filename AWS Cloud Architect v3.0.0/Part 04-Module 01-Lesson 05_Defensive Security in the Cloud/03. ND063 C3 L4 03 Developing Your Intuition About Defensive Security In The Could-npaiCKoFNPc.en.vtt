@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.370
+One of the most widely accepted benefits of leveraging public cloud services for running
+
+00:00:05.370 --> 00:00:07.980
+applications is the speed and agility with
+
+00:00:07.980 --> 00:00:11.055
+which we can deploy new infrastructure environments.
+
+00:00:11.055 --> 00:00:15.450
+Agility and speed of change bring challenges to security and stability.
+
+00:00:15.450 --> 00:00:19.670
+For this reason, it's not enough to simply design a cloud environment with
+
+00:00:19.670 --> 00:00:24.455
+security in mind and deploy cloud resources with secure configurations.
+
+00:00:24.455 --> 00:00:29.254
+In the first few lessons we focused on designing cloud environments securely.
+
+00:00:29.254 --> 00:00:32.720
+We now want to get a better sense of how to keep those environments
+
+00:00:32.720 --> 00:00:36.680
+secure at all levels and through all phases of their life cycle,
+
+00:00:36.680 --> 00:00:38.930
+from development to production.
+
+00:00:38.930 --> 00:00:42.050
+The first step is to have visibility into what is
+
+00:00:42.050 --> 00:00:45.865
+deployed or going to be deployed in your cloud environments.
+
+00:00:45.865 --> 00:00:48.890
+Focus on three major categories,
+
+00:00:48.890 --> 00:00:54.875
+resources related to the management such as user roles and permissions,
+
+00:00:54.875 --> 00:00:58.640
+network and infrastructure components,
+
+00:00:58.640 --> 00:01:02.465
+and your data, where is it and what does it contain?
+
+00:01:02.465 --> 00:01:04.070
+How sensitive is it?
+
+00:01:04.070 --> 00:01:06.140
+For each of these three categories,
+
+00:01:06.140 --> 00:01:09.410
+work with security and compliance teams to develop
+
+00:01:09.410 --> 00:01:13.265
+a firm understanding of potential threats and vulnerabilities.
+
+00:01:13.265 --> 00:01:16.880
+Organizations and engineering teams should quantify
+
+00:01:16.880 --> 00:01:22.405
+specific vulnerabilities that could increase risk and lead to exploitations.
+
+00:01:22.405 --> 00:01:28.190
+The second key item is to ensure checks and processes are in place to scan for and
+
+00:01:28.190 --> 00:01:31.820
+identify vulnerabilities and configurations
+
+00:01:31.820 --> 00:01:35.035
+which are not in line with security best practices.
+
+00:01:35.035 --> 00:01:39.830
+These processes should be automated and be capable of checking each part of
+
+00:01:39.830 --> 00:01:42.560
+the application stack from the code all the
+
+00:01:42.560 --> 00:01:46.180
+way down to the core cloud infrastructure services.
+
+00:01:46.180 --> 00:01:48.400
+When it comes to the cloud,
+
+00:01:48.400 --> 00:01:50.900
+some of the most obvious vulnerabilities are
+
+00:01:50.900 --> 00:01:55.010
+server instances that are deployed without any OS hardening,
+
+00:01:55.010 --> 00:01:59.600
+exposure of secrets, overly permissive firewall rules,
+
+00:01:59.600 --> 00:02:02.989
+or overly permissive IAM policies.
+
+00:02:02.989 --> 00:02:08.000
+Identification of these types of vulnerabilities needs to happen during all phases of
+
+00:02:08.000 --> 00:02:12.425
+the life cycle starting from architecture design and code development,
+
+00:02:12.425 --> 00:02:14.375
+all the way to post-production.
+
+00:02:14.375 --> 00:02:17.480
+Identification and remediation of vulnerabilities
+
+00:02:17.480 --> 00:02:21.455
+earlier on drastically reduces risk of exploitation.
+
+00:02:21.455 --> 00:02:24.320
+We call this idea shift left.
+
+00:02:24.320 --> 00:02:28.220
+The principle's based on the idea that bugs found earlier in
+
+00:02:28.220 --> 00:02:32.165
+the life cycle of a system or application are cheaper to fix.
+
+00:02:32.165 --> 00:02:35.540
+We can equate the cost of fixing a bug to the amount of
+
+00:02:35.540 --> 00:02:39.185
+risk and identified vulnerability poses to the system.
+
+00:02:39.185 --> 00:02:43.490
+For this reason, it is critical to always keep security in mind early
+
+00:02:43.490 --> 00:02:48.500
+on when designing and developing your cloud environments and applications.
+
+00:02:48.500 --> 00:02:52.655
+Lastly, we want to be able to identify suspicious activities so that
+
+00:02:52.655 --> 00:02:57.100
+active threats can be identified and remediated as soon as possible.
+
+00:02:57.100 --> 00:03:00.230
+It's important that security-related changes to
+
+00:03:00.230 --> 00:03:03.940
+the environment are also being monitored continuously.
+
+00:03:03.940 --> 00:03:09.200
+It's critical that tools and processes for defensive threat detection and
+
+00:03:09.200 --> 00:03:14.884
+incident response be applied to all layers of the stack including user activity,
+
+00:03:14.884 --> 00:03:18.820
+network traffic monitoring, and cloud configuration.
+
+00:03:18.820 --> 00:03:24.710
+Security monitoring tools should be implemented in all environments, not just production.
+
+00:03:24.710 --> 00:03:27.260
+As an architect, it is essential that you design
+
+00:03:27.260 --> 00:03:32.160
+environments with the right tools in place for threat defense and monitoring.
+
