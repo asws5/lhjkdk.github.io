@@ -1,0 +1,232 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.810
+AWS Relational Database Service, or RDS,
+
+00:00:03.810 --> 00:00:09.120
+is a managed service that launches and maintains one of six databases for you.
+
+00:00:09.120 --> 00:00:12.945
+You have the option of SQL Server, Oracle,
+
+00:00:12.945 --> 00:00:19.545
+MariaDB, PostgreSQL, AWS Aurora, and MySQL.
+
+00:00:19.545 --> 00:00:25.545
+AWS offers reserved instances for RDS similar to EC2,
+
+00:00:25.545 --> 00:00:29.700
+and purchasing reserved database capacity can save a lot of money.
+
+00:00:29.700 --> 00:00:36.285
+Using AWS RDS also provides customers with the advantage of AWS manage services.
+
+00:00:36.285 --> 00:00:38.730
+You don't have to worry about managing the hardware,
+
+00:00:38.730 --> 00:00:42.650
+supporting the database or patching or updating.
+
+00:00:42.650 --> 00:00:46.985
+When you use AWS RDS service to manage your databases,
+
+00:00:46.985 --> 00:00:53.000
+you are handing over some control in exchange for AWS expertise and support,
+
+00:00:53.000 --> 00:00:57.305
+freeing you to innovate in other areas of your stack.
+
+00:00:57.305 --> 00:01:02.300
+If your application requires you to have complete control of your operating system,
+
+00:01:02.300 --> 00:01:07.310
+you have the option of installing any database you like on EC2 instances.
+
+00:01:07.310 --> 00:01:10.070
+You can even bring an existing license to save money on
+
+00:01:10.070 --> 00:01:13.355
+SQL Server and Oracle implementations.
+
+00:01:13.355 --> 00:01:16.625
+While relational databases can scale,
+
+00:01:16.625 --> 00:01:18.875
+they're mostly limited to vertical scaling,
+
+00:01:18.875 --> 00:01:21.940
+where costs can really begin to accelerate.
+
+00:01:21.940 --> 00:01:24.155
+To reduce database costs,
+
+00:01:24.155 --> 00:01:29.090
+you can purchase reserve capacity based on the database instance class,
+
+00:01:29.090 --> 00:01:34.265
+the database engine, and redundancy such as read replicas and high availability,
+
+00:01:34.265 --> 00:01:37.460
+multi availability zone deployments.
+
+00:01:37.460 --> 00:01:41.495
+Oracle and SQL server have additional considerations,
+
+00:01:41.495 --> 00:01:43.774
+because for these two database engines,
+
+00:01:43.774 --> 00:01:48.305
+you have the option of using your own license and saving money there as well.
+
+00:01:48.305 --> 00:01:52.490
+Similar to EC2, you save money by committing to paying for
+
+00:01:52.490 --> 00:01:57.910
+a one or three year term for a particular database instance class and database engine.
+
+00:01:57.910 --> 00:02:01.190
+An example would be committing to a three-year term for
+
+00:02:01.190 --> 00:02:07.805
+PostgreSQL database dot M5 extra large in the US East one region,
+
+00:02:07.805 --> 00:02:11.080
+saving you about 40 percent off the on-demand cost,
+
+00:02:11.080 --> 00:02:13.770
+depending on when you pay your reserved bill.
+
+00:02:13.770 --> 00:02:19.025
+You save the most by sending AWS payment in full at the beginning of the three-year term,
+
+00:02:19.025 --> 00:02:21.950
+but the savings is only about two to six percent.
+
+00:02:21.950 --> 00:02:26.420
+So if your company budget doesn't allow for a large one time expenditure,
+
+00:02:26.420 --> 00:02:31.005
+it might be best for you to pay the monthly bill instead of paying it all up front.
+
+00:02:31.005 --> 00:02:33.880
+Before you decide how you'd like to pay,
+
+00:02:33.880 --> 00:02:36.520
+make sure you have a clear picture of the costs,
+
+00:02:36.520 --> 00:02:39.010
+the payment options, that discount,
+
+00:02:39.010 --> 00:02:42.070
+and how that will affect your company down the line.
+
+00:02:42.070 --> 00:02:45.325
+Costs and discounts vary by region,
+
+00:02:45.325 --> 00:02:48.445
+so make your selections with costs in mind.
+
+00:02:48.445 --> 00:02:53.110
+Reserving instances is the bedrock of cost savings in AWS,
+
+00:02:53.110 --> 00:02:55.060
+and for production applications,
+
+00:02:55.060 --> 00:02:57.295
+there should be no other option.
+
+00:02:57.295 --> 00:03:00.610
+Reserved instances are long-term commitment,
+
+00:03:00.610 --> 00:03:04.915
+so making sure you've selected the right database instance is important.
+
+00:03:04.915 --> 00:03:08.110
+As of now, AWS doesn't allow you to
+
+00:03:08.110 --> 00:03:11.395
+make changes to the instance type once you've selected it.
+
+00:03:11.395 --> 00:03:13.260
+As a Cloud architect,
+
+00:03:13.260 --> 00:03:17.120
+one of your responsibilities may be to perform load testing and
+
+00:03:17.120 --> 00:03:21.865
+conduct a monitoring exercise before committing to an RDS reserved purchase.
+
+00:03:21.865 --> 00:03:25.640
+You will want to make sure your application is exposed to every condition during
+
+00:03:25.640 --> 00:03:30.275
+the monitoring period that you can expect it to encounter over the reservation term.
+
+00:03:30.275 --> 00:03:32.990
+So you want to capture the highs and lows,
+
+00:03:32.990 --> 00:03:35.030
+and especially the outliers.
+
+00:03:35.030 --> 00:03:38.510
+Based on the metrics you captured during the monitoring period,
+
+00:03:38.510 --> 00:03:43.295
+you should be able to make a wise choice when it comes to your reserve database instance.
+
+00:03:43.295 --> 00:03:45.830
+Non-relational databases such as
+
+00:03:45.830 --> 00:03:50.720
+DynamoDB are appropriate for mobile applications, gaming,
+
+00:03:50.720 --> 00:03:55.040
+and digital advertising because they deliver millisecond fast performance at
+
+00:03:55.040 --> 00:03:59.690
+any scale on the platform of an AWS managed service.
+
+00:03:59.690 --> 00:04:02.960
+So once again, security,
+
+00:04:02.960 --> 00:04:08.980
+backup, restore, and caching are taken care of by AWS.
+
+00:04:08.980 --> 00:04:15.685
+DynamoDB pricing is primarily based on write capacity units and read capacity units.
+
+00:04:15.685 --> 00:04:19.025
+But you'll also pay for auto-scaling, indexing,
+
+00:04:19.025 --> 00:04:21.010
+data transfer, and caching,
+
+00:04:21.010 --> 00:04:24.255
+much the same as AWS RDS.
+
+00:04:24.255 --> 00:04:28.850
+Hundreds of thousands of AWS customers have selected AWS managed
+
+00:04:28.850 --> 00:04:35.600
+databases like RDS and DynamoDB for their performance, reliability and scalability.
+
+00:04:35.600 --> 00:04:39.665
+As you began to explore these database options in your own environment,
+
+00:04:39.665 --> 00:04:42.940
+remember that reserved instances can greatly reduce costs,
+
+00:04:42.940 --> 00:04:46.855
+and part of what you're paying for is AWS expertise.
+
+00:04:46.855 --> 00:04:49.400
+Their expertise is in providing you with database,
+
+00:04:49.400 --> 00:04:52.370
+hardware and services that would exceed what you'd be able to
+
+00:04:52.370 --> 00:04:57.360
+accomplish yourself without a team of legendary DBAs.
+

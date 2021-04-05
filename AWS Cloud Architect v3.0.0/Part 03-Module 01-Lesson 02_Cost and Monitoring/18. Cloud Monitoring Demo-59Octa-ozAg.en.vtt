@@ -1,0 +1,202 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.190
+CloudWatch monitors your AWS cloud resources
+
+00:00:05.190 --> 00:00:09.285
+and applications and reports metrics in real time.
+
+00:00:09.285 --> 00:00:13.110
+It can be used to track metrics and log files,
+
+00:00:13.110 --> 00:00:16.650
+configure usage alarms, and make changes to
+
+00:00:16.650 --> 00:00:22.125
+your AWS infrastructure based on metrics and changes that it detects in the environment.
+
+00:00:22.125 --> 00:00:26.610
+The CloudWatch page already tracks and displays metrics and data about
+
+00:00:26.610 --> 00:00:31.485
+the AWS services you're using without any additional configuration on your part.
+
+00:00:31.485 --> 00:00:34.289
+You can optionally create custom dashboards
+
+00:00:34.289 --> 00:00:38.050
+configured to display data about the metrics that matter most to you.
+
+00:00:38.050 --> 00:00:41.195
+Additionally, CloudWatch can be configured on
+
+00:00:41.195 --> 00:00:45.665
+individual instances to capture metrics that can be viewed and EC2,
+
+00:00:45.665 --> 00:00:47.945
+as well as the CloudWatch dashboard.
+
+00:00:47.945 --> 00:00:51.605
+Cloudwatch alarms can serve two purposes.
+
+00:00:51.605 --> 00:00:55.685
+In addition to notify you if your alarm threshold has been reached,
+
+00:00:55.685 --> 00:01:00.715
+it can also take action on the monitored resource based on your alarm configuration.
+
+00:01:00.715 --> 00:01:03.710
+For example, if it detects an instance
+
+00:01:03.710 --> 00:01:06.710
+running at a CPU that breaches the alarm threshold,
+
+00:01:06.710 --> 00:01:10.430
+it can launch additional instances to address the immediate need and
+
+00:01:10.430 --> 00:01:14.630
+stop instances that are being underutilized using the same logic.
+
+00:01:14.630 --> 00:01:20.960
+CloudWatch pricing is based on custom metrics and pricing varies by region.
+
+00:01:20.960 --> 00:01:23.120
+For the purposes of this course,
+
+00:01:23.120 --> 00:01:27.080
+the services we are using should be covered under the free tier.
+
+00:01:27.080 --> 00:01:31.880
+If you plan to explore a capturing metrics for services outside the free tier,
+
+00:01:31.880 --> 00:01:35.945
+please familiarize yourself with the CloudWatch pricing documentation
+
+00:01:35.945 --> 00:01:40.690
+and make sure you set appropriate billing alarms to avoid unexpected charge.
+
+00:01:40.690 --> 00:01:45.050
+So let's take a look at creating a CloudWatch alarm for
+
+00:01:45.050 --> 00:01:52.420
+an EC2 Instance that takes an action when the alarm threshold is met.
+
+00:01:52.420 --> 00:01:56.660
+So what we're going to do is we're going to open
+
+00:01:56.660 --> 00:02:00.680
+the EC2 management page and
+
+00:02:00.680 --> 00:02:07.455
+select and instance that we'd like to create an alarm for.
+
+00:02:07.455 --> 00:02:09.710
+So I've selected this running instance here,
+
+00:02:09.710 --> 00:02:11.450
+the one here at the top.
+
+00:02:11.450 --> 00:02:14.960
+You'll notice that there is some content down at the bottom of the page.
+
+00:02:14.960 --> 00:02:18.560
+If you need to, just scroll it up so that you can see what you're doing here.
+
+00:02:18.560 --> 00:02:20.060
+We're going to go to the third tab,
+
+00:02:20.060 --> 00:02:23.775
+monitoring, and we're going to create an alarm.
+
+00:02:23.775 --> 00:02:25.100
+We see in the CloudWatch alarms,
+
+00:02:25.100 --> 00:02:29.765
+there are no CloudWatch alarms currently configured for this EC2 Instance,
+
+00:02:29.765 --> 00:02:32.150
+so we're going to create one.
+
+00:02:32.150 --> 00:02:35.765
+Because we don't have any SNS topics right now,
+
+00:02:35.765 --> 00:02:37.000
+we'll just uncheck that.
+
+00:02:37.000 --> 00:02:38.920
+You can create that later if you like.
+
+00:02:38.920 --> 00:02:40.960
+But what we want this alarm to do is,
+
+00:02:40.960 --> 00:02:45.710
+we want this alarm to reboot this EC2 Instance when
+
+00:02:45.710 --> 00:02:51.935
+the CPU utilization average is greater than 90 percent,
+
+00:02:51.935 --> 00:02:55.790
+for at least one consecutive period of five minutes.
+
+00:02:55.790 --> 00:02:57.920
+You can play around with this 15 minutes,
+
+00:02:57.920 --> 00:03:00.740
+two consecutive periods of 15 minutes, whatever you like,
+
+00:03:00.740 --> 00:03:06.210
+whatever makes sense to you when it comes to your application.
+
+00:03:06.210 --> 00:03:10.940
+So if you know that after five minutes of CPU at 90 percent,
+
+00:03:10.940 --> 00:03:13.790
+that means that you've got a memory leak or something like that,
+
+00:03:13.790 --> 00:03:16.925
+you want your alarm to reboot your instance,
+
+00:03:16.925 --> 00:03:25.285
+then you'd want to name your alarm memory leak, and create it.
+
+00:03:25.285 --> 00:03:28.084
+Once you've created your alarm,
+
+00:03:28.084 --> 00:03:32.090
+you'll get a success window that pops up and it will
+
+00:03:32.090 --> 00:03:35.840
+provide you with a link to your alarm on the CloudWatch page.
+
+00:03:35.840 --> 00:03:38.930
+So let's click on that and the CloudWatch
+
+00:03:38.930 --> 00:03:43.500
+management console open and show us our newly created alarm.
+
+00:03:43.780 --> 00:03:48.620
+So we've got a tiny little metric here.
+
+00:03:48.620 --> 00:03:51.680
+Our CPU utilization is at six percent.
+
+00:03:51.680 --> 00:03:53.570
+We'll see this red line here,
+
+00:03:53.570 --> 00:03:55.400
+that's our 90 percent threshold.
+
+00:03:55.400 --> 00:03:57.895
+It doesn't look like we're in any danger right now,
+
+00:03:57.895 --> 00:03:59.450
+how many memory leaks are,
+
+00:03:59.450 --> 00:04:00.845
+you just never know.
+
+00:04:00.845 --> 00:04:07.980
+So that is how you create a CloudWatch alarm for an EC2 Instance. Thank you.
+

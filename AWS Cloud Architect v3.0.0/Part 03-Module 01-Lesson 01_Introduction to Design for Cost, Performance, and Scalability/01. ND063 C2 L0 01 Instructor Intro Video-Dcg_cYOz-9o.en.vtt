@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.085
+Hello, and welcome to course two of the Cloud Architecture Nanodegree.
+
+00:00:05.085 --> 00:00:06.990
+It's nice to have you here.
+
+00:00:06.990 --> 00:00:12.240
+I'm Leslie, a Cloud Architect and Disaster Recovery Specialist from Chicago.
+
+00:00:12.240 --> 00:00:14.744
+Like some of you who are changing careers,
+
+00:00:14.744 --> 00:00:17.070
+I didn't begin my career in IT.
+
+00:00:17.070 --> 00:00:20.040
+I'm actually a chemist who learns server technology on
+
+00:00:20.040 --> 00:00:24.315
+the job while working on a network data system at a life sciences company.
+
+00:00:24.315 --> 00:00:27.120
+I've been a Cloud Architect for about five years,
+
+00:00:27.120 --> 00:00:31.165
+and I've enjoyed every technology challenge and triumph along the way.
+
+00:00:31.165 --> 00:00:35.570
+I'm excited to be here sharing cloud technology lessons and guiding you through
+
+00:00:35.570 --> 00:00:37.790
+the beginning stages of what I'm sure will be
+
+00:00:37.790 --> 00:00:41.210
+exciting and rewarding careers in cloud architecture.
+
+00:00:41.210 --> 00:00:46.100
+The goal of this course is to provide you with the foundation you need to draw
+
+00:00:46.100 --> 00:00:48.620
+the necessary parallels between what we know
+
+00:00:48.620 --> 00:00:52.330
+as traditional on-premises data center and the public cloud.
+
+00:00:52.330 --> 00:00:54.890
+So that you can properly provisioned the resources in
+
+00:00:54.890 --> 00:00:59.100
+the cloud necessary for successful cloud deployments
+

@@ -1,0 +1,187 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.950
+Hybrid Cloud is often
+
+00:00:01.950 --> 00:00:06.505
+the infrastructure model that kick starts the process of moving to the Cloud.
+
+00:00:06.505 --> 00:00:10.320
+Corporations often use Cloud data storage as
+
+00:00:10.320 --> 00:00:15.780
+a first step toward moving to the Cloud because it's so easy and inexpensive.
+
+00:00:15.780 --> 00:00:21.659
+Basic Cloud storage doesn't require any special access or networking.
+
+00:00:21.659 --> 00:00:25.170
+S3 buckets are accessible over the Internet.
+
+00:00:25.170 --> 00:00:31.425
+It's easy to procure storage quickly and you only pay for what you need.
+
+00:00:31.425 --> 00:00:36.930
+Two of the most obvious and frequently cited benefits of hybrid Cloud,
+
+00:00:36.930 --> 00:00:40.050
+are that you have a backup of your data to assist with
+
+00:00:40.050 --> 00:00:44.100
+disaster recovery efforts and data portability.
+
+00:00:44.100 --> 00:00:47.360
+Having all of your data in the Cloud makes it easier for you to
+
+00:00:47.360 --> 00:00:51.085
+move it between Cloud providers if it becomes necessary.
+
+00:00:51.085 --> 00:00:53.780
+Connecting the on-premises data center to
+
+00:00:53.780 --> 00:00:57.830
+the Cloud provider requires networking expertise and support
+
+00:00:57.830 --> 00:01:00.860
+from the network team and the Cloud technology team in order to
+
+00:01:00.860 --> 00:01:04.660
+implement the fastest connection and most secure solution.
+
+00:01:04.660 --> 00:01:08.990
+The connectivity to the data center is secured via a customer managed
+
+00:01:08.990 --> 00:01:13.990
+gateway and a VPN or AWS direct connect.
+
+00:01:13.990 --> 00:01:18.680
+AWS direct connect is a service that facilitates the establishment of
+
+00:01:18.680 --> 00:01:24.115
+a secure dedicated network connection between the on-premises network and the Cloud.
+
+00:01:24.115 --> 00:01:26.765
+Data is encrypted end to end,
+
+00:01:26.765 --> 00:01:30.395
+meaning it's encrypted at rest on-premises,
+
+00:01:30.395 --> 00:01:35.530
+encrypted in transfer, and encrypted at rest in the Cloud.
+
+00:01:35.530 --> 00:01:38.505
+Securing the connection between the data center
+
+00:01:38.505 --> 00:01:40.910
+and the Cloud and monitoring the connection is
+
+00:01:40.910 --> 00:01:43.715
+important because the connection is a vulnerability
+
+00:01:43.715 --> 00:01:47.245
+that is frequently targeted by outsiders for exploitation.
+
+00:01:47.245 --> 00:01:53.060
+AWS VPN enables hybrid connectivity by providing the ability to connect
+
+00:01:53.060 --> 00:01:56.510
+your on-premises environment to your AWS VPC
+
+00:01:56.510 --> 00:02:00.790
+over an encrypted Internet connection to maintain data integrity.
+
+00:02:00.790 --> 00:02:04.745
+An AWS direct connect is a private network connection
+
+00:02:04.745 --> 00:02:08.540
+between the on-premises environment and AWS that allows you to
+
+00:02:08.540 --> 00:02:11.960
+establish a faster and more secure connection by using
+
+00:02:11.960 --> 00:02:17.120
+private IP space via an AWS direct connect location.
+
+00:02:17.120 --> 00:02:19.820
+Using direct connect also has the benefit of
+
+00:02:19.820 --> 00:02:22.880
+potential data transfer cost reduction because
+
+00:02:22.880 --> 00:02:24.590
+data transfer that uses
+
+00:02:24.590 --> 00:02:29.210
+a direct connection is charged at the lower direct connection rate.
+
+00:02:29.210 --> 00:02:32.645
+The AWS VPC provides and manages
+
+00:02:32.645 --> 00:02:36.110
+all the connections into the Cloud environment and resources,
+
+00:02:36.110 --> 00:02:39.980
+including public Internet connections, VPNs,
+
+00:02:39.980 --> 00:02:45.035
+direct connections, peering connections, and subnets.
+
+00:02:45.035 --> 00:02:49.580
+Defining your subnets and IP addressing schemes is the beginning of building out
+
+00:02:49.580 --> 00:02:52.070
+your Cloud network infrastructure and controlling
+
+00:02:52.070 --> 00:02:54.970
+access into and out of your Cloud environment.
+
+00:02:54.970 --> 00:02:58.159
+In order to communicate with your on-premises environment,
+
+00:02:58.159 --> 00:03:02.650
+you need to have network routing configured between the data center and the VPC.
+
+00:03:02.650 --> 00:03:05.555
+Subnets can be public or private,
+
+00:03:05.555 --> 00:03:10.165
+and how they're defined is based on how they're configured to communicate in the VPC.
+
+00:03:10.165 --> 00:03:12.440
+In the AWS VPC,
+
+00:03:12.440 --> 00:03:16.339
+the public subnet is for public facing servers like web servers,
+
+00:03:16.339 --> 00:03:20.230
+bastion hosts, proxies, and VPNs.
+
+00:03:20.230 --> 00:03:25.830
+Public subnets have an Internet gateway for routes out to the Internet from the VPC.
+
+00:03:25.830 --> 00:03:31.895
+Private subnets are for back-end servers like databases and internal load balancers.
+
+00:03:31.895 --> 00:03:36.020
+There are routes between the subnets for communication between the tiers,
+
+00:03:36.020 --> 00:03:39.445
+but there are no routes from the private subnet to the Internet.
+
+00:03:39.445 --> 00:03:43.460
+If the servers in the private subnet need to access the Internet,
+
+00:03:43.460 --> 00:03:46.550
+for example, to download an update or a license key,
+
+00:03:46.550 --> 00:03:51.230
+the servers in the private subnet need to use a net gateway in the public subnet,
+
+00:03:51.230 --> 00:03:54.530
+that is a one-way connection out to the Internet that
+
+00:03:54.530 --> 00:03:58.950
+doesn't allow the Internet to connect back into the servers in the private subnet.
+

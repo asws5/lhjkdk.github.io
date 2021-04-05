@@ -1,0 +1,342 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tagging and Lifecycle Policies</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cost and Monitoring</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Intro.html">01. Lesson Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to Costs in the Cloud.html">02. Intro to Costs in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="03. Cloud Cost Pricing.html">03. Cloud Cost Pricing</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise Pricing by Region.html">04. Exercise: Pricing by Region</a>
+    </li>
+    <li class="">
+      <a href="05. Solution Pricing by Region.html">05. Solution: Pricing by Region</a>
+    </li>
+    <li class="">
+      <a href="06. Instance Pricing.html">06. Instance Pricing</a>
+    </li>
+    <li class="">
+      <a href="07. Storage Pricing.html">07. Storage Pricing</a>
+    </li>
+    <li class="">
+      <a href="08. Tagging and Lifecycle Policies.html">08. Tagging and Lifecycle Policies</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise S3 Lifecycle Policy Configuration.html">09. Exercise: S3 Lifecycle Policy Configuration</a>
+    </li>
+    <li class="">
+      <a href="10. Solution S3 Lifecycle Policy Configuration.html">10. Solution: S3 Lifecycle Policy Configuration</a>
+    </li>
+    <li class="">
+      <a href="11. DB and Data Transfer Costs.html">11. DB and Data Transfer Costs</a>
+    </li>
+    <li class="">
+      <a href="12. Hybrid Options.html">12. Hybrid Options</a>
+    </li>
+    <li class="">
+      <a href="13. Optimizing for Cost.html">13. Optimizing for Cost</a>
+    </li>
+    <li class="">
+      <a href="14. Right Sizing From the Start.html">14. Right Sizing From the Start</a>
+    </li>
+    <li class="">
+      <a href="15. Autoscaling.html">15. Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise Autoscaling.html">16. Exercise: Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="17. Solution  Autoscaling.html">17. Solution:  Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="18. Monitoring and Optimization.html">18. Monitoring and Optimization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Recap.html">19. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="20. Glossary.html">20. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Tagging and Lifecycle Policies</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Tagging Demo heading</p></h3>
+  <div>
+  <h2 id="tagging-to-track-costs">Tagging To Track Costs</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L1 10 TAGGING Demo</p></h3>
+  <video controls>
+  <source src="08. ND063 C2 L1 10 TAGGING Demo-I00g_hIQEeU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="08. ND063 C2 L1 10 TAGGING Demo-I00g_hIQEeU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Tagging Best Practices</p></h3>
+  <div>
+  <h3 id="best-practices-for-tagging">Best Practices for Tagging</h3>
+<ul>
+<li><p>Gather input from a variety of cloud stakeholders to determine the best tagging strategy for your organization</p></li>
+<li><p>Define your organization’s tags early in the cloud adoption process, and put systems in place to ensure they are being used consistently</p></li>
+<li><p>AWS tags are case sensitive, so you must standardize how your tags are defined to avoid confusion and orphaned data</p></li>
+<li><p>AWS allows you to tag nearly every service that generates costs, so tag everything you can to maintain accurate billing and cost estimates and reports</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Lifecycle demo heading</p></h3>
+  <div>
+  <h2 id="lifecycle-policies">Lifecycle Policies</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 Lifecycle Slides And Demo</p></h3>
+  <video controls>
+  <source src="08. ND063 C2 Lifecycle Slides And Demo-bgTz2l5U-EQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="08. ND063 C2 Lifecycle Slides And Demo-bgTz2l5U-EQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Pros and cons of storage types for cost</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l1-lifecycle-policy.jpg" alt="How a Lifecycle Policy Works" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>How a Lifecycle Policy Works</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Lifecycle Policy recap</p></h3>
+  <div>
+  <h3 id="s3-lifecycle-policy-configuration">S3 Lifecycle Policy Configuration</h3>
+<p>S3 Object Lifecycle Policies simplify the task of object lifecycle management. </p>
+<ul>
+<li><p>A lifecycle configuration is an XML file that defines the actions you want AWS to perform on the object in S3 storage during its lifecycle in AWS. The lifecycle policy is configured in the S3 management console.</p></li>
+<li><p>Object lifecycle policies define both transitions and expirations</p></li>
+<li><p>Object transitions define when an object is moved to another storage class; for example moving an object from S3 Standard to S3 Standard Infrequently Accessed after 60 days</p></li>
+<li><p>Object expirations define when an object needs to expire out of the S3 bucket, and AWS deletes the file when the expiration conditions have been met</p></li>
+<li><p>Once an object has transitioned out of S3 standard, it cannot go back. The object would have to be retrieved and re-uploaded to S3 Standard. </p></li>
+<li><p>Lifecycle policies automate transitions and expirations to reduce storage costs by moving objects to less costly tiers, archiving them for long term storage, and deleting them to meet governance requirements</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Lifecycle Policy Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What happens to an object when it transitions to “expired” in a lifecycle policy?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1010695" id="rbk1">
+        <label for="rbk1"><p>It makes a final transition to Glacier Deep Archive</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1010695" id="rbk2">
+        <label for="rbk2"><p>It transitions to the expiration bucket</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1010695" id="rbk3">
+        <label for="rbk3"><p>It is placed in a deletion review cache</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1010695" id="rbk4">
+        <label for="rbk4"><p>It is permanently deleted</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    It is permanently deleted
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading-on-tagging-and-lifecycle-policies">Additional Reading on Tagging and Lifecycle Policies</h3>
+<p>An effective tagging strategy helps you gain visibility into your costs and resource allocation and provide the insights necessary to track your cloud technology goals and direct your company’s cloud initiatives. Please follow the links below to dive deeper into the topic of resource tagging.</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2//cost-alloc-tags.html" rel="noopener noreferrer" target="_blank">Using Cost Allocation Tags</a>  </li>
+<li><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html" rel="noopener noreferrer" target="_blank">Viewing CloudTrail Events</a>  </li>
+<li><a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/" rel="noopener noreferrer" target="_blank">AWS Tagging Strategies</a></li>
+<li><a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf" rel="noopener noreferrer" target="_blank">AWS Tagging Best Practices</a>  </li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-lifecycle.html" rel="noopener noreferrer" target="_blank">Create Lifecycle Policies</a>   </li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html" rel="noopener noreferrer" target="_blank">Object Lifecycle Management</a>    </li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-set-lifecycle-configuration-intro.html" rel="noopener noreferrer" target="_blank">Setting Lifecycle Configuration on a Bucket</a>  </li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html" rel="noopener noreferrer" target="_blank">Transitioning Objects Using S3 Lifecycle</a>  </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. Exercise S3 Lifecycle Policy Configuration.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Tagging and Lifecycle Policies')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

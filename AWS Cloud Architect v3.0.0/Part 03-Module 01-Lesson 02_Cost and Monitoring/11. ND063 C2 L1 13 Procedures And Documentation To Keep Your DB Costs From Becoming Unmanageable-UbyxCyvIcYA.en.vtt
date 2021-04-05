@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.120
+One way of keeping database costs from becoming
+
+00:00:03.120 --> 00:00:07.605
+unmanageable is by keeping a subset of the data in RDS.
+
+00:00:07.605 --> 00:00:09.870
+It's a best practice to keep the part of
+
+00:00:09.870 --> 00:00:13.395
+your database that you would like to leave unchanged in RDS,
+
+00:00:13.395 --> 00:00:18.105
+moving large objects and a subset of your variable data to S3,
+
+00:00:18.105 --> 00:00:21.315
+reducing storage and retrieval costs.
+
+00:00:21.315 --> 00:00:25.425
+By moving your CLOBs and BLOBs to S3,
+
+00:00:25.425 --> 00:00:29.385
+you can improve performance and availability and reduce costs.
+
+00:00:29.385 --> 00:00:34.590
+S3 is fast, scalable, reliable, and inexpensive.
+
+00:00:34.590 --> 00:00:39.760
+One small caveat is that because S3 is eventually consistent,
+
+00:00:39.760 --> 00:00:44.390
+you may have to modify your application logic to store the version ID and
+
+00:00:44.390 --> 00:00:49.925
+the transaction in RDS in order to achieve point-in-time consistency.
+
+00:00:49.925 --> 00:00:54.980
+It is also wise to reduce costs by moving historical data to S3.
+
+00:00:54.980 --> 00:01:00.550
+This is the data that is very seldom read but consumes storage in CPU cycles.
+
+00:01:00.550 --> 00:01:03.800
+In most cases, historical data can be archived to
+
+00:01:03.800 --> 00:01:07.955
+Amazon S3 Glacier for maximum cost savings.
+
+00:01:07.955 --> 00:01:12.590
+Lastly, it may be beneficial to consider moving your high velocity,
+
+00:01:12.590 --> 00:01:15.800
+frequently written data to DynamoDB.
+
+00:01:15.800 --> 00:01:22.475
+Again, DynamoDB is a NoSQL database fully managed by AWS.
+
+00:01:22.475 --> 00:01:27.185
+Amazon takes on the responsibility of operating and scaling the database,
+
+00:01:27.185 --> 00:01:29.090
+so you don't have to worry about the setup,
+
+00:01:29.090 --> 00:01:33.065
+configuration, replication, scaling, or patching.
+
+00:01:33.065 --> 00:01:38.420
+In addition, DynamoDB is the lowest cost option when you provision a capacity in
+
+00:01:38.420 --> 00:01:40.610
+advance by specifying the number of
+
+00:01:40.610 --> 00:01:44.030
+read/writes per second you expect your application to require.
+
+00:01:44.030 --> 00:01:47.959
+This is especially relevant when you need to replicate tables globally
+
+00:01:47.959 --> 00:01:52.495
+because you only pay for the read/write capacity that you provision for your table.
+
+00:01:52.495 --> 00:01:56.540
+This combined with the fact that DynamoDB distributes data in
+
+00:01:56.540 --> 00:02:00.874
+a table across multiple partitions on different physical servers,
+
+00:02:00.874 --> 00:02:03.560
+means that you'll have improved read/write throughput of
+
+00:02:03.560 --> 00:02:06.985
+your tables and reduce costs at the same time.
+
+00:02:06.985 --> 00:02:10.935
+Databases can be costly and become unmanageable.
+
+00:02:10.935 --> 00:02:13.885
+How can we prevent these scenarios?
+
+00:02:13.885 --> 00:02:17.290
+Well, first, we can have incremental backups,
+
+00:02:17.290 --> 00:02:21.140
+we can communicate within the same availability zone,
+
+00:02:21.140 --> 00:02:26.250
+and we can purchase reserved instances for our managed databases.
+

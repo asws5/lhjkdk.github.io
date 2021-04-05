@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.390
+AWS currently offers three calculators for use
+
+00:00:03.390 --> 00:00:06.885
+by Cloud technologists to configure cost estimates.
+
+00:00:06.885 --> 00:00:08.819
+The simple monthly calculator,
+
+00:00:08.819 --> 00:00:11.550
+which allows you to explore AWS services,
+
+00:00:11.550 --> 00:00:16.800
+model solutions, and create estimates for the cost of your use cases on AWS.
+
+00:00:16.800 --> 00:00:21.074
+The TCO calculator or total cost of ownership calculator,
+
+00:00:21.074 --> 00:00:25.200
+which is used to compare the cost of running your applications in an on-premises or
+
+00:00:25.200 --> 00:00:31.499
+co-location environment to AWS and the AWS pricing calculator,
+
+00:00:31.499 --> 00:00:34.050
+which is new calculator currently in beta that
+
+00:00:34.050 --> 00:00:37.040
+will eventually replace a simple monthly calculator.
+
+00:00:37.040 --> 00:00:40.880
+Use the AWS free tier wisely.
+
+00:00:40.880 --> 00:00:45.800
+Although we are using the generous AWS free tier to complete this nano degree,
+
+00:00:45.800 --> 00:00:49.700
+it is still possible to incur service charges and fees.
+
+00:00:49.700 --> 00:00:54.500
+Only some of the AWS services are available for free.
+
+00:00:54.500 --> 00:00:59.255
+Make sure you are knowledgeable about what is included in your 12 month trial.
+
+00:00:59.255 --> 00:01:03.035
+You can learn more in the free tier FAQs.
+
+00:01:03.035 --> 00:01:07.880
+It is also important to terminate or delete services when you no longer need them.
+
+00:01:07.880 --> 00:01:11.030
+Because we're mostly working in the AWS console,
+
+00:01:11.030 --> 00:01:13.550
+it is very easy to close your browser tab out of
+
+00:01:13.550 --> 00:01:17.030
+habit and forget to stop you're running Cloud services.
+
+00:01:17.030 --> 00:01:20.345
+Costs can add up quickly in the Cloud.
+
+00:01:20.345 --> 00:01:24.560
+I'll let you know when we're using items that may be out of the free tier
+
+00:01:24.560 --> 00:01:28.685
+and I'll also remind you to wind down the services when we're done with an exercise.
+
+00:01:28.685 --> 00:01:32.650
+But it's your responsibility to use AWS services wisely.
+
+00:01:32.650 --> 00:01:36.610
+Secure your AWS account with two-factor authentication.
+
+00:01:36.610 --> 00:01:40.070
+Remember when you registered for your AWS account,
+
+00:01:40.070 --> 00:01:42.100
+you provided a form of payment.
+
+00:01:42.100 --> 00:01:45.200
+It is your responsibility to take the appropriate steps to
+
+00:01:45.200 --> 00:01:48.455
+secure your account and prevent unauthorized use.
+
+00:01:48.455 --> 00:01:51.020
+In fact, if you haven't already configured
+
+00:01:51.020 --> 00:01:53.855
+your AWS account for two-factor authentication,
+
+00:01:53.855 --> 00:01:56.430
+please take the time to do it now.
+

@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.470
+Two of the easiest ways to save money on EC2 instances is
+
+00:00:04.470 --> 00:00:09.190
+by reserving compute capacity in advance and by bidding on Spot Instances.
+
+00:00:09.190 --> 00:00:13.590
+Spot Instances are AWS excess compute capacity
+
+00:00:13.590 --> 00:00:17.050
+made available for sale to the public at a steep discount.
+
+00:00:17.050 --> 00:00:19.460
+It can be reclaimed at anytime,
+
+00:00:19.460 --> 00:00:20.610
+so it should be used for
+
+00:00:20.610 --> 00:00:25.000
+your non-essential computing functions that don't require 100 percent availability,
+
+00:00:25.000 --> 00:00:28.839
+like stateless, non-production workloads, batch jobs,
+
+00:00:28.839 --> 00:00:31.100
+Sandbox Environments, or really any
+
+00:00:31.100 --> 00:00:34.750
+application where some short notice downtime is acceptable.
+
+00:00:34.750 --> 00:00:39.950
+Reserved instances provide up to 75 percent discount when compared to
+
+00:00:39.950 --> 00:00:42.470
+on-demand pricing when you commit to purchasing
+
+00:00:42.470 --> 00:00:46.375
+instances in a particular availability zone upfront.
+
+00:00:46.375 --> 00:00:49.520
+Instances can be reserved for a period of
+
+00:00:49.520 --> 00:00:55.720
+one or three years and come in two classes: Convertible and Standard.
+
+00:00:55.720 --> 00:01:00.890
+Convertible Reserved Instances cost a bit more for the flexibility of
+
+00:01:00.890 --> 00:01:06.445
+being able to exchange them for convertible instances of equal or lesser value later.
+
+00:01:06.445 --> 00:01:10.790
+Standard Reserved Instances cannot be exchanged.
+
+00:01:10.790 --> 00:01:13.535
+Once you buy those, they're yours.
+
+00:01:13.535 --> 00:01:14.845
+You can also purchase
+
+00:01:14.845 --> 00:01:19.315
+Convertible Reserved Instances and the Convertible Reserved Instance Marketplace.
+
+00:01:19.315 --> 00:01:23.950
+I'll provide a link for more information in that in the further research link below.
+
+00:01:23.950 --> 00:01:29.400
+Spot Instances are AWS unused EC2 capacity.
+
+00:01:29.400 --> 00:01:35.170
+That AWS sells at up to 90 percent discount when compared to on-demand pricing.
+
+00:01:35.170 --> 00:01:40.430
+Spot Instances are up for sale for an hourly price on the Spot market,
+
+00:01:40.430 --> 00:01:45.430
+and the market price fluctuates based on availability and demand.
+
+00:01:45.430 --> 00:01:50.420
+You set your Spot price and your spot instance will run whenever capacity is
+
+00:01:50.420 --> 00:01:56.095
+available and the maximum price per hour for your request exceeds the Spot price.
+
+00:01:56.095 --> 00:01:59.840
+Spot Instances are good for fault tolerance,
+
+00:01:59.840 --> 00:02:02.630
+stateless, and flexible applications.
+
+00:02:02.630 --> 00:02:05.945
+Some good examples are containerized workloads,
+
+00:02:05.945 --> 00:02:07.880
+test and dev workloads,
+
+00:02:07.880 --> 00:02:10.885
+web servers, and batch processes.
+
+00:02:10.885 --> 00:02:14.970
+Spot Instances have one major drawback,
+
+00:02:14.970 --> 00:02:21.740
+AWS can reclaim the capacity allocated to your Spot Instance with two minutes of notice.
+
+00:02:21.740 --> 00:02:23.360
+At the two-minute mark,
+
+00:02:23.360 --> 00:02:25.720
+your Instance will be terminated.
+
+00:02:25.720 --> 00:02:29.420
+If you can be flexible about when your applications run,
+
+00:02:29.420 --> 00:02:31.395
+and if they can be interrupted,
+
+00:02:31.395 --> 00:02:35.345
+Spot Instances are a great cost-effective choice.
+
+00:02:35.345 --> 00:02:41.230
+Lastly, AWS offers Dedicated Instances and Dedicated Hosts.
+
+00:02:41.230 --> 00:02:46.630
+Some companies have a requirement that their application is not run on shared servers.
+
+00:02:46.630 --> 00:02:50.430
+So AWS offers the option of Dedicated Hosts,
+
+00:02:50.430 --> 00:02:55.450
+Instances launched on physical servers that are dedicated for your use.
+
+00:02:55.450 --> 00:03:02.610
+Dedicated Instances are run in a VPC on hardware that is dedicated to a single customer.
+

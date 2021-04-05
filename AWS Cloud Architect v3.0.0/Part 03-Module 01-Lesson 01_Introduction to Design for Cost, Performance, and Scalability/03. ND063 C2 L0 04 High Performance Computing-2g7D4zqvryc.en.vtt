@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.420
+This course content discusses high-performance in the Cloud,
+
+00:00:03.420 --> 00:00:07.425
+which is not to be confused with high performance computing in the Cloud.
+
+00:00:07.425 --> 00:00:11.250
+High performance computing is also known as supercomputing,
+
+00:00:11.250 --> 00:00:13.845
+and the terms can be used interchangeably.
+
+00:00:13.845 --> 00:00:16.845
+High performance computing is a process of
+
+00:00:16.845 --> 00:00:20.010
+aggregating computer power and harnessing all of that
+
+00:00:20.010 --> 00:00:23.115
+compute potential to solve large and complex problems
+
+00:00:23.115 --> 00:00:26.560
+in fields like medicine, engineering, and finance.
+
+00:00:26.560 --> 00:00:28.835
+Problems that would take hours, weeks,
+
+00:00:28.835 --> 00:00:30.485
+or even years on a desktop,
+
+00:00:30.485 --> 00:00:31.985
+only take minutes, days,
+
+00:00:31.985 --> 00:00:33.965
+and weeks on a supercomputer.
+
+00:00:33.965 --> 00:00:38.935
+They sustain high-performance by using each nodes computing resources concurrently.
+
+00:00:38.935 --> 00:00:43.970
+Computers or nodes are organized into groups called clusters and configured
+
+00:00:43.970 --> 00:00:49.070
+to communicate and work together through software managed communication networks.
+
+00:00:49.070 --> 00:00:50.569
+As you can imagine,
+
+00:00:50.569 --> 00:00:54.290
+managing clusters with hundreds of nodes is a big job that
+
+00:00:54.290 --> 00:00:58.445
+requires personnel with specialized IT knowledge and experience.
+
+00:00:58.445 --> 00:01:00.245
+In a research environment,
+
+00:01:00.245 --> 00:01:05.195
+you won't find many scientists with a time and desire to manage the supercomputer.
+
+00:01:05.195 --> 00:01:08.305
+They really want to focus on their area of study.
+
+00:01:08.305 --> 00:01:12.320
+Amazon has a managed supercomputer service that matches
+
+00:01:12.320 --> 00:01:17.200
+utilization needs to run the most compute intensive workloads.
+
+00:01:17.200 --> 00:01:20.000
+This isn't a course on high performance computing
+
+00:01:20.000 --> 00:01:21.980
+and we'll only be touching on it briefly.
+
+00:01:21.980 --> 00:01:25.429
+But it needs to be included in the conversation about performance in the Cloud,
+
+00:01:25.429 --> 00:01:27.920
+because supercomputing really is the ultimate and
+
+00:01:27.920 --> 00:01:32.010
+highly scaled ultra high performance computing in the Cloud.
+

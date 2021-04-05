@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.745
+So here's my solution to exercise to S3 lifecycle policy.
+
+00:00:05.745 --> 00:00:10.950
+Going to login to the AWS management console and go to S3.
+
+00:00:10.950 --> 00:00:15.975
+You can also find S3 by typing S3 here in the search bar,
+
+00:00:15.975 --> 00:00:18.885
+or find the S3 up here under services.
+
+00:00:18.885 --> 00:00:22.575
+So we're going to go to S3, and I'm going to create
+
+00:00:22.575 --> 00:00:28.800
+an S3 bucket called Leslie Cloudlab bucket,
+
+00:00:28.800 --> 00:00:35.100
+and I'm going to accept all of the default settings,
+
+00:00:35.100 --> 00:00:37.829
+making sure I'm in the right region,
+
+00:00:37.829 --> 00:00:40.110
+US East 1, Northern Virginia.
+
+00:00:40.110 --> 00:00:43.849
+I'm just going to accept all the defaults next,
+
+00:00:43.849 --> 00:00:48.530
+next, next, and then create my bucket.
+
+00:00:48.530 --> 00:00:51.815
+So I'll go ahead and open my bucket here,
+
+00:00:51.815 --> 00:00:57.300
+and I'm going to upload a couple of files of a decent size.
+
+00:01:01.730 --> 00:01:05.805
+Let's take the AWS Well Architected Framework,
+
+00:01:05.805 --> 00:01:08.520
+and the Cost Optimization Pillar,
+
+00:01:08.520 --> 00:01:16.870
+and go ahead and upload those files.
+
+00:01:20.740 --> 00:01:24.330
+Now that my files are uploaded,
+
+00:01:24.370 --> 00:01:27.395
+we're going to create our lifecycle policy.
+
+00:01:27.395 --> 00:01:29.000
+We're going to start by selecting
+
+00:01:29.000 --> 00:01:36.145
+the management tab and click here on "Add lifecycle rule".
+
+00:01:36.145 --> 00:01:42.715
+I'm going to name my rule Leslie Cloudlab Rule,
+
+00:01:42.715 --> 00:01:46.250
+and it's going to apply to all objects in my bucket.
+
+00:01:46.250 --> 00:01:52.070
+Select the current version of my files because there really are no previous versions.
+
+00:01:52.070 --> 00:01:56.440
+We're going to start by adding our first transition, click "Add Transition".
+
+00:01:56.440 --> 00:01:59.390
+What we're going to do is we're going to transition our files to
+
+00:01:59.390 --> 00:02:03.870
+standard and frequent access after 31 days.
+
+00:02:04.250 --> 00:02:08.190
+Our second transition is going to be,
+
+00:02:08.190 --> 00:02:11.930
+to move our files to Glacier after 61 days.
+
+00:02:11.930 --> 00:02:15.770
+We're going to have to accept that we acknowledged that this lifecycle rule will
+
+00:02:15.770 --> 00:02:21.845
+increase if the objects are too small for the transition.
+
+00:02:21.845 --> 00:02:24.860
+So accept that and click "Next".
+
+00:02:24.920 --> 00:02:27.680
+We're going to configure an exploration or
+
+00:02:27.680 --> 00:02:30.530
+deletion of our files on the current version again,
+
+00:02:30.530 --> 00:02:39.630
+and we're going to set those files to be deleted after a 180 days and click on "Next".
+
+00:02:39.630 --> 00:02:46.950
+Once again, acknowledge the lifecycle rule.
+
+00:02:46.950 --> 00:02:50.370
+Basically, AWS wants you to acknowledge
+
+00:02:50.370 --> 00:02:55.825
+that you know you're going to be deleting files after a 180 days,
+
+00:02:55.825 --> 00:02:58.530
+and we're going to save our rule.
+
+00:02:58.530 --> 00:03:03.620
+As we can see now, we have a lifecycle rule that's going to move
+
+00:03:03.620 --> 00:03:08.630
+our files to IA after 31 days and after 61 days,
+
+00:03:08.630 --> 00:03:10.860
+it's going to move them to Glacier.
+
+00:03:10.880 --> 00:03:13.740
+In other words, end of the exercise.
+
+00:03:13.740 --> 00:03:21.520
+Let's make sure we delete our lifecycle rule, confirm it.
+
+00:03:21.590 --> 00:03:29.550
+If you like, you can actually go back to our bucket and you can delete that as well.
+
+00:03:30.340 --> 00:03:35.130
+Thanks for completing an exercise and don't forget to log out.
+

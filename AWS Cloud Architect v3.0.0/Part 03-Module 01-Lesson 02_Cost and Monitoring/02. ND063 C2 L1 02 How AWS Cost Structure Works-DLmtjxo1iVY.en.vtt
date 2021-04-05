@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.895
+Public Cloud expenditures are on the rise,
+
+00:00:02.895 --> 00:00:05.940
+and despite the rapid adoption of Cloud technology,
+
+00:00:05.940 --> 00:00:10.840
+public Cloud customers are still failing to harness the full power of Cloud computing.
+
+00:00:10.840 --> 00:00:13.860
+Accurate cost comparisons between AWS and
+
+00:00:13.860 --> 00:00:16.920
+traditional on-premises data centers are hard to pin down
+
+00:00:16.920 --> 00:00:20.740
+accurately as there are very few head-to-head features to evaluate.
+
+00:00:20.740 --> 00:00:23.160
+AWS doesn't have many services that can be
+
+00:00:23.160 --> 00:00:26.010
+directly compared to a counterpart in the data center.
+
+00:00:26.010 --> 00:00:29.360
+For example, the closest comparison we can make to an
+
+00:00:29.360 --> 00:00:32.905
+on-premises server is an on-demand EC2 instance.
+
+00:00:32.905 --> 00:00:34.280
+But even in that case,
+
+00:00:34.280 --> 00:00:37.580
+we would have to compare identically configured servers running at
+
+00:00:37.580 --> 00:00:41.290
+full capacity together any insight into how they compare.
+
+00:00:41.290 --> 00:00:43.400
+In the Cloud, there's a concept called
+
+00:00:43.400 --> 00:00:47.285
+capacity that represents a server's resource potential.
+
+00:00:47.285 --> 00:00:52.375
+Physical servers are spec'd out and quoted at a purchase or lease price,
+
+00:00:52.375 --> 00:00:54.360
+and once they're in, they're yours,
+
+00:00:54.360 --> 00:00:56.820
+with no returns and no refunds.
+
+00:00:56.820 --> 00:00:59.420
+You make your payments and you do your best to utilize
+
+00:00:59.420 --> 00:01:02.555
+your servers according to your plans and projections.
+
+00:01:02.555 --> 00:01:04.520
+Whereas in the Cloud,
+
+00:01:04.520 --> 00:01:07.925
+service can be provisioned almost as soon as you decide you need one.
+
+00:01:07.925 --> 00:01:11.075
+It only takes minutes to configure and launch an instance,
+
+00:01:11.075 --> 00:01:14.540
+and even less time to launch a previously saved machine image.
+
+00:01:14.540 --> 00:01:16.870
+So there's really no comparing it too.
+
+00:01:16.870 --> 00:01:21.860
+Another aspect of AWS is the democratization of resource procurement or
+
+00:01:21.860 --> 00:01:24.470
+the potential of anyone in your Cloud technology group to
+
+00:01:24.470 --> 00:01:27.460
+purchase AWS resources at anytime.
+
+00:01:27.460 --> 00:01:31.415
+The old way of purchasing IT resources involved committees,
+
+00:01:31.415 --> 00:01:35.194
+budget allocations, projections of VP of finance,
+
+00:01:35.194 --> 00:01:37.555
+and endless levels of approvals.
+
+00:01:37.555 --> 00:01:41.360
+In the Cloud, there's an account configured with an open credit card or
+
+00:01:41.360 --> 00:01:43.340
+purchase order that can be assigned to
+
+00:01:43.340 --> 00:01:46.340
+a technical group or a traditional finance or accounting team,
+
+00:01:46.340 --> 00:01:48.545
+and with the proper roles and permissions,
+
+00:01:48.545 --> 00:01:52.405
+anyone on the Cloud technology team can procure Cloud resources.
+
+00:01:52.405 --> 00:01:56.630
+While this has led to improved efficiency in the development process and greatly
+
+00:01:56.630 --> 00:02:01.040
+accelerated the pace of innovation due to on-demand availability of resources,
+
+00:02:01.040 --> 00:02:02.750
+it's also translated into
+
+00:02:02.750 --> 00:02:04.640
+a complex billing structure for
+
+00:02:04.640 --> 00:02:08.350
+non-technical finance staff to interpret at the end of the month.
+
+00:02:08.350 --> 00:02:11.960
+This shift has opened a lane for many third-party software in
+
+00:02:11.960 --> 00:02:17.195
+Cloud consulting firms to offer billing interpretation and optimization services.
+
+00:02:17.195 --> 00:02:19.280
+You will definitely become familiar with some
+
+00:02:19.280 --> 00:02:21.775
+of these vendors as you progress in your career.
+
+00:02:21.775 --> 00:02:24.080
+Understanding Cloud billing is
+
+00:02:24.080 --> 00:02:28.740
+a valuable skill that we'll have begun to master by the end of this lesson.
+

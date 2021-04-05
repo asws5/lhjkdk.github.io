@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.834
+In the Cloud, customers pay for actions,
+
+00:00:02.834 --> 00:00:06.660
+acquisitions, data transfer, and managed services.
+
+00:00:06.660 --> 00:00:12.390
+They pay for pretty much everything other than the initial data upload that's free.
+
+00:00:12.390 --> 00:00:16.400
+Keep in mind that you don't really own anything in the public Cloud.
+
+00:00:16.400 --> 00:00:19.230
+You are essentially paying to use the services and the provider
+
+00:00:19.230 --> 00:00:23.420
+agrees to supply and support them similar to a lease agreement.
+
+00:00:23.420 --> 00:00:28.905
+You can view AWS as a platform of almost 200 managed services.
+
+00:00:28.905 --> 00:00:31.385
+Some of the costs of the technology management
+
+00:00:31.385 --> 00:00:34.040
+are built into the fees you pay for these services.
+
+00:00:34.040 --> 00:00:38.705
+So if you're paying $1.50 an hour to run an EC2 instance,
+
+00:00:38.705 --> 00:00:41.675
+part of that charge is for the management of the instance.
+
+00:00:41.675 --> 00:00:45.695
+That is, AWS and their technology teams securing,
+
+00:00:45.695 --> 00:00:49.180
+updating, and maintaining the server on your behalf.
+
+00:00:49.180 --> 00:00:53.510
+This is another reason it isn't realistic to compare Cloud to physical.
+
+00:00:53.510 --> 00:00:56.570
+One terabyte of data may cost more in the Cloud,
+
+00:00:56.570 --> 00:00:59.900
+but it may be worth it to pay more when you don't have to secure it,
+
+00:00:59.900 --> 00:01:01.850
+maintain it, back it up,
+
+00:01:01.850 --> 00:01:04.430
+or provide the 11 9s guarantee.
+
+00:01:04.430 --> 00:01:11.615
+The AWS 11 9s guarantee is a representation of AWS S3's durability.
+
+00:01:11.615 --> 00:01:15.605
+Durability is used to measure the likelihood of data loss.
+
+00:01:15.605 --> 00:01:19.790
+So an AWS says that they guarantee 11 9s of durability,
+
+00:01:19.790 --> 00:01:21.500
+they are saying that 99.999999999
+
+00:01:21.500 --> 00:01:30.865
+percent chance that your files will remain available in S3.
+
+00:01:30.865 --> 00:01:36.515
+In other words, if you gave AWS one million files to store, statistically,
+
+00:01:36.515 --> 00:01:40.345
+they would lose one file every 659,000 years,
+
+00:01:40.345 --> 00:01:43.775
+or if you store 100 billion files in S3,
+
+00:01:43.775 --> 00:01:46.235
+AWS might lose one.
+
+00:01:46.235 --> 00:01:49.700
+I say might because S3 durability increases when
+
+00:01:49.700 --> 00:01:53.120
+you spread your objects across regions and availability zones.
+
+00:01:53.120 --> 00:01:55.310
+Establishing controls around provisioning
+
+00:01:55.310 --> 00:01:59.320
+Cloud resources is the key to preventing a billing disaster.
+
+00:01:59.320 --> 00:02:03.350
+Imagine how unmanageable and disorganized an AWS environment would
+
+00:02:03.350 --> 00:02:08.000
+be if all users could spin up instances, create databases,
+
+00:02:08.000 --> 00:02:09.664
+backup drives to S3,
+
+00:02:09.664 --> 00:02:14.425
+and run applications on servers with more power than they need just because they can,
+
+00:02:14.425 --> 00:02:17.765
+essentially a technology spending free for all.
+
+00:02:17.765 --> 00:02:20.725
+How can you get in front of this situation?
+
+00:02:20.725 --> 00:02:25.220
+Establish a naming convention for servers and databases,
+
+00:02:25.220 --> 00:02:29.815
+use tags to associate resources with cost centers,
+
+00:02:29.815 --> 00:02:35.360
+establish IT governance rules and make sure everyone follows them,
+
+00:02:35.410 --> 00:02:38.650
+setup user roles and control so only
+
+00:02:38.650 --> 00:02:41.905
+certain roles are allowed to provision infrastructure,
+
+00:02:41.905 --> 00:02:44.140
+and use billing alarms to notify
+
+00:02:44.140 --> 00:02:48.759
+the admin tier when the bill has reached or exceeded a certain threshold.
+
+00:02:48.759 --> 00:02:52.570
+Establishing and enforcing rules and guidelines for procuring
+
+00:02:52.570 --> 00:02:57.310
+Cloud resources when you first establish your account prevents overspend,
+
+00:02:57.310 --> 00:03:00.455
+rogue infrastructure, and rework.
+
+00:03:00.455 --> 00:03:04.460
+Cost allocation tags help you keep track of which group,
+
+00:03:04.460 --> 00:03:09.340
+lifecycle, person, or application a cost belongs to.
+
+00:03:09.340 --> 00:03:12.695
+It is much easier to keep track of AWS costs
+
+00:03:12.695 --> 00:03:16.375
+when you can balance out your monthly bill by cost allocation tag.
+
+00:03:16.375 --> 00:03:19.924
+You'll know which costs are production, which are test,
+
+00:03:19.924 --> 00:03:23.524
+which costs belong to your pro bono city government project,
+
+00:03:23.524 --> 00:03:26.485
+and which cost belong in the experimental bucket.
+
+00:03:26.485 --> 00:03:29.420
+It's a practical organizational task and should be
+
+00:03:29.420 --> 00:03:33.480
+standard protocol for every new Cloud implementation.
+

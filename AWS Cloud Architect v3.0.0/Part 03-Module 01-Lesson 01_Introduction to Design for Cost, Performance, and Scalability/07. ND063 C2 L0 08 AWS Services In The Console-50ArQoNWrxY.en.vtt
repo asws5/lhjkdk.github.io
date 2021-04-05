@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.970
+I'm going to demonstrate logging in and browsing around the AWS management console.
+
+00:00:05.970 --> 00:00:13.710
+First one I'm going to do is browse to console.aws.amazon.com in my internet browser.
+
+00:00:13.710 --> 00:00:17.505
+This brings up my account, lesliecloudlab.
+
+00:00:17.505 --> 00:00:19.620
+I'm going to log in with my username,
+
+00:00:19.620 --> 00:00:22.455
+lesliecloudlab, and my password.
+
+00:00:22.455 --> 00:00:26.130
+After I successfully enter my username and password,
+
+00:00:26.130 --> 00:00:29.385
+AWS prompts me for my MFA code,
+
+00:00:29.385 --> 00:00:34.350
+which is a six digit code I'm retrieving from the Google Authentication app on my phone.
+
+00:00:34.350 --> 00:00:38.985
+After I login, I land here on the AWS management console page,
+
+00:00:38.985 --> 00:00:43.625
+which lists some helpful shortcuts to frequently use services,
+
+00:00:43.625 --> 00:00:47.905
+some wizards, and some training videos.
+
+00:00:47.905 --> 00:00:53.075
+Note that I'm logged in to US East 1 or Northern Virginia.
+
+00:00:53.075 --> 00:00:56.030
+Selecting a region brings up a menu of
+
+00:00:56.030 --> 00:00:59.315
+regions that are available to me under my free tier.
+
+00:00:59.315 --> 00:01:04.685
+Next to region is the administrative menu that has my account information,
+
+00:01:04.685 --> 00:01:07.370
+my billing dashboard, security credentials,
+
+00:01:07.370 --> 00:01:09.365
+and of course, the sign out link.
+
+00:01:09.365 --> 00:01:10.910
+Over here under support,
+
+00:01:10.910 --> 00:01:12.350
+we have some documentation,
+
+00:01:12.350 --> 00:01:14.435
+training, and other resources.
+
+00:01:14.435 --> 00:01:19.264
+There are a couple of ways to get to the services you need in the AWS console.
+
+00:01:19.264 --> 00:01:23.495
+The most straightforward is to type the name or description into the search.
+
+00:01:23.495 --> 00:01:26.810
+Typing EC2 brings up the EC2 service,
+
+00:01:26.810 --> 00:01:31.595
+but so does typing instance and typing S3 brings up the S3 service,
+
+00:01:31.595 --> 00:01:33.295
+but so does typing bucket.
+
+00:01:33.295 --> 00:01:39.215
+The other way is to select the down arrow next to services on the menu ribbon here.
+
+00:01:39.215 --> 00:01:45.725
+This brings up all of the AWS services available categorized by function.
+
+00:01:45.725 --> 00:01:49.250
+Feel free to get comfortable and use the option that works best
+
+00:01:49.250 --> 00:01:53.370
+for you and then don't forget to log out.
+

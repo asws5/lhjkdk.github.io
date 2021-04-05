@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.280
+CloudTrail is Amazon's account logging service that provides auditing,
+
+00:00:05.280 --> 00:00:11.385
+governance, and compliance visibility into every API call made in the AWS account.
+
+00:00:11.385 --> 00:00:15.045
+The API call in details are into a log file
+
+00:00:15.045 --> 00:00:19.330
+and maintained for 90 days without any configuration on the user's part.
+
+00:00:19.330 --> 00:00:23.475
+CloudTrail captures who or what made the call.
+
+00:00:23.475 --> 00:00:25.515
+The who or what could be a user,
+
+00:00:25.515 --> 00:00:28.185
+application or AWS service.
+
+00:00:28.185 --> 00:00:30.430
+What time it happened,
+
+00:00:30.430 --> 00:00:33.739
+the user or process that took the action,
+
+00:00:33.739 --> 00:00:37.540
+and the service or resource that was affected by the action.
+
+00:00:37.540 --> 00:00:41.000
+CloudTrail Logs keep a running account of
+
+00:00:41.000 --> 00:00:47.695
+API calls and saves them in a secure and immutable format in a JSON file called an event.
+
+00:00:47.695 --> 00:00:51.980
+The law can be filtered and searched by metadata like date and time,
+
+00:00:51.980 --> 00:00:54.334
+user or AWS service,
+
+00:00:54.334 --> 00:00:56.740
+but it can't be modified.
+
+00:00:56.740 --> 00:01:01.970
+CloudTrail Logs can be configured to be sent and consumed by CloudWatch.
+
+00:01:01.970 --> 00:01:05.000
+Publishing CloudTrail Logs to CloudWatch provides
+
+00:01:05.000 --> 00:01:09.330
+the ability to create alarms based on CloudTrail Log data,
+
+00:01:09.330 --> 00:01:13.875
+and visualize CloudTrail log data through the CloudWatch dashboards.
+
+00:01:13.875 --> 00:01:17.240
+CloudTrail Logs can be configured to publish
+
+00:01:17.240 --> 00:01:20.530
+Cloud Shell data to CloudWatch as soon as they're created.
+
+00:01:20.530 --> 00:01:23.060
+Once a CloudTrail has been created,
+
+00:01:23.060 --> 00:01:26.965
+the option for sending the log data to CloudWatch becomes available.
+
+00:01:26.965 --> 00:01:31.195
+In order to configure CloudTrail to share data with CloudWatch,
+
+00:01:31.195 --> 00:01:34.130
+you need to create an IAM role for CloudTrail with
+
+00:01:34.130 --> 00:01:37.465
+a policy that allows it to access CloudWatch.
+
+00:01:37.465 --> 00:01:41.660
+The roles required to write the stream of log data are create
+
+00:01:41.660 --> 00:01:46.615
+log stream and put log events in a CloudWatch Log.
+
+00:01:46.615 --> 00:01:49.730
+We're going to take a look at creating a CloudTrail,
+
+00:01:49.730 --> 00:01:55.450
+which as we know is a record of all the API calls that take place in this AWS account.
+
+00:01:55.450 --> 00:02:00.545
+So by default, CloudTrail keeps a record of
+
+00:02:00.545 --> 00:02:02.900
+all of the events for the last 90 days without you
+
+00:02:02.900 --> 00:02:05.555
+having to create a specific CloudTrail.
+
+00:02:05.555 --> 00:02:07.160
+If you'd like to see that,
+
+00:02:07.160 --> 00:02:12.345
+you can go to event history and explore that data.
+
+00:02:12.345 --> 00:02:20.660
+If you like click on the arrow and take a look at what data CloudTrail collects.
+
+00:02:20.660 --> 00:02:23.345
+As you scroll down, you'll see a button called View event,
+
+00:02:23.345 --> 00:02:28.100
+and that's going to open a window that shows you the CloudTrail data in JSON format.
+
+00:02:28.100 --> 00:02:32.570
+So let's go to trails and create a trail.
+
+00:02:32.570 --> 00:02:38.220
+Let's call our trail CloudLab1.
+
+00:02:39.260 --> 00:02:46.130
+We're going to only collect data in this region and create it and store it here.
+
+00:02:46.130 --> 00:02:48.845
+We're not going to log KMS events,
+
+00:02:48.845 --> 00:02:52.045
+but we are going to log all the Read/Wright events,
+
+00:02:52.045 --> 00:02:56.535
+and we're going to log all the API activity for S3 buckets.
+
+00:02:56.535 --> 00:02:59.085
+We're going to create a new S3 bucket,
+
+00:02:59.085 --> 00:03:04.150
+I would like to call my S3 bucket lesliecloudlab23456.
+
+00:03:06.680 --> 00:03:10.690
+Lets tag it with the environment,
+
+00:03:11.090 --> 00:03:19.170
+production,and create a CloudTrail There you have it.
+
+00:03:19.170 --> 00:03:23.330
+A brand new CloudTrail is created in the US East one region,
+
+00:03:23.330 --> 00:03:27.030
+Northern Virginia. Thanks for joining.
+

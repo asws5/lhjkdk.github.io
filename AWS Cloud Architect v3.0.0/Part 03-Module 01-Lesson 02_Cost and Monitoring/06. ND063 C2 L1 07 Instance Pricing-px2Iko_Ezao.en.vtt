@@ -1,0 +1,199 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.495
+EC2 instance pricing is the most straightforward and well understood pricing in AWS.
+
+00:00:06.495 --> 00:00:09.644
+The prices are public and posted,
+
+00:00:09.644 --> 00:00:14.370
+instance types and sizes are logical and easy to understand,
+
+00:00:14.370 --> 00:00:20.220
+and everyone knows how to do the simple math of price per hour times hours run per month.
+
+00:00:20.220 --> 00:00:24.645
+However, despite this transparent pricing and easy math,
+
+00:00:24.645 --> 00:00:28.110
+instance costs remain one of the obstacles to establishing and
+
+00:00:28.110 --> 00:00:32.085
+maintaining a cost efficient AWS implementation.
+
+00:00:32.085 --> 00:00:35.430
+On-demand instances are the default instance type
+
+00:00:35.430 --> 00:00:38.305
+that you launch to the basic EC2 launch wizard.
+
+00:00:38.305 --> 00:00:41.420
+You pay the stated price with per second billing,
+
+00:00:41.420 --> 00:00:45.280
+and you can run with on-demand instances as long as you like,
+
+00:00:45.280 --> 00:00:50.045
+just as long as you're aware there are lower-cost options available.
+
+00:00:50.045 --> 00:00:55.610
+AWS may serve some banners on the EC2 page letting you know that you could be
+
+00:00:55.610 --> 00:01:01.310
+paying far less by using reserved instances or a new lower-cost instance class,
+
+00:01:01.310 --> 00:01:04.945
+but they won't make you change your provisioning ways.
+
+00:01:04.945 --> 00:01:07.575
+You will be permitted to overpay,
+
+00:01:07.575 --> 00:01:12.545
+but AWS does a pretty good job of making sure that you're doing it knowingly.
+
+00:01:12.545 --> 00:01:18.700
+I can think of many reasons you would run on-demand instances for a short period of time,
+
+00:01:18.700 --> 00:01:23.450
+like non-production experimental workloads, load testing,
+
+00:01:23.450 --> 00:01:25.970
+and production, training environments that are
+
+00:01:25.970 --> 00:01:29.465
+used infrequently and situations like that.
+
+00:01:29.465 --> 00:01:34.190
+But there's no reason to run on-demand instances long-term if you know how
+
+00:01:34.190 --> 00:01:38.660
+your application performs in production over a reasonable monitoring period.
+
+00:01:38.660 --> 00:01:42.545
+It's imperative that architects understand instance pricing.
+
+00:01:42.545 --> 00:01:47.750
+In understanding how AWS prices instances and provides pricing incentives,
+
+00:01:47.750 --> 00:01:50.510
+you can save up to 80 percent on your monthly bill,
+
+00:01:50.510 --> 00:01:53.345
+and typically, at least 50 percent.
+
+00:01:53.345 --> 00:01:56.914
+AWS provides the following purchasing options
+
+00:01:56.914 --> 00:01:59.510
+to enable you to optimize your costs based on
+
+00:01:59.510 --> 00:02:06.625
+your needs: On-demand instances where you pay by the second for the instances you launch,
+
+00:02:06.625 --> 00:02:10.760
+reserved instances where you reduce your Amazon EC2
+
+00:02:10.760 --> 00:02:15.020
+costs by making a commitment to a consistent instance configuration,
+
+00:02:15.020 --> 00:02:20.275
+including instance type and region for a term of one or three years,
+
+00:02:20.275 --> 00:02:25.400
+and spot instances, where you can request unused EC2 compute
+
+00:02:25.400 --> 00:02:30.725
+resources which can reduce your Amazon EC2 costs significantly.
+
+00:02:30.725 --> 00:02:36.575
+The way you plan to use your EC2 instances has a big impact on how much you pay.
+
+00:02:36.575 --> 00:02:43.490
+Here are some examples of some usage and cost comparisons: Savings plans reduce
+
+00:02:43.490 --> 00:02:47.600
+your Amazon EC2 cost by making a commitment to a consistent amount of
+
+00:02:47.600 --> 00:02:53.320
+usage in US dollars per hour for a term of one or three years;
+
+00:02:53.320 --> 00:02:58.160
+scheduled instances, where you purchase instances that are always
+
+00:02:58.160 --> 00:03:03.040
+available on the specific recurring schedule for a one year term;
+
+00:03:03.040 --> 00:03:07.790
+and dedicated hosts, where you pay for a physical host that is fully
+
+00:03:07.790 --> 00:03:11.990
+dedicated to running your instances and bring your existing per socket,
+
+00:03:11.990 --> 00:03:17.365
+per core or per VM software license to reduce your cost.
+
+00:03:17.365 --> 00:03:20.960
+In dedicated instances, you pay by
+
+00:03:20.960 --> 00:03:25.165
+the hour for instances that run on single tenant hardware.
+
+00:03:25.165 --> 00:03:29.420
+Capacity reservations are where you reserve capacity for
+
+00:03:29.420 --> 00:03:34.955
+your EC2 instances in a specific availability zone for any duration of time.
+
+00:03:34.955 --> 00:03:37.055
+Pricing also varies based on
+
+00:03:37.055 --> 00:03:42.380
+AMI and operating system so explore the pricing and options before committing.
+
+00:03:42.380 --> 00:03:45.600
+An AMI is an Amazon Machine Image.
+
+00:03:45.600 --> 00:03:49.325
+AMI is defined the operating system, built-in tools,
+
+00:03:49.325 --> 00:03:52.220
+and storage configuration of your EC2 instance,
+
+00:03:52.220 --> 00:03:55.075
+and you select it when you're launching an instance.
+
+00:03:55.075 --> 00:03:57.540
+To best manage infrastructure,
+
+00:03:57.540 --> 00:04:01.850
+considering who on the team should be able to launch EC2 instances.
+
+00:04:01.850 --> 00:04:03.520
+In a data center model,
+
+00:04:03.520 --> 00:04:05.360
+this certainly is impossible.
+
+00:04:05.360 --> 00:04:07.570
+So consider if it should be here.
+
+00:04:07.570 --> 00:04:10.820
+Should developers have their own AWS account?
+
+00:04:10.820 --> 00:04:14.465
+AWS has instance types based on the purpose.
+
+00:04:14.465 --> 00:04:19.070
+You can save by selecting the right instance model and size from the start.
+
+00:04:19.070 --> 00:04:22.489
+In AWS, updates new generations frequently.
+
+00:04:22.489 --> 00:04:25.220
+When they do, be prepared to move to
+
+00:04:25.220 --> 00:04:30.030
+new generations to save money and realize performance gains.
+

@@ -1,0 +1,256 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.545
+AWS provides many storage options for backup, archiving,
+
+00:00:04.545 --> 00:00:07.275
+and disaster recovery in the form of block,
+
+00:00:07.275 --> 00:00:09.435
+file, and object storage.
+
+00:00:09.435 --> 00:00:11.970
+These low-cost storage options provide
+
+00:00:11.970 --> 00:00:15.855
+high availability and durability for different use cases.
+
+00:00:15.855 --> 00:00:20.400
+It is important not only to understand the appropriate use cases for storage,
+
+00:00:20.400 --> 00:00:23.470
+but also the underlying cost structure.
+
+00:00:23.470 --> 00:00:26.945
+Storage costs will also differ depending on
+
+00:00:26.945 --> 00:00:33.785
+AWS region and how you choose to structure and manage your storage using AWS services.
+
+00:00:33.785 --> 00:00:39.020
+It's important to provision the required amount of block storage and scale up as needed.
+
+00:00:39.020 --> 00:00:41.885
+As block storage must be defined in advance
+
+00:00:41.885 --> 00:00:44.959
+as opposed to object storage and file storage,
+
+00:00:44.959 --> 00:00:47.720
+which grows as objects and files are added.
+
+00:00:47.720 --> 00:00:53.525
+Amazon also provides various tools for monitoring storage usage and lifecycle management.
+
+00:00:53.525 --> 00:00:59.185
+For example, you can use the AWS billing console, bills,
+
+00:00:59.185 --> 00:01:02.600
+and cost explorer, to gain insight into how you're
+
+00:01:02.600 --> 00:01:06.205
+using storage resources and managing your storage budget.
+
+00:01:06.205 --> 00:01:08.659
+When calculating storage costs,
+
+00:01:08.659 --> 00:01:10.820
+you must also consider all aspects of
+
+00:01:10.820 --> 00:01:15.350
+storage billing in order to get an accurate view of your storage expenses.
+
+00:01:15.350 --> 00:01:17.570
+The storage attributes to consider
+
+00:01:17.570 --> 00:01:22.175
+are: the storage capacity that you've provisioned and used,
+
+00:01:22.175 --> 00:01:28.715
+data transfer costs, replication across availability zones and regions,
+
+00:01:28.715 --> 00:01:31.760
+and storage access patterns.
+
+00:01:31.760 --> 00:01:37.435
+Here is the list of storage options available in Amazon Web Services.
+
+00:01:37.435 --> 00:01:43.505
+Block Storage is procured in advance and can be resized as needed.
+
+00:01:43.505 --> 00:01:46.460
+You have the option of using magnetic drives,
+
+00:01:46.460 --> 00:01:48.845
+which are best for throughput intensive workloads
+
+00:01:48.845 --> 00:01:51.830
+like big data analysis and log processing,
+
+00:01:51.830 --> 00:01:53.510
+and solid state drives,
+
+00:01:53.510 --> 00:01:59.050
+which are best for I/O intensive applications and database services and boot volumes.
+
+00:01:59.050 --> 00:02:02.960
+Magnetic drives also come in a cold storage option,
+
+00:02:02.960 --> 00:02:07.075
+which is best for data that isn't accessed much during an average day.
+
+00:02:07.075 --> 00:02:12.020
+Elastic file system, or EFS is a Cloud file system that
+
+00:02:12.020 --> 00:02:14.060
+emulates the file shares we're used to working with
+
+00:02:14.060 --> 00:02:17.575
+today on Windows and Unix-based systems.
+
+00:02:17.575 --> 00:02:22.430
+EFS can be differentiated by the feature that allows it to either stand alone as
+
+00:02:22.430 --> 00:02:27.310
+a share or be connected to multiple EC2 instances at the same time.
+
+00:02:27.310 --> 00:02:31.565
+You do not need to provision EFS storage if scales is needed,
+
+00:02:31.565 --> 00:02:34.310
+keeping costs to what you're using at the time.
+
+00:02:34.310 --> 00:02:37.115
+S3 storage is object storage,
+
+00:02:37.115 --> 00:02:42.830
+a scalable storage service in the Cloud with four pricing components: storage,
+
+00:02:42.830 --> 00:02:44.840
+data transfer in and out,
+
+00:02:44.840 --> 00:02:48.860
+requests, and S3 transfer acceleration in and out.
+
+00:02:48.860 --> 00:02:53.210
+S3 provides the 11 lines of durability guarantee.
+
+00:02:53.210 --> 00:02:57.800
+There are several S3 service options available in AWS.
+
+00:02:57.800 --> 00:03:02.570
+S3 standard, which is the out of the box de facto standard S3
+
+00:03:02.570 --> 00:03:07.540
+configuration option that most people think about when discussing S3 object storage.
+
+00:03:07.540 --> 00:03:12.410
+S3 standard IA or standard infrequently accessed,
+
+00:03:12.410 --> 00:03:15.140
+is a less costly standard storage option for
+
+00:03:15.140 --> 00:03:18.790
+objects that you may need, but probably won't.
+
+00:03:18.790 --> 00:03:26.540
+S3 one zone IA provides a storage option with less redundancy than S3 IA,
+
+00:03:26.540 --> 00:03:31.445
+as the S3 objects are only replicated within one availability zone.
+
+00:03:31.445 --> 00:03:38.120
+S3 Glacier is Amazon's archive offering for files that are accessed so infrequently.
+
+00:03:38.120 --> 00:03:40.760
+But you agree that in exchange for a very,
+
+00:03:40.760 --> 00:03:45.925
+very inexpensive storage, that can take a few hours to return the objects to you.
+
+00:03:45.925 --> 00:03:50.195
+Of course, if you need archived objects in less than a few hours,
+
+00:03:50.195 --> 00:03:53.080
+you can pay for accelerated retrieval.
+
+00:03:53.080 --> 00:03:56.630
+An AWS Snowball is a physical device that
+
+00:03:56.630 --> 00:04:01.565
+Amazon ships to customers to upload petabytes of object data into S3,
+
+00:04:01.565 --> 00:04:04.010
+saving time and network bandwidth.
+
+00:04:04.010 --> 00:04:09.910
+The device is actually shipped back to Amazon for upload into AWS S3.
+
+00:04:09.910 --> 00:04:14.045
+Storage needs to be planned with an archiving, retention,
+
+00:04:14.045 --> 00:04:16.370
+and deletion strategy from the start,
+
+00:04:16.370 --> 00:04:20.794
+or storage and data transfer costs will be considerably higher than necessary.
+
+00:04:20.794 --> 00:04:23.450
+We're going to look at how a storage strategy eliminates
+
+00:04:23.450 --> 00:04:27.725
+the burden of infinite storage costs and data transfer costs.
+
+00:04:27.725 --> 00:04:33.530
+Storage costs and requirements need to be well understood by the architect.
+
+00:04:33.530 --> 00:04:39.115
+Use magnetic drives over SSD drives whenever possible.
+
+00:04:39.115 --> 00:04:44.640
+Consider data transfer costs before adopting Glacier for archive.
+
+00:04:44.640 --> 00:04:48.170
+Use the S3 endpoint in the VPC to
+
+00:04:48.170 --> 00:04:52.525
+eliminate costs associated with public Internet traffic to S3.
+
+00:04:52.525 --> 00:04:58.115
+Make use of incremental backups and establish a robust lifecycle policy.
+
+00:04:58.115 --> 00:05:01.040
+Imagine the job of a new architect who joins
+
+00:05:01.040 --> 00:05:05.200
+a company and has to manage terabytes of unstructured S3 data.
+
+00:05:05.200 --> 00:05:07.850
+It would be impossible to know what's in there,
+
+00:05:07.850 --> 00:05:09.170
+what's a key then,
+
+00:05:09.170 --> 00:05:10.819
+what should be deleted?
+
+00:05:10.819 --> 00:05:12.950
+Most people would just keep everything and
+
+00:05:12.950 --> 00:05:15.350
+continue to pay for storage of objects they don't need to
+
+00:05:15.350 --> 00:05:20.795
+keep because they didn't define a lifecycle policy or use tagging from the beginning.
+
+00:05:20.795 --> 00:05:24.830
+Make sure you involve your organization's governance team to
+
+00:05:24.830 --> 00:05:29.195
+establish a file retention policy for Cloud storage and follow it.
+
+00:05:29.195 --> 00:05:32.100
+Get everyone involved.
+

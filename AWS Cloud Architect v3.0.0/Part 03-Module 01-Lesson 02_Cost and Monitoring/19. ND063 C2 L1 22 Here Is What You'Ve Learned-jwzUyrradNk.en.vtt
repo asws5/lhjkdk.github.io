@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.475
+As you've probably figured out by now,
+
+00:00:02.475 --> 00:00:07.065
+managing the costs of cloud computing is a complex but very important topic
+
+00:00:07.065 --> 00:00:12.015
+required for any organization interested in maintaining good cost controls in the cloud.
+
+00:00:12.015 --> 00:00:16.470
+It's one of the skills that makes my job as a cloud architect so interesting.
+
+00:00:16.470 --> 00:00:19.290
+My goal in this lesson was to give you an introduction
+
+00:00:19.290 --> 00:00:21.915
+to the complexities of AWS service costs,
+
+00:00:21.915 --> 00:00:27.585
+and an overview of some of the important issues you'll face when procuring AWS services.
+
+00:00:27.585 --> 00:00:30.345
+Here's what we covered in this lesson.
+
+00:00:30.345 --> 00:00:33.465
+We've learned about the AWS approach to cost
+
+00:00:33.465 --> 00:00:37.380
+associated with providing managed services in their public cloud.
+
+00:00:37.380 --> 00:00:41.320
+In comparing costs between the traditional or physical server model,
+
+00:00:41.320 --> 00:00:44.870
+we've explored how cloud costs really can't be compared because
+
+00:00:44.870 --> 00:00:50.065
+public cloud compute capacity is built as a utility and not a capital asset.
+
+00:00:50.065 --> 00:00:54.920
+It was a shift in thinking that led us to a deeper understanding of AWS regions,
+
+00:00:54.920 --> 00:00:56.360
+and the reasons that costs in
+
+00:00:56.360 --> 00:01:01.400
+different geographical areas very significantly based on location,
+
+00:01:01.400 --> 00:01:05.944
+government regulations, utilities, and the costs of doing business.
+
+00:01:05.944 --> 00:01:11.989
+We proceeded to dive into the cost of AWS services like EC2 Instances, storage,
+
+00:01:11.989 --> 00:01:16.370
+and databases, and how being mindful of the opportunities to reduce
+
+00:01:16.370 --> 00:01:21.170
+costs up front can save you and your organization substantially over time.
+
+00:01:21.170 --> 00:01:25.625
+When you commit to AWS with reserved Instances for EC2 and databases,
+
+00:01:25.625 --> 00:01:29.555
+and we commit to a life cycle for S3 objects as well.
+
+00:01:29.555 --> 00:01:31.460
+Finally, we explored how
+
+00:01:31.460 --> 00:01:35.465
+skilled cloud architects optimize their cloud infrastructure with the help of
+
+00:01:35.465 --> 00:01:39.380
+AWS services and even some third party tools to reduce
+
+00:01:39.380 --> 00:01:43.805
+costs and unnecessary power consumption when they monitor and right size.
+
+00:01:43.805 --> 00:01:45.245
+In our next lesson,
+
+00:01:45.245 --> 00:01:47.690
+we will dive into how AWS services can be
+
+00:01:47.690 --> 00:01:51.590
+optimized to get the best performance out of your workloads in the cloud.
+
+00:01:51.590 --> 00:01:56.480
+We'll also look at high-performance computing and how AWS provides services
+
+00:01:56.480 --> 00:02:01.799
+and technology for large computing problems in industry and academia.
+

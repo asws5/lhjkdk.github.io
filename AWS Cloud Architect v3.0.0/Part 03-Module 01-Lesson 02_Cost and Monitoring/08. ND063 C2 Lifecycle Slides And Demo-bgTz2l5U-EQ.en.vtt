@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.765
+S3 Lifecycle policies are designed to simplify the task of Object Lifecycle Management.
+
+00:00:06.765 --> 00:00:09.795
+Why do we need lifecycle policies?
+
+00:00:09.795 --> 00:00:12.540
+We need them because the frequency with which we
+
+00:00:12.540 --> 00:00:15.735
+need to access data can change over time.
+
+00:00:15.735 --> 00:00:20.385
+It can get expensive to pay for immediate access when we don't need it.
+
+00:00:20.385 --> 00:00:23.790
+For example, if you're a college professor,
+
+00:00:23.790 --> 00:00:28.870
+your students will be uploading class data as a complete projects and write papers.
+
+00:00:28.870 --> 00:00:33.635
+Initially, you'll want to have immediate access to student projects and papers.
+
+00:00:33.635 --> 00:00:37.585
+So an S3 bucket for student classwork is a good place to start.
+
+00:00:37.585 --> 00:00:39.755
+But after the school year ends,
+
+00:00:39.755 --> 00:00:42.550
+you probably won't need to access the data anymore.
+
+00:00:42.550 --> 00:00:46.430
+It costs more to keep all of that data in a standard S3 bucket to keep it
+
+00:00:46.430 --> 00:00:50.845
+immediately accessible when its only being accessed and frequently.
+
+00:00:50.845 --> 00:00:56.305
+You can reduce costs by moving the objects and the classwork bucket to S3 Glacier.
+
+00:00:56.305 --> 00:00:58.070
+When the student graduates,
+
+00:00:58.070 --> 00:01:00.230
+you won't need the projects or papers at all.
+
+00:01:00.230 --> 00:01:04.790
+So you can delete all of that data by expiring it in the lifecycle policy.
+
+00:01:04.790 --> 00:01:07.955
+You could manually move the data over time,
+
+00:01:07.955 --> 00:01:10.465
+but that's a tedious process.
+
+00:01:10.465 --> 00:01:14.150
+A lifecycle policy is designed to manage the process for
+
+00:01:14.150 --> 00:01:18.780
+you by moving the data to a different bucket at a preset time.
+
+00:01:19.330 --> 00:01:23.300
+So here's an example of how you would configure a lifecycle policy.
+
+00:01:23.300 --> 00:01:26.989
+I'm going to log into the AWS management console,
+
+00:01:26.989 --> 00:01:32.270
+make sure I'm in the Northern Virginia region and go to the S3 service.
+
+00:01:32.270 --> 00:01:36.100
+I am going to select my bucket.
+
+00:01:36.230 --> 00:01:39.950
+My bucket view should have five tabs across the top.
+
+00:01:39.950 --> 00:01:45.855
+I'm going to select management and add a lifecycle rule.
+
+00:01:45.855 --> 00:01:49.130
+So for the example of a college professor,
+
+00:01:49.130 --> 00:01:52.140
+we're going to create a schoolwork bucket
+
+00:01:52.990 --> 00:01:57.145
+and we're going to apply it to all the objects in the bucket,
+
+00:01:57.145 --> 00:02:05.390
+and we're going to create transitions to Glacier for all of the versions in the bucket.
+
+00:02:05.390 --> 00:02:10.340
+So in order to do that, we're going to have to create a transition for
+
+00:02:10.340 --> 00:02:16.705
+the current versions to move them to Glacier after a 180 days.
+
+00:02:16.705 --> 00:02:19.100
+We're going to acknowledge that for
+
+00:02:19.100 --> 00:02:22.655
+small objects it might cost us a little money. So acknowledge that.
+
+00:02:22.655 --> 00:02:24.425
+Then for previous versions,
+
+00:02:24.425 --> 00:02:34.020
+we're also going to add a transition to Glacier after a 180 days.
+
+00:02:35.030 --> 00:02:39.800
+Now we're going to configure the files or the objects in
+
+00:02:39.800 --> 00:02:45.230
+the bucket to expire or be deleted after 1,460 days.
+
+00:02:45.230 --> 00:02:48.580
+So we're going to take the current version and the previous versions,
+
+00:02:48.580 --> 00:02:57.210
+and after 1,460 for
+
+00:02:57.210 --> 00:03:03.130
+the current and 1,460 for the previous,
+
+00:03:03.710 --> 00:03:06.760
+we're going to delete them.
+
+00:03:06.920 --> 00:03:11.210
+We're going to acknowledge that this rule is going to apply to all the objects in
+
+00:03:11.210 --> 00:03:17.775
+the bucket and we're going to save our new lifecycle policy.
+
+00:03:17.775 --> 00:03:21.200
+So after you create your lifecycle policy,
+
+00:03:21.200 --> 00:03:25.380
+just make sure you sign out of the console.
+
+00:03:26.480 --> 00:03:29.500
+Thanks for watching the demo.
+

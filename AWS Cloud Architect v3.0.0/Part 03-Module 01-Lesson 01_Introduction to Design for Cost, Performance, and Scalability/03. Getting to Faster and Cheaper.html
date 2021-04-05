@@ -1,0 +1,348 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Getting to Faster and Cheaper</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Design for Cost, Performance, and Scalability</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Welcome to the Course.html">01. Welcome to the Course</a>
+    </li>
+    <li class="">
+      <a href="02. Performance Efficiency in the Cloud.html">02. Performance Efficiency in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="03. Getting to Faster and Cheaper.html">03. Getting to Faster and Cheaper</a>
+    </li>
+    <li class="">
+      <a href="04. Defining Goals.html">04. Defining Goals</a>
+    </li>
+    <li class="">
+      <a href="05. Historical Context.html">05. Historical Context</a>
+    </li>
+    <li class="">
+      <a href="06. Course Structure.html">06. Course Structure</a>
+    </li>
+    <li class="">
+      <a href="07. Getting Started AWS Console.html">07. Getting Started: AWS Console</a>
+    </li>
+    <li class="">
+      <a href="08. Tools Needed.html">08. Tools Needed</a>
+    </li>
+    <li class="">
+      <a href="09. Recap.html">09. Recap</a>
+    </li>
+    <li class="">
+      <a href="10. Glossary.html">10. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Getting to Faster and Cheaper</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND063 C2 L0 03 General Efficiencies For Instances, Databases Storage, And Network</p></h3>
+  <video controls>
+  <source src="03. ND063 C2 L0 03 General Efficiencies For Instances, Databases Storage, And Network-lHZoMc3KYWk.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND063 C2 L0 03 General Efficiencies For Instances, Databases Storage, And Network-lHZoMc3KYWk.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Performance Efficiency Glossary Terms</p></h3>
+  <div>
+  <h3 id="new-termsbrbr">New Terms<br><br></h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition" style="text-align:left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline</td>
+<td style="text-align:left;">Measurement of conditions at the start of your project used to make planning decisions</td>
+</tr>
+<tr>
+<td>Cloud Computing</td>
+<td style="text-align:left;">Storing and accessing data and applications over the Internet instead of a local or networked computer's hard drive</td>
+</tr>
+<tr>
+<td>Infrastructure as Code</td>
+<td style="text-align:left;">The process of provisioning and managing your cloud resources by writing a template file that is both human-readable, and machine-consumable</td>
+</tr>
+<tr>
+<td>Serverless</td>
+<td style="text-align:left;">Compute model where the developer doesn’t need to be concerned with the server because the cloud provider takes care of it</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>AWS Efficiency recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p><strong>Moving to the cloud doesn’t guarantee that your application will be faster and cost less to operate</strong>. In fact, without the proper baseline metrics, you won’t know where to start when planning your move.</p></li>
+<li><p><strong>Most performance issues can be traced to the application itself</strong> and some applications will need to be redesigned to be cloud native in order to achieve truly optimized performance.  Common causes of performance issues:   </p>
+<ul>
+<li>Poorly designed applications  </li>
+<li>Database design constraints  </li>
+<li>Inefficient network routes  </li></ul></li>
+<li><p><strong>Moving to the cloud should improve network response times.</strong>  Global edge cache locations can bring the server closer to the end user.    </p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Free Response Quiz</p></h3>
+  <div>
+  <p><strong>QUESTION: <p>Reflect</p></strong></p>
+  <p>What do you think is the best service cloud providers offer their customers?</p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>I think the best service cloud providers offer is elasticity. Cloud providers offer the ability to automate resource scaling, which is a huge advantage over the data center model. Having your applications configured to autoscale offers peace of mind along with the knowledge that your applications will always have the compute resources they need. You can also expect predictable costs when you use good resource planning practices and use AWS pricing optimization options when configuring your scaling policies.</p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>QUIZ</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>How do edge locations deliver content to users faster?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1005393" id="rbk1">
+        <label for="rbk1"><p>By moving it closer</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1005393" id="rbk2">
+        <label for="rbk2"><p>By breaking it into smaller files</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1005393" id="rbk3">
+        <label for="rbk3"><p>By decreasing the resolution</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1005393" id="rbk4">
+        <label for="rbk4"><p>By using satellites</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    By moving it closer
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>High Performance Heading</p></h3>
+  <div>
+  <h2 id="high-performance-in-the-cloud-vs-high-performance-computing">High Performance In the Cloud vs. High Performance Computing</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L0 04 High Performance Computing</p></h3>
+  <video controls>
+  <source src="03. ND063 C2 L0 04 High Performance Computing-2g7D4zqvryc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND063 C2 L0 04 High Performance Computing-2g7D4zqvryc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>High Performance Computing Recap</p></h3>
+  <div>
+  <h3 id="new-termsbrbr">New Terms<br><br></h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition" style="text-align:left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High Performance Computing (a.k.a. supercomputing)</td>
+<td style="text-align:left;">Supercomputing harnesses the computing power of multiple computers and aggregates them to tackle complex problems in business and academia</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>Supercomputing harnesses the computing power of multiple computers and aggregates them to tackle complex problems in business and academia.</p></li>
+<li><p>In supercomputing, computers are called nodes and nodes are organized into groups called clusters.</p></li>
+<li><p>Supercomputing is the ultimate in high performance computing in the cloud.</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h2 id="additional-reading">Additional Reading</h2>
+<p>Please follow the links below to learn more about Amazon’s managed database services, their on premises hybrid cloud offering, and high performance computing in the AWS cloud.</p>
+<ul>
+<li><a href="https://aws.amazon.com/rds/" rel="noopener noreferrer" target="_blank">AWS RDS</a>  </li>
+<li><a href="https://www.zdnet.com/article/aws-outpost-brings-its-cloud-hardware-on-premises/" rel="noopener noreferrer" target="_blank">AWS Outposts Brings AWS Cloud Hardware on Premises</a>   </li>
+<li><a href="https://aws.amazon.com/hpc/" rel="noopener noreferrer" target="_blank">HPC on AWS</a>  </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Defining Goals.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Getting to Faster and Cheaper')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,544 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Storage Pricing</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cost and Monitoring</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Intro.html">01. Lesson Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to Costs in the Cloud.html">02. Intro to Costs in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="03. Cloud Cost Pricing.html">03. Cloud Cost Pricing</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise Pricing by Region.html">04. Exercise: Pricing by Region</a>
+    </li>
+    <li class="">
+      <a href="05. Solution Pricing by Region.html">05. Solution: Pricing by Region</a>
+    </li>
+    <li class="">
+      <a href="06. Instance Pricing.html">06. Instance Pricing</a>
+    </li>
+    <li class="">
+      <a href="07. Storage Pricing.html">07. Storage Pricing</a>
+    </li>
+    <li class="">
+      <a href="08. Tagging and Lifecycle Policies.html">08. Tagging and Lifecycle Policies</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise S3 Lifecycle Policy Configuration.html">09. Exercise: S3 Lifecycle Policy Configuration</a>
+    </li>
+    <li class="">
+      <a href="10. Solution S3 Lifecycle Policy Configuration.html">10. Solution: S3 Lifecycle Policy Configuration</a>
+    </li>
+    <li class="">
+      <a href="11. DB and Data Transfer Costs.html">11. DB and Data Transfer Costs</a>
+    </li>
+    <li class="">
+      <a href="12. Hybrid Options.html">12. Hybrid Options</a>
+    </li>
+    <li class="">
+      <a href="13. Optimizing for Cost.html">13. Optimizing for Cost</a>
+    </li>
+    <li class="">
+      <a href="14. Right Sizing From the Start.html">14. Right Sizing From the Start</a>
+    </li>
+    <li class="">
+      <a href="15. Autoscaling.html">15. Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise Autoscaling.html">16. Exercise: Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="17. Solution  Autoscaling.html">17. Solution:  Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="18. Monitoring and Optimization.html">18. Monitoring and Optimization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Recap.html">19. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="20. Glossary.html">20. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Storage Pricing</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Costs heading</p></h3>
+  <div>
+  <h2 id="what-are-the-costs-associated-with-storage">What Are the Costs Associated With Storage?</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L1 09 What Are Costs Associated With Storage-</p></h3>
+  <video controls>
+  <source src="07. ND063 C2 L1 09 What Are Costs Associated With Storage--855-ZH2W7C0.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. ND063 C2 L1 09 What Are Costs Associated With Storage--855-ZH2W7C0.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Lesson Glossary</p></h3>
+  <div>
+  <h3 id="storage-pricing-terms">Storage Pricing Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge Cache</td>
+<td>A high-speed data storage layer which stores a subset of data, typically transient in nature, close to the end user so that future requests for that data are served up faster</td>
+</tr>
+<tr>
+<td>EBS</td>
+<td>Elastic Block Store - cloud-based and pre-allocated linux-based block storage system provided by Amazon Web Services (AWS) that is best used for storing persistent data</td>
+</tr>
+<tr>
+<td>EFS</td>
+<td>Elastic File System - a simple, scalable, elastic, and encrypted file storage system that can be used by concurrent compute resources in the AWS cloud and on-premises.</td>
+</tr>
+<tr>
+<td>HDD</td>
+<td>Category of EBS hard disk drive. Can be throughput optimized (workhorse) or cold (infrequently scanned)</td>
+</tr>
+<tr>
+<td>Lifecycle Policies</td>
+<td>Automate the actions you want to take on an object in an S3 bucket over its lifetime,  for example, move them to another storage class, archive them after a number of days or years, or delete them.</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Amazon Simple Storage Service  is general purpose object storage used for frequently accessed files</td>
+</tr>
+<tr>
+<td>S3 Endpoints</td>
+<td>A private connection between your VPC and S3 that doesn’t require internet access, potentially reducing NAT gateway costs</td>
+</tr>
+<tr>
+<td>SSD</td>
+<td>Category of EBS solid-state drive. Can be IOPS optimized for databases (fast) or general-purpose for boot volumes and dev/test systems</td>
+</tr>
+<tr>
+<td>Storage Cache</td>
+<td>A high-speed data storage layer that stores a subset of typically transient data</td>
+</tr>
+<tr>
+<td>Tagging</td>
+<td>Allows you to name and classify S3 buckets. AWS can provide a usage and cost report based on tags</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Choosing the right storage for your application</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>Storage costs vary considerably depending on usage and requirements. </p></li>
+<li><p>Applications require different types of optimized storage depending on their primary function.</p></li>
+</ul>
+<h3 id="selecting-the-right-storage-for-your-application">Selecting the Right Storage for Your Application.</h3>
+<p>Selecting the right storage is the key to both satisfied customers and high-performing databases. In general you should select storage based on the following criteria:</p>
+<h4 id="ssd-solid-state-drives">SSD Solid State Drives</h4>
+<ul>
+<li>Use flash memory to deliver superior performance and durability without moving parts  </li>
+<li>More durable, run cooler and use less energy  </li>
+<li>Best for i/o intensive applications and database services and boot volumes</li>
+</ul>
+<h4 id="hdd-hard-disk-drives">HDD Hard Disk Drives</h4>
+<ul>
+<li>Proven technology</li>
+<li>Typically less expensive than solid state drives for the same amount of storage </li>
+<li>Available with more storage space than SSDs  </li>
+<li>Best for throughput intensive workloads like big data analysis and log processing  </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Image of the storage models</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l1-storage-types.jpg" alt="AWS Storage Options" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>AWS Storage Options</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quiz:Choose the right model</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Choose the best storage type for a throughput intensive big-data workload</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1010685" id="rbk1">
+        <label for="rbk1"><p>Cold HDD</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1010685" id="rbk2">
+        <label for="rbk2"><p>General Purpose SSD</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1010685" id="rbk3">
+        <label for="rbk3"><p>Throughput Optimized HDD</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1010685" id="rbk4">
+        <label for="rbk4"><p>Provisioned IOPS SSD</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Throughput Optimized HDD
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Choose the Best Archive Storage Type</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the S3 Archive Type with its object retrieval timeframe service level agreement (SLA)</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>S3 Glacier</p></button>
+  <button class="btn btn-primary"><p>S3 IA</p></button>
+  <button class="btn btn-primary"><p>S3 Glacier Deep Archive </p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Usage</p>
+      </th>
+      <th>
+        <p>Archive Type</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>1 minute - 12 Hour SLA</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Immediate Retrieval</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Within 12 hour retrieval SLA</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Usage</p>
+        </th>
+        <th>
+          <p>Archive Type</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>1 minute - 12 Hour SLA</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>S3 Glacier</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Immediate Retrieval</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>S3 IA</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Within 12 hour retrieval SLA</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>S3 Glacier Deep Archive </p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Object, Block, and File Storage</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the feature with the storage service</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>AWS Glacier</p></button>
+  <button class="btn btn-primary"><p>Edge Cache</p></button>
+  <button class="btn btn-primary"><p>AWS EBS</p></button>
+  <button class="btn btn-primary"><p>AWS EFS</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>AWS Storage Service Features</p>
+      </th>
+      <th>
+        <p>AWS Storage Service</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>Scalable, elastic, and encrypted file storage system that can be used concurrently in the AWS cloud and on-premises</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Active Linux-based file system that is procured in advance and best for persistent data</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Extremely low-cost S3 storage for backup and archiving</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>A high-speed data storage layer that stores a subset of frequently requested data close to the end user so that future requests for that data are served up faster</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>AWS Storage Service Features</p>
+        </th>
+        <th>
+          <p>AWS Storage Service</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>Extremely low-cost S3 storage for backup and archiving</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>AWS Glacier</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>A high-speed data storage layer that stores a subset of frequently requested data close to the end user so that future requests for that data are served up faster</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Edge Cache</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Active Linux-based file system that is procured in advance and best for persistent data</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>AWS EBS</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Scalable, elastic, and encrypted file storage system that can be used concurrently in the AWS cloud and on-premises</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>AWS EFS</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Storage Pricing Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading-on-storage-pricing">Additional Reading on Storage Pricing</h3>
+<p>You can learn more about file and object storage in the cloud and how to optimize your storage solution for cost and functionality by following the links provided below. </p>
+<ul>
+<li><a href="https://www.amazon.com/dp/B079RBVX3M" rel="noopener noreferrer" target="_blank">Buy a Storage Gateway on Amazon.com</a>  </li>
+<li><a href="https://medium.com/nubego/how-to-save-money-with-aws-vpc-endpoints-9bac8ae1319c" rel="noopener noreferrer" target="_blank">Save Money With AWS VPC Endpoints</a>   </li>
+<li><a href="https://cloudonaut.io/6-new-ways-to-reduce-your-AWS-bill-with-little-effort/" rel="noopener noreferrer" target="_blank">Reduce Your AWS Bill</a>    </li>
+<li><a href="https://bluesentryit.com/gain-real-savings-proper-cloud-setup/" rel="noopener noreferrer" target="_blank">Real Savings Through Proper Cloud Setup</a>    </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Tagging and Lifecycle Policies.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Storage Pricing')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

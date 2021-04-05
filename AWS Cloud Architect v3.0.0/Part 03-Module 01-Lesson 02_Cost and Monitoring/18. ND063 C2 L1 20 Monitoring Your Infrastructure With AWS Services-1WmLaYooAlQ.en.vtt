@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.505
+Although most of your work is technical,
+
+00:00:02.505 --> 00:00:06.795
+you must set aside time to partner with IT Finance to baseline,
+
+00:00:06.795 --> 00:00:10.740
+project, monitor, and manage your costs.
+
+00:00:10.740 --> 00:00:15.900
+Consistently monitoring your AWS account for costs is imperative.
+
+00:00:15.900 --> 00:00:22.185
+Your cost baselines need to be defined and adhered to by every member of the Cloud team.
+
+00:00:22.185 --> 00:00:24.990
+Remember, that runaway costs can be
+
+00:00:24.990 --> 00:00:29.130
+an unexpected side effect of not defining baselines and expectations,
+
+00:00:29.130 --> 00:00:31.035
+and often lead to disappointment,
+
+00:00:31.035 --> 00:00:35.500
+disillusionment, and the abandonment of Cloud technology projects.
+
+00:00:35.500 --> 00:00:38.660
+Establishing a tagging strategy prior to initiating
+
+00:00:38.660 --> 00:00:43.625
+your Cloud projects is so important when establishing a cost monitoring protocol,
+
+00:00:43.625 --> 00:00:49.640
+because it simplifies the process of associating AWS costs with their business use.
+
+00:00:49.640 --> 00:00:52.160
+This allows your finance team to ensure
+
+00:00:52.160 --> 00:00:57.385
+budgetary resources are being allocated according to their stated purpose.
+
+00:00:57.385 --> 00:01:00.865
+Using Cost Explorer and Trusted Adviser,
+
+00:01:00.865 --> 00:01:03.170
+which is free for some support accounts,
+
+00:01:03.170 --> 00:01:07.370
+to uncover opportunities to reduce and refine your service costs,
+
+00:01:07.370 --> 00:01:10.100
+is also an important task that should be assigned to
+
+00:01:10.100 --> 00:01:13.740
+a Cloud resource on your team and executed regularly,
+
+00:01:13.740 --> 00:01:16.910
+with the results being shared and tracked over time,
+
+00:01:16.910 --> 00:01:19.960
+and documented for response and resolution.
+
+00:01:19.960 --> 00:01:21.970
+Despite our best efforts,
+
+00:01:21.970 --> 00:01:24.340
+and the vigilance of our internal security teams,
+
+00:01:24.340 --> 00:01:26.704
+and AWS security monitoring,
+
+00:01:26.704 --> 00:01:29.785
+Cloud breaches have been known to occur.
+
+00:01:29.785 --> 00:01:35.720
+In most cases, human error leaves the door open for malice use of an AWS account.
+
+00:01:35.720 --> 00:01:38.600
+If this rare event was ever to occur,
+
+00:01:38.600 --> 00:01:43.385
+the damage can often be mitigated by a fast response to a billing alert,
+
+00:01:43.385 --> 00:01:46.780
+letting you know that an out of bounds cost has occurred.
+
+00:01:46.780 --> 00:01:50.040
+AWS wants you to succeed on their platform.
+
+00:01:50.040 --> 00:01:53.030
+So they offer assistance in the following ways.
+
+00:01:53.030 --> 00:01:56.120
+AWS Cost Explorer, which is a tool that
+
+00:01:56.120 --> 00:01:58.925
+enables you to view and analyze your costs and usage,
+
+00:01:58.925 --> 00:02:00.760
+and in a graph or report,
+
+00:02:00.760 --> 00:02:05.840
+Cost Explorer is very useful in forecasting costs and predicting word services,
+
+00:02:05.840 --> 00:02:10.030
+like Reserved Instances, may offer cost savings.
+
+00:02:10.030 --> 00:02:15.080
+AWS CodeGuru, which is a fully managed service that helps you proactively
+
+00:02:15.080 --> 00:02:20.515
+improve code quality and application performance with intelligent recommendations.
+
+00:02:20.515 --> 00:02:23.270
+It reviews your code and finds code issues
+
+00:02:23.270 --> 00:02:26.240
+during code reviews before they reach production,
+
+00:02:26.240 --> 00:02:29.150
+including needlessly costly lines of code,
+
+00:02:29.150 --> 00:02:33.400
+race conditions, memory leaks, and runaway logging.
+
+00:02:33.400 --> 00:02:38.665
+AWS Solutions architects are professional AWS certified engineers,
+
+00:02:38.665 --> 00:02:41.210
+who are deployed by AWS to assist
+
+00:02:41.210 --> 00:02:44.905
+customers in solving the most challenging engineering problems.
+
+00:02:44.905 --> 00:02:49.400
+Costs for this assistants vary based on your support agreement,
+
+00:02:49.400 --> 00:02:52.675
+and of course, the relative value of your account.
+
+00:02:52.675 --> 00:02:56.810
+AWS also offers a count credits for certain customers,
+
+00:02:56.810 --> 00:03:00.890
+like startups, nonprofits, and academic institutions.
+
+00:03:00.890 --> 00:03:03.740
+It also never hurts to ask AWS for credits,
+
+00:03:03.740 --> 00:03:05.140
+no matter who you are.
+
+00:03:05.140 --> 00:03:08.010
+Competition among Cloud providers is heating up,
+
+00:03:08.010 --> 00:03:11.300
+and AWS has an interest in your success as a customer,
+
+00:03:11.300 --> 00:03:14.000
+and may provide credits that allow you to try a new service,
+
+00:03:14.000 --> 00:03:16.710
+or onboard a new application.
+

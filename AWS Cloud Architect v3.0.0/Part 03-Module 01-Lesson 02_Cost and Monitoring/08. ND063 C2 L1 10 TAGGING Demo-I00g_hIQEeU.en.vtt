@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.275
+So I've logged in to the AWS Management Console
+
+00:00:04.275 --> 00:00:09.420
+to give you a demonstration of tagging an S3 bucket.
+
+00:00:09.420 --> 00:00:14.700
+So I'm going to go to S3 and create a bucket.
+
+00:00:14.700 --> 00:00:18.330
+I'm going to add four tags.
+
+00:00:18.330 --> 00:00:24.930
+Tagging makes it easier to manage and search for your resources in AWS.
+
+00:00:24.930 --> 00:00:28.110
+So let me create my bucket,
+
+00:00:28.110 --> 00:00:32.710
+making sure it's in US East 1,
+
+00:00:33.140 --> 00:00:38.325
+and just go ahead and hit Next.
+
+00:00:38.325 --> 00:00:47.585
+I'm going to use tags which organize in a key value pair system.
+
+00:00:47.585 --> 00:00:48.965
+So my first key,
+
+00:00:48.965 --> 00:00:53.790
+I'm going to use is going to be team.
+
+00:00:53.790 --> 00:00:58.695
+My team is going to be logistics.
+
+00:00:58.695 --> 00:01:08.040
+I'm going to add another tag for project and we're going to call our project mercury.
+
+00:01:08.040 --> 00:01:10.485
+Let's add one more tag.
+
+00:01:10.485 --> 00:01:15.470
+Let's add lifecycle, and we'll say that
+
+00:01:15.470 --> 00:01:20.800
+all the files that go into this bucket are development.
+
+00:01:20.800 --> 00:01:25.745
+So next, next, create our bucket.
+
+00:01:25.745 --> 00:01:28.729
+We see we have three tags,
+
+00:01:28.729 --> 00:01:34.190
+that'll help us organize the data that goes into this bucket and search for it,
+
+00:01:34.190 --> 00:01:37.370
+find it later, and manage it in the future.
+
+00:01:37.370 --> 00:01:43.590
+Thanks for following along and go ahead and create some tags on your own buckets.
+

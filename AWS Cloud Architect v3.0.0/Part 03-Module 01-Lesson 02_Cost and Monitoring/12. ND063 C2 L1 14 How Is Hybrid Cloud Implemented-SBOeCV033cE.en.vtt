@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.925
+Enterprise hybrid cloud infrastructure is often a mix of cloud providers,
+
+00:00:05.925 --> 00:00:09.465
+on-premises data centers, and edge locations.
+
+00:00:09.465 --> 00:00:11.789
+Hybrid cloud is where cost,
+
+00:00:11.789 --> 00:00:15.735
+control, regulations, and security intersect.
+
+00:00:15.735 --> 00:00:18.180
+Hybrid Cloud with AWS provides
+
+00:00:18.180 --> 00:00:22.305
+organizations the flexibility to support a range of use cases.
+
+00:00:22.305 --> 00:00:25.530
+They can maintain regulatory compliance and consolidate
+
+00:00:25.530 --> 00:00:31.405
+their technology stack under one umbrella using a common set of services and tools.
+
+00:00:31.405 --> 00:00:35.360
+Hybrid cloud accelerates innovation by providing customers with
+
+00:00:35.360 --> 00:00:38.090
+rapid and low cost infrastructure provisioning
+
+00:00:38.090 --> 00:00:41.120
+for prototyping and testing innovative solutions,
+
+00:00:41.120 --> 00:00:45.425
+and removing the limitations of traditional IT planning and budgeting.
+
+00:00:45.425 --> 00:00:50.240
+It also provides companies with disaster recovery when multiple cloud providers are
+
+00:00:50.240 --> 00:00:55.175
+included in the disaster recovery and business continuity technology plan.
+
+00:00:55.175 --> 00:01:01.415
+Using a cloud is a hot backup solution for disaster recovery requires a lot of planning.
+
+00:01:01.415 --> 00:01:03.155
+It can be a good strategy,
+
+00:01:03.155 --> 00:01:05.300
+but it isn't without costs.
+
+00:01:05.300 --> 00:01:09.020
+What you can do is you can run your data transfer intensive applications in
+
+00:01:09.020 --> 00:01:14.645
+the data center and on-premises because those costs are fixed,
+
+00:01:14.645 --> 00:01:19.270
+and you can run your variable in Internet-based applications in the cloud.
+
+00:01:19.270 --> 00:01:22.070
+AWS provides considerable support for
+
+00:01:22.070 --> 00:01:25.355
+organizations that want to implement hybrid infrastructure.
+
+00:01:25.355 --> 00:01:30.095
+A typical enterprise will have a mix of cloud and on-premises data centers.
+
+00:01:30.095 --> 00:01:34.630
+Hybrid cloud architectures allow customers to have the best of both worlds.
+
+00:01:34.630 --> 00:01:38.330
+The control required for many rules and regulations related to
+
+00:01:38.330 --> 00:01:42.965
+data governance that makes on-premises architecture so appealing and the speed,
+
+00:01:42.965 --> 00:01:47.785
+scalability, and flexibility of running workloads and storing data in the cloud.
+
+00:01:47.785 --> 00:01:52.025
+In response to customers need to have physical control over their data,
+
+00:01:52.025 --> 00:01:56.035
+AWS has a hybrid service called AWS Outposts.
+
+00:01:56.035 --> 00:02:00.049
+AWS Outpost is a physical computer storage appliance
+
+00:02:00.049 --> 00:02:03.245
+that resides on premises in the customer data center.
+
+00:02:03.245 --> 00:02:07.175
+It is truly AWS Cloud on-prem.
+
+00:02:07.175 --> 00:02:10.355
+It provides secure transfer and retrieval,
+
+00:02:10.355 --> 00:02:15.500
+encrypts all data at rest and before moving to the AWS public cloud.
+
+00:02:15.500 --> 00:02:20.420
+Key points to remember about hybrid architecture are that some regulations
+
+00:02:20.420 --> 00:02:22.835
+require that certain data be in a data center
+
+00:02:22.835 --> 00:02:25.795
+under your control and not in a public cloud.
+
+00:02:25.795 --> 00:02:28.700
+So you have to maintain a physical presence even though
+
+00:02:28.700 --> 00:02:32.215
+you're moving some applications and workloads to the public cloud.
+
+00:02:32.215 --> 00:02:34.810
+Data transfer in is free,
+
+00:02:34.810 --> 00:02:36.770
+but that's about it.
+
+00:02:36.770 --> 00:02:39.170
+Some types of data will be required to be
+
+00:02:39.170 --> 00:02:41.965
+encrypted before being uploaded to the public cloud.
+
+00:02:41.965 --> 00:02:45.800
+So you need to be aware of your company's rules and governance guidance around
+
+00:02:45.800 --> 00:02:50.640
+public cloud services before procuring cloud resources.
+

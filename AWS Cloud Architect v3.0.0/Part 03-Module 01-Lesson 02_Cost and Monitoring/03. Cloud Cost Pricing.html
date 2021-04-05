@@ -1,0 +1,430 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cloud Cost Pricing</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cost and Monitoring</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Intro.html">01. Lesson Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to Costs in the Cloud.html">02. Intro to Costs in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="03. Cloud Cost Pricing.html">03. Cloud Cost Pricing</a>
+    </li>
+    <li class="">
+      <a href="04. Exercise Pricing by Region.html">04. Exercise: Pricing by Region</a>
+    </li>
+    <li class="">
+      <a href="05. Solution Pricing by Region.html">05. Solution: Pricing by Region</a>
+    </li>
+    <li class="">
+      <a href="06. Instance Pricing.html">06. Instance Pricing</a>
+    </li>
+    <li class="">
+      <a href="07. Storage Pricing.html">07. Storage Pricing</a>
+    </li>
+    <li class="">
+      <a href="08. Tagging and Lifecycle Policies.html">08. Tagging and Lifecycle Policies</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise S3 Lifecycle Policy Configuration.html">09. Exercise: S3 Lifecycle Policy Configuration</a>
+    </li>
+    <li class="">
+      <a href="10. Solution S3 Lifecycle Policy Configuration.html">10. Solution: S3 Lifecycle Policy Configuration</a>
+    </li>
+    <li class="">
+      <a href="11. DB and Data Transfer Costs.html">11. DB and Data Transfer Costs</a>
+    </li>
+    <li class="">
+      <a href="12. Hybrid Options.html">12. Hybrid Options</a>
+    </li>
+    <li class="">
+      <a href="13. Optimizing for Cost.html">13. Optimizing for Cost</a>
+    </li>
+    <li class="">
+      <a href="14. Right Sizing From the Start.html">14. Right Sizing From the Start</a>
+    </li>
+    <li class="">
+      <a href="15. Autoscaling.html">15. Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise Autoscaling.html">16. Exercise: Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="17. Solution  Autoscaling.html">17. Solution:  Autoscaling</a>
+    </li>
+    <li class="">
+      <a href="18. Monitoring and Optimization.html">18. Monitoring and Optimization</a>
+    </li>
+    <li class="">
+      <a href="19. Lesson Recap.html">19. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="20. Glossary.html">20. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Cloud Cost Pricing</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>What are Paid Cloud Services?</p></h3>
+  <div>
+  <h2 id="what-are-paid-cloud-services">What are Paid Cloud Services?</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L1 04 What Are Paid Cloud Services-</p></h3>
+  <video controls>
+  <source src="03. ND063 C2 L1 04 What Are Paid Cloud Services--2ed2IbwBomc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND063 C2 L1 04 What Are Paid Cloud Services--2ed2IbwBomc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Lesson Glossary</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition" style="text-align:left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11 9’s guarantee</td>
+<td style="text-align:left;">99.999999999% durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001% of objects</td>
+</tr>
+<tr>
+<td>AWS Support</td>
+<td style="text-align:left;">Paid support plans offering AWS customers access to AWS technical experts and professional guidance</td>
+</tr>
+<tr>
+<td>Durability</td>
+<td style="text-align:left;">The probability that the object will remain intact and accessible after a period of one year</td>
+</tr>
+<tr>
+<td>Fault Tolerance</td>
+<td style="text-align:left;">The property that enables a system to continue operating properly in the event of the failure of (or one or more faults within) some of its components</td>
+</tr>
+<tr>
+<td>High Availability</td>
+<td style="text-align:left;">Refers to systems that are durable and likely to operate continuously without failure for a long time</td>
+</tr>
+<tr>
+<td>Memory-Optimized</td>
+<td style="text-align:left;">The R3 instance class recommended for applications that require high memory performance</td>
+</tr>
+<tr>
+<td>Storage-Optimized</td>
+<td style="text-align:left;">Instances are designed for workloads that require high, sequential read and write access to very large data sets on local storage. They are optimized to deliver tens of thousands of low-latency, random I/O operations per second (IOPS) to applications</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>What costs money in the cloud</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<p>An accurate cost estimation that meets and exceeds your organization’s budgetary goals requires you to ask important questions, interpret data, and implement AWS best practices</p>
+<h4 id="paid-aws-cloud-services-include">Paid AWS Cloud Services include:</h4>
+<ul>
+<li>Running Compute Resources  </li>
+<li>Storage  </li>
+<li>Provisioned Databases  </li>
+<li>Data Transfer    </li>
+</ul>
+<p>Remember, you only pay for services you use, and once you stop using them, AWS stops charging you immediately and doesn’t levy any termination fees.</p>
+<h4 id="aws-does-not-charge-for">AWS does not charge for:</h4>
+<ul>
+<li>** AWS Elastic Beanstalk** - Rapid application deployment  </li>
+<li>** AWS Cloud Formation** - AWS Branded Infrastructure as Code service  </li>
+<li>** Auto-Scaling** - Scaling EC2 instances up/down or in/out based on your application   requirements  </li>
+<li>** AWS IAM** - User and access management  </li>
+</ul>
+<p>There is no cost for uploading data into the AWS cloud, although you will pay for storage and data transfer back out. Because of the massive scale of the AWS technology platform, there is no limit to how much data you can upload. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Value of Cloud</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l1-costs.jpg" alt="AWS Costs Include Maintenance" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>AWS Costs Include Maintenance</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Unmanageable costs/Billing Hygiene</p></h3>
+  <div>
+  <h3 id="good-cost-hygiene-practices">Good Cost Hygiene Practices</h3>
+<ul>
+<li><p>Establish a naming convention for Servers and Databases<br />
+<br>  <br>  </p></li>
+<li><p>Use Tags to track costs by:  </p>
+<ul>
+<li>Group</li>
+<li>Lifecycle</li>
+<li>Person</li>
+<li>Application</li></ul></li>
+<li><p>Create IT Governance rules<br />
+<br>  <br>  </p></li>
+<li><p>Set Billing Alarms</p></li>
+</ul>
+<h2 id="costs-in-regions">Costs In Regions</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L1 05 Costs In Regions</p></h3>
+  <video controls>
+  <source src="03. ND063 C2 L1 05 Costs In Regions-NW7RuTsBQFo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND063 C2 L1 05 Costs In Regions-NW7RuTsBQFo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h2 id="new-terms">New Terms</h2>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition" style="text-align:left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Availability Zones</td>
+<td style="text-align:left;">A logical data center in an AWS region with redundant and separate power, networking and connectivity reducing the likelihood of two zones failing simultaneously</td>
+</tr>
+<tr>
+<td>AWS CloudFront</td>
+<td style="text-align:left;">Fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency</td>
+</tr>
+<tr>
+<td>AWS Local Zones</td>
+<td style="text-align:left;">A type of AWS infrastructure deployment that places AWS compute, storage, database, and other select services closer to large population, industry, and IT centers where no AWS Region exists today</td>
+</tr>
+<tr>
+<td>AWS Regions</td>
+<td style="text-align:left;">A geographical location with a collection of availability zones physically isolated from and independent of every other region</td>
+</tr>
+<tr>
+<td>Edge Location</td>
+<td style="text-align:left;">A physical site that CloudFront uses to cache copies of your content for faster delivery to users at any location</td>
+</tr>
+<tr>
+<td>Points of Presence</td>
+<td style="text-align:left;">AWS Edge Locations and Regional Edge Caches used for both AWS CloudFront and Lambda@Edge to deliver content to end users at high speeds</td>
+</tr>
+<tr>
+<td>VPC Peering</td>
+<td style="text-align:left;">A networking connection between two AWS VPCs that allows you to route traffic between them using private IP addresses</td>
+</tr>
+<tr>
+<td>VPC Sharing</td>
+<td style="text-align:left;">allows you to share subnets with other AWS accounts in your organization</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>US East 1</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l1-us-east-1.jpg" alt="US East 1 (N. Virginia)" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>US East 1 (N. Virginia)</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Costs in Regions</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>AWS costs depend on the region<br />
+<br><br></p></li>
+<li><p>Costs vary due to:   </p>
+<ul>
+<li>local regulations  </li>
+<li>cost of doing business</li>
+<li>competition</li></ul></li>
+<li><p>Least costly region is US East 1 in N. Virginia  </p></li>
+</ul>
+<h3 id="tips-for-reducing-costs">Tips for Reducing Costs</h3>
+<ul>
+<li>Use AWS CloudFront to cache data close to end users</li>
+<li>Avoid inter-region data transfer costs</li>
+<li>Peering via AWS Transit Gateway for VPCs reduces costs</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Exercise Pricing by Region.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Cloud Cost Pricing')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

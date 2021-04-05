@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.550
+Amazon disrupted the IT industry almost
+
+00:00:02.550 --> 00:00:06.255
+15 years ago when they launched Amazon Web Services.
+
+00:00:06.255 --> 00:00:09.390
+The idea was to sell excess compute capacity
+
+00:00:09.390 --> 00:00:12.765
+left over from their massive website, Amazon.com.
+
+00:00:12.765 --> 00:00:16.620
+They sold capacity by the hour and storage by the gigabyte.
+
+00:00:16.620 --> 00:00:21.365
+This on-demand, no contracts service also had a unique billing model.
+
+00:00:21.365 --> 00:00:23.885
+Cloud services are built like a utility,
+
+00:00:23.885 --> 00:00:26.315
+you pay as you go for what you use.
+
+00:00:26.315 --> 00:00:30.700
+This billing model allows you to adapt to a changing IT landscape quickly,
+
+00:00:30.700 --> 00:00:33.575
+build out infrastructure according to your budget,
+
+00:00:33.575 --> 00:00:37.760
+and make decisions based on your needs not your investments.
+
+00:00:37.760 --> 00:00:42.530
+While AWS appears to have taken the industry by storm with some companies seeing
+
+00:00:42.530 --> 00:00:43.730
+the Cloud powerhouse as
+
+00:00:43.730 --> 00:00:47.735
+the only logical choice to meet their complex technical infrastructure needs,
+
+00:00:47.735 --> 00:00:51.985
+most of these organizations are using AWS Cloud inefficiently.
+
+00:00:51.985 --> 00:00:56.150
+It is common to find companies that started out in the Cloud years ago,
+
+00:00:56.150 --> 00:00:58.775
+found a configuration that met their needs,
+
+00:00:58.775 --> 00:01:03.080
+set up a series of policies and procedures that made sense for them at the time,
+
+00:01:03.080 --> 00:01:05.600
+and they haven't made many changes since.
+
+00:01:05.600 --> 00:01:09.935
+A simple audit of their configuration has the potential to save them a lot of money,
+
+00:01:09.935 --> 00:01:12.605
+but as in most cases in IT,
+
+00:01:12.605 --> 00:01:15.395
+inertia sets in, and along with that comes,
+
+00:01:15.395 --> 00:01:17.825
+if it isn't broken, don't fix it.
+
+00:01:17.825 --> 00:01:19.310
+In cases like this,
+
+00:01:19.310 --> 00:01:23.450
+we might also find another cost issue that companies in the Cloud run into.
+
+00:01:23.450 --> 00:01:25.630
+Who's supporting the environment?
+
+00:01:25.630 --> 00:01:29.690
+In the early stages of Cloud when it was only servers and switches,
+
+00:01:29.690 --> 00:01:34.555
+the support requirements could be met by any competent infrastructure engineer.
+
+00:01:34.555 --> 00:01:36.570
+In the ensuing years,
+
+00:01:36.570 --> 00:01:39.560
+Cloud technology has evolved into its own practice,
+
+00:01:39.560 --> 00:01:45.325
+requiring dedicated technologists, policies, developers, and governance.
+
+00:01:45.325 --> 00:01:47.540
+Companies who started out in the Cloud long
+
+00:01:47.540 --> 00:01:50.450
+ago and haven't kept pace with a technology upgrades and
+
+00:01:50.450 --> 00:01:53.720
+improvements may also find that they don't have the right people on
+
+00:01:53.720 --> 00:01:57.650
+the team to help them take advantage of everything the Cloud has to offer.
+
+00:01:57.650 --> 00:02:02.060
+This course will offer broad descriptions of public Cloud in general,
+
+00:02:02.060 --> 00:02:07.325
+but the primary focus will be on the technology provided by Amazon Web Services.
+
+00:02:07.325 --> 00:02:12.845
+In this course, I may use AWS and Amazon interchangeably,
+
+00:02:12.845 --> 00:02:18.080
+but please note that Amazon.com Incorporated is the parent company of AWS,
+
+00:02:18.080 --> 00:02:21.380
+and owns other organizations such as Amazon.com,
+
+00:02:21.380 --> 00:02:23.299
+the global e-commerce website,
+
+00:02:23.299 --> 00:02:28.095
+Prime Video, Twitch, Ring, and whole foods.
+
+00:02:28.095 --> 00:02:30.560
+Generally, when I say Amazon,
+
+00:02:30.560 --> 00:02:33.250
+I mean AWS, the Cloud provider.
+
+00:02:33.250 --> 00:02:36.590
+AWS changes frequently, so that what you see in
+
+00:02:36.590 --> 00:02:40.969
+this course may not match what you see when you access AWS yourself.
+
+00:02:40.969 --> 00:02:44.720
+What you see in this course reflects how the AWS management console
+
+00:02:44.720 --> 00:02:50.130
+looks and how AWS functionality works in March of 2020.
+

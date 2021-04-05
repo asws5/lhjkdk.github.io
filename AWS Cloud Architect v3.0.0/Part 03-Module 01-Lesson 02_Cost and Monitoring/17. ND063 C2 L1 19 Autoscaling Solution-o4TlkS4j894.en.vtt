@@ -1,0 +1,235 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.890
+So welcome to my solution to the Auto Scaling Configuration exercise.
+
+00:00:04.890 --> 00:00:08.230
+I'm going to start by clicking on EC2.
+
+00:00:08.390 --> 00:00:13.905
+Once I'm there, I'm going to scroll down to the Auto Scaling,
+
+00:00:13.905 --> 00:00:17.170
+and select Auto Scaling Groups.
+
+00:00:17.530 --> 00:00:23.585
+Select Create an Auto Scaling Group and start the wizard.
+
+00:00:23.585 --> 00:00:31.515
+So to get started, I'm going to select our free tier eligible Amazon Linux 2 AMI,
+
+00:00:31.515 --> 00:00:38.385
+and of course, the t2 micro free tier eligible instance.
+
+00:00:38.385 --> 00:00:41.410
+I'm going to name my launch configuration,
+
+00:00:41.410 --> 00:00:44.090
+and I'm going to request spot instances,
+
+00:00:44.090 --> 00:00:45.860
+keep the price down.
+
+00:00:45.860 --> 00:00:50.525
+Let's just go a fraction of a cent above
+
+00:00:50.525 --> 00:00:55.220
+the spot price to see if we can get some really cheap instances here.
+
+00:00:55.220 --> 00:00:57.110
+Not going to choose an IAM role now,
+
+00:00:57.110 --> 00:01:00.490
+but we are going to enable CloudWatch monitoring.
+
+00:01:00.490 --> 00:01:04.100
+Accept the default eight gigs storage, that's fine.
+
+00:01:04.100 --> 00:01:08.390
+We're going to choose the default security group for this VPC.
+
+00:01:08.810 --> 00:01:14.120
+Next, let's have a look and review our launch configuration.
+
+00:01:14.120 --> 00:01:16.760
+That's the right name, spot,
+
+00:01:16.760 --> 00:01:23.745
+got the right storage security groups. Looks good.
+
+00:01:23.745 --> 00:01:28.850
+We'll go ahead and create our launch configuration by choosing my existing key pair,
+
+00:01:28.850 --> 00:01:31.820
+which is lesliecloudlab, click in the acknowledgment.
+
+00:01:31.820 --> 00:01:34.670
+If you don't have a key pair here or you can't find it,
+
+00:01:34.670 --> 00:01:38.540
+you can just go ahead and select Create new key pair here from the drop-down,
+
+00:01:38.540 --> 00:01:42.745
+download your new key pair and proceed.
+
+00:01:42.745 --> 00:01:45.095
+Create my launch configuration.
+
+00:01:45.095 --> 00:01:49.660
+Now we're going to create the Auto Scaling Group with our launch configuration here.
+
+00:01:49.660 --> 00:01:52.730
+I'm going to go ahead and select a previously chosen,
+
+00:01:52.730 --> 00:01:56.945
+lesliecloudlab group is the name of my Auto Scaling Group.
+
+00:01:56.945 --> 00:01:59.765
+Started off with two instances,
+
+00:01:59.765 --> 00:02:07.030
+and choose a few subnets here in our us-east-1vpc.
+
+00:02:08.900 --> 00:02:11.520
+Go ahead and take a look at Advanced Details,
+
+00:02:11.520 --> 00:02:14.265
+but don't change anything here, just have a look.
+
+00:02:14.265 --> 00:02:16.755
+Let's configure our scaling policy.
+
+00:02:16.755 --> 00:02:19.960
+We're going to use a scaling policy to adjust the capacity of this group,
+
+00:02:19.960 --> 00:02:24.100
+and we're going to scale between two and four instances.
+
+00:02:24.100 --> 00:02:26.630
+So between two and four instances.
+
+00:02:26.630 --> 00:02:29.240
+We don't need to give it,
+
+00:02:29.240 --> 00:02:30.935
+just call it Skill Group Size.
+
+00:02:30.935 --> 00:02:33.770
+I'm going to scale based on average CPU,
+
+00:02:33.770 --> 00:02:37.735
+and our target is going to be 85 percent utilization.
+
+00:02:37.735 --> 00:02:40.940
+We're going to give our instances 180 seconds or
+
+00:02:40.940 --> 00:02:44.880
+three minutes to warm up after they start scaling.
+
+00:02:46.370 --> 00:02:50.880
+Any notifications is optional because this is just an exercise.
+
+00:02:50.880 --> 00:02:56.650
+But if you'd like, you can add your confirmed AWS email address here,
+
+00:02:56.650 --> 00:03:00.610
+and you will be notified when launch events take place,
+
+00:03:00.610 --> 00:03:03.685
+launch terminations or failures.
+
+00:03:03.685 --> 00:03:11.565
+So your notification will be sent to a confirmed address.
+
+00:03:11.565 --> 00:03:13.575
+But let's not worry about that now.
+
+00:03:13.575 --> 00:03:19.500
+Let's go ahead and configure some tags for our Auto Scaling Group. Let's add a few tags.
+
+00:03:19.500 --> 00:03:25.350
+Let's add application, and our application is named mercury.
+
+00:03:25.350 --> 00:03:30.035
+Let's add another tag for lifecycle,
+
+00:03:30.035 --> 00:03:33.840
+and this is a production application.
+
+00:03:33.840 --> 00:03:38.700
+How about one last tag for a group?
+
+00:03:38.700 --> 00:03:45.190
+This application is a production application in the logistics group.
+
+00:03:45.190 --> 00:03:51.425
+That's great. Let's have a quick review of our Auto Scaling Group.
+
+00:03:51.425 --> 00:03:54.835
+If everything looks good, we can go ahead and create it.
+
+00:03:54.835 --> 00:03:57.435
+Looks like we were successful.
+
+00:03:57.435 --> 00:03:59.150
+Sometimes when you get to this step,
+
+00:03:59.150 --> 00:04:00.650
+you're not successful the first time.
+
+00:04:00.650 --> 00:04:04.250
+If that happens, just go ahead and hit retry and see if you can
+
+00:04:04.250 --> 00:04:08.330
+get it to create on a second or even possibly third try.
+
+00:04:08.330 --> 00:04:11.655
+So now we created our Auto Scaling Group.
+
+00:04:11.655 --> 00:04:13.680
+Go ahead and close this.
+
+00:04:13.680 --> 00:04:17.025
+Here we see our scaling group here.
+
+00:04:17.025 --> 00:04:19.935
+Between two and four instances,
+
+00:04:19.935 --> 00:04:23.105
+we've got our availability zones that we've selected here,
+
+00:04:23.105 --> 00:04:27.695
+and our defaults. Looks good.
+
+00:04:27.695 --> 00:04:31.610
+So if you are able to successfully complete the exercise,
+
+00:04:31.610 --> 00:04:33.435
+what you'll want to do is, well,
+
+00:04:33.435 --> 00:04:34.805
+pat yourself on the back,
+
+00:04:34.805 --> 00:04:40.350
+but then go ahead and go back and delete everything.
+
+00:04:46.550 --> 00:04:53.020
+Got to delete my Auto Scaling Group before I delete my launch configuration.
+
+00:04:54.230 --> 00:04:58.665
+Auto Scaling Group on its way out of here.
+
+00:04:58.665 --> 00:05:03.030
+Let's see about our launch configuration now.
+
+00:05:04.270 --> 00:05:07.650
+Let's see if I gave it enough time.
+
+00:05:10.430 --> 00:05:14.940
+All the resources we created in the exercise are gone.
+
+00:05:14.940 --> 00:05:19.810
+Thanks for participating in the exercise. Don't forget to log out.
+

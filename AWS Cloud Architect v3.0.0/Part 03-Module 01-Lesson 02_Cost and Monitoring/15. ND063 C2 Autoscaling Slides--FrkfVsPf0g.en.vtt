@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.840
+Cloud computing makes it possible to launch your applications as
+
+00:00:03.840 --> 00:00:08.430
+fully scalable from the start by implementing a service called auto scaling.
+
+00:00:08.430 --> 00:00:13.770
+Auto scaling is a term used to describe the automatic changes that add or remove
+
+00:00:13.770 --> 00:00:19.830
+compute resources in order to maintain stable performance and control costs.
+
+00:00:19.830 --> 00:00:25.920
+The auto scaling service monitors your applications and adjust compute resources
+
+00:00:25.920 --> 00:00:28.770
+based on predefined criteria to make sure that
+
+00:00:28.770 --> 00:00:32.905
+the application has the capacity it needs to serve demand.
+
+00:00:32.905 --> 00:00:36.735
+When demand decreases, it scales the resources back
+
+00:00:36.735 --> 00:00:42.100
+in to ensure compute resources are not idle and costs are controlled.
+
+00:00:42.100 --> 00:00:48.805
+Auto scaling in the Cloud is described in terms of vertical or scaling up and down,
+
+00:00:48.805 --> 00:00:52.865
+and horizontal or scaling out and in.
+
+00:00:52.865 --> 00:00:58.105
+Vertical auto scaling is a process of adding more resources to the system,
+
+00:00:58.105 --> 00:01:00.760
+like memory or CPU.
+
+00:01:00.760 --> 00:01:06.410
+In AWS terms, it would be moving to a larger instance.
+
+00:01:06.410 --> 00:01:09.460
+Horizontal scaling is the process of adding
+
+00:01:09.460 --> 00:01:13.555
+more nodes or workers to increase compute resources.
+
+00:01:13.555 --> 00:01:19.940
+In AWS terms, it would mean adding more EC2 instances.
+
+00:01:20.010 --> 00:01:24.655
+You can configure scaling for all AWS resources,
+
+00:01:24.655 --> 00:01:26.860
+from the Auto scaling interface.
+
+00:01:26.860 --> 00:01:30.820
+The services you can configure are EC2,
+
+00:01:30.820 --> 00:01:35.325
+EC2 Spot Fleets, ECS,
+
+00:01:35.325 --> 00:01:40.160
+Dynamo DB, and AWS Aurora.
+

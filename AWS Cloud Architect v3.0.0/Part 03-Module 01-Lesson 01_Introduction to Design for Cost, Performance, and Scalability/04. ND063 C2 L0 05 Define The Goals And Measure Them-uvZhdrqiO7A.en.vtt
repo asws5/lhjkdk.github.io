@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.370
+One of the primary business drivers for moving to
+
+00:00:02.370 --> 00:00:05.130
+the Cloud is the potential for cost savings.
+
+00:00:05.130 --> 00:00:08.010
+But to be honest, motives abound.
+
+00:00:08.010 --> 00:00:10.755
+It's a major decision and a big move.
+
+00:00:10.755 --> 00:00:12.570
+In a large organization,
+
+00:00:12.570 --> 00:00:16.995
+the migration project plan might project that it'll take years to complete.
+
+00:00:16.995 --> 00:00:21.745
+My advice to you in this situation is to remain neutral and keep an open mind.
+
+00:00:21.745 --> 00:00:24.530
+What's important is that the team defines the goals
+
+00:00:24.530 --> 00:00:28.180
+prior to planning the migration or fresh start in the Cloud.
+
+00:00:28.180 --> 00:00:32.720
+The team will generally consist of an IT director, IT managers,
+
+00:00:32.720 --> 00:00:35.855
+business application owners, the people with the money,
+
+00:00:35.855 --> 00:00:38.465
+technical application owners and admins,
+
+00:00:38.465 --> 00:00:41.044
+product managers, production engineers,
+
+00:00:41.044 --> 00:00:43.985
+software engineering managers, software engineers,
+
+00:00:43.985 --> 00:00:46.760
+infrastructure engineers, and specialized support
+
+00:00:46.760 --> 00:00:49.970
+staff like monitoring engineers and level 3 and 4 support.
+
+00:00:49.970 --> 00:00:52.640
+Remember, you'll need to base your plans on
+
+00:00:52.640 --> 00:00:56.680
+your baseline metrics to give your team the best shot at success.
+
+00:00:56.680 --> 00:01:03.845
+Some examples of your team's goals might be resiliency, elasticity, scalability,
+
+00:01:03.845 --> 00:01:07.760
+fault tolerance and disaster recovery, high-performance,
+
+00:01:07.760 --> 00:01:11.870
+security, lower costs, centralization,
+
+00:01:11.870 --> 00:01:13.620
+and Cloud native applications.
+
+00:01:13.620 --> 00:01:15.440
+These are just a few examples.
+
+00:01:15.440 --> 00:01:17.220
+Your team goals will be different,
+
+00:01:17.220 --> 00:01:19.660
+but what's important is that you define them.
+
+00:01:19.660 --> 00:01:23.945
+Once you have a concrete set of goals documented and defined,
+
+00:01:23.945 --> 00:01:27.950
+you need to associate each goal with your current data so you can
+
+00:01:27.950 --> 00:01:32.060
+understand how to determine if your Cloud projects are performing on target,
+
+00:01:32.060 --> 00:01:36.905
+exceeding expectations, or if they need to be revisited and revised.
+
+00:01:36.905 --> 00:01:39.980
+You can use Amazon's monitoring services to capture
+
+00:01:39.980 --> 00:01:43.600
+the metrics that will provide you with the data you need to make the best decision.
+
+00:01:43.600 --> 00:01:46.970
+There also a host of third party applications
+
+00:01:46.970 --> 00:01:51.230
+designed to offer you every Cloud metric available and provides you with graphs,
+
+00:01:51.230 --> 00:01:54.175
+reports, and logs in a streamline format.
+
+00:01:54.175 --> 00:01:56.925
+It's not necessary to use these applications,
+
+00:01:56.925 --> 00:01:58.790
+but the way they interpret, aggregate,
+
+00:01:58.790 --> 00:02:01.010
+and present the data they capture can be of
+
+00:02:01.010 --> 00:02:03.755
+great use to team members who aren't as technical.
+
+00:02:03.755 --> 00:02:08.780
+It may lead to faster decision-making by drawing parallels and pulling out trends it may
+
+00:02:08.780 --> 00:02:14.880
+take longer to detect when using the AWS built-in logging and monitoring options.
+

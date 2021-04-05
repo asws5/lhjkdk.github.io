@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.655
+Now, for a little tough news.
+
+00:00:02.655 --> 00:00:05.160
+Cost and performance issues do not automatically
+
+00:00:05.160 --> 00:00:08.175
+vanish when you migrate your applications to the cloud.
+
+00:00:08.175 --> 00:00:10.650
+It's an unfortunate fact that if you haven't done
+
+00:00:10.650 --> 00:00:14.535
+good cost performance planning backed up by actual metrics,
+
+00:00:14.535 --> 00:00:18.235
+you may end up paying more for the same performance as a data center.
+
+00:00:18.235 --> 00:00:23.699
+Why is that? Performance issues can most often be traced back to the application itself,
+
+00:00:23.699 --> 00:00:26.415
+and not necessarily the underlying infrastructure.
+
+00:00:26.415 --> 00:00:30.180
+Lifting it out of the data center and shifting it to a cloud data center,
+
+00:00:30.180 --> 00:00:32.550
+probably won't be able to immediately improve
+
+00:00:32.550 --> 00:00:35.310
+the performance of an application with poor design.
+
+00:00:35.310 --> 00:00:38.010
+In this case, it would be best to estimate the cost
+
+00:00:38.010 --> 00:00:40.930
+of redesigning the application to be cloud native.
+
+00:00:40.930 --> 00:00:42.950
+This would allow you to take advantage of
+
+00:00:42.950 --> 00:00:45.950
+the cloud services that have been specifically designed,
+
+00:00:45.950 --> 00:00:47.825
+with cost and performance in mind,
+
+00:00:47.825 --> 00:00:51.485
+such as a suite of AWS serverless services.
+
+00:00:51.485 --> 00:00:55.625
+Performance issues can also be traced to database response times,
+
+00:00:55.625 --> 00:00:58.895
+and database design is often a culprit here as well.
+
+00:00:58.895 --> 00:01:03.214
+Lots of companies have a culture of standardizing on one database,
+
+00:01:03.214 --> 00:01:06.395
+whether it's the best database for every application or not,
+
+00:01:06.395 --> 00:01:09.245
+and developers are constrained by that decision.
+
+00:01:09.245 --> 00:01:13.225
+They have to make their applications work with the corporate standard database.
+
+00:01:13.225 --> 00:01:17.225
+In order to achieve improved response times after shifting to the cloud,
+
+00:01:17.225 --> 00:01:22.775
+a database redesign and possibly the selection of a new database may be advised as well.
+
+00:01:22.775 --> 00:01:25.850
+One area where users are anticipating improvements when
+
+00:01:25.850 --> 00:01:29.140
+moving to the cloud is a network response times.
+
+00:01:29.140 --> 00:01:32.000
+AWS improves network response times with
+
+00:01:32.000 --> 00:01:34.955
+their CloudFront content delivery network service,
+
+00:01:34.955 --> 00:01:37.850
+which offers global edge cached locations,
+
+00:01:37.850 --> 00:01:41.814
+to provide content to customers in their own geographic location.
+
+00:01:41.814 --> 00:01:46.280
+AWS also offers the very popular Route 53 service,
+
+00:01:46.280 --> 00:01:49.460
+that can be configured to route traffic based on policies,
+
+00:01:49.460 --> 00:01:52.480
+geographic location, and even latency,
+
+00:01:52.480 --> 00:01:54.074
+but it must be configured,
+
+00:01:54.074 --> 00:01:57.905
+and your configuration decisions must be based on metrics.
+
+00:01:57.905 --> 00:02:03.170
+Performance metrics such as logging and monitoring on your applications and databases,
+
+00:02:03.170 --> 00:02:06.860
+will over time provides you with the baseline data required for you to
+
+00:02:06.860 --> 00:02:11.580
+select the best services for your applications and underlying infrastructure.
+

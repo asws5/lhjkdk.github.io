@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.835
+This course has four primary topics.
+
+00:00:02.835 --> 00:00:05.220
+Our first two topics will be a comparison of
+
+00:00:05.220 --> 00:00:09.330
+cloud services to the on-premises model most of us are familiar with.
+
+00:00:09.330 --> 00:00:10.640
+For costs in the cloud,
+
+00:00:10.640 --> 00:00:13.965
+we will look at what services AWS charges for,
+
+00:00:13.965 --> 00:00:15.880
+how costs are calculated,
+
+00:00:15.880 --> 00:00:20.270
+what you need to know to decide what infrastructure is appropriate for your technology,
+
+00:00:20.270 --> 00:00:24.455
+and how to optimize to get the lowest price for what you need to run successfully.
+
+00:00:24.455 --> 00:00:26.615
+In the performance in the cloud lesson,
+
+00:00:26.615 --> 00:00:29.075
+we will explore optimized instances,
+
+00:00:29.075 --> 00:00:32.690
+scaling, and how to optimize for improved performance.
+
+00:00:32.690 --> 00:00:34.820
+The serverless lesson will introduce you to
+
+00:00:34.820 --> 00:00:39.980
+the AWS serverless technology offering and how they can impact performance and cost.
+
+00:00:39.980 --> 00:00:45.160
+Serverless is truly where the cloud differentiates itself from the on-premises model.
+
+00:00:45.160 --> 00:00:47.465
+In the infrastructure as code lesson,
+
+00:00:47.465 --> 00:00:51.680
+we will begin to explore the idea that your entire enterprise can be defined in
+
+00:00:51.680 --> 00:00:56.810
+code and saved as files that can be used to deploy infrastructure in AWS.
+
+00:00:56.810 --> 00:00:59.090
+You'll start to learn the language of the cloud and
+
+00:00:59.090 --> 00:01:01.925
+begin to think of cloud solutions like an architect.
+
+00:01:01.925 --> 00:01:06.100
+The work ahead is very exciting to me and I can't wait to get started.
+
+00:01:06.100 --> 00:01:11.135
+In this course, we will spend most of our instruction time in the AWS console.
+
+00:01:11.135 --> 00:01:12.890
+In the first half of the course,
+
+00:01:12.890 --> 00:01:16.790
+we will be exclusively in the console working with AWS services to
+
+00:01:16.790 --> 00:01:21.015
+estimate costs and optimize performance.
+
+00:01:21.015 --> 00:01:26.270
+We will continue to do some work in the console as we explore AWS serverless technology,
+
+00:01:26.270 --> 00:01:29.030
+but we will get into a little bit of serverless code as
+
+00:01:29.030 --> 00:01:32.050
+we explore possibilities with AWS Lambda.
+
+00:01:32.050 --> 00:01:35.340
+For the last lesson on infrastructure as code,
+
+00:01:35.340 --> 00:01:42.070
+we'll be working in an IDE and the command line to create and run our terraform files.
+
+00:01:42.070 --> 00:01:46.580
+AWS has over 100 services on their menu,
+
+00:01:46.580 --> 00:01:51.865
+and you can expect that number to grow and the interfaces to change over time.
+
+00:01:51.865 --> 00:01:55.865
+They're always testing and pushing out new pages and dashboards.
+
+00:01:55.865 --> 00:01:58.400
+So you can expect that from time to time you will
+
+00:01:58.400 --> 00:02:01.505
+log in and things won't look the same as the last time you checked in.
+
+00:02:01.505 --> 00:02:03.605
+It's all in the name of progress,
+
+00:02:03.605 --> 00:02:06.890
+so it's best to stay up-to-date on upcoming changes by
+
+00:02:06.890 --> 00:02:11.190
+reading AWS blogs and watching their broadcasts on YouTube.
+

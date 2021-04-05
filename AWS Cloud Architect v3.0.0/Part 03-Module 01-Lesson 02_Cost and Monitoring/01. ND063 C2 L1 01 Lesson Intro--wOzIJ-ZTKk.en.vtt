@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.430
+Managing cloud spend is quoted as,
+
+00:00:02.430 --> 00:00:06.810
+"One of the major challenges facing experienced IT organizations today."
+
+00:00:06.810 --> 00:00:12.540
+In some cases, IT organizations that have adopted Cloud technology have abandoned
+
+00:00:12.540 --> 00:00:15.270
+their efforts due to both overwhelming costs and
+
+00:00:15.270 --> 00:00:18.460
+the work it takes to understand and manage costs in the Cloud.
+
+00:00:18.460 --> 00:00:20.660
+There are costs associated with the Cloud that
+
+00:00:20.660 --> 00:00:22.820
+simply don't exist in the data center model,
+
+00:00:22.820 --> 00:00:26.465
+such as data transfer fees and per second billing.
+
+00:00:26.465 --> 00:00:29.810
+This lesson will help you understand the challenges of costs in
+
+00:00:29.810 --> 00:00:33.470
+the Cloud and give you some tools to help you manage those costs.
+
+00:00:33.470 --> 00:00:36.605
+We will start with an overview of Cloud costs.
+
+00:00:36.605 --> 00:00:41.420
+Then we'll take a deeper look at AWS service pricing for instances, storage,
+
+00:00:41.420 --> 00:00:46.789
+and databases, and identify best practices for managing costs in each type of service.
+
+00:00:46.789 --> 00:00:49.970
+We'll end the lesson by looking at cost optimization and
+
+00:00:49.970 --> 00:00:54.870
+best practices for monitoring costs. Let's get started.
+

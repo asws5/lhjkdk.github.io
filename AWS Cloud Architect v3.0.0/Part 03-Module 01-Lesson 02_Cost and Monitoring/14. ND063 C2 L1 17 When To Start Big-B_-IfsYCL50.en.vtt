@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.805
+When does it make sense to start big and when does it make sense to employ elasticity?
+
+00:00:05.805 --> 00:00:08.130
+It makes sense to start big with
+
+00:00:08.130 --> 00:00:11.280
+larger and more powerful computing storage when you have
+
+00:00:11.280 --> 00:00:15.085
+predictable traffic, requests, and workloads.
+
+00:00:15.085 --> 00:00:17.925
+A sturdy CI/CD pipeline,
+
+00:00:17.925 --> 00:00:21.180
+and strong IT and Dev support to monitor
+
+00:00:21.180 --> 00:00:25.365
+your environment and make changes when they see a shift in resource utilization,
+
+00:00:25.365 --> 00:00:29.880
+so they can scale up or down as needed to balance performance and costs.
+
+00:00:29.880 --> 00:00:33.140
+Remember, when you already know what you need,
+
+00:00:33.140 --> 00:00:36.560
+you can lower cost by reserving your compute in advance and
+
+00:00:36.560 --> 00:00:40.240
+predict and even lower your annual Cloud spend.
+
+00:00:40.240 --> 00:00:44.090
+Employing elasticity is the way to go when you're aware of
+
+00:00:44.090 --> 00:00:48.799
+your application's usage patterns and history of surges and requests and access,
+
+00:00:48.799 --> 00:00:51.695
+such as an application that is used extensively
+
+00:00:51.695 --> 00:00:54.740
+every day when people arrive at work between around
+
+00:00:54.740 --> 00:00:58.775
+7:00 and 9:00 and then usage levels off during the day
+
+00:00:58.775 --> 00:01:03.560
+and surges again between 3:00 and 5:00 whenever one is wrapping up for the day.
+
+00:01:03.560 --> 00:01:05.900
+Running applications that experience
+
+00:01:05.900 --> 00:01:09.545
+extreme usage fluctuations is also a good use of elasticity.
+
+00:01:09.545 --> 00:01:12.770
+Such as a platform where users post content that goes
+
+00:01:12.770 --> 00:01:16.010
+viral frequently at unexpected intervals,
+
+00:01:16.010 --> 00:01:17.965
+and in the meantime,
+
+00:01:17.965 --> 00:01:20.505
+usage is generally stable.
+
+00:01:20.505 --> 00:01:26.650
+AWS has services that can help you manage your Cloud budget and keep costs under control.
+
+00:01:26.650 --> 00:01:31.970
+AWS Budgets gives you the ability to set custom budgets that alert you when
+
+00:01:31.970 --> 00:01:37.520
+your costs or usage exceed or are forecasted to exceed your budgeted amount,
+
+00:01:37.520 --> 00:01:42.925
+and can even alert you when your utilization drops below your defined threshold.
+
+00:01:42.925 --> 00:01:49.715
+AWS Code Guru, that can evaluate code as it's being written to find the most inefficient,
+
+00:01:49.715 --> 00:01:53.065
+costly, and unproductive lines of code.
+
+00:01:53.065 --> 00:01:56.960
+Billing Alarms, which are notifications that contact you when
+
+00:01:56.960 --> 00:02:01.030
+your billing threshold is approaching or has been reached.
+
+00:02:01.030 --> 00:02:03.655
+An AWS Trusted Advisor,
+
+00:02:03.655 --> 00:02:08.960
+which gives you proactive recommendations to optimize your AWS environment for cost,
+
+00:02:08.960 --> 00:02:13.920
+performance, security, fault tolerance, and service limits.
+
+00:02:13.930 --> 00:02:20.140
+AWS Trusted Advisor can scan your environment and give you feedback if you want it.
+
+00:02:20.140 --> 00:02:22.200
+But what can it tell you?
+
+00:02:22.200 --> 00:02:26.360
+Well, it can tell you about over utilized EC2 instances,
+
+00:02:26.360 --> 00:02:30.170
+which might indicate that the application running on that instance may
+
+00:02:30.170 --> 00:02:34.310
+experience performance issues during periods of high utilization.
+
+00:02:34.310 --> 00:02:39.995
+It can tell you about unattached EBS storage volumes which incur costs every month.
+
+00:02:39.995 --> 00:02:43.700
+It can also tell you about unattached elastic IP addresses,
+
+00:02:43.700 --> 00:02:48.420
+which incur costs when they aren't attached to a running instance.
+

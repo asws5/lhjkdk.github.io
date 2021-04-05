@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.105
+When we talk about Cloud versus on-premises,
+
+00:00:03.105 --> 00:00:06.105
+we're talking about the cloud as servers and resources
+
+00:00:06.105 --> 00:00:09.330
+that are accessed over the Internet and on-premises as
+
+00:00:09.330 --> 00:00:12.900
+hardware located onsite or in a data center running on hardware
+
+00:00:12.900 --> 00:00:17.055
+that is owned or leased by and dedicated to one company.
+
+00:00:17.055 --> 00:00:21.525
+Cloud computing is generally categorized into four models.
+
+00:00:21.525 --> 00:00:26.760
+Private Cloud is compute resources deployed from one company organization,
+
+00:00:26.760 --> 00:00:31.620
+and that organization conducts mostly intra-business interactions and transactions.
+
+00:00:31.620 --> 00:00:34.115
+So it makes sense for them to own, operate,
+
+00:00:34.115 --> 00:00:37.130
+and govern their own Cloud computing resources.
+
+00:00:37.130 --> 00:00:39.860
+Community Cloud is cloud resources that are
+
+00:00:39.860 --> 00:00:42.455
+provided for organizations and community groups,
+
+00:00:42.455 --> 00:00:46.495
+such as municipal groups, nonprofits, and schools.
+
+00:00:46.495 --> 00:00:50.055
+Hybrid Cloud combines public Cloud, private Cloud,
+
+00:00:50.055 --> 00:00:55.210
+and Cloud on-premises to allow data and resources to be shared between them.
+
+00:00:55.210 --> 00:01:00.890
+Public Cloud is the cloud model generally used for business to consumer interactions.
+
+00:01:00.890 --> 00:01:03.380
+Public Clouds are owned by the government,
+
+00:01:03.380 --> 00:01:06.730
+academic institutions or business.
+
+00:01:06.730 --> 00:01:12.490
+Amazon.com Incorporated is the business that owns the public cloud, Amazon Web Services.
+
+00:01:12.490 --> 00:01:18.115
+Other examples of public Cloud providers are Microsoft Azure and Google Cloud Platform.
+
+00:01:18.115 --> 00:01:20.150
+Many large customers would like to take
+
+00:01:20.150 --> 00:01:22.955
+advantage of the managed services the Cloud provides,
+
+00:01:22.955 --> 00:01:26.680
+but regulations require them to maintain data onsite.
+
+00:01:26.680 --> 00:01:30.710
+AWS now has a unique hardware offering to meet their needs,
+
+00:01:30.710 --> 00:01:33.605
+while providing all the advantages of public Cloud.
+
+00:01:33.605 --> 00:01:38.120
+Amazon recently announced a physical device called Amazon Outposts.
+
+00:01:38.120 --> 00:01:42.065
+Amazon Outposts resides on-premises in the data center as
+
+00:01:42.065 --> 00:01:46.580
+AWS branded hardware comprised of fully managed compute and storage.
+
+00:01:46.580 --> 00:01:50.180
+This allows customers to run AWS compute and storage
+
+00:01:50.180 --> 00:01:54.595
+on-premises and connect securely to the rest of Amazon's Cloud.
+
+00:01:54.595 --> 00:01:58.790
+Now, this goes against what most of us know to be true of the Cloud.
+
+00:01:58.790 --> 00:02:02.420
+That is, that it is massive data centers of compute and storage,
+
+00:02:02.420 --> 00:02:05.915
+running AWS services in a shared public model.
+
+00:02:05.915 --> 00:02:08.900
+What this shows is that AWS is able to be
+
+00:02:08.900 --> 00:02:13.465
+flexible and innovate according to the requirements of the customers they serve.
+
+00:02:13.465 --> 00:02:15.290
+As a Cloud architect,
+
+00:02:15.290 --> 00:02:19.265
+you will be required to select the best Cloud model for your business needs.
+
+00:02:19.265 --> 00:02:23.090
+For this course, we will touch on hybrid architecture briefly,
+
+00:02:23.090 --> 00:02:26.760
+but a majority of our focus will be on public Cloud.
+
