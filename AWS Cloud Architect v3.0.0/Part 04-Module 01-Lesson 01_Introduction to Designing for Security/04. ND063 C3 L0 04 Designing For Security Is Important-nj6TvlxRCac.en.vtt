@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.010
+So why is this course important?
+
+00:00:02.010 --> 00:00:04.845
+Why do we need to ensure that our cloud environments
+
+00:00:04.845 --> 00:00:07.800
+are architected with security in mind?
+
+00:00:07.800 --> 00:00:09.870
+The answer boils down to trust.
+
+00:00:09.870 --> 00:00:13.890
+Businesses that lose the trust of their customers will not be able to survive.
+
+00:00:13.890 --> 00:00:17.490
+In an online world, customers trust businesses to ensure
+
+00:00:17.490 --> 00:00:21.480
+that their personal information and any other data is secure and protected.
+
+00:00:21.480 --> 00:00:25.200
+Looking at some statistics from 2019,
+
+00:00:25.200 --> 00:00:27.599
+courtesy of IBM Security,
+
+00:00:27.599 --> 00:00:31.935
+the average cost of a data breach is on the order of millions.
+
+00:00:31.935 --> 00:00:34.065
+This tells me a few things.
+
+00:00:34.065 --> 00:00:39.005
+First, the cost of a data breach is devastating to a business.
+
+00:00:39.005 --> 00:00:44.660
+Second, it appears that in addition to securing their applications and infrastructure,
+
+00:00:44.660 --> 00:00:48.650
+companies are faced with a very real challenge in being able to
+
+00:00:48.650 --> 00:00:53.015
+identify and remediate vulnerabilities or compromises to their environment.
+
+00:00:53.015 --> 00:00:57.814
+In the cloud, securing applications and infrastructure is important,
+
+00:00:57.814 --> 00:01:01.730
+but security monitoring and operations are equally as important.
+
+00:01:01.730 --> 00:01:04.010
+For this reason, everyone using the cloud,
+
+00:01:04.010 --> 00:01:09.230
+from developers and architects to DevOps engineers need to have a firm grasp on
+
+00:01:09.230 --> 00:01:11.960
+cloud security practices and how they can be
+
+00:01:11.960 --> 00:01:16.110
+implemented early on in the design and development phase.
+

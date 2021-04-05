@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.360
+In order to participate in the exercises and the project,
+
+00:00:03.360 --> 00:00:06.090
+you will need access to an AWS account.
+
+00:00:06.090 --> 00:00:10.095
+Your user should be set up with Console and programmatic access.
+
+00:00:10.095 --> 00:00:12.510
+You will also need a Git client in order to
+
+00:00:12.510 --> 00:00:15.420
+interact with the repositories used in the project.
+
+00:00:15.420 --> 00:00:18.675
+I recommend you also installed AWS CLI,
+
+00:00:18.675 --> 00:00:23.565
+as you will need to run commands against your AWS account for some of the exercises.
+
+00:00:23.565 --> 00:00:26.595
+Finally, in some of the walkthroughs,
+
+00:00:26.595 --> 00:00:31.575
+I have made use of certain tools which have been run on a Linux-like command line.
+
+00:00:31.575 --> 00:00:33.405
+In order to follow along,
+
+00:00:33.405 --> 00:00:36.165
+set up an environment with Terraform 12.
+
+00:00:36.165 --> 00:00:39.000
+I'm confident you have these set up if you've
+
+00:00:39.000 --> 00:00:42.370
+completed the previous courses in the nanodegree.
+

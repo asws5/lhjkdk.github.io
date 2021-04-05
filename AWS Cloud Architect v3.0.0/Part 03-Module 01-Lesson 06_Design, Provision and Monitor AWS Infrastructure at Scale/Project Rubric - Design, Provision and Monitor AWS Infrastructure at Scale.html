@@ -1,0 +1,408 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Design, Provision and Monitor AWS Infrastructure at Scale</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Design, Provision and Monitor AWS Infrastructure at Scale</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Details.html">01. Project Details</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Design, Provision and Monitor AWS Infrastructure at Scale.html">Project Description - Design, Provision and Monitor AWS Infrastructure at Scale</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Design, Provision and Monitor AWS Infrastructure at Scale.html">Project Rubric - Design, Provision and Monitor AWS Infrastructure at Scale</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Design, Provision and Monitor AWS Infrastructure at Scale</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Design Infrastructure Solution</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Develop a schematic for the application development project</p>
+        </td>
+        <td>
+          <p>The infrastructure includes: </p>
+<ul>
+<li>Infrastructure in the following regions: <code>us-east-1</code></li>
+<li>Users and Client machines</li>
+<li>One VPC</li>
+<li>Two Availability Zones</li>
+<li>Four Subnets (2 Public, 2 Private)</li>
+<li>A NAT Gateway</li>
+<li>A CloudFront distribution with an S3 Bucket</li>
+<li>Web servers in the Public Subnets</li>
+<li>Application Servers in the Private Subnets</li>
+<li>DB Servers in the Private Subnets</li>
+<li>Web Servers Load Balanced and Autoscaled</li>
+<li>Application Servers Load Balanced and Autoscaled</li>
+<li>A Master DB in AZ 1 with a read replica in AZ2</li>
+</ul>
+<p>All services in the diagram include a label to indicate the type of service and any necessary parameters (e.g. size, location)</p>
+<p>Visible lines represent all network connections</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Develop a schematic for a Serverless  AWS infrastructure application development project</p>
+        </td>
+        <td>
+          <p>The infrastructure includes:</p>
+<ul>
+<li>A user and client machine</li>
+<li>AWS Route 53</li>
+<li>A CloudFront Distribution</li>
+<li>AWS Cognito</li>
+<li>AWS Lambda</li>
+<li>API Gateway</li>
+<li>DynamoDB</li>
+<li>S3 Storage</li>
+</ul>
+<p>All services in the diagram include a label to indicate the type of service and any necessary parameters (e.g. size, location)</p>
+<p>Visible lines represent all network connections</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Estimate Costs</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Estimate the monthly cost of the planned infrastructure for Diagram 1</p>
+        </td>
+        <td>
+          <p>The monthly cost is between $8,000-10,000  using the <a href="https://calculator.aws/#/" rel="noopener noreferrer" target="_blank">AWS Pricing Calculator</a></p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Modify the infrastructure to reduce the monthly cost</p>
+        </td>
+        <td>
+          <p>The infrastructure includes all required services to run properly</p>
+<p>The monthly cost is $6,500 or below using the <a href="https://calculator.aws/#/" rel="noopener noreferrer" target="_blank">AWS Pricing Calculator</a></p>
+<p>A rationale is provided to explain which services were changed or removed</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Modify the infrastructure to increase performance and redundancy</p>
+        </td>
+        <td>
+          <p>Infrastructure has been re-designed for increased performance and redundancy</p>
+<p>The monthly cost is between $18,000-20,000 using the  <a href="https://calculator.aws/#/" rel="noopener noreferrer" target="_blank">AWS Pricing Calculator</a></p>
+<p>A rationale is provided to explain which services were changed or removed</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Configure AWS Monitoring and Billing</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Configure a CloudWatch Billing Alarm</p>
+        </td>
+        <td>
+          <ul>
+<li>A billing alarm is configured to send an alarm to a valid email address when a $5 billing threshold is met</li>
+<li>The billing alarm has a status of GREEN OK after a refresh period of 5-10 minutes</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Create and Configure IAM Users and Groups</p>
+        </td>
+        <td>
+          <ul>
+<li>A group named <code>CloudTrailAdmins</code> has been created and has the two <code>CloudTrail</code> privileges.</li>
+<li>A  group named <code>Reviewers</code> has been created and has the <code>Billing</code> privilege.</li>
+<li>A user named <code>CloudTrail</code> is created and assigned to the  <code>CloudTrailAdmins</code> group.</li>
+<li>A user named <code>Accountant</code> is created and assigned to the  <code>Reviewers</code> group.</li>
+<li>Both users have AWS Console access</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Update AWS password policy </p>
+        </td>
+        <td>
+          <p>Password policy meets or exceeds these requirements:</p>
+<ul>
+<li>Minimum password length = 8</li>
+<li>Require at least one uppercase letter</li>
+<li>Require at least one lowercase letter</li>
+<li>Require at least one number</li>
+<li>Require at least one non-alphanumeric character.</li>
+</ul>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Infrastructure as Code with Terraform</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Provision AWS Infrastructure as Code with Terraform</p>
+        </td>
+        <td>
+          <p>AWS Console EC2 screenshot  <code>Terraform_1_1</code>  shows: </p>
+<ul>
+<li>4 AWS t2.micro EC2 instances named Udacity T2</li>
+<li>2 m4.large EC2 instances named "Udacity M4"</li>
+</ul>
+<p>Updated AWS Console EC2 screenshot  <code>Terraform_1_2</code>   shows: </p>
+<ul>
+<li>4 AWS t2.micro EC2 instances named "Udacity T2"</li>
+</ul>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Deploy an AWS Lambda function using Terraform</p>
+        </td>
+        <td>
+          <p>Infrastructure includes:</p>
+<ul>
+<li>A lambda.py file</li>
+<li>A main.tf file</li>
+<li>An outputs.tf file</li>
+<li>A variables.tf file</li>
+</ul>
+<p>AWS CloudWatch log screenshot <code>Terraform_2_3</code>  shows the CloudWatch log entry that correlates to the lambda function</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Delete and Destroy AWS Infrastructure Resources with Terraform</p>
+        </td>
+        <td>
+          <p>All infrastructure provisioned with Terraform is deleted/ destroyed using the *.tf configuration files</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ul>
+<li>Enhance the original infrastructure to demonstrate a solution suitable for &gt;&gt; 1 million concurrent users: Include multiple regions, Decoupling, CloudFront Distributions, Load Balancing, Auto-Scaling, Route 53 Optimization, Serverless Functions, etc</li>
+<li>Demonstrate an understanding of decoupling by using AWS Lambda, SQS, and SNS in the infrastructure Diagram</li>
+<li>Use Terraform to provision the following infrastructure in two regions: A VPC, Public subnets, EC2 instance with 20 GB EBS storage, S3 buckets in both regions. Create vars.tf, outputs.tf, main.tf. Save the terraform files in folders as modules. Upload the modules to GitHub</li>
+<li>Configure additional CloudWatch alarms to send alerts for CPU usage, memory usage or other metrics.to a valid email address. Alarms related to infrastructure would be particularly impressive</li>
+</ul></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Design, Provision and Monitor AWS Infrastructure at Scale')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

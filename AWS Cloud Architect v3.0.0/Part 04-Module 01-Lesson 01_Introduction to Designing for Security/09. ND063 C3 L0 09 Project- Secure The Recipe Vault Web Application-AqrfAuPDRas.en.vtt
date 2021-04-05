@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.455
+In this project, you will deploy an application environment in AWS
+
+00:00:04.455 --> 00:00:09.240
+and apply methods learned in the course to secure and harden the application and data.
+
+00:00:09.240 --> 00:00:13.680
+Designing and deploying applications in the cloud with security in mind is critically
+
+00:00:13.680 --> 00:00:18.960
+important since a breach can have wide ranging and devastating impacts on any business.
+
+00:00:18.960 --> 00:00:24.925
+You will play the role of a cloud architect for an online store, MomsKitchenTo.u,
+
+00:00:24.925 --> 00:00:28.700
+and be responsible for ensuring that secret recipes stored
+
+00:00:28.700 --> 00:00:32.690
+in the cloud are secure and protected from unauthorized access.
+
+00:00:32.690 --> 00:00:37.835
+The environment will be deployed initially with minimum security controls in place.
+
+00:00:37.835 --> 00:00:43.225
+You will assess the architecture design and apply and test various security controls.
+
+00:00:43.225 --> 00:00:45.230
+This project will also give you
+
+00:00:45.230 --> 00:00:48.950
+additional experience deploying infrastructure as code templates,
+
+00:00:48.950 --> 00:00:52.010
+and simulating a common breach scenario in
+
+00:00:52.010 --> 00:00:56.250
+order to appreciate some of the security controls that are covered.
+

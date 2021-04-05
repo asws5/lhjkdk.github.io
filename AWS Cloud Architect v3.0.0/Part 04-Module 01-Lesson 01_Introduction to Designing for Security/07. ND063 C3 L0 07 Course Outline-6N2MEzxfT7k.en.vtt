@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.115
+In this course, we will be focusing around
+
+00:00:02.115 --> 00:00:05.755
+architectural best practices around Cloud security.
+
+00:00:05.755 --> 00:00:10.680
+We will start with looking at Identity and Access Management in AWS.
+
+00:00:10.680 --> 00:00:13.980
+We will cover techniques to ensure that users enrolls who
+
+00:00:13.980 --> 00:00:17.805
+manage and control resources in the Cloud are secure.
+
+00:00:17.805 --> 00:00:22.125
+We will also investigate best practices around authentication,
+
+00:00:22.125 --> 00:00:25.860
+authorization, and fine-tuning user permissions.
+
+00:00:25.860 --> 00:00:28.860
+We will also explore methods of ensuring that
+
+00:00:28.860 --> 00:00:33.645
+your cloud infrastructure and networks are protected from unauthorized access.
+
+00:00:33.645 --> 00:00:39.105
+This will include techniques to secure and harden access to instances and servers.
+
+00:00:39.105 --> 00:00:44.380
+Additionally, we will delve into network controls offered by the Cloud provider.
+
+00:00:44.380 --> 00:00:50.390
+You will also get an overview of various methods to securely connect to Cloud networks.
+
+00:00:50.390 --> 00:00:55.460
+Once we have a good understanding of how to secure access to Cloud environments,
+
+00:00:55.460 --> 00:01:00.980
+we will cover techniques and methods related to protecting data stored in the Cloud.
+
+00:01:00.980 --> 00:01:04.490
+We'll look at encryption capabilities offered by
+
+00:01:04.490 --> 00:01:08.980
+AWS and how applications can leverage these capabilities.
+
+00:01:08.980 --> 00:01:13.955
+I will also provide recommendations around encryption key management.
+
+00:01:13.955 --> 00:01:17.480
+Finally, we will tie it all together by looking at how
+
+00:01:17.480 --> 00:01:21.140
+to incorporate security in your Cloud operational model.
+
+00:01:21.140 --> 00:01:24.710
+We will introduce the idea of shifting security
+
+00:01:24.710 --> 00:01:28.615
+monitoring to the left in order to discover risks early on.
+
+00:01:28.615 --> 00:01:33.980
+We will also look at tools to discover vulnerabilities and insecure configurations.
+
+00:01:33.980 --> 00:01:36.080
+Finally, we will discuss some of
+
+00:01:36.080 --> 00:01:42.090
+the AWS Cloud services which can defend Web applications from external threats.
+

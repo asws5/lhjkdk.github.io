@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.360
+When it comes to running applications in the public Cloud,
+
+00:00:03.360 --> 00:00:06.420
+companies are very concerned about security.
+
+00:00:06.420 --> 00:00:11.535
+This is justifiable and a very valid concern shared by many.
+
+00:00:11.535 --> 00:00:13.845
+So the questions will always arise,
+
+00:00:13.845 --> 00:00:16.155
+will my data to be secure in the Cloud?
+
+00:00:16.155 --> 00:00:21.575
+What about the major data breaches that I've heard in the news in the last few years.
+
+00:00:21.575 --> 00:00:25.160
+How do I know the underlying physical hardware is secure?
+
+00:00:25.160 --> 00:00:27.275
+These questions can be answered by
+
+00:00:27.275 --> 00:00:30.950
+understanding the shared security responsibility model.
+
+00:00:30.950 --> 00:00:34.850
+In the shared responsibility model, the Cloud provider,
+
+00:00:34.850 --> 00:00:40.240
+for example, AWS, is responsible for security of the Cloud.
+
+00:00:40.240 --> 00:00:42.680
+The Cloud customer, on the other hand,
+
+00:00:42.680 --> 00:00:47.930
+is responsible for security in the Cloud. What does this mean?
+
+00:00:47.930 --> 00:00:51.530
+So let's take a look at a representation of this model
+
+00:00:51.530 --> 00:00:55.135
+from the AWS Security and Compliance page.
+
+00:00:55.135 --> 00:00:57.890
+This page has a great diagram
+
+00:00:57.890 --> 00:01:02.495
+describing this model and I'm going to open it up in another tab.
+
+00:01:02.495 --> 00:01:05.930
+So AWS is responsible for protecting
+
+00:01:05.930 --> 00:01:08.540
+the physical and virtual infrastructure that
+
+00:01:08.540 --> 00:01:12.350
+runs all of the services offered in the AWS Cloud.
+
+00:01:12.350 --> 00:01:16.130
+This infrastructure is composed of hardware, software,
+
+00:01:16.130 --> 00:01:20.335
+networking, and the facilities that run AWS Cloud services.
+
+00:01:20.335 --> 00:01:24.860
+An example of this would be AWS's commitment to ensure that
+
+00:01:24.860 --> 00:01:30.400
+one customer can never access another customer's database or network resources.
+
+00:01:30.400 --> 00:01:32.555
+The customer, on the other hand,
+
+00:01:32.555 --> 00:01:34.850
+is responsible for ensuring that
+
+00:01:34.850 --> 00:01:39.259
+Cloud services they use are configured and accessed securely.
+
+00:01:39.259 --> 00:01:44.180
+An example of this could be when a customer provisions a Server Instance.
+
+00:01:44.180 --> 00:01:47.510
+They will be responsible for operating system hardening
+
+00:01:47.510 --> 00:01:51.575
+on the server and ensuring that disk volumes are encrypted.
+
+00:01:51.575 --> 00:01:54.874
+The customer is also responsible for determining
+
+00:01:54.874 --> 00:01:59.000
+identity and access permissions for the specific resource.
+
+00:01:59.000 --> 00:02:02.855
+As a consumer of Cloud infrastructure and platform services,
+
+00:02:02.855 --> 00:02:06.350
+you have the power to apply security best practices to
+
+00:02:06.350 --> 00:02:11.490
+ensure that the Cloud is a safe and secure place to run your applications.
+
