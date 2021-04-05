@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.060
+When demand increases, your cloud capacity can be
+
+00:00:03.060 --> 00:00:06.960
+configured to increase to keep up with demand to almost any scale.
+
+00:00:06.960 --> 00:00:10.740
+The three primary functions built into AWS to
+
+00:00:10.740 --> 00:00:14.880
+address increases in compute demand are bursting,
+
+00:00:14.880 --> 00:00:18.455
+elasticity, and auto scaling.
+
+00:00:18.455 --> 00:00:22.560
+Burstable instances provide your application a baseline level of
+
+00:00:22.560 --> 00:00:25.110
+CPU performance with the ability to
+
+00:00:25.110 --> 00:00:28.470
+burst to a higher level when required by your workload.
+
+00:00:28.470 --> 00:00:34.800
+These instances are great for a series of general-purpose workloads, like microservices,
+
+00:00:34.800 --> 00:00:39.085
+vast interactive applications, moderately sized databases,
+
+00:00:39.085 --> 00:00:43.950
+virtual desktop environments, and lower life cycles like development and test.
+
+00:00:43.950 --> 00:00:49.340
+AWS burstable instances are T2 and T3 instance types.
+
+00:00:49.340 --> 00:00:54.080
+Elasticity is the ability to acquire resources as you need them,
+
+00:00:54.080 --> 00:00:59.210
+and elasticity is also releasing resources when you no longer need them.
+
+00:00:59.210 --> 00:01:01.100
+Scaling up and down,
+
+00:01:01.100 --> 00:01:03.550
+and scaling out and in.
+
+00:01:03.550 --> 00:01:08.150
+This is an automatic process for AWS services like S3.
+
+00:01:08.150 --> 00:01:12.995
+A service isn't elastic unless it releases resources it no longer needs,
+
+00:01:12.995 --> 00:01:16.240
+and that's another major cloud differentiator.
+
+00:01:16.240 --> 00:01:20.360
+Auto-scaling monitors your applications based on criteria you
+
+00:01:20.360 --> 00:01:26.455
+specify and automatically adjust capacity to maintain availability and performance.
+
+00:01:26.455 --> 00:01:29.720
+Using AWS, auto-scaling is easy,
+
+00:01:29.720 --> 00:01:31.820
+and once configured, your applications will be
+
+00:01:31.820 --> 00:01:34.810
+running with increased capacity in minutes.
+
+00:01:34.810 --> 00:01:39.800
+Auto scaling is an example of scaling up when you add servers as you need them,
+
+00:01:39.800 --> 00:01:44.970
+and scaling down when you wind down and terminate servers you no longer need.
+

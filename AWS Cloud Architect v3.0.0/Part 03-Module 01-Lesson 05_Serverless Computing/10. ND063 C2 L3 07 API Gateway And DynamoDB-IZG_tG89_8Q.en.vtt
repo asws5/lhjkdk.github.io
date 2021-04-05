@@ -1,0 +1,220 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.885
+APIs are services you develop that allow
+
+00:00:03.885 --> 00:00:07.710
+other applications to access parts of your data or code,
+
+00:00:07.710 --> 00:00:10.320
+enabling them to build add-on,
+
+00:00:10.320 --> 00:00:14.400
+complimentary applications and integrations with your data,
+
+00:00:14.400 --> 00:00:17.355
+usually via JSON or XML.
+
+00:00:17.355 --> 00:00:19.560
+When you publish an API,
+
+00:00:19.560 --> 00:00:22.215
+you're responsible for maintaining,
+
+00:00:22.215 --> 00:00:28.225
+versioning, and monitoring your API through all of its various lifecycles.
+
+00:00:28.225 --> 00:00:33.755
+Amazon noted that API management was a pain point for its customers.
+
+00:00:33.755 --> 00:00:35.675
+So a few years ago,
+
+00:00:35.675 --> 00:00:38.070
+they launched API Gateway.
+
+00:00:38.070 --> 00:00:40.520
+Amazon API Gateway is
+
+00:00:40.520 --> 00:00:46.415
+a fully managed and scalable service that makes it easy for AWS customers to create,
+
+00:00:46.415 --> 00:00:51.850
+publish, maintain, monitor, and secure APIs.
+
+00:00:51.850 --> 00:00:56.390
+API Gateway sits between the requester or requesting
+
+00:00:56.390 --> 00:01:02.155
+application and the backend or the repository where the data resides.
+
+00:01:02.155 --> 00:01:06.140
+API Gateway lets you create and configure APIs,
+
+00:01:06.140 --> 00:01:11.000
+host APIs, cache and throttle API requests.
+
+00:01:11.000 --> 00:01:16.570
+An API gateway also handles authentication and authorization of APIs.
+
+00:01:16.570 --> 00:01:20.600
+API Gateway works with Lambda by sitting in-between
+
+00:01:20.600 --> 00:01:27.145
+the user's API request and the lambda running compute functions on the backend.
+
+00:01:27.145 --> 00:01:34.305
+AWS DynamoDB, is a proprietary serverless NoSQL database.
+
+00:01:34.305 --> 00:01:38.810
+It makes up a key component of the AWS serverless offering
+
+00:01:38.810 --> 00:01:43.925
+as it fits into their practice of designing Cloud native serverless architecture,
+
+00:01:43.925 --> 00:01:48.274
+and it is tightly integrated with the rest of their serverless offering.
+
+00:01:48.274 --> 00:01:52.160
+It is fast, high-performing and scales
+
+00:01:52.160 --> 00:01:56.230
+elastically with auto-scaling in provision capacity mode.
+
+00:01:56.230 --> 00:02:00.110
+Now briefly, a NoSQL database differs from
+
+00:02:00.110 --> 00:02:03.770
+a SQL or relational database in that it doesn't store
+
+00:02:03.770 --> 00:02:07.070
+data in a structured or relational format
+
+00:02:07.070 --> 00:02:11.755
+that we may be used to with SQL language based databases.
+
+00:02:11.755 --> 00:02:15.860
+DynamoDB is good for applications where all the data
+
+00:02:15.860 --> 00:02:19.160
+you need can be stored in one table because there is
+
+00:02:19.160 --> 00:02:22.790
+no relational aspect of a SQL database that allows you
+
+00:02:22.790 --> 00:02:27.005
+to join data from various tables to build out functionality.
+
+00:02:27.005 --> 00:02:29.390
+For example, if you're building
+
+00:02:29.390 --> 00:02:34.445
+a bucket list application where users name the places that they would like to visit,
+
+00:02:34.445 --> 00:02:37.820
+all the destination objects have to be contained in
+
+00:02:37.820 --> 00:02:40.790
+the individual users table and not as
+
+00:02:40.790 --> 00:02:45.745
+destination objects in other tables that's referenced by the user tables.
+
+00:02:45.745 --> 00:02:52.690
+DynamoDB uses a key value format to store JSON objects in tables.
+
+00:02:52.690 --> 00:02:54.715
+Based on the object data,
+
+00:02:54.715 --> 00:03:01.150
+tables are assigned a primary key that can be used to reference items in the table.
+
+00:03:01.150 --> 00:03:06.650
+DynamoDB data is hosted on a series of distributed managed servers,
+
+00:03:06.650 --> 00:03:10.370
+which not only increases database availability and performance,
+
+00:03:10.370 --> 00:03:13.235
+it also facilitates automatic scaling.
+
+00:03:13.235 --> 00:03:18.800
+However, because the database is widely distributed over many servers,
+
+00:03:18.800 --> 00:03:21.980
+there's no way to query an actual database
+
+00:03:21.980 --> 00:03:26.015
+because it doesn't exist in one place on one server.
+
+00:03:26.015 --> 00:03:29.584
+In order to run a query on DynamoDB tables,
+
+00:03:29.584 --> 00:03:32.680
+you need to use a DynamoDB API.
+
+00:03:32.680 --> 00:03:34.860
+You can use it directly,
+
+00:03:34.860 --> 00:03:37.665
+via the AWS CLI,
+
+00:03:37.665 --> 00:03:40.620
+or the AWS SDK.
+
+00:03:40.620 --> 00:03:46.405
+DynamoDB is tightly integrated with the AWS serverless ecosystem.
+
+00:03:46.405 --> 00:03:51.350
+Lambda functions can be triggered by an update to DynamoDB table via
+
+00:03:51.350 --> 00:03:56.650
+DynamoDB Streams with your activity logs from the DynamoDB tables.
+
+00:03:56.650 --> 00:04:01.610
+S3 can make a backup of new database records via Lambda function as well.
+
+00:04:01.610 --> 00:04:05.285
+Again, because DynamoDB is serverless,
+
+00:04:05.285 --> 00:04:09.440
+AWS manages the underlying compute infrastructure and
+
+00:04:09.440 --> 00:04:11.990
+the actual DynamoDB software while
+
+00:04:11.990 --> 00:04:15.580
+providing their customers with the access and views they need.
+
+00:04:15.580 --> 00:04:18.645
+DynamoDB has a few drawbacks.
+
+00:04:18.645 --> 00:04:22.355
+It's a proprietary element of the AWS platform.
+
+00:04:22.355 --> 00:04:25.430
+So if you'd like to migrate out of AWS,
+
+00:04:25.430 --> 00:04:27.385
+it might become a project,
+
+00:04:27.385 --> 00:04:29.344
+and because of how it's priced,
+
+00:04:29.344 --> 00:04:33.730
+it's not ideal for high traffic of large objects.
+
+00:04:33.730 --> 00:04:36.885
+AWS DynamoDB is fast,
+
+00:04:36.885 --> 00:04:38.970
+requires no server management.
+
+00:04:38.970 --> 00:04:41.119
+It is distributed and scalable,
+
+00:04:41.119 --> 00:04:47.550
+making it ideal for applications that exclusively use self-contained data objects.
+

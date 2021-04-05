@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.390
+AWS RDS offers a wide range of database instance classes for higher performance,
+
+00:00:06.390 --> 00:00:10.515
+including our familiar M class memory optimized instances,
+
+00:00:10.515 --> 00:00:13.545
+and T family burstable instances.
+
+00:00:13.545 --> 00:00:16.485
+Of course, you can elastically scale your instance
+
+00:00:16.485 --> 00:00:19.395
+up and down as needed to improve performance.
+
+00:00:19.395 --> 00:00:23.460
+You can start small and grow based on your workload.
+
+00:00:23.460 --> 00:00:28.919
+Using CloudWatch to monitor your database resources and based on the metrics you capture,
+
+00:00:28.919 --> 00:00:31.590
+you can test and scale accordingly.
+
+00:00:31.590 --> 00:00:37.375
+RDS also takes advantage of AWS Elastic Block Storage or EBS,
+
+00:00:37.375 --> 00:00:39.875
+for exceptional read-write performance.
+
+00:00:39.875 --> 00:00:43.530
+You have the same SSD or HDD options with
+
+00:00:43.530 --> 00:00:48.525
+general SSD or provision IOPS SSD or magnetic hard drive storage.
+
+00:00:48.525 --> 00:00:52.600
+But we aren't going to consider the magnetic option in a performance discussion.
+
+00:00:52.600 --> 00:00:56.275
+We're going to assume design for optimal performance and cost.
+
+00:00:56.275 --> 00:01:00.215
+So we'll assume the use of EBS solid state drives.
+
+00:01:00.215 --> 00:01:02.960
+We have general purpose SSD,
+
+00:01:02.960 --> 00:01:08.265
+which is the default general SSD drive with linear scaling and burstability.
+
+00:01:08.265 --> 00:01:11.615
+We also have provisioned IOPS SSD,
+
+00:01:11.615 --> 00:01:13.190
+which is fast, predictable,
+
+00:01:13.190 --> 00:01:16.765
+and consistent when you need fast and consistent I/O.
+
+00:01:16.765 --> 00:01:20.735
+Provision IOPS SSDs are also more costly,
+
+00:01:20.735 --> 00:01:23.485
+so you pay for the increased performance.
+
+00:01:23.485 --> 00:01:28.020
+Database backups and maintenance windows affect database performance.
+
+00:01:28.020 --> 00:01:30.740
+While your database will still be fully available,
+
+00:01:30.740 --> 00:01:35.350
+I/O will increase, and that may have an effect on performance and production.
+
+00:01:35.350 --> 00:01:39.275
+Of course, this is something you can predict and prepare for.
+
+00:01:39.275 --> 00:01:44.600
+AWS RDS provides automated read replicas for all databases,
+
+00:01:44.600 --> 00:01:47.380
+except for Oracle and SQL Server.
+
+00:01:47.380 --> 00:01:51.230
+These read replicas scale out read performance by
+
+00:01:51.230 --> 00:01:56.320
+replicating all changes made on the master databases to read replicas.
+
+00:01:56.320 --> 00:01:59.869
+Read replicas are fully managed service,
+
+00:01:59.869 --> 00:02:04.205
+and to reduce cost associated with cross availability zone traffic,
+
+00:02:04.205 --> 00:02:06.935
+you should configure the Multi-AZ feature
+
+00:02:06.935 --> 00:02:09.850
+to specify where the read replicas should reside.
+
+00:02:09.850 --> 00:02:12.500
+In addition to CloudWatch and the metrics that
+
+00:02:12.500 --> 00:02:15.215
+can be monitored and alerted on in that service,
+
+00:02:15.215 --> 00:02:19.795
+AWS now offers a service called RDS Performance Insights.
+
+00:02:19.795 --> 00:02:22.910
+A database performance tuning and monitoring feature,
+
+00:02:22.910 --> 00:02:26.450
+you enable in the RDS console that helps you quickly assess
+
+00:02:26.450 --> 00:02:30.820
+the load on your database and determine when and where to take action.
+
+00:02:30.820 --> 00:02:36.220
+The output from performance insights is displayed on the Performance Insights dashboard.
+
+00:02:36.220 --> 00:02:39.565
+This feature isn't overly technical or complicated,
+
+00:02:39.565 --> 00:02:43.834
+and the dashboard makes the database load easy to understand and interpret,
+
+00:02:43.834 --> 00:02:47.935
+suitable for the experienced DBA and the IT generalist.
+
+00:02:47.935 --> 00:02:50.375
+For example, when the load is high,
+
+00:02:50.375 --> 00:02:52.459
+it is easy to identify the bottleneck,
+
+00:02:52.459 --> 00:02:57.060
+be it CPU consumption or a misbehaving SQL statement.
+

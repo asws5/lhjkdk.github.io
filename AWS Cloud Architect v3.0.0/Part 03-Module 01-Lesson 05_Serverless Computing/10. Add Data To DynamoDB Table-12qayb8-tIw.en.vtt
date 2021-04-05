@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.340
+Our table is being created.
+
+00:00:02.340 --> 00:00:06.150
+Once it's created, we're going to add some data to our table,
+
+00:00:06.150 --> 00:00:12.075
+and I'll just show you how flexible our table is.
+
+00:00:12.075 --> 00:00:14.790
+So we go to Items,
+
+00:00:14.790 --> 00:00:18.570
+so we're going to create an item in you deci location.
+
+00:00:18.570 --> 00:00:24.850
+So my idea for this is let's just find out where everyone is.
+
+00:00:24.850 --> 00:00:34.300
+Chicago, I'm going to add another string name, that's me,
+
+00:00:34.400 --> 00:00:37.780
+and another string,
+
+00:00:39.980 --> 00:00:48.045
+and we're going to say my role is architect.
+
+00:00:48.045 --> 00:00:51.410
+But since it's a NoSQL database,
+
+00:00:51.410 --> 00:00:56.690
+we can also just add some random information as well.
+
+00:00:56.690 --> 00:01:00.110
+So let's just say color,
+
+00:01:00.110 --> 00:01:08.930
+my favorite color is green and food, ice cream.
+
+00:01:08.930 --> 00:01:13.260
+Let's go ahead and save that. Look at that.
+
+00:01:13.260 --> 00:01:17.660
+Let's create another item based on some of this information, but not all of it.
+
+00:01:17.660 --> 00:01:18.875
+So let's create another item.
+
+00:01:18.875 --> 00:01:22.775
+So this location is going to be Omaha,
+
+00:01:22.775 --> 00:01:25.160
+another string.
+
+00:01:25.160 --> 00:01:28.040
+Nickname is Bert.
+
+00:01:28.040 --> 00:01:33.260
+Sport, volleyball,
+
+00:01:33.260 --> 00:01:39.975
+but also food, beans.
+
+00:01:39.975 --> 00:01:44.660
+So you see this is how unstructured data would look in a table.
+
+00:01:44.660 --> 00:01:48.680
+So even though we've got a couple of individuals,
+
+00:01:48.680 --> 00:01:52.565
+we've got all the information for me except my nickname or my sport,
+
+00:01:52.565 --> 00:01:53.885
+those are still blank,
+
+00:01:53.885 --> 00:01:56.195
+and then we've got another user.
+
+00:01:56.195 --> 00:01:58.520
+We don't know what the name of that person is,
+
+00:01:58.520 --> 00:02:00.170
+but we do know that they like beans,
+
+00:02:00.170 --> 00:02:03.755
+there in Omaha, and that he liked to be called Bert.
+
+00:02:03.755 --> 00:02:08.285
+So what we can do is we can search.
+
+00:02:08.285 --> 00:02:15.500
+Let's add a filter here where name is a string and it
+
+00:02:15.500 --> 00:02:24.120
+contains L. There we go, that's me.
+
+00:02:24.340 --> 00:02:27.430
+So while we're in here,
+
+00:02:27.430 --> 00:02:29.775
+let's take a look at metrics.
+
+00:02:29.775 --> 00:02:33.430
+These dashboards are provided by default by AWS.
+
+00:02:33.430 --> 00:02:36.820
+We're going to show read capacity which is pretty low.
+
+00:02:36.820 --> 00:02:41.765
+We're still 0.02, so we're good on that.
+
+00:02:41.765 --> 00:02:44.955
+Capacity is coming in pretty low as well.
+
+00:02:44.955 --> 00:02:49.370
+Of course, we only have two items in our tables,
+
+00:02:49.370 --> 00:02:51.845
+so that's to be expected.
+
+00:02:51.845 --> 00:02:57.665
+Alarms. Both of them are in OK State,
+
+00:02:57.665 --> 00:02:59.575
+and these are defaults.
+
+00:02:59.575 --> 00:03:02.690
+Again, if you'd like to change your capacity,
+
+00:03:02.690 --> 00:03:05.945
+your provision capacity, you can do it here,
+
+00:03:05.945 --> 00:03:10.400
+but I do recommend that we leave auto-scaling off for now until you are certain,
+
+00:03:10.400 --> 00:03:13.955
+and you have the budget for an auto scale that
+
+00:03:13.955 --> 00:03:18.395
+could expand possibly beyond your expectations.
+
+00:03:18.395 --> 00:03:21.090
+All right. Thanks for watching.
+

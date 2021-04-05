@@ -1,0 +1,178 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.395
+Here's how I created my network diagram with AWS VPC.
+
+00:00:07.395 --> 00:00:11.505
+We want an Internet gateway, an EC2 instance,
+
+00:00:11.505 --> 00:00:16.140
+and a public subnet with an elastic IP address and the database in
+
+00:00:16.140 --> 00:00:21.710
+a private subnet and some a client to connect to AWS.
+
+00:00:21.710 --> 00:00:24.290
+So I'm using Lucidchart,
+
+00:00:24.290 --> 00:00:27.200
+which is an online diagramming application.
+
+00:00:27.200 --> 00:00:30.485
+I think you have a free trial for a couple of weeks,
+
+00:00:30.485 --> 00:00:33.325
+but I went ahead and paid for the full version.
+
+00:00:33.325 --> 00:00:38.745
+So Lucidchart has some AWS icons integrated.
+
+00:00:38.745 --> 00:00:45.215
+I went ahead and pulled those up to prepare myself to create this diagram.
+
+00:00:45.215 --> 00:00:50.465
+So here first, we're going to drag over the
+
+00:00:50.465 --> 00:01:00.100
+AWS cloud large environment here.
+
+00:01:00.100 --> 00:01:06.065
+Lucidchart provides some guidelines but let you know when you've got it centered.
+
+00:01:06.065 --> 00:01:12.500
+So I'm going to give myself plenty of room here to build out this little network diagram.
+
+00:01:12.500 --> 00:01:15.995
+Second, I'm going to bring in a VPC.
+
+00:01:15.995 --> 00:01:22.550
+Try to get that as centered as I can and make that nice size too just so I
+
+00:01:22.550 --> 00:01:29.940
+can have some room to add as needed.
+
+00:01:32.140 --> 00:01:38.310
+Okay. I want a VPC to that.
+
+00:01:38.310 --> 00:01:42.380
+I'm going to add an availability zone in my VPC.
+
+00:01:42.380 --> 00:01:45.870
+You got nice size too.
+
+00:01:50.810 --> 00:01:54.785
+We're going to have to put a couple my subnets in here.
+
+00:01:54.785 --> 00:02:03.540
+I'm going to need subnet one.
+
+00:02:03.540 --> 00:02:07.845
+Let's get that to decent size.
+
+00:02:07.845 --> 00:02:11.380
+Grab another subnet here,
+
+00:02:11.410 --> 00:02:17.130
+get that, bring that little bit.
+
+00:02:17.130 --> 00:02:19.805
+Maybe make that one a little bit bigger.
+
+00:02:19.805 --> 00:02:29.740
+So we want to put a database in our private subnet,
+
+00:02:30.130 --> 00:02:38.850
+and we want to put an EC2 instance in our public subnet.
+
+00:02:39.280 --> 00:02:41.435
+Bring that down a little bit,
+
+00:02:41.435 --> 00:02:45.180
+make it a little smaller so it fits in there a little better.
+
+00:02:48.160 --> 00:02:58.835
+Goodness. Diagramming takes a little bit of time to get used to,
+
+00:02:58.835 --> 00:03:01.890
+but I'm sure you guys will get it.
+
+00:03:02.390 --> 00:03:06.810
+Moving you up now so we don't have as much crowding.
+
+00:03:09.100 --> 00:03:18.720
+So let's scroll down a little text box here.
+
+00:03:18.720 --> 00:03:25.320
+Then we're going to call this our public subnets.
+
+00:03:25.320 --> 00:03:28.425
+Let's make it so that we can see it.
+
+00:03:28.425 --> 00:03:34.570
+Then let's do that again for our private subnet.
+
+00:03:35.120 --> 00:03:39.165
+We want to add an Internet gateway.
+
+00:03:39.165 --> 00:03:45.310
+Let's find that Internet gateway,
+
+00:03:46.190 --> 00:03:49.920
+and so had them here.
+
+00:03:49.920 --> 00:03:55.420
+It's pretty big, shrink it down a little bit.
+
+00:03:58.550 --> 00:04:09.075
+Let's add a workstation to access everything here.
+
+00:04:09.075 --> 00:04:13.350
+I'll make that a little smaller too.
+
+00:04:13.350 --> 00:04:16.480
+That's probably good enough.
+
+00:04:18.500 --> 00:04:25.480
+Let's connect it. Well, let's bring this down to
+
+00:04:25.480 --> 00:04:34.420
+the gateway and let's bring you up a whole and connect it to our client.
+
+00:04:35.720 --> 00:04:39.120
+Okay. I think that's good enough.
+
+00:04:39.120 --> 00:04:46.210
+Let's see. So I hope you were able to come up with something similar here.
+
+00:04:46.210 --> 00:04:52.980
+Let's attach our gateway to our public subnet here.
+
+00:04:52.980 --> 00:04:57.400
+Let's see. I built one earlier, let's compare them.
+
+00:04:57.910 --> 00:05:01.805
+An elastic IP address, that's what we forgot.
+
+00:05:01.805 --> 00:05:11.160
+So let me get our elastic IP and add that here.
+
+00:05:13.630 --> 00:05:16.565
+We'll call that good.
+
+00:05:16.565 --> 00:05:26.320
+We can make it a little bit [inaudible] and maybe we'll make our VPC a little bit better.
+
+00:05:26.390 --> 00:05:30.965
+If you're able to complete this exercise, congratulations.
+
+00:05:30.965 --> 00:05:34.310
+I know diagramming isn't the easiest concept if you're not accustomed to it.
+
+00:05:34.310 --> 00:05:37.940
+So thanks for completing the exercise,
+
+00:05:37.940 --> 00:05:43.170
+and hopefully you [inaudible] up with a diagram that looks a little something like this.
+

@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.735
+We've made it to the end of our lesson on infrastructures as code.
+
+00:00:03.735 --> 00:00:05.880
+So let's take a look at what we learned.
+
+00:00:05.880 --> 00:00:09.915
+Well, first we learned about what infrastructure as code is,
+
+00:00:09.915 --> 00:00:11.445
+and when it's helpful.
+
+00:00:11.445 --> 00:00:16.590
+Then we talked about terraform and how we can use it to design and deploy infrastructure.
+
+00:00:16.590 --> 00:00:20.220
+We talked about terraform collaboration and security.
+
+00:00:20.220 --> 00:00:25.510
+Finally, we went through some best practices for using infrastructure as code.
+

@@ -1,0 +1,520 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TF Variables and Modules</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Infrastructure as Code</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Intro.html">01. Lesson Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to IaC.html">02. Intro to IaC</a>
+    </li>
+    <li class="">
+      <a href="03. Automation.html">03. Automation</a>
+    </li>
+    <li class="">
+      <a href="04. AWS CLI.html">04. AWS CLI</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise AWS CLI.html">05. Exercise: AWS CLI</a>
+    </li>
+    <li class="">
+      <a href="06. Solution AWS CLI.html">06. Solution: AWS CLI</a>
+    </li>
+    <li class="">
+      <a href="07. Intro to Terraform.html">07. Intro to Terraform</a>
+    </li>
+    <li class="">
+      <a href="08. Terraform Files.html">08. Terraform Files</a>
+    </li>
+    <li class="">
+      <a href="09. TF Variables and Modules.html">09. TF Variables and Modules</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise Terraform Create.html">10. Exercise: Terraform Create</a>
+    </li>
+    <li class="">
+      <a href="11. Solution Terraform Create.html">11. Solution: Terraform Create</a>
+    </li>
+    <li class="">
+      <a href="12. TF State Management.html">12. TF State Management</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise Remote Backend.html">13. Exercise: Remote Backend</a>
+    </li>
+    <li class="">
+      <a href="14. Solution Remote Backend.html">14. Solution: Remote Backend</a>
+    </li>
+    <li class="">
+      <a href="15. TF Best Practices.html">15. TF Best Practices</a>
+    </li>
+    <li class="">
+      <a href="16. Lesson Recap.html">16. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="17. Course Wrap Up.html">17. Course Wrap Up</a>
+    </li>
+    <li class="">
+      <a href="18. Glossary.html">18. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. TF Variables and Modules</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Terraform variables heading</p></h3>
+  <div>
+  <h2 id="variables-in-terraform">Variables in Terraform</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L4 06 Terraform Variables</p></h3>
+  <video controls>
+  <source src="09. ND063 C2 L4 06 Terraform Variables-nrLczX3lDvw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. ND063 C2 L4 06 Terraform Variables-nrLczX3lDvw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Introduction to TFVARS recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>Terraform variables are commonly stored in either a <code>variables.tf</code> or <code>.tfvars</code> file in a Terraform configuration</p></li>
+<li><p>Input variables are used to make your code more configurable by allowing you to SEND values into Terraform </p></li>
+<li><p>Output variables output or print an expression from Terraform. </p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TFVARS Features</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What are the two types of Terraform variables?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1011053" id="rbk1">
+      <label for="rbk1"><p>Stored</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1011053" id="rbk2">
+      <label for="rbk2"><p>Input</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1011053" id="rbk3">
+      <label for="rbk3"><p>Simple</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1011053" id="rbk4">
+      <label for="rbk4"><p>Output</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Input</li>
+      <li>Output</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF Variables Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is the file extension for a Terraform variables file?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1011011" id="rbk1">
+        <label for="rbk1"><p><code>.tfm</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1011011" id="rbk2">
+        <label for="rbk2"><p><code>.tfvars</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1011011" id="rbk3">
+        <label for="rbk3"><p><code>.vars</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1011011" id="rbk4">
+        <label for="rbk4"><p><code>.terravars</code></p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    `.tfvars`
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Terraform modules header</p></h3>
+  <div>
+  <h2 id="terraform-modules">Terraform Modules</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L4 07 Terraform Modules</p></h3>
+  <video controls>
+  <source src="09. ND063 C2 L4 07 Terraform Modules-Q1f94Vdooy8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. ND063 C2 L4 07 Terraform Modules-Q1f94Vdooy8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary Terms</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lifecycle Environment</td>
+<td>Application life cycles are divided into life cycle environments, which represent each stage of the application life cycle- Development, QA, UAT, Staging, Production, etc</td>
+</tr>
+<tr>
+<td>Module</td>
+<td>A set of Terraform configuration files in a folder</td>
+</tr>
+<tr>
+<td>Root Module</td>
+<td>The module in the current working directory</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Terraform Modules recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>Terraform modules ensure that the configurations in your lifecycle environments are the same. </p></li>
+<li><p>Terraform modules abstract your infrastructure descriptions by describing it as architecture and not actual objects.</p></li>
+<li><p>Terraform modules are a set of Terraform configuration files in a folder.</p></li>
+<li><p>Terraform modules can be reused in different environments, so that the code in the environments is the exact same. </p></li>
+<li><p>A Terraform module best practice is to have separate git repositories for reusable modules and live infrastructure and specify a versioned module git URL in the source parameter instead of your local filesystem.</p></li>
+<li><p>Terraform modules can be created and shared among Terraform users on <a href="https://registry.terraform.io/" rel="noopener noreferrer" target="_blank">Terraform Registry</a>  or in private registries. Using premade modules is a good way to get started.</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Terraform Create heading</p></h3>
+  <div>
+  <h2 id="using-terraform-to-create-aws-infrastructure">Using Terraform to Create AWS Infrastructure</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF Create Demo</p></h3>
+  <video controls>
+  <source src="09. TF Create Demo-kmocwDpm8Lo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. TF Create Demo-kmocwDpm8Lo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Terraform Create demo recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>Terraform is a declarative language that describes infrastructure in terms of the end goal as opposed to a series of steps it would take to get there. </p></li>
+<li><p>An example of how declarative code differs from procedural code would be changing the number of servers in a .tf file to increase the number of running servers from 2 to 4. Terraform would recognize that two servers have already been created based on the .tfstate, and add two more because the end goal is 4 servers. In procedural language such as an AWS CLI command, increasing the server count to 4 would result in 4 additional servers.</p></li>
+</ul>
+<h3 id="using-terraform-to-create-an-ec2-instance">Using Terraform to Create an EC2 Instance</h3>
+<ol>
+<li>Verify you are in the correct directory by running </li>
+</ol>
+<pre><code class="bash language-bash">which terraform</code></pre>
+<p><br></p>
+<ol start="2">
+<li>Locate the directory containing your terraform files<br />
+<br><br></li>
+<li>Initialize the directory with</li>
+</ol>
+<pre><code class="bash language-bash">terraform init</code></pre>
+<p><br></p>
+<ol start="4">
+<li>View the Terraform execution plan with</li>
+</ol>
+<pre><code class="bash language-bash">terraform plan</code></pre>
+<p><br></p>
+<ol start="5">
+<li>Apply the Terraform execution plan with</li>
+</ol>
+<pre><code class="bash language-bash">terraform apply</code></pre>
+<p><br></p>
+<ol start="6">
+<li>Observe the infrastructure provisioned by Terraform in the AWS Management Console<br />
+<br><br></li>
+<li>Return to the terminal and terminate the infrastructure with</li>
+</ol>
+<pre><code class="bash language-bash">terraform destroy</code></pre>
+<h3 id="demo-code">Demo Code</h3>
+<p>Here is the Terraform code I used for main.tf. If you’d like to try to run the code, save your main.tf to a working directory in your Terraform root directory and run it there with <code>terraform init</code>, <code>terraform plan</code>, <code>terraform apply</code>, <code>terraform destroy</code>. </p>
+<pre><code class="bash language-bash">provider "aws" {
+  access_key = "&lt;Your Access Key&gt;"
+  secret_key = "&lt;Your Secret Key&gt;"
+  region = "us-east-1"
+}
+
+resource "aws_instance" "Udacity" {
+  ami = "ami-0323c3dd2da7fb37d"
+  instance_type = "t2.micro"
+}  </code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Modules Features</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What can you do to apply versioning to your Terraform modules</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1010983" id="rbk1">
+        <label for="rbk1"><p>Use an S3 bucket</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1010983" id="rbk2">
+        <label for="rbk2"><p>Create separate github accounts for modules</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1010983" id="rbk3">
+        <label for="rbk3"><p>Make the changes manually before you terraform init, then change them back</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1010983" id="rbk4">
+        <label for="rbk4"><p>Create a different version for each lifecycle</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Create separate github accounts for modules
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF Modules quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Modules are containers that contain resources that are used together. What are your options for obtaining modules?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1011066" id="rbk1">
+      <label for="rbk1"><p>Private Registries</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1011066" id="rbk2">
+      <label for="rbk2"><p>Terraform Registry</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1011066" id="rbk3">
+      <label for="rbk3"><p>Write them yourself</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1011066" id="rbk4">
+      <label for="rbk4"><p>Amazon Registry</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Private Registries</li>
+      <li>Terraform Registry</li>
+      <li>Write them yourself</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading">Additional Reading</h3>
+<p>Learn more about Terraform Modules  </p>
+<ul>
+<li><a href="https://learn.hashicorp.com/terraform/getting-started/modules.html" rel="noopener noreferrer" target="_blank">Terraform Modules</a>    </li>
+<li><a href="https://www.terraform.io/docs/modules/index.html" rel="noopener noreferrer" target="_blank">Creating Modules</a>    </li>
+<li><a href="https://registry.terraform.io/" rel="noopener noreferrer" target="_blank">Terraform Registry</a>    </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="10. Exercise Terraform Create.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. TF Variables and Modules')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

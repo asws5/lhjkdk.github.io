@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.980
+Here's a use case that may help you envision the benefits of serverless applications,
+
+00:00:04.980 --> 00:00:08.130
+conserving, compute, and performing efficiently.
+
+00:00:08.130 --> 00:00:11.910
+In today's hyper-connected and hyper-vigilant world,
+
+00:00:11.910 --> 00:00:15.705
+many people want a camera watching over their homes and property,
+
+00:00:15.705 --> 00:00:17.760
+and I can understand why.
+
+00:00:17.760 --> 00:00:23.885
+Images provide context, early warnings, and sometimes reassurance.
+
+00:00:23.885 --> 00:00:27.020
+Imagine a camera pointed at an object to
+
+00:00:27.020 --> 00:00:30.370
+see if someone would come and disturb the object in the middle of the night.
+
+00:00:30.370 --> 00:00:34.200
+Weeks go by and the object is undisturbed.
+
+00:00:34.200 --> 00:00:38.225
+One night, a figure is captured disturbing the object,
+
+00:00:38.225 --> 00:00:41.000
+and the camera captures a photo and uploads it
+
+00:00:41.000 --> 00:00:43.580
+to an S3 bucket that's configured to trigger
+
+00:00:43.580 --> 00:00:45.200
+a Lambda function that sends
+
+00:00:45.200 --> 00:00:49.445
+an SNS notification to the owner of the object with the image attached.
+
+00:00:49.445 --> 00:00:52.555
+That's it. That's the serverless app.
+
+00:00:52.555 --> 00:00:54.575
+I know that was a simple example,
+
+00:00:54.575 --> 00:00:56.120
+but the comparison I would like to make
+
+00:00:56.120 --> 00:00:59.120
+here is that in comparison to running the application on
+
+00:00:59.120 --> 00:01:04.255
+a server for weeks without any action and paying for all that idle compute,
+
+00:01:04.255 --> 00:01:09.905
+you can run a simple serverless function and pay literally almost nothing for a simpler,
+
+00:01:09.905 --> 00:01:12.745
+faster, and less complicated job.
+
+00:01:12.745 --> 00:01:14.810
+Now, we aren't yet at the point where
+
+00:01:14.810 --> 00:01:18.335
+your average company is running serverless applications in production.
+
+00:01:18.335 --> 00:01:21.620
+As we've discussed, most of them are taking a tentative step
+
+00:01:21.620 --> 00:01:25.355
+towards running production applications on EC2 instances.
+
+00:01:25.355 --> 00:01:30.305
+But some of the most technologically advanced companies like Netflix, Blackboard,
+
+00:01:30.305 --> 00:01:32.510
+Conde Nast, and The New York Times,
+
+00:01:32.510 --> 00:01:36.860
+certainly are running serverless applications to great success.
+
+00:01:36.860 --> 00:01:38.420
+I say that to say,
+
+00:01:38.420 --> 00:01:42.260
+that unless you're aiming to work for a large multinational tech company,
+
+00:01:42.260 --> 00:01:44.375
+or cloud consulting agency,
+
+00:01:44.375 --> 00:01:49.225
+don't expect to see too many enterprise level serverless applications for awhile.
+
+00:01:49.225 --> 00:01:52.610
+It's coming, but it will take some time and
+
+00:01:52.610 --> 00:01:56.645
+some baby steps for companies to train, engineer, and test.
+
+00:01:56.645 --> 00:01:59.180
+The good thing is, when the time comes,
+
+00:01:59.180 --> 00:02:04.200
+you'll be on your way to flexing your expertise in this new area of computing.
+

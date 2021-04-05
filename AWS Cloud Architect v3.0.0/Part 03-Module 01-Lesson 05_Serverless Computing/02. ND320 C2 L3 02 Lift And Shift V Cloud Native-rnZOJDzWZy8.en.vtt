@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.740
+The process of figuratively picking up your on-premises application and
+
+00:00:04.740 --> 00:00:09.510
+dropping onto a server running on a Cloud provider is called lifting and shifting.
+
+00:00:09.510 --> 00:00:13.860
+It's a simplest method available for migrating your application to the Cloud.
+
+00:00:13.860 --> 00:00:16.710
+It doesn't require any particular Cloud skills or
+
+00:00:16.710 --> 00:00:19.905
+knowledge other than adding some user authentication,
+
+00:00:19.905 --> 00:00:23.070
+configuring the appropriate routes in the VPC,
+
+00:00:23.070 --> 00:00:26.535
+and getting the dependencies installed and the database up in running.
+
+00:00:26.535 --> 00:00:29.475
+It can all be done in a day or less.
+
+00:00:29.475 --> 00:00:33.045
+Now, you have to consider that this method means bringing
+
+00:00:33.045 --> 00:00:38.185
+all the application issues experienced on-premises right along over to the Cloud.
+
+00:00:38.185 --> 00:00:41.600
+There won't be any miracles with this migration method.
+
+00:00:41.600 --> 00:00:46.340
+In fact, problems and costs can begin to accelerate quickly upon
+
+00:00:46.340 --> 00:00:49.490
+the realization that some performance improvements can be
+
+00:00:49.490 --> 00:00:53.000
+achieved by allocating more Cloud resources to the application,
+
+00:00:53.000 --> 00:00:55.230
+thus driving up the costs and
+
+00:00:55.230 --> 00:00:58.665
+an unfortunate surprise maybe waiting at the end of the month.
+
+00:00:58.665 --> 00:01:01.820
+Chances are you aren't moving to the Cloud so you can
+
+00:01:01.820 --> 00:01:04.730
+give your application more resources on demand.
+
+00:01:04.730 --> 00:01:07.950
+It probably wasn't under resource on-premises,
+
+00:01:07.950 --> 00:01:11.280
+it was probably experiencing challenges from outdated,
+
+00:01:11.280 --> 00:01:14.375
+confusing and overly patched code.
+
+00:01:14.375 --> 00:01:19.805
+That's not to say Cloud migration can't or shouldn't be done, it should.
+
+00:01:19.805 --> 00:01:26.245
+In fact, AWS has a service called AWS server migration service to assist in the process.
+
+00:01:26.245 --> 00:01:28.035
+You have to start somewhere,
+
+00:01:28.035 --> 00:01:32.510
+you just have to be aware of when you're throwing money at an engineering problem and
+
+00:01:32.510 --> 00:01:37.435
+formulate a plan of action to address the application shortfalls after the migration.
+
+00:01:37.435 --> 00:01:39.575
+Depending on the application,
+
+00:01:39.575 --> 00:01:42.484
+serious consideration should be given to initiating
+
+00:01:42.484 --> 00:01:44.870
+a re-engineering project to modernize
+
+00:01:44.870 --> 00:01:49.120
+the application and give it a chance to operate at its highest potential.
+
+00:01:49.120 --> 00:01:53.120
+If it's a foundational application that has a lot of heavy lifting,
+
+00:01:53.120 --> 00:01:57.065
+runs long processes and experiences consistent traffic.
+
+00:01:57.065 --> 00:02:00.095
+It's not a good candidate for serverless architecture,
+
+00:02:00.095 --> 00:02:04.400
+but that doesn't mean it can't benefit from a Cloud focused redesign.
+
+00:02:04.400 --> 00:02:10.460
+These applications can benefit from resource optimized EC2 instances,
+
+00:02:10.460 --> 00:02:15.200
+application load balancers, and the favor of being matched with a database
+
+00:02:15.200 --> 00:02:17.210
+that is appropriate for the application
+
+00:02:17.210 --> 00:02:20.200
+instead of the database that is the corporate standard.
+
+00:02:20.200 --> 00:02:24.225
+Applications that can most benefit from Cloud native redesign,
+
+00:02:24.225 --> 00:02:28.735
+are lightweight applications whose actions can be driven by events.
+
+00:02:28.735 --> 00:02:34.535
+Events trigger serverless functions to execute and can be actions like: API requests,
+
+00:02:34.535 --> 00:02:38.395
+files being uploaded and messages being added to a queue.
+
+00:02:38.395 --> 00:02:41.870
+Because serverless architecture is built by function,
+
+00:02:41.870 --> 00:02:45.380
+it becomes clear why applications with lots of events and
+
+00:02:45.380 --> 00:02:50.160
+long running functions would be too costly to run under a serverless paradigm.
+

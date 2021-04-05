@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.120
+Serverless computing is an architectural model
+
+00:00:03.120 --> 00:00:06.465
+or a cloud provider offers scalable, flexible,
+
+00:00:06.465 --> 00:00:09.285
+and low-cost compute services as needed,
+
+00:00:09.285 --> 00:00:13.575
+eliminating the need for customers to provision and manage compute.
+
+00:00:13.575 --> 00:00:18.690
+Serverless offers developers the advantage of faster release times,
+
+00:00:18.690 --> 00:00:21.630
+unlimited compute capacity, and the freedom
+
+00:00:21.630 --> 00:00:24.850
+from the task of managing and optimizing servers.
+
+00:00:24.850 --> 00:00:27.500
+The cloud vendor takes care of all of that,
+
+00:00:27.500 --> 00:00:29.465
+meaning that in a serverless model,
+
+00:00:29.465 --> 00:00:32.510
+there are actually servers running behind the scenes,
+
+00:00:32.510 --> 00:00:36.035
+but developers don't have to interact with or worry about them.
+
+00:00:36.035 --> 00:00:40.415
+Serverless architecture is an excellent choice for new,
+
+00:00:40.415 --> 00:00:45.115
+lightweight, flexible applications that are being designed for the cloud.
+
+00:00:45.115 --> 00:00:49.565
+That is cloud native that have short running processes,
+
+00:00:49.565 --> 00:00:53.390
+inconsistent workloads with levels in between processing,
+
+00:00:53.390 --> 00:00:59.090
+and a need to reduce latency by having some compute functions running close to end-users.
+
+00:00:59.090 --> 00:01:03.020
+Not all applications can benefit from running serverless.
+
+00:01:03.020 --> 00:01:06.200
+Applications that have long running processes and
+
+00:01:06.200 --> 00:01:11.140
+consistent workloads would probably function best on EC2 instance.
+
+00:01:11.140 --> 00:01:16.220
+The cost benefit of serverless would be lost on the long running consistent workloads,
+
+00:01:16.220 --> 00:01:20.825
+which is actually a key metric for an optimized EC2 instance.
+
+00:01:20.825 --> 00:01:25.145
+Serverless pricing is based on resources used per second.
+
+00:01:25.145 --> 00:01:28.765
+Short functions work best with serverless compute.
+
+00:01:28.765 --> 00:01:32.900
+In this lesson, we'll start exploring serverless architecture.
+
+00:01:32.900 --> 00:01:39.230
+Specifically, we'll talk about cloud migration, AWS Lambda,
+
+00:01:39.230 --> 00:01:42.960
+serverless costs, API Gateway,
+
+00:01:42.960 --> 00:01:47.400
+and DynamoDB, and containers.
+

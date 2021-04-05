@@ -1,0 +1,211 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.160
+I'd like to show you how to create an EC2 instance from the command line.
+
+00:00:05.160 --> 00:00:08.370
+So what we're going to do first is verify that we've got
+
+00:00:08.370 --> 00:00:14.460
+the AWS CLI installed properly by typing in the command which aws.
+
+00:00:14.460 --> 00:00:16.215
+So if we run that command,
+
+00:00:16.215 --> 00:00:19.605
+it shows us where the AWS CLI is installed,
+
+00:00:19.605 --> 00:00:24.735
+and after that if we'd like to just verify the version that we have running,
+
+00:00:24.735 --> 00:00:29.950
+we type in aws--version
+
+00:00:30.380 --> 00:00:36.860
+and it returns that we we're running AWS CLI version 2.0 and that's great.
+
+00:00:36.860 --> 00:00:41.450
+So what we do next is we run the commands for creating
+
+00:00:41.450 --> 00:00:46.740
+an EC2 instance and I've already got those here. It's already here.
+
+00:00:46.740 --> 00:00:49.460
+So what I want to do is show you how you gather
+
+00:00:49.460 --> 00:00:52.910
+this information that's required in order to create your instance.
+
+00:00:52.910 --> 00:00:55.510
+So the first command is aws
+
+00:00:55.510 --> 00:01:03.615
+ec2 run-instances and the first command it wants image id.
+
+00:01:03.615 --> 00:01:06.690
+Next it wants how many instances to create,
+
+00:01:06.690 --> 00:01:09.705
+the instance type, your key name,
+
+00:01:09.705 --> 00:01:11.990
+security group id, and subnet id.
+
+00:01:11.990 --> 00:01:16.735
+So first let's go find the AMI id that we're going to use.
+
+00:01:16.735 --> 00:01:18.630
+We're going to find that here.
+
+00:01:18.630 --> 00:01:20.630
+When we go to launch an instance,
+
+00:01:20.630 --> 00:01:23.690
+we select the first Amazon Linux 2 AMI.
+
+00:01:23.690 --> 00:01:25.580
+The AMI id that we want is right here.
+
+00:01:25.580 --> 00:01:28.555
+What I normally do is I just select it,
+
+00:01:28.555 --> 00:01:33.085
+and copy, and paste it right into my terminal.
+
+00:01:33.085 --> 00:01:35.250
+So next, it wants count,
+
+00:01:35.250 --> 00:01:36.630
+we just want to create one instance,
+
+00:01:36.630 --> 00:01:38.475
+if you want four, count four.
+
+00:01:38.475 --> 00:01:40.340
+Instance type t2 micro,
+
+00:01:40.340 --> 00:01:41.720
+we're all familiar with that.
+
+00:01:41.720 --> 00:01:44.420
+That's the free tier EC2 instance.
+
+00:01:44.420 --> 00:01:47.240
+The key name, that's our PEM file that we
+
+00:01:47.240 --> 00:01:50.210
+download in order to interact with EC2 instances.
+
+00:01:50.210 --> 00:01:52.550
+You should have already downloaded your PEM file by now.
+
+00:01:52.550 --> 00:01:58.250
+All it wants to know is that the name of your PEM file and your PEM file needs
+
+00:01:58.250 --> 00:02:04.510
+to be saved in whatever directory you're running the AWS CLI from.
+
+00:02:04.510 --> 00:02:08.030
+So if you need to copy it from your downloads over to your home directory,
+
+00:02:08.030 --> 00:02:09.275
+then go ahead and do that.
+
+00:02:09.275 --> 00:02:13.835
+Security group, let's go find the security group id that is looking for,
+
+00:02:13.835 --> 00:02:19.255
+we're going to find security group under VPC.
+
+00:02:19.255 --> 00:02:23.300
+So under security, find security groups
+
+00:02:23.300 --> 00:02:27.760
+here and I'm selecting the default security group.
+
+00:02:27.760 --> 00:02:30.925
+So I'm going to select it and then down here,
+
+00:02:30.925 --> 00:02:35.180
+just hit this copy to keyboard icon,
+
+00:02:35.180 --> 00:02:39.280
+and then just return to your terminal and paste it.
+
+00:02:39.280 --> 00:02:41.050
+Subnet id, same thing,
+
+00:02:41.050 --> 00:02:45.550
+we're just going to go back to our management console and we know that
+
+00:02:45.550 --> 00:02:53.085
+our subnets are also under our VPC and all of our subnets,
+
+00:02:53.085 --> 00:02:56.080
+at least all my subnets are in us-east-1.
+
+00:02:56.080 --> 00:02:57.740
+So it doesn't matter which one I select,
+
+00:02:57.740 --> 00:02:59.530
+these are all default subnets.
+
+00:02:59.530 --> 00:03:04.585
+Just select one, come on down here and click copy to keyboard,
+
+00:03:04.585 --> 00:03:10.385
+return to your terminal and paste your subnet id right there.
+
+00:03:10.385 --> 00:03:12.890
+After you have all of your information here in
+
+00:03:12.890 --> 00:03:16.160
+the command line that you need in order to create your EC2 instance,
+
+00:03:16.160 --> 00:03:18.685
+you can just go ahead and run it.
+
+00:03:18.685 --> 00:03:22.230
+So it looks like we were successful.
+
+00:03:22.230 --> 00:03:29.115
+So let's just switch back over to our management console EC2,
+
+00:03:29.115 --> 00:03:33.090
+and we should see a new EC2 instance.
+
+00:03:33.090 --> 00:03:37.120
+Probably it would be in the initializing phase.
+
+00:03:37.120 --> 00:03:42.185
+Sure enough, we have one EC2 instance that's initializing,
+
+00:03:42.185 --> 00:03:44.060
+and just to verify it's the right one,
+
+00:03:44.060 --> 00:03:46.280
+let's just scroll on over.
+
+00:03:46.280 --> 00:03:48.930
+Yeah, that's the one.
+
+00:03:51.010 --> 00:03:54.530
+So we can just wait here for it to go to
+
+00:03:54.530 --> 00:03:58.500
+a running state after it passes its status checks.
+
+00:03:59.960 --> 00:04:02.415
+Great, successful.
+
+00:04:02.415 --> 00:04:09.535
+So we have an EC2 instance now that's up and running in us-east-1b availability zone,
+
+00:04:09.535 --> 00:04:12.095
+and we created it from the command line.
+
+00:04:12.095 --> 00:04:14.790
+So thanks for watching.
+

@@ -1,0 +1,267 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise: Serverless Costs</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Serverless Computing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Serverless.html">01. Intro to Serverless</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Migration.html">02. Cloud Migration</a>
+    </li>
+    <li class="">
+      <a href="03. Serverless with AWS.html">03. Serverless with AWS</a>
+    </li>
+    <li class="">
+      <a href="04. Serverless Costs.html">04. Serverless Costs</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise Serverless Costs.html">05. Exercise: Serverless Costs</a>
+    </li>
+    <li class="">
+      <a href="06. Solution Serverless Costs.html">06. Solution: Serverless Costs</a>
+    </li>
+    <li class="">
+      <a href="07. Lambda.html">07. Lambda</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Lambda Function.html">08. Exercise: Lambda Function</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Lambda Function.html">09. Solution: Lambda Function</a>
+    </li>
+    <li class="">
+      <a href="10. API Gateway &amp; DynamoDB.html">10. API Gateway &amp; DynamoDB</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise DynamoDB.html">11. Exercise: DynamoDB</a>
+    </li>
+    <li class="">
+      <a href="12. Solution DynamoDB.html">12. Solution: DynamoDB</a>
+    </li>
+    <li class="">
+      <a href="13. Containers in AWS.html">13. Containers in AWS</a>
+    </li>
+    <li class="">
+      <a href="14. Lesson Recap.html">14. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="15. Glossary.html">15. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Exercise: Serverless Costs</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Create a Lambda Function</p></h3>
+  <div>
+  <h2 id="lambda-vs-server-costs">Lambda vs Server Costs</h2>
+<p>In this exercise we will be estimating the cost difference between using AWS Lambda and AWS EC2 instances.</p>
+<h3 id="lambda-costs">Lambda costs</h3>
+<ul>
+<li><p>Use the <a href="https://s3.amazonaws.com/lambda-tools/pricing-calculator.html" rel="noopener noreferrer" target="_blank">Lambda Pricing Calculator</a>  and do NOT include the Free Tier</p></li>
+<li><p>Assume:</p>
+<ul>
+<li>20 million functions calls per month</li>
+<li>512 MB of Memory</li>
+<li>Execution time of 50ms</li></ul></li>
+</ul>
+<h3 id="ec2-costs">EC2 Costs</h3>
+<ul>
+<li><p>Find pricing for on-demand instances at   <a href="https://aws.amazon.com/ec2/pricing/on-demand/" rel="noopener noreferrer" target="_blank">AWS On-Demand Instance Pricing</a>   </p></li>
+<li><p>Find pricing for 1 year reserved instances at <a href="https://aws.amazon.com/ec2/pricing/reserved-instances/pricing/" rel="noopener noreferrer" target="_blank">Reserved Instance Pricing</a>  </p></li>
+<li><p>Assume:</p>
+<ul>
+<li>1 M5.large EC2 instance  </li>
+<li>Runs for one month </li></ul></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Compare Lambda vs Server Costs</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Compare the cost of running an application using AWS Lambda vs EC2.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="d9ecd024-7182-4c2e-b050-2e49c255ba1c--0">
+        <label for="d9ecd024-7182-4c2e-b050-2e49c255ba1c--0"><p>Calculate the estimated costs to run the application using AWS Lambda</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="d9ecd024-7182-4c2e-b050-2e49c255ba1c--1">
+        <label for="d9ecd024-7182-4c2e-b050-2e49c255ba1c--1"><p>Calculate the costs to run the application using an on-demand EC2 instance</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="d9ecd024-7182-4c2e-b050-2e49c255ba1c--2">
+        <label for="d9ecd024-7182-4c2e-b050-2e49c255ba1c--2"><p>Calculate the costs to run the application using a reserved EC2 instance</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="d9ecd024-7182-4c2e-b050-2e49c255ba1c--3">
+        <label for="d9ecd024-7182-4c2e-b050-2e49c255ba1c--3"><p>Compare the estimated costs for Lambda, EC2 On Demand and EC2 Reserved instances.  Which is the least expensive?</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Thank you for completing the exercise.  You can see my solution in the next video.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Solution Serverless Costs.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Exercise: Serverless Costs')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

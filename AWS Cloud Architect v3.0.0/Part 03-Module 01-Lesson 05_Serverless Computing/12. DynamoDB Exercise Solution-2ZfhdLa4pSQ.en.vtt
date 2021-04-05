@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.065
+Here's my solution to the DynamoDB exercise.
+
+00:00:04.065 --> 00:00:10.470
+So I created a table called udacity neighborhood and my primary key is neighbor.
+
+00:00:10.470 --> 00:00:14.730
+My point in creating this table was to get to know
+
+00:00:14.730 --> 00:00:18.390
+some interesting facts about my neighbors that I
+
+00:00:18.390 --> 00:00:22.230
+see on a daily basis as I'm walking around and chit-chatting with them.
+
+00:00:22.230 --> 00:00:25.200
+So here are the names of five of my neighbors.
+
+00:00:25.200 --> 00:00:28.530
+We can see that this data is quite unstructured.
+
+00:00:28.530 --> 00:00:33.465
+I'm not capturing data for every field about every one,
+
+00:00:33.465 --> 00:00:37.630
+but I'm grabbing what I can and I'm adding it to my table.
+
+00:00:37.630 --> 00:00:39.920
+So you can see for my neighbor,
+
+00:00:39.920 --> 00:00:42.235
+Mercedes, I've got her car,
+
+00:00:42.235 --> 00:00:50.340
+her child, a fun fact about her and what she's growing in her in her first garden.
+
+00:00:50.890 --> 00:00:54.229
+I see that my neighbor, Hattie,
+
+00:00:54.229 --> 00:00:56.960
+there's a fun fact about her, scratch golfer.
+
+00:00:56.960 --> 00:00:58.730
+She might have a car, she might not.
+
+00:00:58.730 --> 00:01:00.230
+It's not in the table though.
+
+00:01:00.230 --> 00:01:01.870
+I don't know anything about kids,
+
+00:01:01.870 --> 00:01:03.605
+at least I didn't add it here,
+
+00:01:03.605 --> 00:01:08.060
+but I do know that she likes to go to Whole Foods and what she's growing in her garden.
+
+00:01:08.060 --> 00:01:12.860
+As you can see, it's these rules are not as strict for unstructured data.
+
+00:01:12.860 --> 00:01:14.540
+So I've got spaces,
+
+00:01:14.540 --> 00:01:18.050
+I've got four-by-four, uppercase,
+
+00:01:18.050 --> 00:01:23.375
+lowercase, and all different kinds of data formatting here,
+
+00:01:23.375 --> 00:01:26.660
+even on my primary key, uppercase and lowercase.
+
+00:01:26.660 --> 00:01:30.680
+In your table, it's fairly easy to make modifications.
+
+00:01:30.680 --> 00:01:36.470
+If, for example, I do find out at some point that my neighbor, Hattie,
+
+00:01:36.470 --> 00:01:40.040
+does have a car and
+
+00:01:40.040 --> 00:01:46.580
+she drives a Ford,
+
+00:01:46.580 --> 00:01:50.750
+then I can populate that field in the table as well.
+
+00:01:50.750 --> 00:01:56.975
+So let's go ahead and see if we can find child1,
+
+00:01:56.975 --> 00:02:07.355
+which is a string that contains just c,
+
+00:02:07.355 --> 00:02:12.775
+that should get us cooper.
+
+00:02:12.775 --> 00:02:14.970
+That's Raul's child.
+
+00:02:14.970 --> 00:02:19.995
+But what if we want to pick uppercase C?
+
+00:02:19.995 --> 00:02:23.400
+That gets us Tracey and her child Charlie.
+
+00:02:23.400 --> 00:02:28.145
+So when it comes to searching through your table, uppercase and lowercase,
+
+00:02:28.145 --> 00:02:30.740
+how you enter the data into the table does matter,
+
+00:02:30.740 --> 00:02:34.295
+unless when you're creating your search terms,
+
+00:02:34.295 --> 00:02:36.095
+you tell it to ignore case.
+
+00:02:36.095 --> 00:02:38.850
+Thanks for completing the exercise.
+

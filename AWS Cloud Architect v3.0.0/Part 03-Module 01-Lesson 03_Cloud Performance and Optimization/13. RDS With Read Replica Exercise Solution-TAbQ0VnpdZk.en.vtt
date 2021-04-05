@@ -1,0 +1,196 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.815
+Let's walk through creating a database with a read replica.
+
+00:00:04.815 --> 00:00:09.760
+So first, let's make sure we're in the right region.
+
+00:00:10.010 --> 00:00:12.480
+I recently visited RDS,
+
+00:00:12.480 --> 00:00:13.950
+but just for the example,
+
+00:00:13.950 --> 00:00:18.970
+we're going to type in RDS here and follow it from the search bar.
+
+00:00:19.400 --> 00:00:28.440
+It's going to bring up the RDS console and we could create an Aurora database here.
+
+00:00:28.440 --> 00:00:30.240
+But instead, let's go to database,
+
+00:00:30.240 --> 00:00:32.190
+this over here in the menu.
+
+00:00:32.190 --> 00:00:34.050
+To create a database,
+
+00:00:34.050 --> 00:00:37.060
+it's going to give us a couple of options.
+
+00:00:38.510 --> 00:00:43.630
+Let's go with easy create and we're going to easy create
+
+00:00:43.630 --> 00:00:48.170
+an Aurora database with my SQL compatibility,
+
+00:00:48.170 --> 00:00:54.245
+a Dev/Test, which is going to be pre-configured for r5 large instance size.
+
+00:00:54.245 --> 00:00:57.930
+Let's call our database,
+
+00:01:03.100 --> 00:01:08.505
+AuroraMySQL01-1, so that's going to cluster identifier,
+
+00:01:08.505 --> 00:01:13.370
+master username admin, we'll go ahead and let AWS auto-generate a password for us.
+
+00:01:13.370 --> 00:01:16.730
+That's fine. Once the database is created,
+
+00:01:16.730 --> 00:01:19.705
+it'll give us the password in a pop-up window.
+
+00:01:19.705 --> 00:01:20.860
+We can copy it from there.
+
+00:01:20.860 --> 00:01:27.030
+We'll go ahead and create our database and our database is creating.
+
+00:01:27.030 --> 00:01:30.460
+It might take a little while.
+
+00:01:30.460 --> 00:01:35.090
+Again, here's where we can see that auto-generated password that
+
+00:01:35.090 --> 00:01:40.110
+AWS created for us by clicking view credential details here.
+
+00:01:40.120 --> 00:01:43.970
+So again, it tells us this is the only time we can view this password,
+
+00:01:43.970 --> 00:01:45.710
+this a onetime Window.
+
+00:01:45.710 --> 00:01:49.970
+So you'd want to copy this password and keep it in a safe place,
+
+00:01:49.970 --> 00:01:51.950
+and then once your database is up and running,
+
+00:01:51.950 --> 00:01:59.140
+you can go in and modify it or you can add other users, e.t.c.
+
+00:01:59.140 --> 00:02:02.010
+So let's just go ahead and close this,
+
+00:02:02.010 --> 00:02:04.560
+databases is still creating.
+
+00:02:04.560 --> 00:02:06.170
+Once our database is created,
+
+00:02:06.170 --> 00:02:12.120
+we're going to create a read replica by going to add reader.
+
+00:02:12.530 --> 00:02:20.300
+Awesome. So now that we've got our database cluster created,
+
+00:02:20.300 --> 00:02:25.010
+we saw that this instance changed from reader to writer.
+
+00:02:25.010 --> 00:02:28.855
+So we don't have a reader anymore because that was one that was being created.
+
+00:02:28.855 --> 00:02:31.705
+So we're going to go select our cluster,
+
+00:02:31.705 --> 00:02:34.290
+go to actions, and add a reader.
+
+00:02:34.290 --> 00:02:38.525
+This is adding a read replica to our cluster.
+
+00:02:38.525 --> 00:02:42.875
+Same class availability zone.
+
+00:02:42.875 --> 00:02:45.830
+This, I'm going to leave it at no preference,
+
+00:02:45.830 --> 00:02:47.900
+but you can select the availability zone.
+
+00:02:47.900 --> 00:02:49.525
+In the Northern Virginia region,
+
+00:02:49.525 --> 00:02:52.145
+these are the availability zones that are available.
+
+00:02:52.145 --> 00:02:57.890
+So I'm going to say no preference and let AWS like that for me,
+
+00:02:57.890 --> 00:03:00.785
+not going to be publicly accessible,
+
+00:03:00.785 --> 00:03:06.120
+and let's just call this reader 1.
+
+00:03:06.120 --> 00:03:09.510
+No preference for priority.
+
+00:03:09.510 --> 00:03:11.670
+Keep all the default options.
+
+00:03:11.670 --> 00:03:15.320
+I'm not going to enable enhanced monitoring for this replica.
+
+00:03:15.320 --> 00:03:17.875
+I don't want to spend the money,
+
+00:03:17.875 --> 00:03:21.105
+and performance insights, same thing.
+
+00:03:21.105 --> 00:03:22.565
+A version upgrade.
+
+00:03:22.565 --> 00:03:27.215
+This is a few half database where he don't mind if AWS
+
+00:03:27.215 --> 00:03:32.765
+update your database with minor engine upgrades,
+
+00:03:32.765 --> 00:03:35.600
+but if you have a database where you can't change anything
+
+00:03:35.600 --> 00:03:38.945
+without going through a change control and even for a minor update,
+
+00:03:38.945 --> 00:03:40.400
+you'd want to select No here.
+
+00:03:40.400 --> 00:03:43.490
+But I'm going to go ahead and select Yes just because they're going to keep it simple,
+
+00:03:43.490 --> 00:03:46.015
+and we're going to add our read replica.
+
+00:03:46.015 --> 00:03:53.000
+This is going to take a little while here as well and soon
+
+00:03:53.000 --> 00:03:55.190
+we'll see that we're going to have
+
+00:03:55.190 --> 00:04:00.325
+another database with a role of reader here in the list.
+
+00:04:00.325 --> 00:04:04.360
+There we go. Our read replicas is right here, reader 1.
+
+00:04:04.360 --> 00:04:09.059
+So thanks for following along and I'll see you at the end of the next exercise.
+

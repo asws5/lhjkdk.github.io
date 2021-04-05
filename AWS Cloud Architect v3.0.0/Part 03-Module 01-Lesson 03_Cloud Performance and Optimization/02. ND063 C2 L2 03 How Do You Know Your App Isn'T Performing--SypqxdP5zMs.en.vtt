@@ -1,0 +1,208 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.590
+Other than metrics, how do you know your application isn't performing?
+
+00:00:04.590 --> 00:00:09.405
+When your cloud monitoring solution detects and notifies you of performance issues,
+
+00:00:09.405 --> 00:00:12.195
+how do you begin to pursue a solution?
+
+00:00:12.195 --> 00:00:16.080
+Well, first, let's define a performance issue.
+
+00:00:16.080 --> 00:00:19.170
+Is it down, is it unreachable?
+
+00:00:19.170 --> 00:00:22.905
+Has everything stopped, or is it just really slow?
+
+00:00:22.905 --> 00:00:27.390
+Is it really slow or really slow?
+
+00:00:27.390 --> 00:00:30.300
+Are users calling, or even worse,
+
+00:00:30.300 --> 00:00:31.920
+blowing up your Twitter?
+
+00:00:31.920 --> 00:00:36.200
+Well, not all performance alarms are indicators of a potential outage.
+
+00:00:36.200 --> 00:00:40.759
+The ones that are, generally have a solution that AWS can address with a service,
+
+00:00:40.759 --> 00:00:43.280
+preventing your application from losing up time and
+
+00:00:43.280 --> 00:00:46.495
+causing headaches for your users and support teams.
+
+00:00:46.495 --> 00:00:51.890
+Your approach to a cloud performance issue might start with some questions.
+
+00:00:51.890 --> 00:00:55.090
+How did this workload get into our environment?
+
+00:00:55.090 --> 00:00:57.500
+Did you lift and shift or did you
+
+00:00:57.500 --> 00:01:00.620
+design the application to be cloud native from the start?
+
+00:01:00.620 --> 00:01:04.670
+Or did you accidentally over-optimized your compute and not leave
+
+00:01:04.670 --> 00:01:09.065
+any room for unexpected performance peaks or periods of high activity.
+
+00:01:09.065 --> 00:01:12.740
+The third question is, when we don't see too often outside of users on
+
+00:01:12.740 --> 00:01:17.075
+the free tier or without unusually restrictive scaling policies.
+
+00:01:17.075 --> 00:01:18.650
+But as for the first two,
+
+00:01:18.650 --> 00:01:21.610
+well, those we see all the time.
+
+00:01:21.610 --> 00:01:24.330
+An applications that have been lifted and shifted,
+
+00:01:24.330 --> 00:01:27.530
+their performance issue could be related to virtually any aspect of
+
+00:01:27.530 --> 00:01:31.555
+the workload directly affected by a cloud service it isn't optimized for.
+
+00:01:31.555 --> 00:01:35.060
+Well, performance and redundancy are engineered into
+
+00:01:35.060 --> 00:01:39.065
+cloud native applications with the help of AWS services.
+
+00:01:39.065 --> 00:01:43.730
+For example, the performance of your lift and shift app could be slow during
+
+00:01:43.730 --> 00:01:46.070
+peak traffic periods because it runs on
+
+00:01:46.070 --> 00:01:49.850
+four load-balance servers that aren't configured to auto-scale,
+
+00:01:49.850 --> 00:01:52.940
+or your database might be down during maintenance because there
+
+00:01:52.940 --> 00:01:56.389
+isn't a read replica to pick up the slack while it's offline.
+
+00:01:56.389 --> 00:02:00.110
+Both of those issues can be remediated using cloud services,
+
+00:02:00.110 --> 00:02:03.025
+even though the app isn't cloud native.
+
+00:02:03.025 --> 00:02:07.745
+The non-native app can be configured to auto-scale based on API requests,
+
+00:02:07.745 --> 00:02:10.505
+and the database can be configured with a read replica.
+
+00:02:10.505 --> 00:02:15.410
+So just because you can't take advantage of AWS performance optimization natively,
+
+00:02:15.410 --> 00:02:17.150
+you can, of course,
+
+00:02:17.150 --> 00:02:21.470
+tweak your service options here and there by monitoring their environment as well as
+
+00:02:21.470 --> 00:02:23.000
+the application to see where
+
+00:02:23.000 --> 00:02:27.125
+performance bottlenecks can be remediated with an AWS service.
+
+00:02:27.125 --> 00:02:31.550
+These AWS services can do when problems are detected.
+
+00:02:31.550 --> 00:02:35.330
+They can spin up instances or scale out.
+
+00:02:35.330 --> 00:02:38.060
+They can terminate instances,
+
+00:02:38.060 --> 00:02:44.075
+increase memory allocation, optimize network routes,
+
+00:02:44.075 --> 00:02:46.220
+and failover to a backup.
+
+00:02:46.220 --> 00:02:50.180
+So even though your application or workload may not be cloud native,
+
+00:02:50.180 --> 00:02:55.025
+you still have an incredible variety of options for not only improving your performance,
+
+00:02:55.025 --> 00:02:59.090
+but also avoiding outages and incidents with the right configuration.
+
+00:02:59.090 --> 00:03:04.775
+Not all performance issues you encounter will be caused by services you can control.
+
+00:03:04.775 --> 00:03:10.640
+For example, Internet outages and mobile network outages will affect performance,
+
+00:03:10.640 --> 00:03:12.980
+and there isn't much you can do about that.
+
+00:03:12.980 --> 00:03:19.390
+Although it's infrequent, AWS does sometimes experience issues and outages.
+
+00:03:19.390 --> 00:03:23.795
+To see if an AWS outage is affecting your application's performance,
+
+00:03:23.795 --> 00:03:28.160
+browse to the AWS service health dashboard and scroll to see if
+
+00:03:28.160 --> 00:03:30.305
+the service having performance issues
+
+00:03:30.305 --> 00:03:33.500
+is reported as having an issue by the cloud provider.
+
+00:03:33.500 --> 00:03:41.015
+The AWS service health dashboard can be found at status.aws.amazon.com.
+
+00:03:41.015 --> 00:03:44.600
+You browse to this location to see if any of the services that are
+
+00:03:44.600 --> 00:03:49.280
+experiencing performance issues are being reported as having issues by AWS.
+
+00:03:49.280 --> 00:03:52.355
+So what you want to do is locate your general region,
+
+00:03:52.355 --> 00:03:54.770
+North America, and for the most part,
+
+00:03:54.770 --> 00:03:59.150
+and scroll down, find the service that you think might be having an issue,
+
+00:03:59.150 --> 00:04:02.765
+locate your region and see what AWS is reporting.
+
+00:04:02.765 --> 00:04:06.575
+Is the service operating normally or it might be experiencing an issue.
+
+00:04:06.575 --> 00:04:11.210
+You can also select your personal health dashboard and see if AWS is
+
+00:04:11.210 --> 00:04:16.830
+reporting that any of the services that knows you have are experiencing any issues.
+

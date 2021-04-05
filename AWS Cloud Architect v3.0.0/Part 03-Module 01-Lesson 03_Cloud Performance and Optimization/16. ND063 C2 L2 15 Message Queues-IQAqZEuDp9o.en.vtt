@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.960
+When you have a workload that generates significant right load,
+
+00:00:03.960 --> 00:00:06.255
+that doesn't need to be processed immediately.
+
+00:00:06.255 --> 00:00:10.605
+You can use a buffer to smooth out demands on your task consumers.
+
+00:00:10.605 --> 00:00:16.590
+Buffering uses a queue to accept messages or units of work from producers.
+
+00:00:16.590 --> 00:00:19.994
+A message queue provides a lightweight buffer,
+
+00:00:19.994 --> 00:00:22.620
+which temporarily stores messages and
+
+00:00:22.620 --> 00:00:26.055
+endpoints that allow software components to connect to the queue,
+
+00:00:26.055 --> 00:00:28.740
+in order to send and receive messages.
+
+00:00:28.740 --> 00:00:30.525
+By using a buffer,
+
+00:00:30.525 --> 00:00:35.085
+you can decouple the throughput rate of producers from that of consumers.
+
+00:00:35.085 --> 00:00:38.820
+Amazon Simple Queue Service or SQS,
+
+00:00:38.820 --> 00:00:41.630
+is a fully managed message queuing service,
+
+00:00:41.630 --> 00:00:46.135
+that exposes an API to publish and consume messages.
+
+00:00:46.135 --> 00:00:53.120
+Thereby, enables you to improve performance by decoupling and scaling microservices,
+
+00:00:53.120 --> 00:00:57.470
+distributed systems, and serverless applications.
+
+00:00:57.470 --> 00:01:04.040
+The messages are usually very small and can be things like requests,
+
+00:01:04.040 --> 00:01:11.210
+replies, error messages, or just plain information like a status or location.
+
+00:01:11.210 --> 00:01:14.405
+To begin the process of sending a message,
+
+00:01:14.405 --> 00:01:18.645
+a component called a producer has a message to the queue.
+
+00:01:18.645 --> 00:01:23.915
+The message is stored in the queue until another component called a consumer,
+
+00:01:23.915 --> 00:01:27.380
+retrieves the message and performs the requested action.
+
+00:01:27.380 --> 00:01:35.500
+Amazon SQS, also leverages the AWS cloud to dynamically scale based on demand.
+
+00:01:35.500 --> 00:01:39.600
+SQS scales elastically with your application,
+
+00:01:39.600 --> 00:01:43.720
+so you don't have to worry about capacity planning and pre-provisioning.
+
+00:01:43.720 --> 00:01:47.375
+There is no limit to the number of messages per queue.
+
+00:01:47.375 --> 00:01:51.205
+The standard queues provide nearly unlimited throughput.
+
+00:01:51.205 --> 00:01:56.060
+SQS is a good solution for applications that need a task queue to
+
+00:01:56.060 --> 00:01:58.100
+buffer messages for communication between
+
+00:01:58.100 --> 00:02:01.100
+components in their application service infrastructure.
+
+00:02:01.100 --> 00:02:02.690
+Like a batch of updates,
+
+00:02:02.690 --> 00:02:05.215
+that need to be processed every hour.
+
+00:02:05.215 --> 00:02:09.830
+AWS SQS is a stand alone service.
+
+00:02:09.830 --> 00:02:16.040
+It can securely and reliably process messages independent of other services.
+
+00:02:16.040 --> 00:02:23.200
+So their lack of availability or busyness doesn't affect how it processes it's queue.
+
+00:02:23.200 --> 00:02:27.705
+SQS offers two types of message queues.
+
+00:02:27.705 --> 00:02:30.870
+Standard queues offer high throughput,
+
+00:02:30.870 --> 00:02:34.500
+best effort ordering and guarantee delivery.
+
+00:02:34.500 --> 00:02:39.280
+This will be great for an application like credit card processing.
+
+00:02:39.280 --> 00:02:44.760
+SQS FIFO queues or First-In-First-Out queues,
+
+00:02:44.760 --> 00:02:47.020
+ensure that messages are processed
+
+00:02:47.020 --> 00:02:51.425
+once and in the exact order that they are sent to the queue.
+
+00:02:51.425 --> 00:02:54.710
+So a process like allowing a user to order
+
+00:02:54.710 --> 00:03:00.125
+a ride share after verifying their destination and payment information,
+
+00:03:00.125 --> 00:03:04.430
+or processing orders for a hot new sneaker,
+
+00:03:04.430 --> 00:03:07.810
+so that the people who ordered first are confirmed first,
+
+00:03:07.810 --> 00:03:11.625
+would be great applications for a FIFO queue.
+
+00:03:11.625 --> 00:03:17.240
+SQS is a good solution for applications that need a task queue to
+
+00:03:17.240 --> 00:03:19.490
+buffer messages for communication between
+
+00:03:19.490 --> 00:03:23.280
+components in their application service infrastructure.
+

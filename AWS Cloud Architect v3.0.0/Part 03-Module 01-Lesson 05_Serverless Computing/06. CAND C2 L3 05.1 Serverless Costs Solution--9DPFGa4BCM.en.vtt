@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.215
+So for this exercise we're going to go to a couple of websites.
+
+00:00:04.215 --> 00:00:10.095
+First, let's go to the AWS Lambda tools pricing calculator.
+
+00:00:10.095 --> 00:00:14.445
+From here based on our assumptions,
+
+00:00:14.445 --> 00:00:18.390
+we're going to enter in the values to find
+
+00:00:18.390 --> 00:00:23.160
+out how much it would cost to run 20 million functions
+
+00:00:23.160 --> 00:00:26.340
+with 512 megabytes of memory
+
+00:00:26.340 --> 00:00:33.135
+allocated and an estimated execution time of about 50 milliseconds.
+
+00:00:33.135 --> 00:00:36.960
+We're not going to include the free tier because that's cheating.
+
+00:00:36.960 --> 00:00:40.740
+We find that running 20 million functions per
+
+00:00:40.740 --> 00:00:48.280
+month with the following circumstances is going to cost you about $12.34.
+
+00:00:48.280 --> 00:00:53.190
+Now let's move over to our on demand instance pricing,
+
+00:00:53.190 --> 00:00:57.290
+and we're going to compare that to an m5.large EC2
+
+00:00:57.290 --> 00:01:01.675
+instance that runs at almost $0.10 an hour.
+
+00:01:01.675 --> 00:01:07.695
+So running at $0.10 an hour 24 hours a day and 30 days a month,
+
+00:01:07.695 --> 00:01:11.380
+it's going to come out to about $69.12.
+
+00:01:12.080 --> 00:01:15.420
+Then that's the on demand price.
+
+00:01:15.420 --> 00:01:20.795
+So if we look at reserved pricing and not paying anything upfront,
+
+00:01:20.795 --> 00:01:29.910
+that'll be $44.53, and for partial upfront you'd pay $256 down,
+
+00:01:29.910 --> 00:01:32.655
+and then 21.17 a month.
+
+00:01:32.655 --> 00:01:35.355
+So that comes out to be about 42.50,
+
+00:01:35.355 --> 00:01:41.675
+and if you pay it all at once that's about $500 and that comes out to about 41.75.
+
+00:01:41.675 --> 00:01:47.270
+So the outcome here is you'll pay between $42 and $44
+
+00:01:47.270 --> 00:01:54.000
+for a reserved instance or $12.34 running serverless
+

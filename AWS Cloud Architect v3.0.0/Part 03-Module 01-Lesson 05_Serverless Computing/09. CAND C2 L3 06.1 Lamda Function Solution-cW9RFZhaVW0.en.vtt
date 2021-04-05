@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.175
+I'm going to show you how to create
+
+00:00:02.175 --> 00:00:08.100
+a very simple Lambda function that's triggered when a file is uploaded to S3.
+
+00:00:08.100 --> 00:00:10.650
+So we're going to start by going to
+
+00:00:10.650 --> 00:00:17.920
+the Lambda management console and creating a function.
+
+00:00:18.380 --> 00:00:24.490
+Let's give our function a name that we can remember,
+
+00:00:24.490 --> 00:00:35.910
+let's say S3_File_Upload_Function.
+
+00:00:35.910 --> 00:00:41.940
+The runtime that we're going to use today is Python.
+
+00:00:41.940 --> 00:00:45.350
+We're going to let Lambda create
+
+00:00:45.350 --> 00:00:49.280
+our execution role because it knows the permissions that we need.
+
+00:00:49.280 --> 00:00:51.964
+So we're going to create a role with basic Lambda permissions,
+
+00:00:51.964 --> 00:00:55.100
+and in particular the role that we need is
+
+00:00:55.100 --> 00:00:59.120
+a user that can upload logs to Amazon CloudWatch.
+
+00:00:59.120 --> 00:01:02.780
+We're going to go ahead and create our function,
+
+00:01:02.780 --> 00:01:08.095
+and successfully created the function, S3_File_Upload_Function.
+
+00:01:08.095 --> 00:01:12.530
+So now what we're going to do is we're going to configure our trigger.
+
+00:01:12.530 --> 00:01:18.455
+Our trigger is going to be S3.
+
+00:01:18.455 --> 00:01:22.070
+So this function is going to execute when we upload
+
+00:01:22.070 --> 00:01:27.510
+a file to my bucket, leslie-cloudlab-bucket.
+
+00:01:27.980 --> 00:01:31.740
+It's going to go on puts.
+
+00:01:31.740 --> 00:01:35.080
+We're not going to deal with any prefixes or suffixes this time,
+
+00:01:35.080 --> 00:01:38.640
+and we're going to enable the trigger right now as soon as we add it.
+
+00:01:38.930 --> 00:01:41.610
+So now we have a trigger.
+
+00:01:41.610 --> 00:01:46.035
+Let's look at our very simple function here.
+
+00:01:46.035 --> 00:01:49.870
+So I've got some Python code which makes sense.
+
+00:01:49.870 --> 00:01:53.755
+If we were to run a test here it would execute and it would be successful.
+
+00:01:53.755 --> 00:01:57.520
+But what we want to see in the log is
+
+00:01:57.520 --> 00:02:02.310
+that it was successful because a file was uploaded to S3.
+
+00:02:02.310 --> 00:02:04.705
+So in order for that to happen,
+
+00:02:04.705 --> 00:02:10.690
+we're going to ask it to print a little statement in the log,
+
+00:02:10.690 --> 00:02:20.050
+and I'm just going to say S3 file uploaded.
+
+00:02:20.050 --> 00:02:23.135
+Hooray. That looks pretty good.
+
+00:02:23.135 --> 00:02:30.520
+So let's save our end function and let's go over to S3 and trigger it.
+
+00:02:30.800 --> 00:02:35.520
+So our bucket was leslie-cloudlab,
+
+00:02:35.520 --> 00:02:38.950
+and let's upload a file,
+
+00:02:39.050 --> 00:02:43.569
+and a file here from our desktop.
+
+00:02:43.820 --> 00:02:49.620
+I think we're just going to [inaudible] ,
+
+00:02:49.620 --> 00:02:52.090
+and let's go ahead and upload that.
+
+00:02:53.660 --> 00:02:58.855
+So we've got our file uploaded and it's large,
+
+00:02:58.855 --> 00:03:02.449
+and that should have triggered our function to execute.
+
+00:03:02.449 --> 00:03:09.900
+The way that we'll know is by going and looking in the CloudWatch logs.
+
+00:03:10.000 --> 00:03:18.150
+So let's open CloudWatch and let's look in the logs.
+
+00:03:18.550 --> 00:03:25.135
+So our function was called S3_File_Upload_Function. That's the one we want.
+
+00:03:25.135 --> 00:03:30.350
+Let's look in the log stream and see if we have our statement, and we do.
+
+00:03:30.350 --> 00:03:33.750
+S3 file uploaded. Hooray.
+

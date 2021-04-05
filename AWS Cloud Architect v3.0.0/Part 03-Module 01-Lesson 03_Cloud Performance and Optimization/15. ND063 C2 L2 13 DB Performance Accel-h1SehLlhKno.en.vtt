@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.375
+The best and most performant database solution
+
+00:00:03.375 --> 00:00:07.035
+depends on the requirements of your application for availability,
+
+00:00:07.035 --> 00:00:11.820
+consistency, latency, scalability, and query capability.
+
+00:00:11.820 --> 00:00:14.490
+It is important to take a data-driven approach
+
+00:00:14.490 --> 00:00:16.770
+to choosing your database to prevent making
+
+00:00:16.770 --> 00:00:18.510
+a decision based on culture or
+
+00:00:18.510 --> 00:00:22.500
+tradition that leads to a database that doesn't perform efficiently.
+
+00:00:22.500 --> 00:00:25.650
+Traditionally, in an on-premises model,
+
+00:00:25.650 --> 00:00:30.270
+a company standardizes on one database vendor and tries to make it work for
+
+00:00:30.270 --> 00:00:35.760
+every application by enabling features and making tweaks to improve performance.
+
+00:00:35.760 --> 00:00:40.110
+With AWS relational database service and DynamoDB,
+
+00:00:40.110 --> 00:00:43.540
+it's possible to select the best database for your workload,
+
+00:00:43.540 --> 00:00:48.950
+and with the RDS model you can leverage the fully managed service provided by AWS,
+
+00:00:48.950 --> 00:00:53.900
+reducing effort of managing and maintaining a database as databases that are provided as
+
+00:00:53.900 --> 00:00:59.500
+managed services remove or reduce the effort of managing so many database servers.
+
+00:00:59.500 --> 00:01:02.360
+When you leverage Amazon RDS,
+
+00:01:02.360 --> 00:01:04.670
+you keep your database engine,
+
+00:01:04.670 --> 00:01:08.070
+which is Oracle, Microsoft SQL Server, or MySQL,
+
+00:01:08.070 --> 00:01:12.830
+MariaDB, or postgresSQL, or choose AWS Aurora,
+
+00:01:12.830 --> 00:01:16.910
+and benefit from an automated and managed service environment.
+
+00:01:16.910 --> 00:01:19.130
+In this RDS model,
+
+00:01:19.130 --> 00:01:22.610
+you are no longer responsible for optimizing compute,
+
+00:01:22.610 --> 00:01:25.330
+memory, storage, or networking.
+
+00:01:25.330 --> 00:01:28.550
+You don't have to worry about raid configuration, volume management,
+
+00:01:28.550 --> 00:01:32.240
+database engine configuration, or the databases themselves.
+
+00:01:32.240 --> 00:01:35.075
+You're only responsible for managing the schemas,
+
+00:01:35.075 --> 00:01:38.485
+indexes, views, and database related options.
+
+00:01:38.485 --> 00:01:45.030
+With RDS, Amazon provides automation for most of the optimization tasks.
+
+00:01:45.140 --> 00:01:50.360
+With AWS, the customer's responsible for selecting the most appropriate instance and
+
+00:01:50.360 --> 00:01:52.010
+storage types and tuning
+
+00:01:52.010 --> 00:01:56.045
+the database configuration with the available options and perimeter groups,
+
+00:01:56.045 --> 00:01:58.775
+and of course, optimizing the database,
+
+00:01:58.775 --> 00:02:01.220
+the schemas, the indexes and views,
+
+00:02:01.220 --> 00:02:04.230
+and other database related options.
+
+00:02:04.240 --> 00:02:08.375
+Now, despite the numerous benefits of RDS,
+
+00:02:08.375 --> 00:02:11.330
+it can be quite expensive when compared to running your database
+
+00:02:11.330 --> 00:02:14.560
+yourself on say, an EC2 instance.
+
+00:02:14.560 --> 00:02:18.985
+It is even more costly when your database is over provisioned.
+
+00:02:18.985 --> 00:02:24.950
+While you may want to use burstable or memory optimized instances for your RDS instance,
+
+00:02:24.950 --> 00:02:27.290
+you need to make sure you're provisioning decisions are
+
+00:02:27.290 --> 00:02:30.510
+based on your metrics and your insights.
+

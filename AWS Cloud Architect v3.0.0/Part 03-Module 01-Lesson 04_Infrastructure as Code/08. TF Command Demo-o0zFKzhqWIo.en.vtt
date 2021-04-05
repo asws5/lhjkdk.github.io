@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.165
+Let's take a look at Terraform commands.
+
+00:00:03.165 --> 00:00:10.464
+So first what I'm going to do is I'm going to browse into my Terraform directory,
+
+00:00:10.464 --> 00:00:16.440
+go ahead and type in which Terraform,
+
+00:00:16.440 --> 00:00:21.460
+and that's going to show you the directory where Terraform is installed.
+
+00:00:21.460 --> 00:00:26.295
+Then from there, go ahead and type in Terraform,
+
+00:00:26.295 --> 00:00:29.415
+and what you'll see here on the display is a list of
+
+00:00:29.415 --> 00:00:33.795
+common commands like apply and destroy which you'll get familiar with,
+
+00:00:33.795 --> 00:00:39.150
+and then plan providers and then some other miscellaneous commands.
+
+00:00:39.150 --> 00:00:42.860
+So Terraform apply builds infrastructure,
+
+00:00:42.860 --> 00:00:46.220
+Terraform initializes your Terraform directory,
+
+00:00:46.220 --> 00:00:52.325
+Terraform tears down or destroys the infrastructure you create with Terraform, etc.
+
+00:00:52.325 --> 00:00:56.674
+So from here let's browse into,
+
+00:00:56.674 --> 00:01:00.170
+well, what we know is one of our working directories.
+
+00:01:00.170 --> 00:01:06.535
+So Udacity, I got one called S3.
+
+00:01:06.535 --> 00:01:09.380
+So Udacity S3, we're going to
+
+00:01:09.380 --> 00:01:11.690
+initialize this directory with one of our Terraform command.
+
+00:01:11.690 --> 00:01:15.995
+So let's try it, terraform init.
+
+00:01:15.995 --> 00:01:21.140
+Great. So we see we have a message that Terraform has been successfully initialized.
+
+00:01:21.140 --> 00:01:25.860
+Let's do one more command. Let's try Terraform plan.
+
+00:01:26.230 --> 00:01:29.910
+Running Terraform plan, since
+
+00:01:29.910 --> 00:01:34.004
+Terraform are to look at the.TF files that are in that directory,
+
+00:01:34.004 --> 00:01:36.290
+it reads them, it interprets them,
+
+00:01:36.290 --> 00:01:42.660
+and then it lists out based on what's in those TF files what it's going to do.
+
+00:01:42.910 --> 00:01:46.110
+Great. Thanks for watching.
+

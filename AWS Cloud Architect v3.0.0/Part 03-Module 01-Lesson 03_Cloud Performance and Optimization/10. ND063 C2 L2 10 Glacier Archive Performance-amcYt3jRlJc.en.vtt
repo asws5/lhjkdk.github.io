@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.620
+Archiving an AWS provides some very low cost options that offer
+
+00:00:04.620 --> 00:00:09.510
+trade-offs that architects need to consider before selecting an archive solution.
+
+00:00:09.510 --> 00:00:14.430
+While some companies will use S3 for archive because it's fast and durable,
+
+00:00:14.430 --> 00:00:16.800
+there are lower cost options that offer
+
+00:00:16.800 --> 00:00:21.765
+the same reliability and similar performance at a much lower price point.
+
+00:00:21.765 --> 00:00:29.535
+First, they can use a middle tier archive called S3 IA or Infrequent Access.
+
+00:00:29.535 --> 00:00:34.110
+It provides a cost reduction when compared to S3 Standard.
+
+00:00:34.110 --> 00:00:37.600
+It isn't quite as economical as S3 Glacier,
+
+00:00:37.600 --> 00:00:43.880
+but IA does allow you to access the objects you need immediately, unlike S3 Glacier.
+
+00:00:43.880 --> 00:00:48.890
+Amazon has always made it known that their S3 Glacier archives service,
+
+00:00:48.890 --> 00:00:54.424
+sacrifices performance in order to bring the cost of archive down as low as possible.
+
+00:00:54.424 --> 00:00:58.220
+That performance sacrifice means that retrieving an object from
+
+00:00:58.220 --> 00:01:02.750
+Glacier could take anywhere from a few minutes to several hours.
+
+00:01:02.750 --> 00:01:06.514
+S3 IA is ideal for long-term storage,
+
+00:01:06.514 --> 00:01:10.690
+backups and as a data store for disaster recovery files.
+
+00:01:10.690 --> 00:01:13.970
+But Glacier is only appropriate for files that you rarely
+
+00:01:13.970 --> 00:01:18.485
+use and that you can wait possibly hours to retrieve.
+
+00:01:18.485 --> 00:01:22.400
+When you make a request to retrieve data from S3 Glacier,
+
+00:01:22.400 --> 00:01:25.250
+you initiate a retrieval job for an archive.
+
+00:01:25.250 --> 00:01:27.875
+Once the retrieval job completes,
+
+00:01:27.875 --> 00:01:33.875
+your data will be available to download or access using Amazon EC2 for 24 hours.
+
+00:01:33.875 --> 00:01:38.930
+Glacier Expedite retrievals, allow you to pay to quickly access your data,
+
+00:01:38.930 --> 00:01:42.640
+when an occasional urgent request arises.
+
+00:01:42.640 --> 00:01:48.244
+Expedited file retrieval, usually takes place between one and five minutes.
+
+00:01:48.244 --> 00:01:55.330
+In addition, there are two types of Expedited retrievals: On-demand and provisioned.
+
+00:01:55.330 --> 00:01:58.145
+On-demand requests are fulfilled when Amazon
+
+00:01:58.145 --> 00:02:01.375
+can complete the retrieval within 1-5 minutes.
+
+00:02:01.375 --> 00:02:06.365
+Provision capacity retrievals allow you to pay in advance so you can ensure that
+
+00:02:06.365 --> 00:02:12.650
+AWS has retrieval capacity for your Expedited retrievals available when you need them.
+
+00:02:12.650 --> 00:02:18.110
+Each unit of capacity ensures that at least three Expedited retrievals can be
+
+00:02:18.110 --> 00:02:25.080
+performed every five minutes and provides up to 150 megabytes of retrieval throughput.
+

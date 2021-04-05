@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.729
+Welcome to the last lesson in this course.
+
+00:00:02.729 --> 00:00:07.080
+In this lesson, we will explore infrastructure as code.
+
+00:00:07.080 --> 00:00:12.660
+Specifically, we'll talk about what is IaC and why we use
+
+00:00:12.660 --> 00:00:15.000
+it and we'll also get an introduction to
+
+00:00:15.000 --> 00:00:18.825
+Terraform and talk about collaboration and security.
+
+00:00:18.825 --> 00:00:23.230
+We'll end the lesson with a discussion of best practices.
+

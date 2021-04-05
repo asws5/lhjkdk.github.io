@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.360
+Amazon EBS, or Elastic Block Storage,
+
+00:00:03.360 --> 00:00:05.670
+is provisioned capacity and performance,
+
+00:00:05.670 --> 00:00:08.880
+meaning you are paying for the EBS storage even if
+
+00:00:08.880 --> 00:00:12.460
+it is unattached or has very low read and write activity.
+
+00:00:12.460 --> 00:00:16.320
+One of the first ways you can optimize your EBS performance is
+
+00:00:16.320 --> 00:00:20.560
+by making sure you don't have provision storage that's not in use.
+
+00:00:20.560 --> 00:00:23.640
+Occasionally, you will need to audit your environment
+
+00:00:23.640 --> 00:00:26.505
+to detect and delete obsolete EBS volumes,
+
+00:00:26.505 --> 00:00:30.855
+and adjust the size of your provision storage to match your actual use.
+
+00:00:30.855 --> 00:00:38.115
+EBS volumes attached to EBS optimized instances can be accessed using dedicated networks,
+
+00:00:38.115 --> 00:00:42.540
+whereas non EBS optimized instances use shared networks.
+
+00:00:42.540 --> 00:00:45.080
+Of course, dedicated network connections to
+
+00:00:45.080 --> 00:00:48.230
+storage provides increased throughput options.
+
+00:00:48.230 --> 00:00:54.460
+Non EBS optimized instances share the network with all the rest of the local traffic.
+
+00:00:54.460 --> 00:00:58.160
+You will need to evaluate your application to determine if using
+
+00:00:58.160 --> 00:01:01.625
+an EBS optimized instance would provide a benefit,
+
+00:01:01.625 --> 00:01:04.490
+especially if your application is web-based or
+
+00:01:04.490 --> 00:01:07.630
+clustered and see significant network traffic.
+
+00:01:07.630 --> 00:01:10.790
+Your application performance can be limited
+
+00:01:10.790 --> 00:01:14.080
+by the network bandwidth available to your instances.
+
+00:01:14.080 --> 00:01:18.590
+This is another reason it is important to perform extensive tests when developing
+
+00:01:18.590 --> 00:01:23.965
+your applications to determine the best instance for your specific performance needs.
+
+00:01:23.965 --> 00:01:27.560
+EFS volume performance optimization is
+
+00:01:27.560 --> 00:01:31.085
+built into the service because it already is distributed,
+
+00:01:31.085 --> 00:01:35.195
+making it highly available, durable, and scalable.
+
+00:01:35.195 --> 00:01:42.260
+Amazon EFS can be mounted on up to thousands of Amazon EC2 instances concurrently.
+
+00:01:42.260 --> 00:01:46.625
+If you can parallelize your application across more instances,
+
+00:01:46.625 --> 00:01:51.335
+you can drive higher throughput levels on your file system across those instances.
+
+00:01:51.335 --> 00:01:55.655
+Applications that perform a large number of read and write operations
+
+00:01:55.655 --> 00:02:00.490
+likely need more memory or computing capacity that applications that don't.
+
+00:02:00.490 --> 00:02:04.685
+Once again, when benchmarking your application and development,
+
+00:02:04.685 --> 00:02:07.400
+choose the EC2 instance types that have
+
+00:02:07.400 --> 00:02:11.450
+the resources that your application needs for optimal performance.
+
+00:02:11.450 --> 00:02:15.515
+Amazon EFS supports two forms of encryption;
+
+00:02:15.515 --> 00:02:19.045
+encryption in transit, and encryption at rest.
+
+00:02:19.045 --> 00:02:22.520
+Choosing to enable either or both types of encryption for
+
+00:02:22.520 --> 00:02:27.800
+your file system has minimal effect on IO latency and throughput.
+

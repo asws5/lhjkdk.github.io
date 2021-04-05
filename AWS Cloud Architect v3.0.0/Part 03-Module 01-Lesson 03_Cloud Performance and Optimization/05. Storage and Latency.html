@@ -1,0 +1,395 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Storage and Latency</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cloud Performance and Optimization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Performance in the Cloud.html">01. Performance in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="02. Performing &amp; Underperforming.html">02. Performing &amp; Underperforming</a>
+    </li>
+    <li class="">
+      <a href="03. Scaling and Performance.html">03. Scaling and Performance</a>
+    </li>
+    <li class="">
+      <a href="04. High Performing EC2 Instances.html">04. High Performing EC2 Instances</a>
+    </li>
+    <li class="">
+      <a href="05. Storage and Latency.html">05. Storage and Latency</a>
+    </li>
+    <li class="">
+      <a href="06. EBS and EFS.html">06. EBS and EFS</a>
+    </li>
+    <li class="">
+      <a href="07. Elastic Block Storage.html">07. Elastic Block Storage</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Resizing an EBS Volume.html">08. Exercise: Resizing an EBS Volume</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Creating an EBS Snapshot.html">09. Solution: Creating an EBS Snapshot</a>
+    </li>
+    <li class="">
+      <a href="10. Archive Performance.html">10. Archive Performance</a>
+    </li>
+    <li class="">
+      <a href="11. AWS RDS.html">11. AWS RDS</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Create an RDS with Read Replica.html">12. Exercise: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Create an RDS with Read Replica.html">13. Solution: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="14. CloudFront and Edge Locations.html">14. CloudFront and Edge Locations</a>
+    </li>
+    <li class="">
+      <a href="15. Database Performance Acceleration.html">15. Database Performance Acceleration</a>
+    </li>
+    <li class="">
+      <a href="16. Message Queues.html">16. Message Queues</a>
+    </li>
+    <li class="">
+      <a href="17. Network Performance Options.html">17. Network Performance Options</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Network Diagram.html">18. Exercise: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="19. Solution Network Diagram.html">19. Solution: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="20. Lesson Recap.html">20. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Glossary.html">21. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Storage and Latency</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Storage Volumes heading</p></h3>
+  <div>
+  <h2 id="storage-volumes-and-latency">Storage Volumes and Latency</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L2 07 Storage Volumes And Latency - Improve Performance</p></h3>
+  <video controls>
+  <source src="05. ND063 C2 L2 07 Storage Volumes And Latency - Improve Performance-tijm0u2Ao1k.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND063 C2 L2 07 Storage Volumes And Latency - Improve Performance-tijm0u2Ao1k.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Storage types</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l2-storage-types.jpg" alt="Storage Solutions" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Storage Solutions</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Availability</td>
+<td>A storage volume’s ability to deliver data upon request</td>
+</tr>
+<tr>
+<td>Data Durability</td>
+<td>Refers to long-term data protection, so the stored data does not suffer from degradation or some other corruption. Durability is focused on redundancy, , sodata is never lost or compromised</td>
+</tr>
+<tr>
+<td>Elastic Block Store</td>
+<td>High performance block storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads</td>
+</tr>
+<tr>
+<td>Elastic File System</td>
+<td>Fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources. It is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically</td>
+</tr>
+<tr>
+<td>IOPS</td>
+<td>Input/output operations per second (IOPS, pronounced eye-ops) is an input/output performance measurement used to benchmark computer storage devices like hard disk drives (HDD), solid state drives (SSD)</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Refers to the number of IOPS or the amount of throughput (measured in megabytes per second) that the storage volume can deliver</td>
+</tr>
+<tr>
+<td>Throughput</td>
+<td>Measurement of  data that can be transferred from one location to another in a given amount of time used to measure the performance of hard drives and RAM as well as Internet and network connections</td>
+</tr>
+<tr>
+<td>Transient or Ephemeral Data</td>
+<td>Data created within an application session, and at the end of the session, it is discarded or reset back to its default and not stored</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Storage Volumes lesson recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<p>Amazon has three storage categories for object, block, and file storage</p>
+<ul>
+<li><strong>Simple Storage Service (S3)</strong> <ul>
+<li>Highly durable object storage optimized for media files  </li>
+<li>Guarantees 99.999999999% availability</li></ul></li>
+<li><strong>Elastic Block Store (EBS)</strong>  <ul>
+<li>EC2 attached block storage comprised of workload specific hard drives  </li>
+<li>Must be provisioned in advance, so you may end up paying for storage you are not using</li></ul></li>
+<li><strong>Elastic File System( EFS)</strong> <ul>
+<li>Elastic file storage for named files that require a file structure, such as big data workloads and web sites. </li>
+<li>Truly elastic and it will expand and contract as you use it. </li></ul></li>
+</ul>
+<p>In addition, <strong>AWS Instance Store</strong> is considered ephemeral data attached to an EC2 instance that is deleted when the instance is terminated.</p>
+<h3 id="best-practices-for-optimized-object-storage">Best Practices for Optimized Object Storage</h3>
+<ul>
+<li>Spread connection requests to maximize the accessible bandwidth</li>
+<li>Access in the same AWS Region when possible to reduce latency and data transfer costs</li>
+<li>Use AWS S3 Transfer Acceleration for fast and secure data transfer over long distances  </li>
+<li>Use Instance Store for ephemeral storage  </li>
+<li><strong>Always delete unused storage volumes and obsolete snapshots!!!</strong>   </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Storage Quiz II</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the characteristics below are TRUE of AWS Elastic File System?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012497" id="rbk1">
+      <label for="rbk1"><p>Can be shared by thousands of instances</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012497" id="rbk2">
+      <label for="rbk2"><p>Can only be used on Windows based EC2 instances</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012497" id="rbk3">
+      <label for="rbk3"><p>Files can be moved to EFS IA if they aren’t accessed in a certain period of time</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012497" id="rbk4">
+      <label for="rbk4"><p>Grows and shrinks elastically as files are added and removed</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Can be shared by thousands of instances</li>
+      <li>Files can be moved to EFS IA if they aren’t accessed in a certain period of time</li>
+      <li>Grows and shrinks elastically as files are added and removed</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Storage Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>AWS S3 Glacier is object storage for what specific data tier?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1012518" id="rbk1">
+        <label for="rbk1"><p>Infrequently Accessed</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1012518" id="rbk2">
+        <label for="rbk2"><p>Cold Storage</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1012518" id="rbk3">
+        <label for="rbk3"><p>Snapshots</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1012518" id="rbk4">
+        <label for="rbk4"><p>Hot Storage</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Cold Storage
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. EBS and EFS.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Storage and Latency')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

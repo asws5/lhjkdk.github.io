@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.470
+Invoking Lambda functions means triggering them or kicking them off.
+
+00:00:04.470 --> 00:00:06.930
+In understanding the actions that invoke
+
+00:00:06.930 --> 00:00:11.040
+functions will enable you to select the best method for your task.
+
+00:00:11.040 --> 00:00:15.465
+Lambda functions need a handler as the entry point for the Lambda.
+
+00:00:15.465 --> 00:00:17.100
+This is usually JSON
+
+00:00:17.100 --> 00:00:22.510
+formatted input and they need a runtime or coding language specified.
+
+00:00:22.510 --> 00:00:26.885
+Finally, they need event triggers to invoke the function.
+
+00:00:26.885 --> 00:00:29.210
+When configuring your functions,
+
+00:00:29.210 --> 00:00:33.130
+you decide how much memory you want to allocate to your functions.
+
+00:00:33.130 --> 00:00:35.580
+Based on the amount of memory you select,
+
+00:00:35.580 --> 00:00:40.540
+AWS automatically provision CPU and network resources.
+
+00:00:40.540 --> 00:00:44.555
+Lambda functions can be written in a variety of languages,
+
+00:00:44.555 --> 00:00:47.105
+the most common being Node.js,
+
+00:00:47.105 --> 00:00:51.220
+Python, Go, Java, and C#.
+
+00:00:51.220 --> 00:00:54.800
+Every Cloud provider has a serverless offering.
+
+00:00:54.800 --> 00:00:57.080
+These services can save money,
+
+00:00:57.080 --> 00:01:00.740
+run code faster, and improve the user experience.
+
+00:01:00.740 --> 00:01:04.760
+One drawback is that the serverless code you write and configure for
+
+00:01:04.760 --> 00:01:09.200
+OneCloud platform can only be used on that platform due to
+
+00:01:09.200 --> 00:01:13.390
+the tight integration with proprietary Cloud services so
+
+00:01:13.390 --> 00:01:18.470
+using AWS Lambda to run your applications ties you to AWS.
+
+00:01:18.470 --> 00:01:23.815
+AWS Lambda Edge is a great way to speed up your application.
+
+00:01:23.815 --> 00:01:32.460
+Lambda Edge uses the AWS CDN CloudFront to customize the content CloudFront delivers.
+
+00:01:32.460 --> 00:01:37.040
+Lambda Edge is an extension of Lambda where you create functions in
+
+00:01:37.040 --> 00:01:43.525
+one region and execute them in edge locations geographically closest to your users.
+
+00:01:43.525 --> 00:01:50.210
+Running Lambda code closer to users has more benefits than just user satisfaction.
+
+00:01:50.210 --> 00:01:53.945
+It's faster, secure, scalable,
+
+00:01:53.945 --> 00:01:56.500
+and it runs without servers.
+
+00:01:56.500 --> 00:02:01.995
+Lambda Edge functions run in response to CloudFront events.
+
+00:02:01.995 --> 00:02:05.470
+When CloudFront receives a request from a user,
+
+00:02:05.470 --> 00:02:09.464
+before CloudFront forwards a request to the origin,
+
+00:02:09.464 --> 00:02:11.990
+when CloudFront receives a request from
+
+00:02:11.990 --> 00:02:16.720
+the origin and before CloudFront returns a response to the user.
+
+00:02:16.720 --> 00:02:21.050
+For example, you can trigger a Lambda function to rewrite
+
+00:02:21.050 --> 00:02:25.339
+response URLs based on device type or IP address,
+
+00:02:25.339 --> 00:02:30.440
+serving them content that is optimized for their device or location and improving
+
+00:02:30.440 --> 00:02:34.245
+the user experience or identifying crawlers
+
+00:02:34.245 --> 00:02:38.975
+like Googlebot and serving them static pages to help with your pages SEO.
+
+00:02:38.975 --> 00:02:42.380
+Lambda Edge means running code globally with
+
+00:02:42.380 --> 00:02:48.570
+minimal latency and absolutely zero infrastructure to provision and maintain.
+

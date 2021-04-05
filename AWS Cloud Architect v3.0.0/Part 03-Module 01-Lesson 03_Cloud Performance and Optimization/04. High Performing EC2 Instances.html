@@ -1,0 +1,423 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>High Performing EC2 Instances</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cloud Performance and Optimization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Performance in the Cloud.html">01. Performance in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="02. Performing &amp; Underperforming.html">02. Performing &amp; Underperforming</a>
+    </li>
+    <li class="">
+      <a href="03. Scaling and Performance.html">03. Scaling and Performance</a>
+    </li>
+    <li class="">
+      <a href="04. High Performing EC2 Instances.html">04. High Performing EC2 Instances</a>
+    </li>
+    <li class="">
+      <a href="05. Storage and Latency.html">05. Storage and Latency</a>
+    </li>
+    <li class="">
+      <a href="06. EBS and EFS.html">06. EBS and EFS</a>
+    </li>
+    <li class="">
+      <a href="07. Elastic Block Storage.html">07. Elastic Block Storage</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Resizing an EBS Volume.html">08. Exercise: Resizing an EBS Volume</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Creating an EBS Snapshot.html">09. Solution: Creating an EBS Snapshot</a>
+    </li>
+    <li class="">
+      <a href="10. Archive Performance.html">10. Archive Performance</a>
+    </li>
+    <li class="">
+      <a href="11. AWS RDS.html">11. AWS RDS</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Create an RDS with Read Replica.html">12. Exercise: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Create an RDS with Read Replica.html">13. Solution: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="14. CloudFront and Edge Locations.html">14. CloudFront and Edge Locations</a>
+    </li>
+    <li class="">
+      <a href="15. Database Performance Acceleration.html">15. Database Performance Acceleration</a>
+    </li>
+    <li class="">
+      <a href="16. Message Queues.html">16. Message Queues</a>
+    </li>
+    <li class="">
+      <a href="17. Network Performance Options.html">17. Network Performance Options</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Network Diagram.html">18. Exercise: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="19. Solution Network Diagram.html">19. Solution: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="20. Lesson Recap.html">20. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Glossary.html">21. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. High Performing EC2 Instances</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>High Performing Instances heading</p></h3>
+  <div>
+  <h2 id="aws-performance-optimized-instances">AWS Performance Optimized Instances</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L2 05 High Performing AWS Instances</p></h3>
+  <video controls>
+  <source src="04. ND063 C2 L2 05 High Performing AWS Instances-Ykqywk78Z8o.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND063 C2 L2 05 High Performing AWS Instances-Ykqywk78Z8o.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>High Performing EC2 Instance Recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li>Performance data is the key to choosing the proper instance family choice for your workload</li>
+<li>AWS optimized instances can provide higher throughput for intensive workloads  </li>
+<li>Optimized instance sizes and generations change frequently to improve performance and lower cost  </li>
+<li>Follow the <a href="https://aws.amazon.com/blogs/aws/" rel="noopener noreferrer" target="_blank">AWS Blog</a> to stay on top of changes</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Best Performing Instance</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Select the best accelerated computing instances for an application that requires 3D game streaming.  You may want to check the AWS documentation for <a href="https://aws.amazon.com/ec2/instance-types/" rel="noopener noreferrer" target="_blank">EC2 Instance Types</a>.</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012470" id="rbk1">
+      <label for="rbk1"><p>G4</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012470" id="rbk2">
+      <label for="rbk2"><p>R5</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012470" id="rbk3">
+      <label for="rbk3"><p>G3</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012470" id="rbk4">
+      <label for="rbk4"><p>F1</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>G4</li>
+      <li>G3</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Scale in- Scale Out</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which term below describes the capability of servers to scale in and scale out?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1012438" id="rbk1">
+        <label for="rbk1"><p>Rendering</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1012438" id="rbk2">
+        <label for="rbk2"><p>Reserving</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1012438" id="rbk3">
+        <label for="rbk3"><p>Elasticity</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1012438" id="rbk4">
+        <label for="rbk4"><p>Bursting</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Elasticity
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term" style="text-align:left;">Term</th>
+<th id="definition" style="text-align:left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">Accelerated Computing Instance Families</td>
+<td style="text-align:left;">Use hardware accelerators, or co-processors, to perform some functions, such as floating point number calculations, graphics processing, or data pattern matching, more efficiently than is possible in software running on CPUs</td>
+</tr>
+<tr>
+<td style="text-align:left;">Auto Scaling Group</td>
+<td style="text-align:left;">AWS EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management</td>
+</tr>
+<tr>
+<td style="text-align:left;">Launch Configuration</td>
+<td style="text-align:left;">An instance configuration template that an Auto Scaling group uses to launch EC2 instances</td>
+</tr>
+<tr>
+<td style="text-align:left;">Placement Groups</td>
+<td style="text-align:left;">Influence the placement of a group of interdependent instances to meet the needs of your workload</td>
+</tr>
+<tr>
+<td style="text-align:left;">Predictive Scaling</td>
+<td style="text-align:left;">A feature of AWS Auto Scaling uses machine learning to schedule the right number of EC2 instances in anticipation of approaching traffic changes. Predictive Scaling predicts future traffic, including regularly-occurring spikes, and provisions the right number of EC2 instances in advance</td>
+</tr>
+<tr>
+<td style="text-align:left;">Target Utilization</td>
+<td style="text-align:left;">The threshold we define at how much utilization (in %) we want auto scaling to take place</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>High Performance Computing header</p></h3>
+  <div>
+  <h2 id="high-performing-infrastructure-vs-high-performance-computing">High Performing Infrastructure vs. High Performance Computing</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L2 06 High Performance Computing</p></h3>
+  <video controls>
+  <source src="04. ND063 C2 L2 06 High Performance Computing-qnt9yeXIsT4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND063 C2 L2 06 High Performance Computing-qnt9yeXIsT4.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quantum Scale</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/jade-cines.jpg" alt="A SGI Altix supercomputer with 23,000 processors at the CINES facility in France
+&lt;br&gt;
+&lt;a href&#x3D;&quot;https://commons.wikimedia.org/wiki/File:Jade_CINES.jpg&quot; title&#x3D;&quot;via Wikimedia Commons&quot;&gt;Penalva&lt;/a&gt; / &lt;a href&#x3D;&quot;https://creativecommons.org/licenses/by-sa/3.0&quot;&gt;CC BY-SA&lt;/a&gt;" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>A SGI Altix supercomputer with 23,000 processors at the CINES facility in France<br />
+<br><br />
+<a href="https://commons.wikimedia.org/wiki/File:Jade_CINES.jpg" title="via Wikimedia Commons">Penalva</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA</a></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Think Like a Cloud Architect</p></h3>
+  <div>
+  <p><strong>QUESTION: <p>Reflect</p></strong></p>
+  <p>What do you think about going viral in the cloud? Is it really worth the money? It depends on what it's worth to you. Please share your thoughts. </p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>Going viral in the cloud has costs associated with the increased traffic to your web pages. The costs may or may not be significant. Configuring your site to autoscale, even with elasticity, will add to your bottom line at the end of the month. Is it worth it? Let's say you are a small vendor with a small handmade inventory of low priced products. It probably isn’t worth the extra expense. The first few visitors will buy all your inventory, the latecomers will crash your site, and you will go off to sew your quilts or distill your perfume while the internet recovers and looks for the next big thing. </p>
+<p>However, if you would welcome the attention and demand, you have plenty of valuable resources to share, and you will recoup the value in the additional expense, it is absolutely worth it to configure your site to autoscale when traffic increases. An example would be a person with deep knowledge on an obscure topic that few people know about. All of a sudden, the obscure topic starts trending and leads people directly to your site where you have several PDFs on the topic for sale and available for download! You will make up in valuable exposure what you could probably never buy on your own- publicity! </p>
+<p>Another example would be a silly photo posted on your personal blog being linked by a Twitter account with millions of followers. People are going to click, laugh, and move on while AWS spins up servers and your costs rise. If you want to provide the world with a few hundred dollars worth of humor, you should do it! You might end up with a write up in Buzzfeed or an invite to The Ellen Show!</p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading">Additional Reading</h3>
+<p>EC2 instances are generally categorized by performance family, and, if you take every instance configuration option into account, you will come up with hundreds of thousands of options for EC2 instance configuration. The links below will take you to further reading on optimized instances, and configuration options for getting the best compute performance out of your EC2 instances</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html" rel="noopener noreferrer" target="_blank">Compute Optimized Instances</a>  </li>
+<li><a href="https://aws.amazon.com/ec2/instance-types/inf1/" rel="noopener noreferrer" target="_blank">Amazon INF1 Instances</a>  </li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html" rel="noopener noreferrer" target="_blank">Burstable Performance Instances</a> </li>
+<li><a href="https://aws.amazon.com/hpc/" rel="noopener noreferrer" target="_blank">High Performance Computing in AWS</a>  </li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html" rel="noopener noreferrer" target="_blank">Placement Groups</a>   </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Storage and Latency.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. High Performing EC2 Instances')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

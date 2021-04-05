@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.895
+Hello again and for the last time.
+
+00:00:02.895 --> 00:00:05.880
+Congratulations on making it this far.
+
+00:00:05.880 --> 00:00:09.120
+Here's what we learned over the last few lessons.
+
+00:00:09.120 --> 00:00:12.375
+We started out looking at costs in the cloud,
+
+00:00:12.375 --> 00:00:15.465
+and how to monitor and optimize them.
+
+00:00:15.465 --> 00:00:18.675
+Next, we looked at performance,
+
+00:00:18.675 --> 00:00:22.695
+starting with scaling and then taking a deep dive into storage,
+
+00:00:22.695 --> 00:00:25.290
+archive, and database options.
+
+00:00:25.290 --> 00:00:28.845
+We also looked at message queues and networking.
+
+00:00:28.845 --> 00:00:31.065
+In the serverless lesson,
+
+00:00:31.065 --> 00:00:34.900
+we discussed cloud migration in AWS Lambda.
+
+00:00:34.900 --> 00:00:39.110
+We also looked at the cost of serverless and learned that,
+
+00:00:39.110 --> 00:00:40.670
+in the right situation,
+
+00:00:40.670 --> 00:00:43.940
+using serverless can bring huge cost savings.
+
+00:00:43.940 --> 00:00:49.910
+We also looked at API Gateway, DynamoDB, and containers.
+
+00:00:49.910 --> 00:00:53.195
+Finally, in our last lesson,
+
+00:00:53.195 --> 00:00:56.240
+we talked about infrastructure as code and got
+
+00:00:56.240 --> 00:01:00.835
+an overview of Terraform and IaC best practices.
+
+00:01:00.835 --> 00:01:06.604
+Thank you for taking the time to walk with me through the essentials of AWS Cloud costs,
+
+00:01:06.604 --> 00:01:10.265
+performance, serverless, and IaC.
+
+00:01:10.265 --> 00:01:13.610
+If this nanodegree program has been your first exposure
+
+00:01:13.610 --> 00:01:16.940
+to the AWS public cloud and cloud architecture,
+
+00:01:16.940 --> 00:01:21.050
+I hope you're starting to gain an understanding of cloud compute potential and
+
+00:01:21.050 --> 00:01:25.570
+how to compare and contrast the cost and performance to that of the data center.
+
+00:01:25.570 --> 00:01:30.575
+This has been an introduction to dozens of cloud concepts and services.
+
+00:01:30.575 --> 00:01:37.420
+As you know, technical concepts build on each other and take time and experience to grow.
+
+00:01:37.420 --> 00:01:40.610
+You've taken the first big step to acquiring the skills
+
+00:01:40.610 --> 00:01:44.345
+required to be a cloud cost and performance champion,
+
+00:01:44.345 --> 00:01:46.594
+and I commend you for your decision.
+
+00:01:46.594 --> 00:01:48.260
+When you have time,
+
+00:01:48.260 --> 00:01:51.290
+read the articles and watch the videos provided at the end of
+
+00:01:51.290 --> 00:01:55.480
+the lessons to deepen your understanding of cloud resource management.
+
+00:01:55.480 --> 00:01:58.820
+You may be surprised how quickly your beginner efforts and
+
+00:01:58.820 --> 00:02:03.365
+knowledge become advanced understanding and expertise.
+
+00:02:03.365 --> 00:02:06.020
+It's been a pleasure walking through these lessons
+
+00:02:06.020 --> 00:02:08.120
+with you and I look forward to meeting and
+
+00:02:08.120 --> 00:02:10.070
+interacting with some of you in the future in
+
+00:02:10.070 --> 00:02:13.740
+your careers as cloud architects and engineers.
+

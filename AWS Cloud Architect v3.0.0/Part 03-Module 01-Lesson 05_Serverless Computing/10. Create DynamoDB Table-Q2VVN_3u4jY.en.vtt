@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.760
+Let's create a DynamoDB table.
+
+00:00:02.760 --> 00:00:05.775
+Do a quick search, DynamoDB.
+
+00:00:05.775 --> 00:00:09.855
+So DynamoDB is Amazon's proprietary,
+
+00:00:09.855 --> 00:00:13.425
+really fast, and really flexible NoSQL database.
+
+00:00:13.425 --> 00:00:18.315
+So NoSQL database is just pretty much one big table, which as you'll see,
+
+00:00:18.315 --> 00:00:21.420
+makes it extremely easy to just add data in
+
+00:00:21.420 --> 00:00:25.995
+an unstructured way and search for it using Amazon's search tools.
+
+00:00:25.995 --> 00:00:28.740
+So let's just create our table.
+
+00:00:28.740 --> 00:00:37.475
+Call it udacity_location, and our primary key is going to be a location,
+
+00:00:37.475 --> 00:00:39.170
+and that's a string.
+
+00:00:39.170 --> 00:00:41.735
+So we're not going to worry about a sort key right now.
+
+00:00:41.735 --> 00:00:45.060
+We are going to take the default settings.
+
+00:00:45.060 --> 00:00:47.480
+But before we do that, let's take a look and see what they are.
+
+00:00:47.480 --> 00:00:53.880
+So we're not going to know secondary index provision,
+
+00:00:53.880 --> 00:00:56.445
+which is our free-tier eligible,
+
+00:00:56.445 --> 00:00:58.620
+read, write, and capacity mode.
+
+00:00:58.620 --> 00:01:05.450
+So that's going to give us five read capacity units and five write capacity units,
+
+00:01:05.450 --> 00:01:08.060
+which is going to be about three dollars a month.
+
+00:01:08.060 --> 00:01:10.940
+But we also have auto scaling enabled.
+
+00:01:10.940 --> 00:01:14.935
+We really don't want that because if you look at the capacity calculator,
+
+00:01:14.935 --> 00:01:19.730
+we're going to take a look and see how much would it cost if we scale all the way up to
+
+00:01:19.730 --> 00:01:25.970
+40,000 read units and 40,000 write units for a one kilobyte item.
+
+00:01:25.970 --> 00:01:31.310
+So one kilobyte item and reads per second,
+
+00:01:31.310 --> 00:01:34.445
+that's going to be 80,000 which is a lot.
+
+00:01:34.445 --> 00:01:40.670
+But 80,000 items read per second is going to give us 40,000 read capacity units.
+
+00:01:40.670 --> 00:01:48.885
+I think 40,000 write capacity units is 40,000 items written per second.
+
+00:01:48.885 --> 00:01:51.150
+That's $23,000 a month.
+
+00:01:51.150 --> 00:01:54.090
+So in this case, let's cancel this.
+
+00:01:54.090 --> 00:01:56.980
+We're going to say no thanks to auto scaling
+
+00:01:56.980 --> 00:01:59.840
+just because we're pretty sure that we're not going to need that much,
+
+00:01:59.840 --> 00:02:01.445
+but we're not a hundred percent sure.
+
+00:02:01.445 --> 00:02:05.825
+We'd hate to see it scale all the way up to 40,000 reads and write capacity units.
+
+00:02:05.825 --> 00:02:10.620
+So we've created, we've named our table,
+
+00:02:10.620 --> 00:02:13.080
+and we've designated the primary keys.
+
+00:02:13.080 --> 00:02:15.850
+We're going to go ahead and create that table.
+

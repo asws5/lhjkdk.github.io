@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.845
+Performance issues don't just go away after you migrate your applications to the cloud.
+
+00:00:04.845 --> 00:00:10.725
+Especially if you employ the Lift and Shift Model of Cloud Migration, or Implementation.
+
+00:00:10.725 --> 00:00:13.860
+You will find that most of the time your performance
+
+00:00:13.860 --> 00:00:16.860
+issues are related to your application, or service.
+
+00:00:16.860 --> 00:00:19.170
+Resolving the issues would require
+
+00:00:19.170 --> 00:00:22.245
+a code redesign for the application to be cloud native,
+
+00:00:22.245 --> 00:00:25.200
+or at the very least to be compatible with
+
+00:00:25.200 --> 00:00:29.520
+modern cloud services which are designed for Performance Optimization.
+
+00:00:29.520 --> 00:00:31.695
+But what if it isn't your code?
+
+00:00:31.695 --> 00:00:34.260
+What if it's your cloud configuration,
+
+00:00:34.260 --> 00:00:36.645
+the one that you came up with?
+
+00:00:36.645 --> 00:00:42.380
+In this lesson, we will explore ways to utilize AWS services to optimize performance.
+
+00:00:42.380 --> 00:00:45.415
+When your metrics indicate adjustments are necessary.
+
+00:00:45.415 --> 00:00:49.520
+Because performance, and cloud resources are so closely related to cost,
+
+00:00:49.520 --> 00:00:52.070
+and resource allocation, monitoring,
+
+00:00:52.070 --> 00:00:56.570
+and managing cloud performance is a high priority for cloud architects.
+
+00:00:56.570 --> 00:01:00.935
+We are going to uncover how best to architect for performance from the start,
+
+00:01:00.935 --> 00:01:02.300
+as well as how to detect,
+
+00:01:02.300 --> 00:01:04.024
+and improve performance degradation,
+
+00:01:04.024 --> 00:01:07.460
+and compute storage, and the network.
+
+00:01:07.460 --> 00:01:13.640
+AWS, offers a variety of internal services that help customers by monitoring performance,
+
+00:01:13.640 --> 00:01:18.605
+and analyzing performance trends to offer insight as to how to improve performance,
+
+00:01:18.605 --> 00:01:20.810
+saving time, and money.
+
+00:01:20.810 --> 00:01:26.925
+Specifically, we'll talk about scaling, storage,
+
+00:01:26.925 --> 00:01:34.990
+archive, database, message queues, and networking.
+

@@ -1,0 +1,380 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Archive Performance</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cloud Performance and Optimization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Performance in the Cloud.html">01. Performance in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="02. Performing &amp; Underperforming.html">02. Performing &amp; Underperforming</a>
+    </li>
+    <li class="">
+      <a href="03. Scaling and Performance.html">03. Scaling and Performance</a>
+    </li>
+    <li class="">
+      <a href="04. High Performing EC2 Instances.html">04. High Performing EC2 Instances</a>
+    </li>
+    <li class="">
+      <a href="05. Storage and Latency.html">05. Storage and Latency</a>
+    </li>
+    <li class="">
+      <a href="06. EBS and EFS.html">06. EBS and EFS</a>
+    </li>
+    <li class="">
+      <a href="07. Elastic Block Storage.html">07. Elastic Block Storage</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Resizing an EBS Volume.html">08. Exercise: Resizing an EBS Volume</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Creating an EBS Snapshot.html">09. Solution: Creating an EBS Snapshot</a>
+    </li>
+    <li class="">
+      <a href="10. Archive Performance.html">10. Archive Performance</a>
+    </li>
+    <li class="">
+      <a href="11. AWS RDS.html">11. AWS RDS</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Create an RDS with Read Replica.html">12. Exercise: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Create an RDS with Read Replica.html">13. Solution: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="14. CloudFront and Edge Locations.html">14. CloudFront and Edge Locations</a>
+    </li>
+    <li class="">
+      <a href="15. Database Performance Acceleration.html">15. Database Performance Acceleration</a>
+    </li>
+    <li class="">
+      <a href="16. Message Queues.html">16. Message Queues</a>
+    </li>
+    <li class="">
+      <a href="17. Network Performance Options.html">17. Network Performance Options</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Network Diagram.html">18. Exercise: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="19. Solution Network Diagram.html">19. Solution: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="20. Lesson Recap.html">20. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Glossary.html">21. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">10. Archive Performance</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Glacier Archive Performance heading</p></h3>
+  <div>
+  <h2 id="archive-performance">Archive Performance</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L2 10 Glacier Archive Performance</p></h3>
+  <video controls>
+  <source src="10. ND063 C2 L2 10 Glacier Archive Performance-amcYt3jRlJc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="10. ND063 C2 L2 10 Glacier Archive Performance-amcYt3jRlJc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>AWS Archive Performance Chart</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l2-storage-options.jpg" alt="AWS Archive Performance" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>AWS Archive Performance</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3 Glacier</td>
+<td>Storage service optimized for infrequently used, or "cold data." Glacier is a low-cost storage service that provides durable storage with security features for data archiving and backup</td>
+</tr>
+<tr>
+<td>S3 IA</td>
+<td>S3 storage class for data that is accessed less frequently, but requires rapid access when needed.</td>
+</tr>
+<tr>
+<td>Expedited Retrieval</td>
+<td>Faster access to your data when you need to have almost immediate access to your information within 1-5 minutes. This retrieval type can be used for archives up to 250MB.</td>
+</tr>
+<tr>
+<td>Retrieval Job</td>
+<td>An asynchronous operation in which you first initiate a job, and then download the output after the job completes</td>
+</tr>
+<tr>
+<td>Provisioned Capacity</td>
+<td>Paying up front to ensure that S3 expedited retrieval capacity is available when you need it</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Archive Options Recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>AWS S3 Glacier provides S3 quality durable storage with delayed retrieval times in exchange for lower costs. Standard retrieval times can take 3-5 hours  </p></li>
+<li><p>AWS S3 IA is Amazon’s middle archive tier offering standard S3 object retrieval speeds for a lower cost. Objects in this storage tier are seldom retrieved, but can be brought back immediately</p></li>
+<li><p>Expedited Retrieval is a service to retrieve files from Glacier archive in minutes instead of hours.  It can be purchased on demand or provisioned in advance to ensure availability.   </p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Transfer Acceleration</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>A user needs to use the expedited retrieval service to obtain a large set of objects from S3 Glacier during a period of very high demand, and they are unable to use the service. What Expedited Retrieval feature would have been useful in this situation?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1012462" id="rbk1">
+        <label for="rbk1"><p>S3 IA</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1012462" id="rbk2">
+        <label for="rbk2"><p>Provisioned Capacity</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1012462" id="rbk3">
+        <label for="rbk3"><p>Retrieval Job</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1012462" id="rbk4">
+        <label for="rbk4"><p>EC2 Expedited Retrieval</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Provisioned Capacity
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Archive File Retrieval</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which S3 Storage Models offer immediate file retrieval?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012460" id="rbk1">
+      <label for="rbk1"><p>S3 Element</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012460" id="rbk2">
+      <label for="rbk2"><p>S3 IA</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012460" id="rbk3">
+      <label for="rbk3"><p>S3 Standard</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012460" id="rbk4">
+      <label for="rbk4"><p>S3 Glacier</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>S3 IA</li>
+      <li>S3 Standard</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading">Additional Reading</h3>
+<p>The links below will take you to additional information about AWS storage options and how it can be managed for optimal costs and performance</p>
+<ul>
+<li><a href="https://aws.amazon.com/s3/storage-classes/" rel="noopener noreferrer" target="_blank">S3 Storage Classes</a>  </li>
+<li><a href="https://aws.amazon.com/glacier/" rel="noopener noreferrer" target="_blank">S3 Glacier</a>  </li>
+<li><a href="https://aws.amazon.com/s3/pricing/" rel="noopener noreferrer" target="_blank">Amazon S3 Pricing</a>   </li>
+<li><a href="https://aws.amazon.com/premiumsupport/knowledge-center/glacier-provisioned-capacity/" rel="noopener noreferrer" target="_blank">S3 Glacier Provisioned Capacity</a>  </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="11. AWS RDS.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Archive Performance')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

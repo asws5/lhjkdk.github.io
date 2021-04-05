@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.224
+Right now, we're going take a look at creating an RDS database.
+
+00:00:03.224 --> 00:00:05.550
+So in AWS management console,
+
+00:00:05.550 --> 00:00:07.800
+we're going to make sure we're in the right region,
+
+00:00:07.800 --> 00:00:13.695
+and we're going to go ahead and look for RDS in the search, find it, click,
+
+00:00:13.695 --> 00:00:15.180
+and what we're going to do next,
+
+00:00:15.180 --> 00:00:21.465
+is create an Aurora database with MySQL compatibility.
+
+00:00:21.465 --> 00:00:24.990
+Then from there, we're going to go ahead and create a read replica.
+
+00:00:24.990 --> 00:00:27.720
+So let's create our database.
+
+00:00:27.720 --> 00:00:30.030
+We're going to do a standard create which is going to
+
+00:00:30.030 --> 00:00:32.235
+take us through all the configuration steps.
+
+00:00:32.235 --> 00:00:37.740
+Easy create just uses the recommended best practice configuration and it's really quick.
+
+00:00:37.740 --> 00:00:39.685
+So let's just walk through the steps here.
+
+00:00:39.685 --> 00:00:43.355
+We're going to have an Aurora database with MySQL compatibility,
+
+00:00:43.355 --> 00:00:45.690
+one writer and multiple readers.
+
+00:00:45.690 --> 00:00:49.940
+Our production database is going to be a little bit more costly than dev and test,
+
+00:00:49.940 --> 00:00:52.670
+obviously because of high availability and
+
+00:00:52.670 --> 00:00:55.475
+fast consistent performance as it's described here.
+
+00:00:55.475 --> 00:00:59.845
+Let's give our database cluster a name,
+
+00:00:59.845 --> 00:01:07.700
+UdacityCloudDB, and allow AWS to create a password for us.
+
+00:01:07.700 --> 00:01:09.395
+When the database is creating,
+
+00:01:09.395 --> 00:01:12.200
+a pop-up is going to appear that we can click on
+
+00:01:12.200 --> 00:01:15.140
+and AWS will provide us with that complex password.
+
+00:01:15.140 --> 00:01:21.650
+A memory optimized instance is fine, multi-AZ deployment.
+
+00:01:21.650 --> 00:01:23.735
+We're not going to create a replica this time,
+
+00:01:23.735 --> 00:01:25.925
+we're going to do that manually in the next step.
+
+00:01:25.925 --> 00:01:30.309
+Default VPC is great and we're going to go ahead and create our database.
+
+00:01:30.309 --> 00:01:34.480
+While it's doing that, we're going to go ahead and click here.
+
+00:01:34.480 --> 00:01:41.405
+This is the first and last time that AWS will show us this password,
+
+00:01:41.405 --> 00:01:45.665
+so you want to make sure that you make a note of it, copy it,
+
+00:01:45.665 --> 00:01:51.770
+and paste it into some a database management tool, whatever you choose.
+
+00:01:51.770 --> 00:01:59.185
+As we can see UdacityCloudDB is in a creating status.
+
+00:01:59.185 --> 00:02:02.790
+So we'll give that some time to create.
+
+00:02:04.090 --> 00:02:08.520
+Let's refresh it, see where we are in the process.
+
+00:02:08.740 --> 00:02:16.035
+So our cluster has been created and it's just creating our instance.
+
+00:02:16.035 --> 00:02:20.285
+Great. Successfully created our database.
+
+00:02:20.285 --> 00:02:25.970
+So thanks for watching and we'll see you in the creating a read replica demo.
+

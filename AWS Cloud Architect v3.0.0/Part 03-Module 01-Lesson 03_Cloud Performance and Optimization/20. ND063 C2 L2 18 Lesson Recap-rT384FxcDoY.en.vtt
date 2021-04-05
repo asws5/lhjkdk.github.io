@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.390
+High-performing infrastructure configurations take
+
+00:00:03.390 --> 00:00:06.690
+time to develop and the work is really never done.
+
+00:00:06.690 --> 00:00:09.930
+Over time, new technologies and approaches become
+
+00:00:09.930 --> 00:00:13.395
+available that can improve the performance of your workloads.
+
+00:00:13.395 --> 00:00:17.505
+When you take a data-driven approach to making configuration decisions,
+
+00:00:17.505 --> 00:00:20.130
+you will find that there is always an optimization,
+
+00:00:20.130 --> 00:00:24.450
+a modification, or an upgrade available that can save time and money,
+
+00:00:24.450 --> 00:00:28.455
+improved performance, and increase user satisfaction.
+
+00:00:28.455 --> 00:00:33.485
+Taking a thoughtful approach to performance optimization involves monitoring,
+
+00:00:33.485 --> 00:00:37.235
+testing, and reviews based on your benchmarks,
+
+00:00:37.235 --> 00:00:39.940
+and ultimately your production goals.
+
+00:00:39.940 --> 00:00:43.085
+The data will lead you to choose the best resources,
+
+00:00:43.085 --> 00:00:48.110
+services, and configurations, for your applications and infrastructure.
+
+00:00:48.110 --> 00:00:51.455
+So here's what we covered in this lesson.
+
+00:00:51.455 --> 00:00:57.740
+Scaling to meet performance needs, storage optimization options,
+
+00:00:57.740 --> 00:01:01.355
+archiving for optimal cost and performance,
+
+00:01:01.355 --> 00:01:04.550
+database performance optimization,
+
+00:01:04.550 --> 00:01:08.689
+message queues for application decoupling and buffering,
+
+00:01:08.689 --> 00:01:11.780
+and networking for minimal latency.
+
+00:01:11.780 --> 00:01:13.640
+In the next lesson,
+
+00:01:13.640 --> 00:01:16.445
+we're going to dive into serverless computing.
+
+00:01:16.445 --> 00:01:19.790
+We will explore the three fully managed services that
+
+00:01:19.790 --> 00:01:23.060
+you can use to build and run serverless applications;
+
+00:01:23.060 --> 00:01:28.860
+AWS Lambda, API Gateway, and DynamoDB.
+

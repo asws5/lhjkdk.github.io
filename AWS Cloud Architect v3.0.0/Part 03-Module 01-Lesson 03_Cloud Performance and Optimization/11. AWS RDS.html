@@ -1,0 +1,329 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AWS RDS</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cloud Performance and Optimization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Performance in the Cloud.html">01. Performance in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="02. Performing &amp; Underperforming.html">02. Performing &amp; Underperforming</a>
+    </li>
+    <li class="">
+      <a href="03. Scaling and Performance.html">03. Scaling and Performance</a>
+    </li>
+    <li class="">
+      <a href="04. High Performing EC2 Instances.html">04. High Performing EC2 Instances</a>
+    </li>
+    <li class="">
+      <a href="05. Storage and Latency.html">05. Storage and Latency</a>
+    </li>
+    <li class="">
+      <a href="06. EBS and EFS.html">06. EBS and EFS</a>
+    </li>
+    <li class="">
+      <a href="07. Elastic Block Storage.html">07. Elastic Block Storage</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Resizing an EBS Volume.html">08. Exercise: Resizing an EBS Volume</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Creating an EBS Snapshot.html">09. Solution: Creating an EBS Snapshot</a>
+    </li>
+    <li class="">
+      <a href="10. Archive Performance.html">10. Archive Performance</a>
+    </li>
+    <li class="">
+      <a href="11. AWS RDS.html">11. AWS RDS</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Create an RDS with Read Replica.html">12. Exercise: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Create an RDS with Read Replica.html">13. Solution: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="14. CloudFront and Edge Locations.html">14. CloudFront and Edge Locations</a>
+    </li>
+    <li class="">
+      <a href="15. Database Performance Acceleration.html">15. Database Performance Acceleration</a>
+    </li>
+    <li class="">
+      <a href="16. Message Queues.html">16. Message Queues</a>
+    </li>
+    <li class="">
+      <a href="17. Network Performance Options.html">17. Network Performance Options</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Network Diagram.html">18. Exercise: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="19. Solution Network Diagram.html">19. Solution: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="20. Lesson Recap.html">20. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Glossary.html">21. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. AWS RDS</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Creating an RDS database Heading</p></h3>
+  <div>
+  <h2 id="creating-an-rds-database">Creating an RDS Database</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 RDS DEMO</p></h3>
+  <video controls>
+  <source src="11. ND063 C2 RDS DEMO-cXP2IAOZ9EA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND063 C2 RDS DEMO-cXP2IAOZ9EA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Steps to Create an RDS Database</p></h3>
+  <div>
+  <h3 id="steps-to-create-an-aurora-rds-database-cluster">Steps to Create an Aurora RDS Database Cluster</h3>
+<ol>
+<li>Login to the AWS Management console</li>
+<li>Search for RDS or browse to RDS in the Services console under Databases</li>
+<li>On the AWS RDS Management console, select Create Database</li>
+<li>Select Amazon Aurora (mySQL compatibility) as your RDS Database </li>
+<li>Name your DB cluster</li>
+<li>Configure your DB engine, instance class and storage</li>
+<li>Select admin password option</li>
+<li>Specify optional cluster settings</li>
+<li>Create Database</li>
+</ol>
+<p>Read more here: <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.CreateInstance.html" rel="noopener noreferrer" target="_blank">Creating an Amazon Aurora DB Cluster</a>  </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Read Replica header</p></h3>
+  <div>
+  <h2 id="improving-performance-with-read-replicas">Improving Performance with Read Replicas</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 ReadReplica</p></h3>
+  <video controls>
+  <source src="11. ND063 C2 ReadReplica-SUjrxH-PQ8M.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND063 C2 ReadReplica-SUjrxH-PQ8M.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Read Replica</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l2-read-replica.jpg" alt="Read Replicas" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Read Replicas</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Read Replica new terms</p></h3>
+  <div>
+  <h3 id="new-term">New Term</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read Replica</td>
+<td>A copy of the master db that reflects changes to the master instance in almost real time.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Read Replica recap</p></h3>
+  <div>
+  <h3 id="read-replica">Read Replica</h3>
+<ul>
+<li>Read-only connections reduce read-traffic to the source database</li>
+<li>Allows source database to carry out other operations</li>
+<li>Good for business intelligence and financial engines</li>
+<li>Can be promoted in disaster recovery</li>
+</ul>
+<h3 id="steps-to-create-a-read-replica">Steps to Create a Read Replica</h3>
+<ol>
+<li>Login to the AWS Management Console</li>
+<li>Browse to the RDS Management page</li>
+<li>Select ‘Databases’ in the navigation menu</li>
+<li>Select the radio button next to the database cluster where you want to create the reader</li>
+<li>Under the ‘Actions’ menu, select Add Reader</li>
+<li>On the Add Reader page, configure reader options</li>
+<li>Create Reader</li>
+</ol>
+<p>Read more here: <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-replicas-adding.html" rel="noopener noreferrer" target="_blank">Adding Aurora Replicas to a DB Cluster</a>  </p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Exercise Create an RDS with Read Replica.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. AWS RDS')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

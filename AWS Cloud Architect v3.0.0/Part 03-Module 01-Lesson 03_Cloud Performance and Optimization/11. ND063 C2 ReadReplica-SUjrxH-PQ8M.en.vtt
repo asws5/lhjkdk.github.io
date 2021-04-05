@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.530
+Amazon Read Replicas are additional database instances,
+
+00:00:04.530 --> 00:00:07.770
+created from a snapshot of the source database.
+
+00:00:07.770 --> 00:00:10.320
+Read Replicas are asynchronously
+
+00:00:10.320 --> 00:00:13.845
+updated when there are changes made to the source database,
+
+00:00:13.845 --> 00:00:18.210
+and they are available in AWS, RDS for MySQL,
+
+00:00:18.210 --> 00:00:23.745
+MariaDB, PostgresSQL, Oracle, and AWS Aurora.
+
+00:00:23.745 --> 00:00:28.665
+Read Replicas provide improved performance for read heavy database workloads,
+
+00:00:28.665 --> 00:00:30.840
+by allowing read-only connections,
+
+00:00:30.840 --> 00:00:33.469
+and that's reducing traffic to the source database,
+
+00:00:33.469 --> 00:00:35.405
+and freeing the source database to carry out
+
+00:00:35.405 --> 00:00:38.770
+other resource intensive database operations.
+
+00:00:38.770 --> 00:00:40.550
+Read Replicas are good for
+
+00:00:40.550 --> 00:00:43.925
+database applications that have intensive reporting requirements,
+
+00:00:43.925 --> 00:00:46.640
+like Business Intelligence or financial engines.
+
+00:00:46.640 --> 00:00:50.300
+Because they transfer the intensive queries away from the source database,
+
+00:00:50.300 --> 00:00:52.150
+and provide results faster,
+
+00:00:52.150 --> 00:00:55.820
+and if necessary, a Read Replica can be promoted to
+
+00:00:55.820 --> 00:01:00.040
+become a standalone database instance in a disaster recovery scenario.
+
+00:01:00.040 --> 00:01:04.474
+So now that we've created our new database cluster in instance,
+
+00:01:04.474 --> 00:01:09.020
+udacitycloudlabdb, we're going to add a Read Replica to the instance.
+
+00:01:09.020 --> 00:01:12.165
+So we're going to select our cluster,
+
+00:01:12.165 --> 00:01:15.520
+and under Actions Add reader,
+
+00:01:16.630 --> 00:01:19.610
+no preference for A-Z,
+
+00:01:19.610 --> 00:01:22.780
+obviously not publicly accessible,
+
+00:01:22.780 --> 00:01:25.950
+and let's give it a name,
+
+00:01:25.950 --> 00:01:33.690
+udacitycloudlabreader, and we'll say tier zero,
+
+00:01:33.690 --> 00:01:35.610
+which means if there's a fail over,
+
+00:01:35.610 --> 00:01:37.815
+then this reader will have the priority,
+
+00:01:37.815 --> 00:01:39.510
+even though it is the only reader,
+
+00:01:39.510 --> 00:01:43.125
+that's fine, and performance insights, no.
+
+00:01:43.125 --> 00:01:45.030
+By saying yes to maintenance,
+
+00:01:45.030 --> 00:01:48.815
+this means that we're going to allow AWS to do
+
+00:01:48.815 --> 00:01:52.280
+database instance engine updates if they're
+
+00:01:52.280 --> 00:01:55.175
+minor automatically without us having to intervene.
+
+00:01:55.175 --> 00:01:57.630
+So let's go ahead and add the reader,
+
+00:01:58.040 --> 00:02:02.900
+and give it a couple seconds here.
+
+00:02:02.900 --> 00:02:07.825
+Hit "Refresh", so our reader is here,
+
+00:02:07.825 --> 00:02:11.715
+Read Replica and it's creating status.
+
+00:02:11.715 --> 00:02:18.875
+Let's just stay here for a few minutes until we have our reader available.
+
+00:02:18.875 --> 00:02:23.520
+So I'm going to refresh it here in a couple minutes and see what we got.
+
+00:02:24.890 --> 00:02:27.590
+So let's take a look at our reader.
+
+00:02:27.590 --> 00:02:30.980
+We will see that now it's in the status of configuring enhanced monitoring,
+
+00:02:30.980 --> 00:02:32.435
+so it's almost finished,
+
+00:02:32.435 --> 00:02:36.110
+and we'll notice that it's in a different availability zone than the writer.
+
+00:02:36.110 --> 00:02:39.395
+So the writer is in US East 1C,
+
+00:02:39.395 --> 00:02:41.465
+or Northern Virginia 1C,
+
+00:02:41.465 --> 00:02:45.130
+and our reader is in US East 1D.
+
+00:02:45.130 --> 00:02:47.980
+It's almost finished here.
+
+00:02:48.650 --> 00:02:53.510
+Let's hit "Refresh" one more time here to see if
+
+00:02:53.510 --> 00:03:03.150
+our Read Replica is available. Thanks everyone.
+

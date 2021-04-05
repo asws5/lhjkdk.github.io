@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.265
+Optimally performing infrastructure depends on selecting the correct compute solution.
+
+00:00:05.265 --> 00:00:06.810
+In the real world,
+
+00:00:06.810 --> 00:00:09.360
+architects and developers work together to determine
+
+00:00:09.360 --> 00:00:12.440
+the best compute solution in the development environment.
+
+00:00:12.440 --> 00:00:17.190
+Performance tests are run and metrics are captured and analyzed to
+
+00:00:17.190 --> 00:00:21.905
+select the optimal instance family and generation for the application being evaluated,
+
+00:00:21.905 --> 00:00:24.360
+the assumption being that the application will
+
+00:00:24.360 --> 00:00:27.600
+perform optimally on the selected services.
+
+00:00:27.600 --> 00:00:30.135
+After the solution goes to production,
+
+00:00:30.135 --> 00:00:35.070
+the team must continually monitor the metrics and observe for outliers and trends to make
+
+00:00:35.070 --> 00:00:40.765
+sure the configuration selected in development is still optimal months and years later.
+
+00:00:40.765 --> 00:00:43.550
+As we discussed in the previous lesson,
+
+00:00:43.550 --> 00:00:46.775
+AWS is always upgrading its infrastructure
+
+00:00:46.775 --> 00:00:50.710
+and that includes EC2 instance families and generations.
+
+00:00:50.710 --> 00:00:54.514
+As an incentive for customers to move to their upgraded offering,
+
+00:00:54.514 --> 00:00:58.360
+they often offer the upgraded option at a lower price.
+
+00:00:58.360 --> 00:01:01.370
+In some cases, your application will have
+
+00:01:01.370 --> 00:01:05.900
+one or more functions that require special performance considerations.
+
+00:01:05.900 --> 00:01:10.950
+For that, AWS has what they call optimized instances.
+
+00:01:10.950 --> 00:01:15.830
+Your team can consider which optimized instance is best for your application
+
+00:01:15.830 --> 00:01:21.290
+based on your application architecture needs, objectives and goals.
+
+00:01:21.290 --> 00:01:26.225
+Here's a list of some of AWS is current optimized instance families;
+
+00:01:26.225 --> 00:01:30.385
+T2 and T3, which are burstable instances,
+
+00:01:30.385 --> 00:01:35.150
+C4 and C5 which are compute optimized instances,
+
+00:01:35.150 --> 00:01:37.985
+X1, R4 and R5,
+
+00:01:37.985 --> 00:01:41.035
+which are memory optimized instances,
+
+00:01:41.035 --> 00:01:46.110
+I3 and H1, storage optimized instances,
+
+00:01:46.110 --> 00:01:49.109
+G4, P2 and P3,
+
+00:01:49.109 --> 00:01:53.175
+which are GPU or Graphical Processing Unit optimized,
+
+00:01:53.175 --> 00:01:57.395
+and D2, which is optimized for ephemeral storage.
+
+00:01:57.395 --> 00:02:00.710
+Do any of the optimized instance families on the list meet
+
+00:02:00.710 --> 00:02:04.420
+the performance objective of an application you have in mind?
+
+00:02:04.420 --> 00:02:08.240
+That's good because selecting a non-optimal compute family for
+
+00:02:08.240 --> 00:02:13.115
+your application can cost you more money and lead to lower performance efficiency.
+
+00:02:13.115 --> 00:02:17.480
+Architects are trained to always take advantage of features such as compute
+
+00:02:17.480 --> 00:02:20.150
+elasticity to ensure their applications can
+
+00:02:20.150 --> 00:02:23.600
+manage the hills and valleys of performance over time.
+
+00:02:23.600 --> 00:02:26.840
+But utilizing elasticity should be the exception to
+
+00:02:26.840 --> 00:02:30.730
+the rule when your application is stable and optimized.
+
+00:02:30.730 --> 00:02:33.795
+Design for performance from the start.
+
+00:02:33.795 --> 00:02:37.730
+Choose an optimized instance family for your workload and optimize
+
+00:02:37.730 --> 00:02:42.570
+from there until your performance metrics meet your benchmarks and predictions.
+

@@ -1,0 +1,344 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Serverless Costs</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Serverless Computing</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Serverless.html">01. Intro to Serverless</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Migration.html">02. Cloud Migration</a>
+    </li>
+    <li class="">
+      <a href="03. Serverless with AWS.html">03. Serverless with AWS</a>
+    </li>
+    <li class="">
+      <a href="04. Serverless Costs.html">04. Serverless Costs</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise Serverless Costs.html">05. Exercise: Serverless Costs</a>
+    </li>
+    <li class="">
+      <a href="06. Solution Serverless Costs.html">06. Solution: Serverless Costs</a>
+    </li>
+    <li class="">
+      <a href="07. Lambda.html">07. Lambda</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Lambda Function.html">08. Exercise: Lambda Function</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Lambda Function.html">09. Solution: Lambda Function</a>
+    </li>
+    <li class="">
+      <a href="10. API Gateway &amp; DynamoDB.html">10. API Gateway &amp; DynamoDB</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise DynamoDB.html">11. Exercise: DynamoDB</a>
+    </li>
+    <li class="">
+      <a href="12. Solution DynamoDB.html">12. Solution: DynamoDB</a>
+    </li>
+    <li class="">
+      <a href="13. Containers in AWS.html">13. Containers in AWS</a>
+    </li>
+    <li class="">
+      <a href="14. Lesson Recap.html">14. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="15. Glossary.html">15. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Serverless Costs</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Serverless Costs heading</p></h3>
+  <div>
+  <h2 id="serverless-costs">Serverless Costs</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND320 C2 L3 05 Comparing Costs</p></h3>
+  <video controls>
+  <source src="04. ND320 C2 L3 05 Comparing Costs-LdMybkwf82U.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND320 C2 L3 05 Comparing Costs-LdMybkwf82U.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>serverless comparison</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l3-compare.jpg" alt="Source: [Dashbird.io Calculator](https://dashbird.io/lambda-cost-calculator/)" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Source: <a href="https://dashbird.io/lambda-cost-calculator/" rel="noopener noreferrer" target="_blank">Dashbird.io Calculator</a></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Concept Glossary</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cold Start</td>
+<td>The delayed response that occurs when a new labda instance receives its first request</td>
+</tr>
+<tr>
+<td>Dashbird.io</td>
+<td>A 3rd party serverless observability platform built to manage serverless application</td>
+</tr>
+<tr>
+<td>FaaS</td>
+<td>Category of serverless cloud computing via serverless architectures</td>
+</tr>
+<tr>
+<td>GB/sec</td>
+<td>Measure of compute time used to calculate costs in AWS lambda</td>
+</tr>
+<tr>
+<td>Iaas</td>
+<td>Online platforms that provide computing services over the internet</td>
+</tr>
+<tr>
+<td>Keep Warm</td>
+<td>A periodic ping or function call to lambdas to keep them on in order to avoid the delay of cold starts</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Costs Lesson Recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li>Lambda requests are billed based on <ul>
+<li>number of requests/function invocations </li>
+<li>duration of compute time and allocated memory  </li></ul></li>
+<li>Duration is billed per 100ms</li>
+<li>Lambda works better for small scale apps</li>
+<li>EC2 works better for long-running functions  </li>
+<li>Lambda functions are stateless and run in short-lived containers</li>
+<li>There is a "cold-start" delay after a period of inactivity but that can be avoided by using a keep warm service  </li>
+<li>Serverless can also bring cost savings because fewer people are needed for operations support   </li>
+</ul>
+<h3 id="when-to-use-lambda">When to Use Lambda</h3>
+<ul>
+<li><p>AWS Lambda is optimal for applications with irregular usage patterns and lulls between spikes in activity</p></li>
+<li><p>AWS Lambda is not a good choice for applications with regular, consistent, or steady workloads and long running functions. It might end up being more costly than EC2 instances.</p></li>
+<li><p>Consider the considerable cost of re-architecting an application when deciding if AWS Lambda is a good choice. It might be!</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Serverless Costs Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Select the answer below that represents a cost drawback of AWS Lambda</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1010877" id="rbk1">
+      <label for="rbk1"><p>Autoscaling</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1010877" id="rbk2">
+      <label for="rbk2"><p>Cold Starts</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1010877" id="rbk3">
+      <label for="rbk3"><p>Ephemeral Functions</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1010877" id="rbk4">
+      <label for="rbk4"><p>Control shifted back to Developers</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Cold Starts</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading">Additional Reading</h3>
+<p>Please continue learning about how serverless compute is priced and how it fits into the cloud cost conversation by following the links below</p>
+<ul>
+<li><a href="https://aws.amazon.com/lambda/pricing/" target="_blank">AWS Lambda Pricing</a>  </li>
+<li><a href="https://dashbird.io/blog/aws-lambda-pricing-model-explained/" target="_blank">AWS Lambda Pricing Model Explained with Examples</a>  </li>
+<li><a href="https://medium.com/@zackbloom/serverless-pricing-and-costs-aws-lambda-and-lambda-edge-169bfb58db75" target="_blank">Serverless Pricing and Costs</a>  </li>
+<li><a href="https://aws.amazon.com/blogs/compute/optimizing-the-cost-of-serverless-web-applications/">Optimizing the cost of Serverless Web Applications</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Exercise Serverless Costs.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Serverless Costs')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

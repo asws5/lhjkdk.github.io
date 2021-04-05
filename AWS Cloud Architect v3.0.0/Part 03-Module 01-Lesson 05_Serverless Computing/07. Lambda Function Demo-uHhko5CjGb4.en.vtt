@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.990
+Let's take a look at how we would invoke or trigger
+
+00:00:03.990 --> 00:00:08.920
+an AWS Lambda function using an SQS queue.
+
+00:00:08.920 --> 00:00:10.685
+Before we get into that,
+
+00:00:10.685 --> 00:00:15.380
+I want to go over to IAM and I want to show you
+
+00:00:15.380 --> 00:00:21.235
+a special role that I had to create for lambda.
+
+00:00:21.235 --> 00:00:25.395
+In order to give lambda the permissions it needed
+
+00:00:25.395 --> 00:00:30.690
+to read and delete messages in SQS queue,
+
+00:00:30.690 --> 00:00:33.870
+and also the permission to write to a CloudWatch Log.
+
+00:00:33.870 --> 00:00:38.325
+We're going to be taking a look at that log at the end,
+
+00:00:38.325 --> 00:00:43.505
+so that we can see what happened when we triggered our Lambda function.
+
+00:00:43.505 --> 00:00:44.840
+So the first thing we're going to do is,
+
+00:00:44.840 --> 00:00:50.460
+we're going to create our Lambda function, author from scratch,
+
+00:00:50.460 --> 00:01:00.195
+let's call it SQS_UDACITY_Function.
+
+00:01:00.195 --> 00:01:05.890
+Yeah, looks good, and we're going to use Python.
+
+00:01:06.020 --> 00:01:09.150
+Under Choose or create an execution role,
+
+00:01:09.150 --> 00:01:19.035
+so I just showed you that I created a role format Lambda so I choose an existing role.
+
+00:01:19.035 --> 00:01:21.015
+So let's see if we can find it,
+
+00:01:21.015 --> 00:01:28.270
+there it is Udacity_Lambda_SQS and go ahead and create our function.
+
+00:01:29.420 --> 00:01:34.265
+Function successfully created, you can get rid of that,
+
+00:01:34.265 --> 00:01:38.330
+and let's go ahead and configure our function right here.
+
+00:01:38.330 --> 00:01:40.865
+So we're going to trigger our function,
+
+00:01:40.865 --> 00:01:45.770
+and then after we triggered by adding a message SQS queue,
+
+00:01:45.770 --> 00:01:48.905
+we're going to go back and look in the CloudWatch logs,
+
+00:01:48.905 --> 00:01:50.690
+and we're going to look for a message.
+
+00:01:50.690 --> 00:01:54.680
+The message I'm going to type here is,
+
+00:01:54.680 --> 00:01:56.270
+let's see what can we put here,
+
+00:01:56.270 --> 00:02:05.480
+SQS Message Received.
+
+00:02:05.480 --> 00:02:11.105
+Thanks, and let's save that.
+
+00:02:11.105 --> 00:02:13.835
+So after we save our function,
+
+00:02:13.835 --> 00:02:18.855
+we're going to go over and we're going to create an SQS queue.
+
+00:02:18.855 --> 00:02:22.470
+A standard queue was fine.
+
+00:02:22.470 --> 00:02:26.370
+We're going to call this just simple,
+
+00:02:26.370 --> 00:02:34.485
+UdacitySQSQueue and
+
+00:02:34.485 --> 00:02:37.290
+just Quick-Create, it's fine.
+
+00:02:37.290 --> 00:02:41.780
+So the first thing we want to do is configure a trigger
+
+00:02:41.780 --> 00:02:46.920
+for lambda function and save that,
+
+00:02:47.620 --> 00:02:53.180
+gives us a notification that would be triggered when a message arrives, good.
+
+00:02:53.180 --> 00:02:55.895
+So that should be creating.
+
+00:02:55.895 --> 00:02:58.160
+Now, if we go to the Lambda Triggers tab,
+
+00:02:58.160 --> 00:03:01.020
+seems like it'll be about a minute,
+
+00:03:01.690 --> 00:03:04.340
+so well, that's wrapping up.
+
+00:03:04.340 --> 00:03:07.850
+Let's go back over to Lambda,
+
+00:03:07.850 --> 00:03:14.875
+udacity function, we've got our queue here.
+
+00:03:14.875 --> 00:03:23.690
+So now let's go back over the SQS, looks like it's enabled.
+
+00:03:23.690 --> 00:03:26.600
+So what we're going to go ahead and do is,
+
+00:03:26.600 --> 00:03:29.170
+send a message to our queue.
+
+00:03:29.170 --> 00:03:33.045
+Okay, go and send our message.
+
+00:03:33.045 --> 00:03:35.570
+Great, it's been sent.
+
+00:03:35.570 --> 00:03:40.895
+So sending that message to the queue should trigger our Lambda function.
+
+00:03:40.895 --> 00:03:45.660
+Let's go over to CloudWatch.
+
+00:03:45.660 --> 00:03:49.425
+So we're going to be looking for our function in the logs.
+
+00:03:49.425 --> 00:03:55.810
+Our function is SQS_ UDACITY_Function, there it is.
+
+00:03:55.820 --> 00:04:00.750
+Let's click on that and see if our SQS message received,
+
+00:04:00.750 --> 00:04:02.800
+thanks is right there.
+
+00:04:03.520 --> 00:04:07.170
+Thank you so much for following along.
+

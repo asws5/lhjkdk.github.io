@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.640
+Like most modern programming languages,
+
+00:00:02.640 --> 00:00:06.225
+Terraform language uses the concept of variables.
+
+00:00:06.225 --> 00:00:11.385
+Variables are commonly stored in either a variables.tf file,
+
+00:00:11.385 --> 00:00:16.380
+or terraform.tfvars file in a Terraform configuration.
+
+00:00:16.380 --> 00:00:21.995
+Terraform variables can be input variables or output variables.
+
+00:00:21.995 --> 00:00:26.070
+You would use a variables.tf file to define
+
+00:00:26.070 --> 00:00:30.240
+the variables type and optionally set a default value.
+
+00:00:30.240 --> 00:00:35.670
+A terraform.tfvars file is used to set the actual values of
+
+00:00:35.670 --> 00:00:38.600
+the variables or you can set
+
+00:00:38.600 --> 00:00:42.845
+default values for all your variables and not use tfvars files at all.
+
+00:00:42.845 --> 00:00:46.070
+Input variables are used to make your code more
+
+00:00:46.070 --> 00:00:51.380
+configurable by allowing you to send values into Terraform,
+
+00:00:51.380 --> 00:00:55.235
+while output variables, as the name implies,
+
+00:00:55.235 --> 00:00:59.455
+output or print an expression from Terraform.
+
+00:00:59.455 --> 00:01:04.910
+An example of an input variable is a port number for file transfer.
+
+00:01:04.910 --> 00:01:08.720
+The variable is a transfer port number defined in
+
+00:01:08.720 --> 00:01:13.145
+a tfvars file and stored in the variable transfer port.
+
+00:01:13.145 --> 00:01:17.585
+So anytime you need to specify the transfer port in the configuration,
+
+00:01:17.585 --> 00:01:20.990
+you will substitute var.transfer_port.
+
+00:01:20.990 --> 00:01:24.290
+Once you define your variables in the tfvars file,
+
+00:01:24.290 --> 00:01:27.620
+you can use them in multiple locations in your Terraform code,
+
+00:01:27.620 --> 00:01:29.440
+which is very convenient.
+
+00:01:29.440 --> 00:01:33.150
+Output variables follow the same steps.
+
+00:01:33.150 --> 00:01:36.410
+A good example of an output variable is
+
+00:01:36.410 --> 00:01:41.275
+the IP address of a server in your environment that Terraform is aware of.
+
+00:01:41.275 --> 00:01:44.315
+When designing Terraform configurations,
+
+00:01:44.315 --> 00:01:48.655
+it is very important to keep the re-usability of the code in mind.
+
+00:01:48.655 --> 00:01:51.520
+Defining values as variables,
+
+00:01:51.520 --> 00:01:54.965
+allows configurations to be more dynamic because
+
+00:01:54.965 --> 00:02:00.810
+each individual value doesn't need to be hard-coded in the Terraform configuration.
+

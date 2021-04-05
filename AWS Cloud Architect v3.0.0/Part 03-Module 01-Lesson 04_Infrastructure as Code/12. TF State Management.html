@@ -1,0 +1,409 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TF State Management</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Infrastructure as Code</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Intro.html">01. Lesson Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to IaC.html">02. Intro to IaC</a>
+    </li>
+    <li class="">
+      <a href="03. Automation.html">03. Automation</a>
+    </li>
+    <li class="">
+      <a href="04. AWS CLI.html">04. AWS CLI</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise AWS CLI.html">05. Exercise: AWS CLI</a>
+    </li>
+    <li class="">
+      <a href="06. Solution AWS CLI.html">06. Solution: AWS CLI</a>
+    </li>
+    <li class="">
+      <a href="07. Intro to Terraform.html">07. Intro to Terraform</a>
+    </li>
+    <li class="">
+      <a href="08. Terraform Files.html">08. Terraform Files</a>
+    </li>
+    <li class="">
+      <a href="09. TF Variables and Modules.html">09. TF Variables and Modules</a>
+    </li>
+    <li class="">
+      <a href="10. Exercise Terraform Create.html">10. Exercise: Terraform Create</a>
+    </li>
+    <li class="">
+      <a href="11. Solution Terraform Create.html">11. Solution: Terraform Create</a>
+    </li>
+    <li class="">
+      <a href="12. TF State Management.html">12. TF State Management</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise Remote Backend.html">13. Exercise: Remote Backend</a>
+    </li>
+    <li class="">
+      <a href="14. Solution Remote Backend.html">14. Solution: Remote Backend</a>
+    </li>
+    <li class="">
+      <a href="15. TF Best Practices.html">15. TF Best Practices</a>
+    </li>
+    <li class="">
+      <a href="16. Lesson Recap.html">16. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="17. Course Wrap Up.html">17. Course Wrap Up</a>
+    </li>
+    <li class="">
+      <a href="18. Glossary.html">18. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">12. TF State Management</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>State mgmt heading</p></h3>
+  <div>
+  <h2 id="tfstate-file-management-with-terraform">TFState FIle Management with Terraform</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L4 08 Intro To Terraform State Files</p></h3>
+  <video controls>
+  <source src="12. ND063 C2 L4 08 Intro To Terraform State Files-ce6XFJi60e8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="12. ND063 C2 L4 08 Intro To Terraform State Files-ce6XFJi60e8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary Terms</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term">Term</th>
+<th id="definition">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local Backend</td>
+<td>Stores the terraform.tfstate file on your local disk</td>
+</tr>
+<tr>
+<td>Remote Backend</td>
+<td>Allows you to store the terraform.tfstate file in a remote, shared storage location</td>
+</tr>
+<tr>
+<td>Secrets</td>
+<td>Sensitive data that needs to be kept private</td>
+</tr>
+<tr>
+<td>Terraform State</td>
+<td>Information about what infrastructure Terraform created</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Introduction to Terraform State Files recap</p></h3>
+  <div>
+  <h3 id="key-points">Key Points</h3>
+<ul>
+<li><p>The Terraform state file, <code>terraform.tfstate</code>, is how Terraform is able to keep track of the elements of your infrastructure it is responsible for. The state file allows Terraform to find the resources it has previously created or updated and proceed to carry out the current instruction</p></li>
+<li><p><code>terraform.tfstate</code> is a JSON file that maps the instructions in your configuration files to the actual resource in the real world and maintains all of the metadata about the resource so it can keep track of its status.</p></li>
+<li><p>Instead of using version control for your <code>terraform.tfstate</code> file, the terraform best practice is to use a remote backend to store the file.</p></li>
+</ul>
+<h3 id="using-aws-s3">Using AWS S3</h3>
+<p>If you are already using Terraform with AWS, your best bet would be to use AWS S3 as your remote backend.</p>
+<ul>
+<li><p>AWS S3 is extremely durable, so losing your state file is nearly impossible</p></li>
+<li><p>AWS S3 supports encryption in transit and at rest, and it supports versioning, so if you ever need to roll back your changes, all of your older versions are available</p></li>
+<li><p>Storing a <code>terraform.tfstate</code> file in S3 would cost almost nothing.</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF State demo heading</p></h3>
+  <div>
+  <h2 id="terraform-remote-state-management">Terraform Remote State Management</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF Backend Demo</p></h3>
+  <video controls>
+  <source src="12. TF Backend Demo-ADn1pBCI45I.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF State demo recap</p></h3>
+  <div>
+  <h3 id="demo-code">Demo Code</h3>
+<p>Here is the code I used to create the <code>backend.tf</code> file. You'll need to update it with the name of your S3 bucket and the path to your <code>terraform.tfstate</code> file.<br />
+```bash <br />
+terraform {<br />
+    backend "s3" {<br />
+        bucket = "<Name of your S3 bucket>"<br />
+        key = "<Path To Your terraform.tfstate file>" <br />
+        region = "us-east-1"<br />
+    }<br />
+}</p>
+<pre><code>Here is the code for terraform.tf used to create the S3 backend. You can model yours off my example, or be creative and create your own- just make sure you destroy any infrastructure you create!</code></pre>
+<p>bash<br />
+provider "aws" {<br />
+  access_key = "<Your Access Key>"<br />
+  secret_key = "<Your Secret Key>"<br />
+  region = "us-east-1"<br />
+}</p>
+<p>resource "aws_instance" "Backend" {<br />
+  count = "2"<br />
+  ami = "ami-0323c3dd2da7fb37d"<br />
+  instance_type = "t2.micro"<br />
+}<br />
+```</p>
+<p>Save your <code>backend.tf file</code> with your <code>terraform.tf</code> (or <code>main.tf</code> file) in a working directory under your Terraform root directory. In the demo, the working directory is <code>~/terraform/udacity_s3</code></p>
+<h4 id="note">Note:</h4>
+<p>In order to maintain your tfstate file properly, you MUST have versioning enabled on your S3 bucket.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>tfstate file features</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is the best way for your team to store your Terraform State files?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="1011068" id="rbk1">
+        <label for="rbk1"><p>Remote Backend</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="1011068" id="rbk2">
+        <label for="rbk2"><p>Local Backend</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="1011068" id="rbk3">
+        <label for="rbk3"><p>Github</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="1011068" id="rbk4">
+        <label for="rbk4"><p>USB</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Remote Backend
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>TF remote backend</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which options below are examples of a secure remote backend?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1011026" id="rbk1">
+      <label for="rbk1"><p>AWS S3</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1011026" id="rbk2">
+      <label for="rbk2"><p>Google Cloud Storage</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1011026" id="rbk3">
+      <label for="rbk3"><p>Terraform Pro</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1011026" id="rbk4">
+      <label for="rbk4"><p>/usr/local/bin/terraform</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>AWS S3</li>
+      <li>Google Cloud Storage</li>
+      <li>Terraform Pro</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Further Research</p></h3>
+  <div>
+  <h3 id="additional-reading">Additional Reading</h3>
+<p>Read more about Terraform State  </p>
+<ul>
+<li><a href="https://www.terraform.io/docs/state/index.html" rel="noopener noreferrer" target="_blank">Terraform State</a>  </li>
+<li><a href="https://thorsten-hans.com/terraform-state-demystified" rel="noopener noreferrer" target="_blank">Terraform State Demystified</a>  </li>
+<li><a href="https://medium.com/faun/cleaning-up-a-terraform-state-file-the-right-way-ab509f6e47f3" rel="noopener noreferrer" target="_blank">Cleaning up a Terraform State File</a>  </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="13. Exercise Remote Backend.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. TF State Management')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

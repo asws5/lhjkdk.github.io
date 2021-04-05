@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.065
+Here's how I completed the exercise to use S3 as a remote backend for terraform.
+
+00:00:07.065 --> 00:00:10.230
+So as we know, the goal of this exercise is to end up
+
+00:00:10.230 --> 00:00:13.860
+with four different versions of terraform.tfstate.
+
+00:00:13.860 --> 00:00:15.770
+So in order to do that,
+
+00:00:15.770 --> 00:00:18.175
+we're going to use the same files,
+
+00:00:18.175 --> 00:00:21.870
+main.tf and backend.tf that we were
+
+00:00:21.870 --> 00:00:25.490
+using before and we're just going to make some modifications.
+
+00:00:25.490 --> 00:00:29.600
+So to main.tf, we're just going to add four t2.small
+
+00:00:29.600 --> 00:00:33.770
+instances that won't be that big a deal and we're going to keep the same backend.
+
+00:00:33.770 --> 00:00:35.870
+The reason we're doing this is because we want to use
+
+00:00:35.870 --> 00:00:39.140
+the same state file and we're going to change
+
+00:00:39.140 --> 00:00:41.900
+the state of the environment twice so that we
+
+00:00:41.900 --> 00:00:45.170
+have two more versions of terraform.tfstate.
+
+00:00:45.170 --> 00:00:47.195
+So those two files are saved.
+
+00:00:47.195 --> 00:00:52.535
+Let's go on over to our terminal and of course,
+
+00:00:52.535 --> 00:01:01.830
+initialize our directory and terraform plan.
+
+00:01:02.330 --> 00:01:05.770
+It's going to add four new instances.
+
+00:01:05.770 --> 00:01:12.065
+That's great. Terraform apply.
+
+00:01:12.065 --> 00:01:14.860
+So this is going to get us one more version of
+
+00:01:14.860 --> 00:01:18.520
+terraform.tfstate because the state of the infrastructure is changing,
+
+00:01:18.520 --> 00:01:21.620
+there are going to be four more instances running.
+
+00:01:22.130 --> 00:01:26.830
+So it's creating those four instances.
+
+00:01:27.560 --> 00:01:32.310
+So let's just go and check and see if we've
+
+00:01:32.310 --> 00:01:38.955
+got our third version yet. We'll give it a minute.
+
+00:01:38.955 --> 00:01:42.970
+While we're doing that, there's nothing wrong with going and checking and
+
+00:01:42.970 --> 00:01:47.060
+seeing how our EC2 instances are cooking.
+
+00:01:47.430 --> 00:01:55.210
+This should be four small instances coming up,
+
+00:01:55.210 --> 00:01:59.490
+there we go, two here and then two here.
+
+00:01:59.490 --> 00:02:01.495
+Two small, two small.
+
+00:02:01.495 --> 00:02:05.735
+So since those are in a running state,
+
+00:02:05.735 --> 00:02:12.730
+let's have a look at our terraform.txt file.
+
+00:02:14.480 --> 00:02:17.640
+Let's just show our versions,
+
+00:02:17.640 --> 00:02:21.370
+brand new version that we just got.
+
+00:02:23.420 --> 00:02:28.040
+Let's go for version four by going back to
+
+00:02:28.040 --> 00:02:40.360
+our terminal and terraform destroy.
+
+00:02:40.360 --> 00:02:45.470
+So we're changing the state of our infrastructure again and we're going to
+
+00:02:45.470 --> 00:02:51.930
+get another version of terraform.tf state.
+
+00:02:52.120 --> 00:02:59.160
+There go our four, t2 small instances.
+
+00:03:02.510 --> 00:03:13.690
+Given a moment to process and let's have a look and see if we've got four versions.
+
+00:03:14.600 --> 00:03:19.770
+There we go. Four versions of terraform.tf state.
+
+00:03:19.770 --> 00:03:23.465
+Our third version when we created our instances and our new one,
+
+00:03:23.465 --> 00:03:26.630
+the latest version, when we just destroyed those four instances.
+
+00:03:26.630 --> 00:03:29.640
+Thank you guys for completing the exercise.
+

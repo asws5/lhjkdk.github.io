@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.645
+Let's take a look at the solution to the exercise where we created
+
+00:00:03.645 --> 00:00:08.055
+a snapshot of an EBS volume from a running EC2 Instance.
+
+00:00:08.055 --> 00:00:13.050
+So let's go to EC2 here under the Management Console,
+
+00:00:13.050 --> 00:00:17.020
+making sure that I'm in Northern Virginia, of course.
+
+00:00:17.510 --> 00:00:21.000
+I can go to Instances,
+
+00:00:21.000 --> 00:00:24.495
+I'm going to launch an Instance.
+
+00:00:24.495 --> 00:00:32.865
+Amazon Linux configure details at storage,
+
+00:00:32.865 --> 00:00:36.720
+eight gig general purpose SSD,
+
+00:00:36.720 --> 00:00:39.670
+I'm going to go ahead and launch.
+
+00:00:45.830 --> 00:00:51.195
+So let's wait for our new Instance to launch.
+
+00:00:51.195 --> 00:00:57.690
+Great, so we've got instance that's up and running in a Northern Virginia region,
+
+00:00:57.690 --> 00:01:01.035
+us-east-1, an availability zone b.
+
+00:01:01.035 --> 00:01:02.820
+So we've got our instance running,
+
+00:01:02.820 --> 00:01:08.320
+what we're going to do now is we're going to stop our Instance.
+
+00:01:09.470 --> 00:01:13.550
+While we're stopping it, let's just make a note of the Instance ID so we can
+
+00:01:13.550 --> 00:01:17.960
+identify it under our Elastic Block Storage Menu.
+
+00:01:17.960 --> 00:01:23.360
+Normally what I do is I just look at the last six or so characters.
+
+00:01:23.360 --> 00:01:26.080
+So we've got 90c0fd.
+
+00:01:26.080 --> 00:01:34.350
+Now let's browse over here to volumes and we're looking for
+
+00:01:34.350 --> 00:01:42.780
+the eight gig GP2 volume that's attached to 90c0fd.
+
+00:01:42.780 --> 00:01:48.045
+So that is the top volume here.
+
+00:01:48.045 --> 00:01:50.100
+Under actions, we're just going to create
+
+00:01:50.100 --> 00:01:56.260
+a snapshot and we're going to call it another database backup.
+
+00:01:57.560 --> 00:02:01.915
+This environment is going to be our dev environment,
+
+00:02:01.915 --> 00:02:04.910
+and we're going to create a snapshot,
+
+00:02:04.910 --> 00:02:07.040
+which is just basically a backup of
+
+00:02:07.040 --> 00:02:09.170
+our development database that's running on
+
+00:02:09.170 --> 00:02:12.420
+that Instance or that was running on that Instance.
+
+00:02:14.200 --> 00:02:19.039
+Just want you to know that you don't have to stop an Instance to create a snapshot.
+
+00:02:19.039 --> 00:02:20.540
+But in this case,
+
+00:02:20.540 --> 00:02:22.240
+because I did stop the Instance,
+
+00:02:22.240 --> 00:02:24.800
+that would be an indication that I'm going to attach
+
+00:02:24.800 --> 00:02:27.590
+a different Instance or something of that nature.
+
+00:02:27.590 --> 00:02:31.080
+So to attach or detach an Instance,
+
+00:02:31.080 --> 00:02:36.024
+again, select an attach and detach.
+
+00:02:36.024 --> 00:02:39.690
+So thanks for completing the exercise.
+

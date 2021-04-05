@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.110
+AWS Elastic File System is
+
+00:00:04.110 --> 00:00:07.560
+a fully scalable and elastic NFS file system
+
+00:00:07.560 --> 00:00:11.115
+that grows and shrinks as you add and remove files.
+
+00:00:11.115 --> 00:00:13.860
+It is billed at $0.08 a gigabyte,
+
+00:00:13.860 --> 00:00:16.380
+and you only pay for what you use.
+
+00:00:16.380 --> 00:00:18.915
+It uses the NFS for protocol,
+
+00:00:18.915 --> 00:00:21.315
+to read and write files from the file system.
+
+00:00:21.315 --> 00:00:26.370
+An AWS supports any number of EC2 instance connections at the same time,
+
+00:00:26.370 --> 00:00:29.110
+hundreds and even thousands.
+
+00:00:29.110 --> 00:00:34.235
+So let's take a look at all the steps required to create an Elastic File System.
+
+00:00:34.235 --> 00:00:38.420
+An Elastic File System is the high-performance,
+
+00:00:38.420 --> 00:00:45.210
+low-latency share that can be shared by thousands of EC2 instances at a time.
+
+00:00:45.590 --> 00:00:51.150
+So what we're going to do is we want to create a file system, define the VPC.
+
+00:00:51.150 --> 00:00:53.385
+We're just going to choose the default VPC,
+
+00:00:53.385 --> 00:00:55.910
+and what amount of targets we want.
+
+00:00:55.910 --> 00:00:59.360
+So we are in the Northern Virginia region,
+
+00:00:59.360 --> 00:01:01.430
+which has six availability zones.
+
+00:01:01.430 --> 00:01:04.235
+So we're going to go ahead and select all six of them,
+
+00:01:04.235 --> 00:01:06.950
+so that any instance that we create in
+
+00:01:06.950 --> 00:01:12.420
+this region can attach to the share that we're creating.
+
+00:01:13.620 --> 00:01:16.960
+So lifecycle policy for EFS,
+
+00:01:16.960 --> 00:01:19.470
+basically it's going to help you save money.
+
+00:01:19.470 --> 00:01:22.934
+Because if a file hasn't been accessed after,
+
+00:01:22.934 --> 00:01:26.130
+let's see here, seven, 14, 30, 60,
+
+00:01:26.130 --> 00:01:29.770
+or 90 days, it's going to move that file automatically to
+
+00:01:29.770 --> 00:01:33.790
+a lower cost storage tier, called Infrequent Access.
+
+00:01:33.790 --> 00:01:35.230
+So let's go ahead and say,
+
+00:01:35.230 --> 00:01:37.900
+if it hasn't been accessed in 60 days,
+
+00:01:37.900 --> 00:01:41.195
+we'll move it to EFS IA,
+
+00:01:41.195 --> 00:01:44.345
+we'll use Bursting throughput.
+
+00:01:44.345 --> 00:01:46.830
+We don't need Provisioned,
+
+00:01:46.830 --> 00:01:48.780
+that's going to cost a little bit more.
+
+00:01:48.780 --> 00:01:51.285
+A performance mode, General Purpose,
+
+00:01:51.285 --> 00:01:57.730
+Max I/O is really for extremely high-performance systems.
+
+00:01:59.630 --> 00:02:05.390
+Let's go ahead and enable encryption using the default key.
+
+00:02:05.390 --> 00:02:09.670
+We're not going to configure any special access rules here.
+
+00:02:09.670 --> 00:02:12.255
+It's going to accept the defaults.
+
+00:02:12.255 --> 00:02:14.570
+If everything looks good,
+
+00:02:14.570 --> 00:02:17.730
+let's go ahead and create our file system.
+
+00:02:17.730 --> 00:02:21.275
+While it's creating, we can go back and add a couple of tags.
+
+00:02:21.275 --> 00:02:28.300
+So it's creating access in every availability zone of our region,
+
+00:02:28.300 --> 00:02:29.655
+that takes a little while.
+
+00:02:29.655 --> 00:02:34.235
+So while it's doing that, let's go ahead and add some tags.
+
+00:02:34.235 --> 00:02:36.740
+So add some environment, let's say,
+
+00:02:36.740 --> 00:02:39.530
+production, and let's say,
+
+00:02:39.530 --> 00:02:47.710
+for the application, it's database 23.
+
+00:02:47.710 --> 00:02:52.130
+It takes a while to create because we did add encryption.
+
+00:02:52.130 --> 00:02:54.710
+So we'll just wait for it to create.
+
+00:02:54.710 --> 00:02:58.560
+Let's refresh and see where we are again.
+
+00:03:00.830 --> 00:03:07.355
+Okay, great. All six of our availability zones have access to the share now,
+
+00:03:07.355 --> 00:03:11.520
+and we're ready to go. Thank you.
+

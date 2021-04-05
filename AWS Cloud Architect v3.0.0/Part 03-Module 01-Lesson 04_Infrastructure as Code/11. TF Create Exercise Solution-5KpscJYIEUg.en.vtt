@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.650
+Here's how I completed the creating infrastructure with Terraform exercise.
+
+00:00:04.650 --> 00:00:08.340
+Again, first, I want to make sure that I'm in the right directory,
+
+00:00:08.340 --> 00:00:13.975
+so I'm going to type which Terraform.
+
+00:00:13.975 --> 00:00:15.960
+That's going to show me that, yes,
+
+00:00:15.960 --> 00:00:17.295
+I'm in the right directory.
+
+00:00:17.295 --> 00:00:22.410
+I'm in my Udacity EC2 directory in the Terraform route.
+
+00:00:22.410 --> 00:00:31.770
+The next thing I'm going to do is initialize Terraform init. Looks good.
+
+00:00:31.770 --> 00:00:35.750
+Now let's go on over here to our code editor and take a look
+
+00:00:35.750 --> 00:00:40.080
+at the modifications that you guys made to the code for this exercise.
+
+00:00:40.080 --> 00:00:44.390
+What we asked you to do, is add a count of two instances,
+
+00:00:44.390 --> 00:00:46.205
+change the instance type,
+
+00:00:46.205 --> 00:00:50.195
+and tag it with a name of Udacity Terraform.
+
+00:00:50.195 --> 00:00:54.260
+That looks good. So now let's head over to
+
+00:00:54.260 --> 00:01:01.169
+our terminal and see what Terraform has planned.
+
+00:01:01.580 --> 00:01:11.085
+I'm going to add two instances, so Terraform apply.
+
+00:01:11.085 --> 00:01:14.385
+I'm going to go ahead and give our consent here.
+
+00:01:14.385 --> 00:01:21.325
+Now let's switch on over to our management console.
+
+00:01:21.325 --> 00:01:23.950
+Hit Refresh and see what's cooking.
+
+00:01:23.950 --> 00:01:30.740
+Yes, we've got our two instances that are coming up now, T_2 small.
+
+00:01:30.740 --> 00:01:36.330
+If we take a look at our tags,
+
+00:01:36.330 --> 00:01:38.820
+Udacity Terraform's our key,
+
+00:01:38.820 --> 00:01:42.675
+our name, our value, Udacity Terraform.
+
+00:01:42.675 --> 00:01:46.420
+That looks pretty good. So we're in a pending state.
+
+00:01:46.420 --> 00:01:47.710
+Once they get to a running state,
+
+00:01:47.710 --> 00:01:53.060
+we'll go ahead and go back to our terminal and destroy them.
+
+00:01:53.060 --> 00:01:55.365
+Perfect, right on time.
+
+00:01:55.365 --> 00:02:04.420
+Let's go back and Terraform destroy. We'll agree to that.
+
+00:02:06.290 --> 00:02:09.870
+Have another look here and
+
+00:02:09.870 --> 00:02:14.325
+our two new T_2 small instances should be on their way out here.
+
+00:02:14.325 --> 00:02:15.585
+Which is important to know,
+
+00:02:15.585 --> 00:02:20.165
+because we are running T_2 small instances just for this short period of time.
+
+00:02:20.165 --> 00:02:23.810
+These two instances are not in the free tier.
+
+00:02:23.810 --> 00:02:26.810
+So we want to make sure that we get right back over to Terraform
+
+00:02:26.810 --> 00:02:30.139
+and run Terraform destroy and terminate these instances.
+
+00:02:30.139 --> 00:02:33.030
+Thank you for completing the exercise.
+

@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.630
+Terraform state file is how Terraform is able to keep
+
+00:00:03.630 --> 00:00:07.665
+track of the elements of your infrastructure that it is responsible for.
+
+00:00:07.665 --> 00:00:12.570
+The state file allows Terraform to find the resources it has
+
+00:00:12.570 --> 00:00:17.925
+previously created or updated and proceed to carry out the current instruction.
+
+00:00:17.925 --> 00:00:20.415
+This is because when you run Terraform,
+
+00:00:20.415 --> 00:00:25.950
+it saves the information about what happened in a file called terraform.tfstate.
+
+00:00:25.950 --> 00:00:30.570
+Terraform.tfstate is a JSON file that maps
+
+00:00:30.570 --> 00:00:35.655
+the instructions in your configuration files to the actual resource in the real world.
+
+00:00:35.655 --> 00:00:40.645
+It maintains all the metadata about the resource so it can keep track of its status.
+
+00:00:40.645 --> 00:00:42.900
+This is the power of the state file,
+
+00:00:42.900 --> 00:00:45.420
+it's a blueprint of your infrastructure.
+
+00:00:45.420 --> 00:00:50.300
+Along with the power of the state file, come potential drawbacks.
+
+00:00:50.300 --> 00:00:54.935
+How can it be stored so all team members have access to it?
+
+00:00:54.935 --> 00:00:58.130
+Keep in mind that your terraform.tfstate
+
+00:00:58.130 --> 00:01:01.685
+file is sitting on your local hard drive right now.
+
+00:01:01.685 --> 00:01:05.060
+Also, what happens if two people are working in
+
+00:01:05.060 --> 00:01:09.370
+Terraform at the same time and making updates to the state file?
+
+00:01:09.370 --> 00:01:13.925
+There is potential for data loss and even state file corruption.
+
+00:01:13.925 --> 00:01:18.350
+One way to resolve this is to use GitHub to store your state files.
+
+00:01:18.350 --> 00:01:22.730
+Now, all team members have access, its version,
+
+00:01:22.730 --> 00:01:26.240
+but there's still potential for concurrent updates and you have to be
+
+00:01:26.240 --> 00:01:30.440
+very careful about pushing the latest updates to GitHub when changes are made,
+
+00:01:30.440 --> 00:01:34.220
+and checking for and pulling down the latest changes.
+
+00:01:34.220 --> 00:01:40.325
+Another thing to consider is that the terraform.tfstate file may contain secrets.
+
+00:01:40.325 --> 00:01:45.755
+Keep in mind that the file is in JSON format, that's human readable.
+
+00:01:45.755 --> 00:01:48.185
+Any usernames and passwords,
+
+00:01:48.185 --> 00:01:50.450
+say for example for a database,
+
+00:01:50.450 --> 00:01:52.775
+will be right there in plain text.
+
+00:01:52.775 --> 00:01:58.525
+Also, do you really want the blueprint to your infrastructure out there on GitHub?
+
+00:01:58.525 --> 00:02:03.055
+Probably not, so GitHub may not be the best idea.
+
+00:02:03.055 --> 00:02:07.940
+Instead of using version control for your terraform.tfstate file,
+
+00:02:07.940 --> 00:02:13.355
+the Terraform best practice here is to use a remote backend to store the file.
+
+00:02:13.355 --> 00:02:18.350
+Right now, your Terraform state file is stored on your local hard drive,
+
+00:02:18.350 --> 00:02:20.585
+and that's a local backend.
+
+00:02:20.585 --> 00:02:24.185
+A remote backend is remote shared storage.
+
+00:02:24.185 --> 00:02:28.595
+Some examples of remote backends are S3,
+
+00:02:28.595 --> 00:02:34.650
+Google Cloud Storage, Terraform Pro, and Azure storage.
+
+00:02:34.670 --> 00:02:42.080
+Most of these options support locking the state file when it's in use by another user.
+
+00:02:42.080 --> 00:02:46.010
+They also support encryption in transit and at
+
+00:02:46.010 --> 00:02:50.310
+rest so your secrets in the state file are safe.
+

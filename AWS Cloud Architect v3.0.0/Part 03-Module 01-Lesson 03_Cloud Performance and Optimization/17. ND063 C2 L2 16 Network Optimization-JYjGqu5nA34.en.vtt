@@ -1,0 +1,205 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.215
+In AWS, the network is virtualized, flexible,
+
+00:00:04.215 --> 00:00:10.015
+and configurable making it easier to select a networking solution that meets your needs.
+
+00:00:10.015 --> 00:00:12.065
+In our previous modules,
+
+00:00:12.065 --> 00:00:17.625
+we've become familiar with some of the services AWS provides to assist with networking,
+
+00:00:17.625 --> 00:00:21.270
+such as network optimized EC2 instances,
+
+00:00:21.270 --> 00:00:25.320
+S3 transfer acceleration, and CloudFront.
+
+00:00:25.320 --> 00:00:29.940
+In the Cloud, networking is absolutely critical.
+
+00:00:29.940 --> 00:00:31.845
+Without a functional network,
+
+00:00:31.845 --> 00:00:33.570
+there is no Cloud.
+
+00:00:33.570 --> 00:00:36.960
+The network is also the first place people look when
+
+00:00:36.960 --> 00:00:41.725
+an application is slow, inconsistent, or unreachable.
+
+00:00:41.725 --> 00:00:45.170
+One of the challenges of the cloud is that there is part of
+
+00:00:45.170 --> 00:00:49.015
+the network that is public and completely out of their control.
+
+00:00:49.015 --> 00:00:52.089
+ISPs have outages and maintenance,
+
+00:00:52.089 --> 00:00:54.560
+that doesn't have anything to do with the Cloud providers.
+
+00:00:54.560 --> 00:00:56.750
+But at the end of the day,
+
+00:00:56.750 --> 00:00:59.540
+it affects the end-user experience.
+
+00:00:59.540 --> 00:01:05.000
+What Amazon has done over the years is built out infrastructure and services to improve
+
+00:01:05.000 --> 00:01:08.150
+their own internal network performance to mitigate and
+
+00:01:08.150 --> 00:01:11.815
+reduce network challenges that may be out of their control.
+
+00:01:11.815 --> 00:01:16.640
+Here's some ways AWS has implemented service performance improvements.
+
+00:01:16.640 --> 00:01:20.015
+While we can't go in depth on all of these services,
+
+00:01:20.015 --> 00:01:24.450
+it's pretty important to familiarize yourself with the names and what they do.
+
+00:01:24.470 --> 00:01:27.720
+Amazon S3 content acceleration,
+
+00:01:27.720 --> 00:01:30.325
+lets external users like your customers,
+
+00:01:30.325 --> 00:01:36.454
+use the networking optimizations of CloudFront to upload their data back into S3.
+
+00:01:36.454 --> 00:01:40.480
+Amazon I3 EBS-Optimized instances
+
+00:01:40.480 --> 00:01:45.250
+provides some extra dedicated capacity for Amazon EBS IO,
+
+00:01:45.250 --> 00:01:49.600
+which greatly improves the performance of your EBS volumes by reducing
+
+00:01:49.600 --> 00:01:55.115
+competition for bandwidth between EBS and the rest of your instance traffic.
+
+00:01:55.115 --> 00:01:59.415
+Latency Based Routing, or LBR for Route 53,
+
+00:01:59.415 --> 00:02:02.860
+improves your application's network performance by routing
+
+00:02:02.860 --> 00:02:07.865
+your customers to the AWS endpoint that provides the fastest experience.
+
+00:02:07.865 --> 00:02:10.790
+AWS Direct Connect provides
+
+00:02:10.790 --> 00:02:15.800
+dedicated connectivity from the on-premises network to the AWS environment,
+
+00:02:15.800 --> 00:02:19.280
+giving you consistent bandwidth for your cloud applications to
+
+00:02:19.280 --> 00:02:23.645
+connect easily and perform to your expectations between environments.
+
+00:02:23.645 --> 00:02:29.855
+Amazon VPC endpoints provide reliable connectivity between AWS services like
+
+00:02:29.855 --> 00:02:33.050
+S3 without requiring them to go back out to
+
+00:02:33.050 --> 00:02:37.205
+the network or internet and come back into AWS.
+
+00:02:37.205 --> 00:02:39.529
+When you use a VPC endpoint,
+
+00:02:39.529 --> 00:02:41.840
+the data between your VPC and
+
+00:02:41.840 --> 00:02:47.330
+another AWS service is transferred within the fast and reliable Amazon network,
+
+00:02:47.330 --> 00:02:51.790
+eliminating your dependence on the internet or other external network.
+
+00:02:51.790 --> 00:02:55.040
+AWS Global Accelerator is a service that improves
+
+00:02:55.040 --> 00:02:58.820
+the availability and performance of your applications by providing
+
+00:02:58.820 --> 00:03:04.130
+static IP addresses as fixed entry points to your application end points by using
+
+00:03:04.130 --> 00:03:10.215
+the AWS global network to optimize the path from your users to your applications.
+
+00:03:10.215 --> 00:03:14.275
+It monitors the health of the endpoints and when it detects an issue,
+
+00:03:14.275 --> 00:03:17.425
+it will redirect traffic to healthy endpoints.
+
+00:03:17.425 --> 00:03:20.290
+When implementing a scale out architecture,
+
+00:03:20.290 --> 00:03:24.155
+where you want to use multiple instances for service content,
+
+00:03:24.155 --> 00:03:28.615
+you can leverage load balancers inside your Amazon VPC.
+
+00:03:28.615 --> 00:03:34.730
+AWS provides multiple models for your applications in the elastic load balancer service.
+
+00:03:34.730 --> 00:03:39.624
+The network load balancer is a service that is optimized to deliver your content,
+
+00:03:39.624 --> 00:03:42.640
+be the fastest route available both during times of
+
+00:03:42.640 --> 00:03:46.675
+instability and across geographical region.
+
+00:03:46.675 --> 00:03:53.420
+Application load balancers are best suited for load balancing of web traffic and assigns
+
+00:03:53.420 --> 00:03:55.730
+load based on the performance attributes of
+
+00:03:55.730 --> 00:04:00.835
+your running code and not necessarily the traffic or load on your server.
+
+00:04:00.835 --> 00:04:06.470
+Network load balancers are best for balancing TCP traffic and are
+
+00:04:06.470 --> 00:04:08.690
+capable of handling millions of requests per
+
+00:04:08.690 --> 00:04:12.295
+second while maintaining ultra low latencies.
+
+00:04:12.295 --> 00:04:17.975
+They're also optimized to handle extreme and unstable traffic patterns.
+
+00:04:17.975 --> 00:04:21.539
+Classic load balancers are still available,
+
+00:04:21.539 --> 00:04:26.420
+and they perform the familiar task of distributing incoming network traffic across
+
+00:04:26.420 --> 00:04:33.120
+multiple EC2 instances and as many availability zones as you require for performance.
+

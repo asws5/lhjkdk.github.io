@@ -1,0 +1,430 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Performing &amp; Underperforming</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Cloud Performance and Optimization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Performance in the Cloud.html">01. Performance in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="02. Performing &amp; Underperforming.html">02. Performing &amp; Underperforming</a>
+    </li>
+    <li class="">
+      <a href="03. Scaling and Performance.html">03. Scaling and Performance</a>
+    </li>
+    <li class="">
+      <a href="04. High Performing EC2 Instances.html">04. High Performing EC2 Instances</a>
+    </li>
+    <li class="">
+      <a href="05. Storage and Latency.html">05. Storage and Latency</a>
+    </li>
+    <li class="">
+      <a href="06. EBS and EFS.html">06. EBS and EFS</a>
+    </li>
+    <li class="">
+      <a href="07. Elastic Block Storage.html">07. Elastic Block Storage</a>
+    </li>
+    <li class="">
+      <a href="08. Exercise Resizing an EBS Volume.html">08. Exercise: Resizing an EBS Volume</a>
+    </li>
+    <li class="">
+      <a href="09. Solution Creating an EBS Snapshot.html">09. Solution: Creating an EBS Snapshot</a>
+    </li>
+    <li class="">
+      <a href="10. Archive Performance.html">10. Archive Performance</a>
+    </li>
+    <li class="">
+      <a href="11. AWS RDS.html">11. AWS RDS</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Create an RDS with Read Replica.html">12. Exercise: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Create an RDS with Read Replica.html">13. Solution: Create an RDS with Read Replica</a>
+    </li>
+    <li class="">
+      <a href="14. CloudFront and Edge Locations.html">14. CloudFront and Edge Locations</a>
+    </li>
+    <li class="">
+      <a href="15. Database Performance Acceleration.html">15. Database Performance Acceleration</a>
+    </li>
+    <li class="">
+      <a href="16. Message Queues.html">16. Message Queues</a>
+    </li>
+    <li class="">
+      <a href="17. Network Performance Options.html">17. Network Performance Options</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Network Diagram.html">18. Exercise: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="19. Solution Network Diagram.html">19. Solution: Network Diagram</a>
+    </li>
+    <li class="">
+      <a href="20. Lesson Recap.html">20. Lesson Recap</a>
+    </li>
+    <li class="">
+      <a href="21. Glossary.html">21. Glossary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Performing & Underperforming</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Infrastructure Performance in the Cloud heading</p></h3>
+  <div>
+  <h2 id="infrastructure-performance-in-the-cloud">Infrastructure Performance in the Cloud</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L2 02 Infrastructure Performance In The Cloud</p></h3>
+  <video controls>
+  <source src="02. ND063 C2 L2 02 Infrastructure Performance In The Cloud-upgjjKN3G8g.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND063 C2 L2 02 Infrastructure Performance In The Cloud-upgjjKN3G8g.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Performance  in the Cloud Lesson Recap</p></h3>
+  <div>
+  <h3 id="optimization-game-plan">Optimization Game Plan</h3>
+<ol>
+<li>Run performance tests</li>
+<li>Capture and analyze metrics</li>
+<li>Select the optimal instance  </li>
+<li>Monitor for outliers to make sure the optimal instance continues to be optimal</li>
+</ol>
+<h3 id="best-practices-for-optimizing-for-performance">Best Practices for Optimizing for Performance</h3>
+<ul>
+<li>Design your workload infrastructure with performance in mind from the start</li>
+<li>Whenever possible, design your workload or application to be cloud native</li>
+<li>Utilize compute elasticity to manage performance peaks and valleys </li>
+<li>Optimize until your performance meets benchmarks</li>
+</ul>
+<h4 id="have-the-optimized-instances-changed">Have the Optimized Instances Changed?</h4>
+<p>AWS is constantly changing. Check to see the latest optimized instance types here: <a href="https://aws.amazon.com/ec2/instance-types/" rel="noopener noreferrer" target="_blank">Amazon EC2 Instance Types</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Current Optimized families</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/cand-c2-l2-instance-types.jpg" alt="AWS Optimized instance families February 2020" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>AWS Optimized instance families February 2020</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Performance Indicators</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Select the EC2 Instance Family Optimization Options available in AWS</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012417" id="rbk1">
+      <label for="rbk1"><p>Memory</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012417" id="rbk2">
+      <label for="rbk2"><p>Page Load</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012417" id="rbk3">
+      <label for="rbk3"><p>GPU</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012417" id="rbk4">
+      <label for="rbk4"><p>Burstable</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk5" name="1012417" id="rbk5">
+      <label for="rbk5"><p>Monitoring</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Memory</li>
+      <li>GPU</li>
+      <li>Burstable</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>How do you know header</p></h3>
+  <div>
+  <h2 id="how-do-you-know-when-your-app-isnt-performing">How Do You Know When Your App Isn't Performing?</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C2 L2 03 How Do You Know Your App Isn'T Performing-</p></h3>
+  <video controls>
+  <source src="02. ND063 C2 L2 03 How Do You Know Your App Isn&#x27;T Performing--SypqxdP5zMs.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND063 C2 L2 03 How Do You Know Your App Isn&#x27;T Performing--SypqxdP5zMs.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Recap</p></h3>
+  <div>
+  <h3 id="questions-to-ask-when-you-have-a-performance-issue">Questions to Ask When You Have A Performance Issue</h3>
+<ul>
+<li>How did this workload get into our environment?</li>
+<li>Did you lift and shift or did you design the application to be cloud native from the start?</li>
+<li>Did you accidentally over-optimize your compute and not leave any room for unexpected performance peaks or periods of high activity?</li>
+</ul>
+<h3 id="what-aws-services-can-do-when-problems-are-detected">What AWS Services Can Do When Problems Are Detected</h3>
+<ul>
+<li>Spin up instances (scale out)</li>
+<li>Terminate instances</li>
+<li>Increase memory</li>
+<li>Optimize network routes  </li>
+<li>Failover to a backup  </li>
+</ul>
+<p>Even though your application or workload may not be cloud native, you still have an incredible variety of options for improving your performance and avoiding outages and incidents</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Outside Performance Factors</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Select the Performance factors affecting workloads in the cloud that you probably cannot control</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012427" id="rbk1">
+      <label for="rbk1"><p>Slow Database reads</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012427" id="rbk2">
+      <label for="rbk2"><p>Mobile network unreachable</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012427" id="rbk3">
+      <label for="rbk3"><p>Page not found errors</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012427" id="rbk4">
+      <label for="rbk4"><p>AWS Service outage</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Mobile network unreachable</li>
+      <li>AWS Service outage</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h3 id="new-terms">New Terms</h3>
+<table>
+<thead>
+<tr>
+<th id="term" style="text-align:left;">Term</th>
+<th id="definition" style="text-align:left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">Burstable Performance Instances</td>
+<td style="text-align:left;">T3, T3a, and T2 instances, are designed to provide a baseline level of CPU performance with the ability to burst to a higher level when required by your workload</td>
+</tr>
+<tr>
+<td style="text-align:left;">Elasticity</td>
+<td style="text-align:left;">The ability to grow or shrink infrastructure resources dynamically as needed to automatically adapt to workload changes, maximizing the use of resources and resulting in savings in infrastructure costs</td>
+</tr>
+<tr>
+<td style="text-align:left;">GPU  (Graphics Processing Unit)</td>
+<td style="text-align:left;">A programmable chip used to manage and boost the performance of video and graphics. GPU renders images, animations, and video for the computer's screen</td>
+</tr>
+<tr>
+<td style="text-align:left;">Instance Family</td>
+<td style="text-align:left;">Six distinct classifications of EC2 instance optimized for different types of applications</td>
+</tr>
+<tr>
+<td style="text-align:left;">Lift and  Shift</td>
+<td style="text-align:left;">The process of moving your application from an on-premises environment to the cloud without making any major changes to the code</td>
+</tr>
+<tr>
+<td style="text-align:left;">Optimized Instances</td>
+<td style="text-align:left;">Instance types optimized to fit different use cases. Instance types comprise varying combinations of CPU, memory, storage, GPU, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications</td>
+</tr>
+<tr>
+<td style="text-align:left;">Workload</td>
+<td style="text-align:left;">A collection of resources and code that delivers business value, such as a customer-facing application or a backend process</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Scaling and Performance.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Performing &amp; Underperforming')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

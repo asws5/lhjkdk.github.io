@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.870
+The user experience is one of the most important factors in
+
+00:00:03.870 --> 00:00:08.355
+maintaining a successful application with satisfied customers,
+
+00:00:08.355 --> 00:00:11.760
+especially when it comes to delivering media such as videos,
+
+00:00:11.760 --> 00:00:14.080
+music, and immersive games.
+
+00:00:14.080 --> 00:00:15.950
+As a Cloud architect,
+
+00:00:15.950 --> 00:00:20.165
+improving the online experience will be one of your top priorities.
+
+00:00:20.165 --> 00:00:23.395
+In the world of 8K video, 3D games,
+
+00:00:23.395 --> 00:00:28.745
+and applications where users transmit video story experiences to millions of followers,
+
+00:00:28.745 --> 00:00:34.070
+leveraging a content delivery network can be the answer to user satisfaction.
+
+00:00:34.070 --> 00:00:38.480
+Content delivery networks are systems of distributed proxy servers and
+
+00:00:38.480 --> 00:00:42.950
+data centers that deliver media and other web content to a user,
+
+00:00:42.950 --> 00:00:45.685
+based on geographic location.
+
+00:00:45.685 --> 00:00:48.290
+Content delivery networks cache
+
+00:00:48.290 --> 00:00:52.745
+popular content in multiple points of presence close to the user,
+
+00:00:52.745 --> 00:00:57.740
+so that the user's request can be retrieved from the local cache and serve more quickly,
+
+00:00:57.740 --> 00:01:00.520
+than retrieving it from the origin location.
+
+00:01:00.520 --> 00:01:04.695
+CloudFront is Amazon's content delivery network offering,
+
+00:01:04.695 --> 00:01:10.035
+serving content through a worldwide network of data centers called edge locations.
+
+00:01:10.035 --> 00:01:14.525
+Edge locations are located in most major cities around the world,
+
+00:01:14.525 --> 00:01:20.255
+and their proximity to users cuts down on latency and increases user satisfaction.
+
+00:01:20.255 --> 00:01:23.810
+The increased performance and availability is due to keeping
+
+00:01:23.810 --> 00:01:28.610
+frequently requested objects cached in edge locations worldwide.
+
+00:01:28.610 --> 00:01:34.999
+CloudFront accelerates content distribution by using the AWS network backbone.
+
+00:01:34.999 --> 00:01:38.375
+Taking advantage of the existing AWS network
+
+00:01:38.375 --> 00:01:41.735
+reduces the number of networks the request must pass through,
+
+00:01:41.735 --> 00:01:46.030
+providing much higher transfer rates than using public networks.
+
+00:01:46.030 --> 00:01:49.730
+When a user requests content served with CloudFront,
+
+00:01:49.730 --> 00:01:54.470
+the requested content is routed to the edge location that provides the lowest latency,
+
+00:01:54.470 --> 00:01:57.970
+delivering the content with the best time performance.
+
+00:01:57.970 --> 00:02:00.305
+When a user requests content,
+
+00:02:00.305 --> 00:02:04.250
+if the content is already in the edge location with the lowest latency,
+
+00:02:04.250 --> 00:02:06.860
+CloudFront delivers it immediately.
+
+00:02:06.860 --> 00:02:10.520
+If the content is not yet in the closest edge location,
+
+00:02:10.520 --> 00:02:13.475
+CloudFront retrieves it from a predefined origin,
+
+00:02:13.475 --> 00:02:16.640
+like an Amazon S3 bucket or a web server that you
+
+00:02:16.640 --> 00:02:20.645
+identify as a source of the original content to the edge cache,
+
+00:02:20.645 --> 00:02:23.855
+and then it delivers it to the user from the cache.
+
+00:02:23.855 --> 00:02:27.920
+The origin server can be configured to add headers to the content,
+
+00:02:27.920 --> 00:02:32.515
+to indicate how long you want the files to stay in the edge location cache.
+
+00:02:32.515 --> 00:02:38.715
+By default, the file stays in an edge location for 24 hours before it expires.
+
+00:02:38.715 --> 00:02:41.825
+The minimum expiration time is zero seconds,
+
+00:02:41.825 --> 00:02:45.480
+and there isn't a maximum expiration time limit.
+

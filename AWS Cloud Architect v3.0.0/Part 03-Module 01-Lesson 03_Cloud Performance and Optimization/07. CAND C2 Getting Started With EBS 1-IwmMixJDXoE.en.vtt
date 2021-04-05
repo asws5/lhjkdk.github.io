@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.600
+Although an EBS volume is usually attached to an EC2 instance when it is created,
+
+00:00:06.600 --> 00:00:09.840
+it's highly durable and can be detached and
+
+00:00:09.840 --> 00:00:13.950
+exist separately independent of an EC2 instance.
+
+00:00:13.950 --> 00:00:18.945
+EBS volumes can be created when an EC2 instance is created,
+
+00:00:18.945 --> 00:00:22.935
+or separately on the EBS management page.
+
+00:00:22.935 --> 00:00:26.475
+EBS volumes can be attached to and detached from
+
+00:00:26.475 --> 00:00:30.150
+instances and can be used just like any other hard drive.
+
+00:00:30.150 --> 00:00:31.740
+You can run databases,
+
+00:00:31.740 --> 00:00:35.790
+create file systems, and move them between instances as required.
+
+00:00:35.790 --> 00:00:40.550
+You pay for the storage you provisioned whether it's attached to an instance or not.
+
+00:00:40.550 --> 00:00:43.880
+So be mindful of idle EBS volumes and make
+
+00:00:43.880 --> 00:00:47.395
+sure they're needed before you maintain them for long periods of time.
+
+00:00:47.395 --> 00:00:50.600
+A lower-cost alternative, is creating a snapshot of
+
+00:00:50.600 --> 00:00:56.725
+the idle EBS volume and storing it in S3 to be restored if later you find it necessary.
+
+00:00:56.725 --> 00:01:02.025
+AWS EBS provides four storage volume types.
+
+00:01:02.025 --> 00:01:06.885
+Two solid state drives and two hard disk drives.
+
+00:01:06.885 --> 00:01:10.860
+The first, is provisioned IOPS SSD,
+
+00:01:10.860 --> 00:01:13.995
+then general purpose SSD,
+
+00:01:13.995 --> 00:01:19.825
+Throughput Optimized HDD, and Cold HDD,
+
+00:01:19.825 --> 00:01:26.050
+with hard-disk drives coming in 2-3 times less than solid state drives.
+
+00:01:26.050 --> 00:01:31.700
+Solid-state drives provide single digit millisecond latency for
+
+00:01:31.700 --> 00:01:37.525
+transactional workloads like databases where performance depends on IOPS.
+
+00:01:37.525 --> 00:01:42.050
+Hard-disk drives are for high throughput workloads where the drive is
+
+00:01:42.050 --> 00:01:47.015
+expected to process large amounts of data measured in megabytes per second.
+
+00:01:47.015 --> 00:01:51.065
+Let's take a look at creating a snapshot from EBS volume.
+
+00:01:51.065 --> 00:01:55.710
+So the EBS volume and it can be found under EC2.
+
+00:01:55.940 --> 00:01:58.190
+Once we get here,
+
+00:01:58.190 --> 00:02:02.840
+we're going to scroll down to Elastic Block Store and Volumes.
+
+00:02:02.840 --> 00:02:09.660
+You see we have four volumes currently active in this account.
+
+00:02:09.660 --> 00:02:13.295
+We're going to create a snapshot of the volume on top,
+
+00:02:13.295 --> 00:02:14.900
+the first volume here.
+
+00:02:14.900 --> 00:02:16.310
+So we're going to select it,
+
+00:02:16.310 --> 00:02:19.580
+go to actions, and create snapshot.
+
+00:02:19.580 --> 00:02:21.815
+The description of the snapshot,
+
+00:02:21.815 --> 00:02:25.160
+let's call this db backup,
+
+00:02:25.160 --> 00:02:33.325
+and we're going to say the environment is production,
+
+00:02:33.325 --> 00:02:37.860
+and we'll go ahead and create our snapshot.
+
+00:02:37.860 --> 00:02:41.560
+We've got a successful message,
+
+00:02:42.290 --> 00:02:45.185
+and once we've created our snapshot,
+
+00:02:45.185 --> 00:02:50.495
+we can find it under the snapshots option in the EBS menu.
+
+00:02:50.495 --> 00:02:53.605
+We see that we have one snapshot here,
+
+00:02:53.605 --> 00:02:58.310
+100 GiB drive called db backup that was completed today.
+
+00:02:58.310 --> 00:03:02.250
+That's how you create an EBS volume snapshot.
+

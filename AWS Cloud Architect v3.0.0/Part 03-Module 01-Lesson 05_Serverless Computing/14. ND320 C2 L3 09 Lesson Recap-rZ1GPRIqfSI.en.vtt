@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.600
+Here's what we've learned in this lesson: Cloud migration, AWS Lambda,
+
+00:00:06.600 --> 00:00:14.985
+serverless costs, API gateway, DynamoDB, and containers.
+
+00:00:14.985 --> 00:00:16.560
+In the next lesson,
+
+00:00:16.560 --> 00:00:19.065
+we will focus on infrastructure as code,
+
+00:00:19.065 --> 00:00:22.320
+creating infrastructure from both the command line,
+
+00:00:22.320 --> 00:00:25.155
+from a file, and from a module.
+
+00:00:25.155 --> 00:00:28.325
+We'll look at the why of infrastructure as code.
+
+00:00:28.325 --> 00:00:31.390
+Why did it come about, and why do we need it?
+
+00:00:31.390 --> 00:00:34.760
+We'll dive into the benefits of infrastructure as code,
+
+00:00:34.760 --> 00:00:36.530
+as well as the drawbacks.
+
+00:00:36.530 --> 00:00:40.430
+Finally, we will explore creating reusable infrastructure.
+
+00:00:40.430 --> 00:00:43.250
+I hope you've enjoyed learning about Serverless.
+
+00:00:43.250 --> 00:00:48.000
+Let's meet over in our final lesson, infrastructure as code.
+

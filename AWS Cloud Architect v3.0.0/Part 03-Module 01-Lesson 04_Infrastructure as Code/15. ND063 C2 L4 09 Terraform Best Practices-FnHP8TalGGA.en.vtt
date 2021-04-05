@@ -1,0 +1,202 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.855
+I'd like to share some Terraform best practices with you,
+
+00:00:03.855 --> 00:00:06.690
+to get you thinking about how to deploy Terraform,
+
+00:00:06.690 --> 00:00:11.610
+with reusability, collaboration and security in mind.
+
+00:00:11.610 --> 00:00:14.850
+This is not an exhaustive list.
+
+00:00:14.850 --> 00:00:17.070
+As you proceed in your careers,
+
+00:00:17.070 --> 00:00:20.070
+you'll see that best practices are subjective,
+
+00:00:20.070 --> 00:00:23.970
+and what works best for one company won't work for another.
+
+00:00:23.970 --> 00:00:28.160
+Generally, these practices will keep you aware of the power of
+
+00:00:28.160 --> 00:00:32.875
+Terraform and the risks and rewards of running infrastructure as code.
+
+00:00:32.875 --> 00:00:37.670
+So first, create a separate administrative account for Terraform,
+
+00:00:37.670 --> 00:00:41.105
+that has access to your other environments via special
+
+00:00:41.105 --> 00:00:44.890
+and limited I am privileges for Terraform only.
+
+00:00:44.890 --> 00:00:49.685
+Terraform is an administrative tool that manages infrastructure.
+
+00:00:49.685 --> 00:00:52.760
+So ideally, the administrative function would be
+
+00:00:52.760 --> 00:00:56.305
+separated from the infrastructure it manages.
+
+00:00:56.305 --> 00:01:00.635
+Whenever possible, use the latest version of Terraform.
+
+00:01:00.635 --> 00:01:02.914
+As we discussed earlier,
+
+00:01:02.914 --> 00:01:07.670
+always manage terraform.tfstate with a remote backend.
+
+00:01:07.670 --> 00:01:10.760
+Enforce a style guide or a set of
+
+00:01:10.760 --> 00:01:14.765
+guidelines about how terraform code is written at your company.
+
+00:01:14.765 --> 00:01:17.395
+How are variables expressed?
+
+00:01:17.395 --> 00:01:20.880
+Where are descriptions and comments required?
+
+00:01:20.880 --> 00:01:24.000
+Where do you indent, etc?
+
+00:01:24.000 --> 00:01:27.765
+How you do it isn't that important,
+
+00:01:27.765 --> 00:01:31.205
+what's important is that your code is consistent.
+
+00:01:31.205 --> 00:01:36.925
+Most IDEs have Terraform syntax add-ins and you should use them.
+
+00:01:36.925 --> 00:01:42.860
+Test all code in a sandbox environment every time.
+
+00:01:42.860 --> 00:01:45.110
+Explore and take advantage of
+
+00:01:45.110 --> 00:01:50.104
+the Terraform modules that have been created and shared by the Terraform community.
+
+00:01:50.104 --> 00:01:52.280
+Why reinvent the wheel?
+
+00:01:52.280 --> 00:01:54.890
+You can also find that seeing the work
+
+00:01:54.890 --> 00:01:58.400
+other people are doing will spark your own imagination.
+
+00:01:58.400 --> 00:02:01.220
+Use modules whenever possible,
+
+00:02:01.220 --> 00:02:03.565
+just modify your variables.
+
+00:02:03.565 --> 00:02:06.440
+Modules help you standardize your code,
+
+00:02:06.440 --> 00:02:12.380
+making it reusable, testable, and ultimately maintainable.
+
+00:02:12.380 --> 00:02:17.525
+All Terraform code changes should be subject to a code review.
+
+00:02:17.525 --> 00:02:21.275
+Now, this may be a little far off in the future for some of us,
+
+00:02:21.275 --> 00:02:26.435
+but it's best to put it in place early so it becomes a part of your company culture.
+
+00:02:26.435 --> 00:02:32.060
+The code should be reviewed by someone who didn't have any role in making the changes.
+
+00:02:32.060 --> 00:02:37.505
+Never ever make out-of-band changes to your infrastructure.
+
+00:02:37.505 --> 00:02:40.925
+That is, once you deploy using Terraform,
+
+00:02:40.925 --> 00:02:45.200
+don't go back into the AWS console and modify anything.
+
+00:02:45.200 --> 00:02:47.765
+These changes create bugs,
+
+00:02:47.765 --> 00:02:51.230
+corrupt the tfstate file and cause other issues that
+
+00:02:51.230 --> 00:02:54.900
+are too numerous to list, just don't do it.
+
+00:02:54.900 --> 00:03:00.230
+After code review, the proposed change should have at a minimum,
+
+00:03:00.230 --> 00:03:03.650
+an impact analysis, a rollback plan,
+
+00:03:03.650 --> 00:03:06.250
+and even a disaster recovery plan.
+
+00:03:06.250 --> 00:03:08.535
+Prior to the change being pushed,
+
+00:03:08.535 --> 00:03:11.360
+all effective application teams should be made aware of
+
+00:03:11.360 --> 00:03:15.890
+the changes and given an opportunity to express questions or concerns.
+
+00:03:15.890 --> 00:03:20.180
+Ultimately, the implementation of a best practices culture at
+
+00:03:20.180 --> 00:03:24.455
+your company will lay the foundation for effective team communication,
+
+00:03:24.455 --> 00:03:28.775
+rapid issue resolution and predictable deployments.
+
+00:03:28.775 --> 00:03:31.460
+Terraform implementation should be done
+
+00:03:31.460 --> 00:03:35.615
+incrementally with all members of the cloud team on board.
+
+00:03:35.615 --> 00:03:40.415
+Users should be given time to train and become familiar with Terraform.
+
+00:03:40.415 --> 00:03:44.585
+The move to terraform involves a shift in mindset and culture,
+
+00:03:44.585 --> 00:03:46.190
+and that takes time.
+
+00:03:46.190 --> 00:03:49.460
+Terraform is not the answer for every company,
+
+00:03:49.460 --> 00:03:52.465
+especially a company that doesn't want to use it.
+
+00:03:52.465 --> 00:03:55.745
+The risk of using it improperly is too great.
+
+00:03:55.745 --> 00:04:00.230
+Terraform has the best chance of succeeding at your company when it's used to
+
+00:04:00.230 --> 00:04:04.745
+address a specific pain point and it performs that function well,
+
+00:04:04.745 --> 00:04:11.010
+then it has a chance of growing to become a bigger part of infrastructure planning.
+
