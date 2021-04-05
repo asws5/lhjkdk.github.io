@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.670
+The goal of this exercise was to get you more
+
+00:00:02.670 --> 00:00:05.880
+comfortable with managing IAM users and roles.
+
+00:00:05.880 --> 00:00:09.615
+If you didn't complete all the actions correctly, that's okay,
+
+00:00:09.615 --> 00:00:12.345
+we just wanted you to get a feel for the interface,
+
+00:00:12.345 --> 00:00:14.280
+and how some of the tools work.
+
+00:00:14.280 --> 00:00:20.340
+For your benefit, we will go through the exercise to show how an IAM role can be used in
+
+00:00:20.340 --> 00:00:26.745
+the AWS console to gain elevated access to resources or data in your account.
+
+00:00:26.745 --> 00:00:29.970
+In this exercise, you created an IAM user which would have
+
+00:00:29.970 --> 00:00:33.180
+permissions to assume a specific role in their account.
+
+00:00:33.180 --> 00:00:36.660
+Let's take a look at that user and its permissions.
+
+00:00:36.660 --> 00:00:40.960
+So the user you created was cand-c3-iam-user.
+
+00:00:40.960 --> 00:00:44.180
+Let's take a look at the policy that we created for this user.
+
+00:00:44.180 --> 00:00:47.720
+As you can see the user only has permissions to assume
+
+00:00:47.720 --> 00:00:51.560
+a specific role in this AWS account.
+
+00:00:51.560 --> 00:00:54.984
+The user's policy does not grant any other permissions,
+
+00:00:54.984 --> 00:00:57.080
+so in order to do their job,
+
+00:00:57.080 --> 00:01:00.430
+the user will need to assume the IAM role,
+
+00:01:00.430 --> 00:01:03.540
+so let's go check out this IAM role.
+
+00:01:03.540 --> 00:01:08.530
+Now, the individual who will assume the role will need to be able to view data in S3.
+
+00:01:08.530 --> 00:01:13.220
+So as you can see, this role does have the ability to read data from
+
+00:01:13.220 --> 00:01:18.515
+S3 because it has a policy, AmazonS3ReadOnlyAccess.
+
+00:01:18.515 --> 00:01:20.765
+Looking at the trust relationship,
+
+00:01:20.765 --> 00:01:25.480
+we can see that the role can only be assumed by a specific account,
+
+00:01:25.480 --> 00:01:28.380
+and in that case, that's this account.
+
+00:01:28.380 --> 00:01:30.360
+In order to assume the role,
+
+00:01:30.360 --> 00:01:34.745
+the user would have been required to log in with multi-factor authentication,
+
+00:01:34.745 --> 00:01:37.895
+so if they didn't have MFA setup and they logged in,
+
+00:01:37.895 --> 00:01:40.735
+they would not be able to assume this role.
+
+00:01:40.735 --> 00:01:44.300
+We can verify the role's functionality by
+
+00:01:44.300 --> 00:01:47.945
+assuming the role and attempting to view our S3 buckets.
+
+00:01:47.945 --> 00:01:49.400
+So as a shortcut,
+
+00:01:49.400 --> 00:01:54.210
+I'm going to use this link to assume the role or switch to the role.
+
+00:01:54.590 --> 00:01:57.360
+Now that I've assumed the role,
+
+00:01:57.360 --> 00:02:05.100
+I can go into the S3 page and see if I can see my buckets. It worked.
+
+00:02:05.100 --> 00:02:08.290
+With this role I'm able to see my S3 buckets.
+
+00:02:08.290 --> 00:02:11.960
+In this exercise, you've successfully demonstrated how to use
+
+00:02:11.960 --> 00:02:16.740
+an IAM role to add additional security to the AWS account.
+

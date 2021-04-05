@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.780
+In this lesson, we will get a better understanding of the Cloud Access Model and
+
+00:00:03.780 --> 00:00:08.125
+discuss the importance of authentication and authorization in the Cloud.
+
+00:00:08.125 --> 00:00:10.560
+Controlling and restricting access to
+
+00:00:10.560 --> 00:00:15.720
+the AWS management plane or API is done through the IAM service.
+
+00:00:15.720 --> 00:00:19.465
+This is the overarching first step in Cloud security.
+
+00:00:19.465 --> 00:00:24.120
+Provisioning, configuring, and accessing Cloud resources and data is achieved
+
+00:00:24.120 --> 00:00:28.815
+via the API through the AWS console or CLI for users,
+
+00:00:28.815 --> 00:00:32.500
+and AWS SDK for applications.
+
+00:00:32.500 --> 00:00:37.080
+Authentication refers to who can sign in and use the API.
+
+00:00:37.080 --> 00:00:41.220
+Authorization refers to what permissions that user has.
+
+00:00:41.220 --> 00:00:46.535
+A very secure authentication model can prevent credentials for being misused.
+
+00:00:46.535 --> 00:00:49.580
+A well-designed authorization model ensures that
+
+00:00:49.580 --> 00:00:53.005
+the ability to perform malicious behavior is very limited.
+
+00:00:53.005 --> 00:00:56.105
+Securing access to this API is arguably
+
+00:00:56.105 --> 00:00:59.470
+the most important piece of the Cloud security design.
+
+00:00:59.470 --> 00:01:01.984
+This is because with the correct permissions,
+
+00:01:01.984 --> 00:01:06.080
+an actor can make the necessary changes needed to open the network,
+
+00:01:06.080 --> 00:01:08.285
+access and decrypt sensitive data,
+
+00:01:08.285 --> 00:01:10.355
+disable logging and traceability,
+
+00:01:10.355 --> 00:01:12.835
+or modify access privileges.
+
+00:01:12.835 --> 00:01:17.240
+It would not be inaccurate to say that traditional security controls such as
+
+00:01:17.240 --> 00:01:19.760
+network firewalls and data encryption can
+
+00:01:19.760 --> 00:01:22.970
+be sidestepped with the right access to the API.
+
+00:01:22.970 --> 00:01:26.420
+Suffice to say, all other security controls in
+
+00:01:26.420 --> 00:01:30.720
+AWS depend on a tightly managed IM strategy.
+

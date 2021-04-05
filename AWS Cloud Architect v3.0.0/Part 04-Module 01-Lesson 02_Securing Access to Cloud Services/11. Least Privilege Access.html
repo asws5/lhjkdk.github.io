@@ -1,0 +1,296 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Least Privilege Access</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Services</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Securing Access to Cloud Services.html">02. Securing Access to Cloud Services</a>
+    </li>
+    <li class="">
+      <a href="03. Key Questions.html">03. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="04. Leveraging IAM Roles.html">04. Leveraging IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="05. IAM Roles Quizzes.html">05. IAM Roles Quizzes</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise IAM Roles.html">06. Exercise: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="07. Solution IAM Roles.html">07. Solution: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="08. IAM Best Practices.html">08. IAM Best Practices</a>
+    </li>
+    <li class="">
+      <a href="09. Identity Federation.html">09. Identity Federation</a>
+    </li>
+    <li class="">
+      <a href="10. Identity Federation Quizzes.html">10. Identity Federation Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Least Privilege Access.html">11. Least Privilege Access</a>
+    </li>
+    <li class="">
+      <a href="12. Least Privilege Quizzes.html">12. Least Privilege Quizzes</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise Least Privilege.html">13. Exercise: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="14. Solution Least Privilege.html">14. Solution: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Conclusion.html">15. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. Least Privilege Access</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>least Privilege Access Heading</p></h3>
+  <div>
+  <h2 id="least-privilege-access">Least Privilege Access</h2>
+<p>When creating IAM policies that provide permissions to users and roles, we want to follow the common security practice of granting least privilege. Least Privilege means we grant only the permissions required to perform the necessary tasks.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L1 10 Least Privledge Access</p></h3>
+  <video controls>
+  <source src="11. ND063 C3 L1 10 Least Privledge Access-9BUxr5kbtqw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND063 C3 L1 10 Least Privledge Access-9BUxr5kbtqw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>least Privilege Access Notes</p></h3>
+  <div>
+  <p>When creating IAM policies that provide permissions to users and roles, we want to follow the common security practice of granting least privilege. Remember, least privilege grants only the permissions required to perform necessary tasks.</p>
+<p>It is a very common practice to allow more permissions than necessary. Usually this is for reasons such as convenience or not knowing what permissions are required. Some of the noteworthy recent cloud data breaches were partly related to users or roles which were compromised. These users and rules had expansive enough permissions to ultimately gain access to sensitive data. </p>
+<p>A few of the noteworthy breaches were:</p>
+<ul>
+<li><a href="https://www.bloomberg.com/news/articles/2019-07-29/capital-one-data-systems-breached-by-seattle-woman-u-s-says" rel="noopener noreferrer" target="_blank">Capital One breach from 2019</a>:<br />
+An intruder was able to exploit vulnerabilities on an EC2 instance to obtain API keys, and use those keys to perform other malicious activity, including exfiltrating millions of customer records.</li>
+<li><a href="https://www.cisomag.com/data-breach-occurred-due-to-series-of-missteps-imperva/" rel="noopener noreferrer" target="_blank">Imperva breach from 2018</a>:<br />
+Hackers were able to retrieve a set of AWS API from compromised cloud instances. The keys were used to access other data.</li>
+<li><a href="https://www.onelogin.com/blog/may-31-2017-security-incident" rel="noopener noreferrer" target="_blank">OneLogin 2017</a>:<br />
+AWS API keys were compromised and used to access customer data.</li>
+</ul>
+<p>We have discussed best practices around securing IAM access for users or roles. However, there will always be a risk that temporary credentials are compromised.</p>
+<p>For that reason it is critical to fine-tune IAM policies to restrict and limit, at minimum:</p>
+<ul>
+<li>What Can be Done (Actions)</li>
+<li>To What (Resources)</li>
+<li>By Who (Principals, Trust Policies)</li>
+</ul>
+<h3 id="build-a-least-privilege-policy">Build A Least Privilege Policy</h3>
+<p>Let’s take a look at a simple example of taking an IAM policy and making it least privilege.</p>
+<p>Say you have a microservice that is designed to read and write data to a recipes table in DynamoDB.</p>
+<p>Our environment also contains other tables to store user profile information that is accessed by other microservices that are deployed.</p>
+<p>A simple IAM policy allowing our recipe microservice to use DynamoDB might look like this:</p>
+<pre><code>        {
+            "Sid": "DDBTableAccess",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Resource": "*"
+        }</code></pre>
+<p>The problem here is that the policy will allow the application full access to perform all operations on DynamoDB.  This could include access data in other tables such as the user profile table or even deleting tables!</p>
+<p>In the event that the role was compromised, the threat posed to our environment would be very high.</p>
+<p>A better solution would be to fine tune the access policy so that the application only gets permission to perform the actions it needs.</p>
+<p>In the below example, we have an IAM policy that allows specific actions and limits those actions to a specific resource - in this case, the recipes table.</p>
+<pre><code>        {
+            "Sid": "DDBTableAccessLeastPrivilege",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:BatchGet*",
+                "dynamodb:DescribeStream",
+                "dynamodb:DescribeTable",
+                "dynamodb:Get*",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:BatchWrite*",
+                "dynamodb:Delete*",
+                "dynamodb:Update*",
+                "dynamodb:PutItem"
+            ],
+            "Resource": "arn:aws:dynamodb:*:*:table/recipes"
+        }</code></pre>
+<h3 id="building-a-least-privilege-policy-demo">Building a Least Privilege Policy Demo</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L1 11 Build A Least Privilege Policy Demo Video</p></h3>
+  <video controls>
+  <source src="11. ND063 C3 L1 11 Build A Least Privilege Policy Demo Video-j57MwkVKyu0.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND063 C3 L1 11 Build A Least Privilege Policy Demo Video-j57MwkVKyu0.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Least Privilege Access Key Terms</p></h3>
+  <div>
+  <h3 id="key-terms">Key Terms</h3>
+<h4 id="least-privilege-access">Least Privilege Access</h4>
+<p>Granting a user or application <strong>only</strong> the permissions they need to do the required task.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Least Privilege Quizzes.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Least Privilege Access')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

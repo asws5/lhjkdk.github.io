@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.270
+Let's look at some of the key high-level questions that need to be
+
+00:00:03.270 --> 00:00:06.600
+asked when designing or assessing a Cloud environment.
+
+00:00:06.600 --> 00:00:10.500
+An architect needs to be able to identify all application code and
+
+00:00:10.500 --> 00:00:12.840
+services that will be run in an environment
+
+00:00:12.840 --> 00:00:15.750
+that will be persisting data to Cloud data stores.
+
+00:00:15.750 --> 00:00:19.290
+This includes the use of data volumes, file shares,
+
+00:00:19.290 --> 00:00:22.320
+object storage such as S3, RDS,
+
+00:00:22.320 --> 00:00:25.830
+and other database storage, Elasticsearch and more.
+
+00:00:25.830 --> 00:00:30.450
+Determine how sensitive the data that is being stored in the Cloud is.
+
+00:00:30.450 --> 00:00:32.315
+Your organization should have
+
+00:00:32.315 --> 00:00:35.750
+data classification standards that will allow you to identify and
+
+00:00:35.750 --> 00:00:41.425
+tag Cloud components so that components storing sensitive data are easily identifiable.
+
+00:00:41.425 --> 00:00:45.905
+Determine who needs access to encryption keys in order to encrypt data,
+
+00:00:45.905 --> 00:00:48.845
+decrypt data, manage key permissions,
+
+00:00:48.845 --> 00:00:51.160
+and destroy or rotate keys.
+
+00:00:51.160 --> 00:00:54.380
+Many design choices in the Cloud will hinge on
+
+00:00:54.380 --> 00:01:00.780
+specific regulatory or organization compliance policies around data encryption.
+

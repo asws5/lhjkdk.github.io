@@ -1,0 +1,337 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Secure Access</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Infrastructure</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Key Questions.html">02. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="03. Common Practices.html">03. Common Practices</a>
+    </li>
+    <li class="">
+      <a href="04. Common Practices Quizzes.html">04. Common Practices Quizzes</a>
+    </li>
+    <li class="">
+      <a href="05. Secure Access.html">05. Secure Access</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise Secure Access.html">06. Exercise: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="07. Solution Secure Access.html">07. Solution: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="08. Control Traffic.html">08. Control Traffic</a>
+    </li>
+    <li class="">
+      <a href="09. Restrict Access.html">09. Restrict Access</a>
+    </li>
+    <li class="">
+      <a href="10. Restriction Quizzes.html">10. Restriction Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise Restriction.html">11. Exercise: Restriction</a>
+    </li>
+    <li class="">
+      <a href="12. Solution Restriction.html">12. Solution: Restriction</a>
+    </li>
+    <li class="">
+      <a href="13. Egress Control.html">13. Egress Control</a>
+    </li>
+    <li class="">
+      <a href="14. Egress Control Quizzes.html">14. Egress Control Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Egress Control.html">15. Exercise: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Egress Control.html">16. Solution: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="17. Access to Cloud Networks.html">17. Access to Cloud Networks</a>
+    </li>
+    <li class="">
+      <a href="18. Access Quizzes.html">18. Access Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Architecture Design.html">19. Exercise: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="20. Solution Architecture Design.html">20. Solution: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="21. Lesson Conclusion.html">21. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Secure Access</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Techniques to provide secure access to servers Heading</p></h3>
+  <div>
+  <h2 id="techniques-to-provide-secure-access-to-servers">Techniques to Provide Secure Access to Servers</h2>
+<p>Let’s look at better methods to provide access to servers and other best practices to prevent unauthorized access.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L2 04 Techniques To Provide Secure Access To Servers Walkthrough</p></h3>
+  <video controls>
+  <source src="05. ND063 C3 L2 04 Techniques To Provide Secure Access To Servers Walkthrough-V6Jbfq6zBT4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND063 C3 L2 04 Techniques To Provide Secure Access To Servers Walkthrough-V6Jbfq6zBT4.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Image Build Pipeline Notes</p></h3>
+  <div>
+  <h3 id="techniques-to-provide-secure-access-to-servers">Techniques to Provide Secure Access to Servers</h3>
+<h4 id="deploy-immutable-instances">Deploy Immutable Instances</h4>
+<p>Prevent unauthorized access through deploying servers as immutable components.</p>
+<p>Immutable instances are launched from virtual machine images that are created in a private environment. The images have ideally gone through security patching and hardening, custom configuration, application code deployment, and vulnerability scanning.  </p>
+<p>When it’s time to update the application, a new image is created and deployed and the old instance is then deprovisioned.</p>
+<p>During this cycle no individual ever needs to login to the instance. </p>
+<p>This is a huge step in the right direction in protecting instances from security breaches and unauthorized access.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Image Build Pipeline Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/7.-image-build-pipeline-image.png" alt="**Example of an Immutable Instance**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Example of an Immutable Instance</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Configuration Management Notes</p></h3>
+  <div>
+  <h4 id="configuration-management-tools">Configuration Management Tools</h4>
+<p>Use a configuration management tool to enforce hardening and configuration policies. Even in the event that someone deployed an instance with insecure configuration, the configuration management tool would override this by applying the correct configuration. Some popular tools with this regard are ansible, chef and puppet.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Configuration Management Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/8.-configuration-management-image.png" alt="**Configuration Management is the Next Best Option**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Configuration Management is the Next Best Option</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Techniques to provide secure access to servers Notes</p></h3>
+  <div>
+  <h4 id="privileged-access-management-tools">Privileged Access Management Tools</h4>
+<p>The use of a Privileged Access Management (PAM) tool can provide additional benefits such as:</p>
+<ul>
+<li>time based or temporary access to elevated privileges</li>
+<li>granular privilege management</li>
+<li>session recording and audit trails</li>
+<li>password and secrets management</li>
+<li>multi factor authentication</li>
+</ul>
+<h4 id="additional-best-practices-to-prevent-unauthorized-access">Additional Best Practices To Prevent Unauthorized Access</h4>
+<p>Finally, in addition to choosing a method for providing access, it’s critical to observe a few additional best practices:</p>
+<ul>
+<li>Keep instances up to date and patched.</li>
+<li>Enforce hardening that encompasses security best practices around OS hardening</li>
+<li>Add monitoring for vulnerabilities to ensure that either OS or application vulnerabilities are addressed as soon as possible.</li>
+<li>Implement monitoring and alerting for suspicious events using tools such as intrusion detection systems or IDS or security information and event management or  SIEM tools.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Techniques to provide secure access to servers Heading New Terms</p></h3>
+  <div>
+  <h3 id="key-terms">Key terms</h3>
+<h4 id="immutable-instances">Immutable Instances</h4>
+<p>Instances that are launched from pre-configured images and do not undergo any changes from deployment to deprovisioning.</p>
+<h4 id="configuration-management-tool">Configuration Management Tool</h4>
+<p>Tools that can enforce operating system configuration state based on versioned code templates.</p>
+<h4 id="intrusion-detection-system-ids">Intrusion Detection System (IDS)</h4>
+<p>A process that monitors system activity and identifies suspicious behaviour indicating that a server has been compromised.</p>
+<h4 id="security-information-and-event-management-siem">Security Information and Event Management (SIEM)</h4>
+<p>Tools that aggregate system events and logs in order to provide historical and real-time analysis, correlation, dashboards, and alerting.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Techniques to provide secure access to servers Further Research</p></h3>
+  <div>
+  <h3 id="further-research">Further Research</h3>
+<h4 id="background-reading-on-privileged-access-management">Background Reading on Privileged Access Management</h4>
+<ul>
+<li><a href="https://www.cyberark.com/privileged-access-management/" rel="noopener noreferrer" target="_blank">CyberArk</a></li>
+<li><a href="https://thycotic.com/resources/privileged-access-management/" rel="noopener noreferrer" target="_blank">thycotic</a></li>
+</ul>
+<h4 id="aws-systems-manager-session-manager">AWS Systems Manager Session Manager</h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html" rel="noopener noreferrer" target="_blank">Documentation</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Exercise Secure Access.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Secure Access')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

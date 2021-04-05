@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.610
+Let's take a look at a few common used cases to get
+
+00:00:02.610 --> 00:00:05.355
+a better understanding of how an architecture might use
+
+00:00:05.355 --> 00:00:12.000
+IAM roles instead of IAM users to effectively implement a secure access model in AWS.
+
+00:00:12.000 --> 00:00:15.450
+We're going to take a look at an architecture to see how a DevOps engineer
+
+00:00:15.450 --> 00:00:19.445
+might provide access to herself and other members of the team.
+
+00:00:19.445 --> 00:00:21.265
+In this first scenario,
+
+00:00:21.265 --> 00:00:22.880
+she will use an IAM user,
+
+00:00:22.880 --> 00:00:26.060
+which will have API keys that will be directly used
+
+00:00:26.060 --> 00:00:29.900
+to perform other actions based on an IAM policy.
+
+00:00:29.900 --> 00:00:33.530
+For example, accessing S3 or EC2 in
+
+00:00:33.530 --> 00:00:38.710
+one account or accessing Lambda or DynamoDB in another account.
+
+00:00:38.710 --> 00:00:42.980
+She will have a separate set of IAM user credentials for each account.
+
+00:00:42.980 --> 00:00:45.350
+It's a fairly simple access mechanism.
+
+00:00:45.350 --> 00:00:49.385
+However, imagine what can happen if these keys were to be compromised.
+
+00:00:49.385 --> 00:00:54.755
+The burden of securing and managing those keys or the user password falls on the user.
+
+00:00:54.755 --> 00:00:56.670
+In the second architecture,
+
+00:00:56.670 --> 00:01:01.190
+our user will have very limited permissions via an IAM policy that will only
+
+00:01:01.190 --> 00:01:06.640
+allow her to assume a role which allows her to do the work that she needs to do.
+
+00:01:06.640 --> 00:01:10.010
+In this diagram, she will also be able to switch to
+
+00:01:10.010 --> 00:01:13.550
+other AWS accounts and assume appropriate roles that
+
+00:01:13.550 --> 00:01:16.790
+will provide permissions via an IAM role policy to be
+
+00:01:16.790 --> 00:01:20.530
+able to interact with services such as S3 or EC2.
+
+00:01:20.530 --> 00:01:24.680
+In this case, there's only one set of user credentials she would need to use,
+
+00:01:24.680 --> 00:01:29.480
+and there is no need to manage users and credentials for other AWS accounts.
+
+00:01:29.480 --> 00:01:34.735
+This forms the basis for role-based access control and identity federation.
+
+00:01:34.735 --> 00:01:38.105
+Take a look at this architecture to see how a developer
+
+00:01:38.105 --> 00:01:41.524
+can configure an application to access Cloud services.
+
+00:01:41.524 --> 00:01:46.045
+In this case, we are providing access to an application rather than a person.
+
+00:01:46.045 --> 00:01:50.075
+In the first scenario, the application will make use of an IAM user.
+
+00:01:50.075 --> 00:01:54.170
+The user will have API keys that will be directly used to perform
+
+00:01:54.170 --> 00:01:58.690
+actions such as writing data to S3 buckets or DynamoDB tables.
+
+00:01:58.690 --> 00:02:00.975
+It's a fairly simple access mechanism.
+
+00:02:00.975 --> 00:02:05.075
+However, imagine what can happen if those keys were to be compromised.
+
+00:02:05.075 --> 00:02:10.645
+The burden of securing and managing these API keys falls on the developer.
+
+00:02:10.645 --> 00:02:13.790
+In the second architecture, there is no user.
+
+00:02:13.790 --> 00:02:15.710
+The application will be able to assume
+
+00:02:15.710 --> 00:02:18.995
+a role that is assigned to the instance where it's running.
+
+00:02:18.995 --> 00:02:21.865
+This allows it to do the work they need to do.
+
+00:02:21.865 --> 00:02:28.110
+This is a simple example of how we can do away with provisioning and managing API keys.
+

@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.620
+In this exercise, the goal was to demonstrate how to securely connect to an instance
+
+00:00:04.620 --> 00:00:09.600
+in AWS without requiring local storage or passwords or private key files.
+
+00:00:09.600 --> 00:00:11.969
+So from our AWS console,
+
+00:00:11.969 --> 00:00:14.910
+I'm at the EC2 instances page.
+
+00:00:14.910 --> 00:00:18.900
+As you can see, I have an instance that has been launched for this exercise.
+
+00:00:18.900 --> 00:00:21.960
+Let's check the security group rules to verify that it does
+
+00:00:21.960 --> 00:00:25.260
+not allow any incoming connections.
+
+00:00:25.260 --> 00:00:28.260
+As you can see, this instance has a security group
+
+00:00:28.260 --> 00:00:31.649
+which does not allow any inbound connections.
+
+00:00:31.649 --> 00:00:35.625
+Now this instance is also set up with an instance profile role.
+
+00:00:35.625 --> 00:00:37.935
+This is the role that's assigned to the instance.
+
+00:00:37.935 --> 00:00:40.530
+Let's see what permissions this role contains.
+
+00:00:40.530 --> 00:00:48.030
+So I'm going to open this in another tab and go to the IAM role page.
+
+00:00:48.680 --> 00:00:53.480
+As you can see, this role has the managed policy,
+
+00:00:53.480 --> 00:00:56.510
+Amazon SSM managed instance core.
+
+00:00:56.510 --> 00:01:00.050
+This just allows the SSM agent that's on
+
+00:01:00.050 --> 00:01:04.210
+the instance to work with the AWS Systems Manager service.
+
+00:01:04.210 --> 00:01:06.825
+Now I'm also going to check the IAM role,
+
+00:01:06.825 --> 00:01:11.120
+which we will use to login to the instance.
+
+00:01:11.120 --> 00:01:18.485
+So I'm going to use the cand-c3-iam role to login to the instance.
+
+00:01:18.485 --> 00:01:22.910
+I also check the IAM role which should be used by the user who needs to login.
+
+00:01:22.910 --> 00:01:26.870
+We want to make sure that this role only
+
+00:01:26.870 --> 00:01:31.460
+has permissions to connect to the specified instance that the user needs to.
+
+00:01:31.460 --> 00:01:35.270
+I've created a sample policy and assigned the policy to the role.
+
+00:01:35.270 --> 00:01:37.645
+Let's take a look at the policy.
+
+00:01:37.645 --> 00:01:41.240
+As you can see, this policy allows the user to start
+
+00:01:41.240 --> 00:01:45.770
+a session with the specific instance on my account.
+
+00:01:45.770 --> 00:01:48.350
+So now let's go ahead and assume
+
+00:01:48.350 --> 00:01:53.140
+this role and I can assume the role by just clicking this link.
+
+00:01:53.140 --> 00:01:56.465
+So this will allow me to switch into that role.
+
+00:01:56.465 --> 00:01:58.175
+Now that I've assumed the role,
+
+00:01:58.175 --> 00:02:00.274
+I'm going to use the Systems Manager,
+
+00:02:00.274 --> 00:02:03.864
+Session Manager tool to login to the instance.
+
+00:02:03.864 --> 00:02:07.305
+So I'm going to find Session Manager here,
+
+00:02:07.305 --> 00:02:13.580
+then start a session and this shows me all of the instances that I have available to use
+
+00:02:13.580 --> 00:02:21.215
+this tool and choose this as my instance and I try to start the session.
+
+00:02:21.215 --> 00:02:25.630
+I was successfully able to login to the instance.
+
+00:02:25.630 --> 00:02:29.490
+So I'm going to go ahead and terminate my session now.
+
+00:02:31.420 --> 00:02:35.750
+I hope that through this exercise you've become more comfortable
+
+00:02:35.750 --> 00:02:40.380
+with a secure method of connecting to your instances running in the cloud.
+

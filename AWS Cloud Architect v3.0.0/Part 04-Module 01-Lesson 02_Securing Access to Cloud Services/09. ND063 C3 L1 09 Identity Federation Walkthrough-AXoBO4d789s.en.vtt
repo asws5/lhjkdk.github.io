@@ -1,0 +1,211 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.805
+As discussed previously, we established the idea that using IAM roles is more secure
+
+00:00:05.805 --> 00:00:08.535
+than provisioning IAM users for console access
+
+00:00:08.535 --> 00:00:11.700
+in managing API keys for programmatic access.
+
+00:00:11.700 --> 00:00:14.520
+Identity federation allows an organization to
+
+00:00:14.520 --> 00:00:17.880
+manage identities using an external identity provider
+
+00:00:17.880 --> 00:00:20.250
+instead of attempting to provision and manage
+
+00:00:20.250 --> 00:00:24.825
+user identities from within the AWS environment.
+
+00:00:24.825 --> 00:00:27.030
+Identity providers can provide
+
+00:00:27.030 --> 00:00:31.590
+role-based access control maps to IAM roles and AWS accounts.
+
+00:00:31.590 --> 00:00:35.315
+What are some examples of external identity providers?
+
+00:00:35.315 --> 00:00:38.165
+Your corporate active directory,
+
+00:00:38.165 --> 00:00:41.480
+Cloud-based identity providers such as Okta,
+
+00:00:41.480 --> 00:00:46.195
+OneLogin, Ping, Centrify, AWS, SSO, etc.
+
+00:00:46.195 --> 00:00:51.330
+Web identity providers such as Facebook, Google, or Amazon.
+
+00:00:51.330 --> 00:00:54.320
+When a user requires access to AWS,
+
+00:00:54.320 --> 00:00:55.850
+the user can authenticate with
+
+00:00:55.850 --> 00:00:59.735
+an identity provider which supports SAML tool data assertion
+
+00:00:59.735 --> 00:01:05.725
+such as ADFS to assume an IAM role and obtain temporary API credentials.
+
+00:01:05.725 --> 00:01:10.100
+If a mobile or web application requires access to the AWS API,
+
+00:01:10.100 --> 00:01:12.770
+the user of that application can authenticate with
+
+00:01:12.770 --> 00:01:16.085
+a web identity provider that supports OpenID Connect,
+
+00:01:16.085 --> 00:01:18.950
+such as Facebook, Google, or Amazon.
+
+00:01:18.950 --> 00:01:21.530
+This will allow the application to assume
+
+00:01:21.530 --> 00:01:25.205
+an IAM role and obtain temporary API credentials.
+
+00:01:25.205 --> 00:01:29.135
+Let's quickly define SAML and OpenID assertion.
+
+00:01:29.135 --> 00:01:32.270
+SAML assertion refers to the process of obtaining
+
+00:01:32.270 --> 00:01:36.070
+a document from an identity provider such as ADFS.
+
+00:01:36.070 --> 00:01:38.075
+This is sent to the service provider,
+
+00:01:38.075 --> 00:01:39.605
+AWS in this case,
+
+00:01:39.605 --> 00:01:42.310
+and contains the user authorization.
+
+00:01:42.310 --> 00:01:45.290
+With OpenID, an assertion token is obtained
+
+00:01:45.290 --> 00:01:48.515
+from the identity providers such as Google or Facebook.
+
+00:01:48.515 --> 00:01:50.495
+This is sent to the service provider,
+
+00:01:50.495 --> 00:01:53.885
+AWS in this case, for user authorization.
+
+00:01:53.885 --> 00:01:57.095
+The two primary security benefits of incorporating
+
+00:01:57.095 --> 00:02:02.045
+identity federation are that organizations can centrally managed users,
+
+00:02:02.045 --> 00:02:04.385
+their identities and authentication,
+
+00:02:04.385 --> 00:02:10.195
+the various roles with respect to access to various applications and platforms.
+
+00:02:10.195 --> 00:02:15.215
+This will allow on-boarding and off-boarding of an employee's access to entities such as
+
+00:02:15.215 --> 00:02:17.840
+AWS to be seamless and compliant with
+
+00:02:17.840 --> 00:02:21.760
+an organization's approval and off-boarding processes.
+
+00:02:21.760 --> 00:02:26.600
+An example of this would be an employee that has access to multiple AWS accounts,
+
+00:02:26.600 --> 00:02:30.440
+Azure, Windows servers, corporate VPN, etc.
+
+00:02:30.440 --> 00:02:32.870
+If the employee leaves the organization,
+
+00:02:32.870 --> 00:02:35.495
+this access can be revoked centrally.
+
+00:02:35.495 --> 00:02:39.080
+Identity federation removes the need to use AWS,
+
+00:02:39.080 --> 00:02:41.530
+IAM users, and user API keys.
+
+00:02:41.530 --> 00:02:46.760
+Access to the API is then always dependent on IAM roles via federation.
+
+00:02:46.760 --> 00:02:50.960
+Let's go through an example architecture that incorporates identity federation
+
+00:02:50.960 --> 00:02:55.189
+for AWS users that need to access AWS services.
+
+00:02:55.189 --> 00:03:00.140
+A DevOps user in your organization uses a client apps such as their browser or
+
+00:03:00.140 --> 00:03:05.335
+CLI tools to request authentication from your organization's identity provider.
+
+00:03:05.335 --> 00:03:09.620
+The identity provider constructs a SAML assertion with information
+
+00:03:09.620 --> 00:03:14.020
+about the user and their role and sends the assertion to the client app.
+
+00:03:14.020 --> 00:03:19.505
+The client app calls AWS assumed role with SAML through the API,
+
+00:03:19.505 --> 00:03:21.830
+passing the ARN of the SAML provider,
+
+00:03:21.830 --> 00:03:26.995
+the ARN of the role to assume and the SAML assertion from the identity provider.
+
+00:03:26.995 --> 00:03:32.270
+The API response to the client app includes temporary security credentials.
+
+00:03:32.270 --> 00:03:34.310
+The client app then uses
+
+00:03:34.310 --> 00:03:39.430
+the temporary security credentials to call Amazon S3 API operations.
+
+00:03:39.430 --> 00:03:44.370
+Let's see how it would work if you want to use identity federation for an application.
+
+00:03:44.370 --> 00:03:46.740
+With web identity federation,
+
+00:03:46.740 --> 00:03:52.020
+the app calls a third party identity provider to authenticate the user and the app.
+
+00:03:52.020 --> 00:03:56.330
+The identity provider returns a web identity token to the app.
+
+00:03:56.330 --> 00:04:00.800
+The app calls AWS and passes the web identity token as an input.
+
+00:04:00.800 --> 00:04:05.695
+AWS authorizes the app and gives a temporary access credentials.
+
+00:04:05.695 --> 00:04:09.065
+The app is allowed to assume an IAM role and access
+
+00:04:09.065 --> 00:04:13.325
+AWS resources in accordance with the rules security policy.
+
+00:04:13.325 --> 00:04:18.690
+The app calls the S3 service to retrieve the data that it needs.
+

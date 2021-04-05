@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.310
+In this lesson, we covered the importance of
+
+00:00:02.310 --> 00:00:05.775
+the right identity in access management strategy in the cloud.
+
+00:00:05.775 --> 00:00:08.490
+The foundation of provisioning, managing,
+
+00:00:08.490 --> 00:00:12.585
+and accessing cloud resources starts with identity and access management
+
+00:00:12.585 --> 00:00:17.640
+and the ability to control access to the AWS APIs or the AWS Console.
+
+00:00:17.640 --> 00:00:20.610
+We covered the criticality of reducing the use of
+
+00:00:20.610 --> 00:00:23.820
+IAM users and API keys by instead leveraging
+
+00:00:23.820 --> 00:00:26.250
+roles which allow you to provide access to
+
+00:00:26.250 --> 00:00:30.630
+applications and users without providing permanent API keys.
+
+00:00:30.630 --> 00:00:33.810
+We also emphasized using identity federation to
+
+00:00:33.810 --> 00:00:37.200
+improve security of AWS environments by ensuring
+
+00:00:37.200 --> 00:00:39.810
+that user and role management is moved to
+
+00:00:39.810 --> 00:00:43.910
+an organizational level and outside of the AWS environment.
+
+00:00:43.910 --> 00:00:47.015
+Lastly, we looked at least privilege access,
+
+00:00:47.015 --> 00:00:50.780
+an important yet often overlooked safeguard for ensuring that
+
+00:00:50.780 --> 00:00:55.090
+compromise credentials lead to the least possible consequences.
+
+00:00:55.090 --> 00:00:59.450
+I highly advise you to look at your current AWS usage and start
+
+00:00:59.450 --> 00:01:03.230
+implementing IAM best practices right away as oftentimes,
+
+00:01:03.230 --> 00:01:07.745
+they're an easy fix with the least impact on architecture in applications.
+
+00:01:07.745 --> 00:01:11.690
+Become familiar with AWS documentation around IAM,
+
+00:01:11.690 --> 00:01:14.150
+especially the best practices section.
+
+00:01:14.150 --> 00:01:18.530
+Look into advanced concepts such as attribute-based access controls,
+
+00:01:18.530 --> 00:01:21.460
+or using the access analyzer.
+
+00:01:21.460 --> 00:01:24.250
+See you in the next lesson.
+

@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.590
+We will go through an example IAM policy which allows an application access
+
+00:00:04.590 --> 00:00:09.645
+to an AWS service to demonstrate that although permissions are limited,
+
+00:00:09.645 --> 00:00:12.630
+they are not following the least privileged model.
+
+00:00:12.630 --> 00:00:16.350
+We will also explore the use of IAM permission boundaries as
+
+00:00:16.350 --> 00:00:19.920
+a way to safeguard improper IAM policies.
+
+00:00:19.920 --> 00:00:22.620
+In this example, I have an application that uses
+
+00:00:22.620 --> 00:00:26.310
+a role which allows it access to the S3 service.
+
+00:00:26.310 --> 00:00:30.870
+The application will be run as an AWS Lambda function.
+
+00:00:30.870 --> 00:00:34.280
+Looking at the code, we can see that it will be writing and deleting
+
+00:00:34.280 --> 00:00:39.695
+file objects in an S3 bucket using the put object and delete object calls.
+
+00:00:39.695 --> 00:00:45.370
+The Lambda function will use an execution role to make API calls.
+
+00:00:45.370 --> 00:00:48.735
+Let's see what permissions this role has.
+
+00:00:48.735 --> 00:00:54.230
+As you can see, the role currently has full read and write access to S3,
+
+00:00:54.230 --> 00:00:57.170
+as it is using the AWS managed policy.
+
+00:00:57.170 --> 00:00:59.570
+If we take a deeper look at this policy,
+
+00:00:59.570 --> 00:01:04.550
+we can see that it can read and write data to all S3 buckets in the account.
+
+00:01:04.550 --> 00:01:06.830
+Now if this code were running on
+
+00:01:06.830 --> 00:01:11.755
+an application server instance which became compromised due to some vulnerability,
+
+00:01:11.755 --> 00:01:13.955
+it can and does happen,
+
+00:01:13.955 --> 00:01:18.380
+an actor could potentially gain access to other S3 buckets to
+
+00:01:18.380 --> 00:01:23.980
+ex-filtrate sensitive data or take on a number of other similarly malicious actions.
+
+00:01:23.980 --> 00:01:26.855
+So I will need to create a new policy for this role
+
+00:01:26.855 --> 00:01:29.960
+to only be able to write to a specific bucket.
+
+00:01:29.960 --> 00:01:31.820
+In order to create the policy,
+
+00:01:31.820 --> 00:01:34.985
+I first need to determine what permissions are required.
+
+00:01:34.985 --> 00:01:38.045
+So I'm going to go back to the Lambda function code,
+
+00:01:38.045 --> 00:01:44.000
+because the best way to understand what permissions are needed is to
+
+00:01:44.000 --> 00:01:49.940
+look at the application code and understand what API calls are being made.
+
+00:01:49.940 --> 00:01:51.815
+So let's take a look at the code.
+
+00:01:51.815 --> 00:01:55.030
+We can see from the application code that
+
+00:01:55.030 --> 00:01:58.600
+the put object and delete object calls are being made.
+
+00:01:58.600 --> 00:02:04.705
+We can also see the specific S3 bucket resource that it will need to write to.
+
+00:02:04.705 --> 00:02:08.260
+So the IAM policy will need to be restricted to
+
+00:02:08.260 --> 00:02:11.755
+these actions on the specific S3 bucket resource.
+
+00:02:11.755 --> 00:02:14.110
+So I will create a new IAM policy which will
+
+00:02:14.110 --> 00:02:17.465
+provide least privilege access for this role.
+
+00:02:17.465 --> 00:02:22.645
+I'll use the tool in the console to choose which service I want to use,
+
+00:02:22.645 --> 00:02:29.770
+that's going to be S3, and which actions I want to take on this S3 service.
+
+00:02:29.770 --> 00:02:35.770
+In this case, I would like to use the put object and delete object calls.
+
+00:02:35.770 --> 00:02:41.700
+I also need to specify which resources that these actions are allowed on,
+
+00:02:41.700 --> 00:02:44.825
+and that's going to be our specific S3 bucket.
+
+00:02:44.825 --> 00:02:48.690
+So I'm going to go back to the code and copy the bucket name.
+
+00:02:50.740 --> 00:02:55.650
+Let's review our policy and let's give it a name.
+
+00:02:58.120 --> 00:03:02.735
+So now let's take a look at the policy that I created.
+
+00:03:02.735 --> 00:03:05.450
+We can see the full policy here.
+
+00:03:05.450 --> 00:03:11.660
+It's only allowing these two calls on objects within the specific S3 bucket.
+
+00:03:11.660 --> 00:03:14.120
+Now, let's go back to the role and remove
+
+00:03:14.120 --> 00:03:19.460
+the overly permissive policy and replace it with this new policy.
+
+00:03:19.460 --> 00:03:21.860
+So we're going to remove the S3
+
+00:03:21.860 --> 00:03:26.495
+full access and we're going to add the new policy that we created,
+
+00:03:26.495 --> 00:03:28.885
+the least privileged policy.
+
+00:03:28.885 --> 00:03:31.655
+We can also make use of a permissions boundary,
+
+00:03:31.655 --> 00:03:36.605
+which adds an additional layer of restriction in case the original IAM policy,
+
+00:03:36.605 --> 00:03:40.540
+which allowed full access to S3 is added again to the role.
+
+00:03:40.540 --> 00:03:46.775
+In this case, we could add a permissions boundary to only allow S3 puts and deletes,
+
+00:03:46.775 --> 00:03:51.340
+or I could just use the restrictive policy that I just created.
+
+00:03:51.340 --> 00:03:55.790
+Minimum, this would have prevented a data ex-filtration scenario if
+
+00:03:55.790 --> 00:04:01.315
+another policy was added to the role that was allowing more permissions.
+
+00:04:01.315 --> 00:04:05.660
+So you should have a better understanding now of how we can fine tune
+
+00:04:05.660 --> 00:04:10.140
+an IAM policy and how this can make the environment more secure.
+

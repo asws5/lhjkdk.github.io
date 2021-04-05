@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.610
+Let's take a look at leveraging identity and access
+
+00:00:02.610 --> 00:00:07.290
+management roles to implement a secure access model in AWS.
+
+00:00:07.290 --> 00:00:13.395
+As discussed earlier, access to the AWS API is required for doing anything in AWS.
+
+00:00:13.395 --> 00:00:16.020
+This is true both from a management standpoint and
+
+00:00:16.020 --> 00:00:18.870
+for applications to access services and data,
+
+00:00:18.870 --> 00:00:24.540
+be it manually through the console or leveraging the CLI or SDK for applications,
+
+00:00:24.540 --> 00:00:26.210
+the more access that is provided,
+
+00:00:26.210 --> 00:00:28.025
+the more risk there is.
+
+00:00:28.025 --> 00:00:30.950
+This access is generally provided by creating
+
+00:00:30.950 --> 00:00:35.555
+an IAM user and providing API credentials or keys for that user.
+
+00:00:35.555 --> 00:00:40.520
+The user is assigned a policy which will define what the user is authorized to do.
+
+00:00:40.520 --> 00:00:42.120
+Once that is in place,
+
+00:00:42.120 --> 00:00:46.235
+the users and applications can start making use of Cloud services.
+
+00:00:46.235 --> 00:00:48.890
+Now let's take a look at an application that has been
+
+00:00:48.890 --> 00:00:51.620
+written to make use of these IAM user keys.
+
+00:00:51.620 --> 00:00:53.225
+In our example here,
+
+00:00:53.225 --> 00:00:57.560
+we have a simple application which will need to read data from an S3 bucket.
+
+00:00:57.560 --> 00:01:02.930
+You can see that the AWS credentials are defined near the beginning of the code,
+
+00:01:02.930 --> 00:01:06.775
+followed by calls to the S3 to get the file object.
+
+00:01:06.775 --> 00:01:10.970
+API keys may also be stored locally in a configuration file.
+
+00:01:10.970 --> 00:01:14.585
+So why is this a bad idea from a security perspective?
+
+00:01:14.585 --> 00:01:18.515
+API keys like this can be compromised in many ways.
+
+00:01:18.515 --> 00:01:21.710
+Imagine a situation where keys in the config file or
+
+00:01:21.710 --> 00:01:25.685
+code were accidentally pushed to a public code repository.
+
+00:01:25.685 --> 00:01:29.120
+The keys are also at risk if a server or a laptop are
+
+00:01:29.120 --> 00:01:33.005
+compromised due to exploited vulnerabilities or malware.
+
+00:01:33.005 --> 00:01:35.545
+Let's look at a better way to do this.
+
+00:01:35.545 --> 00:01:38.960
+To avoid managing sensitive keys altogether,
+
+00:01:38.960 --> 00:01:43.280
+a much better approach is to provide access using IAM roles.
+
+00:01:43.280 --> 00:01:47.255
+The key benefit of IAM roles is that all credentials are temporary
+
+00:01:47.255 --> 00:01:51.350
+once assumed and there's no need to store API keys permanently.
+
+00:01:51.350 --> 00:01:54.680
+Applications running on containers and servers can simply
+
+00:01:54.680 --> 00:01:58.010
+assume roles which are assigned to the server infrastructure.
+
+00:01:58.010 --> 00:02:00.410
+As you can see in the example code,
+
+00:02:00.410 --> 00:02:06.320
+there's no longer any need to handle API keys within the code or config files.
+
+00:02:06.320 --> 00:02:09.590
+Assuming a role means that the application can obtain
+
+00:02:09.590 --> 00:02:13.495
+temporary credentials that are aligned to the roles permissions,
+
+00:02:13.495 --> 00:02:16.910
+IAM roles can also be used to provide access to
+
+00:02:16.910 --> 00:02:20.780
+a multiple AWS accounts being used by an organization,
+
+00:02:20.780 --> 00:02:24.760
+without the need for managing many users across many accounts.
+
+00:02:24.760 --> 00:02:27.800
+IAM roles also paved the way for devising
+
+00:02:27.800 --> 00:02:31.775
+an elevated privileged model or complete identity federation,
+
+00:02:31.775 --> 00:02:38.165
+effectively removing the risk associated with managing users and identities in AWS.
+
+00:02:38.165 --> 00:02:41.915
+Let's take a look at a few common architectural patterns,
+
+00:02:41.915 --> 00:02:47.210
+which will illustrate the differences between using IAM users and IAM roles.
+

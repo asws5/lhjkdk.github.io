@@ -1,0 +1,392 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Access to Cloud Networks</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Infrastructure</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Key Questions.html">02. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="03. Common Practices.html">03. Common Practices</a>
+    </li>
+    <li class="">
+      <a href="04. Common Practices Quizzes.html">04. Common Practices Quizzes</a>
+    </li>
+    <li class="">
+      <a href="05. Secure Access.html">05. Secure Access</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise Secure Access.html">06. Exercise: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="07. Solution Secure Access.html">07. Solution: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="08. Control Traffic.html">08. Control Traffic</a>
+    </li>
+    <li class="">
+      <a href="09. Restrict Access.html">09. Restrict Access</a>
+    </li>
+    <li class="">
+      <a href="10. Restriction Quizzes.html">10. Restriction Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise Restriction.html">11. Exercise: Restriction</a>
+    </li>
+    <li class="">
+      <a href="12. Solution Restriction.html">12. Solution: Restriction</a>
+    </li>
+    <li class="">
+      <a href="13. Egress Control.html">13. Egress Control</a>
+    </li>
+    <li class="">
+      <a href="14. Egress Control Quizzes.html">14. Egress Control Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Egress Control.html">15. Exercise: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Egress Control.html">16. Solution: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="17. Access to Cloud Networks.html">17. Access to Cloud Networks</a>
+    </li>
+    <li class="">
+      <a href="18. Access Quizzes.html">18. Access Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Architecture Design.html">19. Exercise: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="20. Solution Architecture Design.html">20. Solution: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="21. Lesson Conclusion.html">21. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">17. Access to Cloud Networks</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Access to Cloud Networks Heading</p></h3>
+  <div>
+  <h2 id="access-to-cloud-networks">Access to Cloud Networks</h2>
+<p>Previously, we talked about obtaining console login access to cloud servers and instances. Oftentimes, developers and engineers will need to establish network connectivity with these hosts and other hosts running in private subnets, such as RDS database instances, etc.  </p>
+<p>Here, we will outline a few methods for establishing network access to resources running in your cloud environments.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L2 13 Access To Cloud Networks</p></h3>
+  <video controls>
+  <source src="17. ND063 C3 L2 13 Access To Cloud Networks-ySoY-TicvKI.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="17. ND063 C3 L2 13 Access To Cloud Networks-ySoY-TicvKI.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Bastion Hosts Notes</p></h3>
+  <div>
+  <h3 id="methods-for-establishing-network-access-to-resources-running-in-your-cloud-environments">Methods for Establishing Network Access to Resources Running in your Cloud Environments</h3>
+<h4 id="bastion-hosts">Bastion Hosts</h4>
+<p>Bastion hosts, or jump hosts, are set up in a public subnet to allow a user to login from either their home or office network, and subsequently access or jump to resources in private networks. </p>
+<ul>
+<li>Pros: It is a simple and low cost method for getting onto your cloud VPC.</li>
+<li>Cons: It needs additional effort to harden the bastion host. It is not scalable for many users, and may not work if client applications need to be on the user's laptop or desktop. It is a common target for attackers who hope to gain access to the network by exploiting a vulnerability on the bastion host.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Bastion Hosts Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/9.-bastion-hosts-image.png" alt="**Bastion Hosts**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Bastion Hosts</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Virtual Desktop Notes</p></h3>
+  <div>
+  <h4 id="virtual-desktop-solution">Virtual Desktop Solution</h4>
+<p>Similar to a bastion host, except that each user will get their own virtual bastion.</p>
+<ul>
+<li>Pros:  It allows users to install their desktop application clients in the cloud environment without having connectivity to the VPC from their local laptop</li>
+<li>Cons: It costs more than a bastion host. Users will not have direct connectivity to any backend services in the VPC.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Virtual Desktop Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/10.-virtual-desktop-image.png" alt="**Virtual Desktop**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Virtual Desktop</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Client VPN Notes</p></h3>
+  <div>
+  <h4 id="client-vpn">Client VPN</h4>
+<p>A client VPN solution allows a user to connect to the cloud VPC using a secure VPN client to establish an encrypted tunnel. </p>
+<ul>
+<li>Pros: Easy to set up. It has the ability to manage many users and roles. It places the user into the VPC so that they may use client applications on their local host to hit the resources deployed in the VPC.</li>
+<li>Cons: It has additional cost as compared to a bastion host. Users may need to install proprietary VPN clients on their local machines.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Client VPN Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/11.-client-vpn-image.png" alt="**Client VPN**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Client VPN</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Site to Site VPN Notes</p></h3>
+  <div>
+  <h4 id="site-to-site-vpn">Site-to Site-VPN</h4>
+<p>We can connect a local trusted network's firewall with the AWS VPN service to establish VPN tunnel connectivity from the entire local network to the AWS VPC network.</p>
+<ul>
+<li>Pros: No need to install any VPN client software on each user's local machine.</li>
+<li>Cons: Additional routing and configuration needs to be performed on the local network. It often leads to delays in setup. No role based routing.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Site to Site VPN Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/12.-site-to-site-vpn-image.png" alt="**Site to Site VPN**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Site to Site VPN</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Access to Cloud Networks Notes</p></h3>
+  <div>
+  <h4 id="direct-connect-link">Direct Connect Link</h4>
+<p>A dedicated link from a corporate office network or co-location datacenter.</p>
+<ul>
+<li>Pros: Dedicated bandwidth. It is ideal for hybrid cloud environments.</li>
+<li>Cons: Higher costs and require more time to set up. Once set up, if users are not on the corporate LAN, a solution such as VPN or VDI will still need to be implemented. Generally, it is not an option for small or virtual teams that do not have a LAN to work out of. </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Access to Cloud Networks Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/13.-access-to-cloud-networks-image.png" alt="**Direct Connect Link**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Direct Connect Link</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Access to Cloud Networks New Terms or Vocabulary</p></h3>
+  <div>
+  <h3 id="key-terms">Key Terms:</h3>
+<h4 id="bastion-hosts">Bastion Hosts</h4>
+<p>Bastion hosts, or jump hosts, are set up in a public subnet to allow a user to login from either their home or office network, and subsequently access or jump to resources in private networks. </p>
+<h4 id="client-vpn">Client VPN</h4>
+<p>A secure tunnel between a user's local host and a VPN server in a cloud VPC. The tunnel is established using a VPN client running on the user's host.</p>
+<h4 id="sit--to-site-vpn">Sit- to-Site VPN</h4>
+<p>A secure network tunnel between a local trusted network and the AWS VPC, using the AWS VPN service or other VPN product.</p>
+<h4 id="virtual-desktop">Virtual Desktop</h4>
+<p>A desktop deployed in a cloud VPC that can be used to run applications that need connectivity to resources in the VPC. A user would install a virtual desktop client on their local host to connect to and use the virtual desktop.</p>
+<h4 id="direct-connect">Direct Connect</h4>
+<p>A dedicated and private network link between a company's on-premise local network and an AWS Direct Connect location - enabling two way traffic between AWS resources and the local network. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Access to Cloud Networks Further Research</p></h3>
+  <div>
+  <h3 id="additional-resources">Additional Resources</h3>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html" rel="noopener noreferrer" target="_blank">AWS Client VPN</a></p></li>
+<li><p><a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html" rel="noopener noreferrer" target="_blank">AWS Workspaces</a></p></li>
+<li><p><a href="https://aws.amazon.com/blogs/awsmarketplace/setting-up-openvpn-access-server-in-amazon-vpc/" rel="noopener noreferrer" target="_blank">OpenVPN on AWS</a></p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="18. Access Quizzes.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('17. Access to Cloud Networks')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

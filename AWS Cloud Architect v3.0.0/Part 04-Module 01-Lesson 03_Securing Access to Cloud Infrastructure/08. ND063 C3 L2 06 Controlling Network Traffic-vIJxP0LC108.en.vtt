@@ -1,0 +1,163 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.795
+So far in this course, we have discussed methods to ensure secure,
+
+00:00:03.795 --> 00:00:08.925
+authenticated, and authorized access to Cloud control plane and server instances.
+
+00:00:08.925 --> 00:00:11.430
+We emphasized the idea of shifting management of
+
+00:00:11.430 --> 00:00:14.865
+users and roles to a centralized identity provider,
+
+00:00:14.865 --> 00:00:17.715
+providing least privileged access permissions,
+
+00:00:17.715 --> 00:00:21.915
+and designing your environment with the least need to provide access to users.
+
+00:00:21.915 --> 00:00:25.440
+Inevitably, traffic will need to reach Cloud resources for
+
+00:00:25.440 --> 00:00:29.580
+applications to work and to carry out day-to-day operations.
+
+00:00:29.580 --> 00:00:31.235
+More often than not,
+
+00:00:31.235 --> 00:00:33.770
+network connectivity will also be required
+
+00:00:33.770 --> 00:00:36.965
+to access entities outside of your Cloud environment.
+
+00:00:36.965 --> 00:00:39.230
+We're going to look at methods to control and
+
+00:00:39.230 --> 00:00:42.545
+restrict network traffic to and from your Cloud environment.
+
+00:00:42.545 --> 00:00:44.420
+From a security perspective,
+
+00:00:44.420 --> 00:00:49.295
+we want to manage the ability to gain network level access to your Cloud resources.
+
+00:00:49.295 --> 00:00:51.545
+We will call this Ingress.
+
+00:00:51.545 --> 00:00:54.590
+Ingress can be required to access services and
+
+00:00:54.590 --> 00:00:57.910
+resources that are running in our Cloud environment.
+
+00:00:57.910 --> 00:00:59.735
+By the very definition,
+
+00:00:59.735 --> 00:01:03.650
+the resources and applications deployed in a public cloud environment are
+
+00:01:03.650 --> 00:01:08.120
+generally going to be in a network that is separate and external to a user's network,
+
+00:01:08.120 --> 00:01:09.470
+be it from an ISP,
+
+00:01:09.470 --> 00:01:12.250
+a datacenter, or a corporate office network.
+
+00:01:12.250 --> 00:01:15.645
+A few examples of Ingress traffic are
+
+00:01:15.645 --> 00:01:19.750
+web application traffic coming from the Internet to your web applications,
+
+00:01:19.750 --> 00:01:22.765
+traffic coming from other Cloud networks,
+
+00:01:22.765 --> 00:01:25.600
+traffic coming from on-premise networks such as
+
+00:01:25.600 --> 00:01:29.020
+datacenters or corporate offices for management,
+
+00:01:29.020 --> 00:01:34.825
+internal user traffic, or other application integration for hybrid Cloud environments.
+
+00:01:34.825 --> 00:01:36.835
+In addition to Ingress,
+
+00:01:36.835 --> 00:01:39.385
+we also need to be able to access the Internet or
+
+00:01:39.385 --> 00:01:43.450
+other external networks for our applications to be able to function.
+
+00:01:43.450 --> 00:01:45.500
+We will call this Egress.
+
+00:01:45.500 --> 00:01:51.160
+Common Egress destinations could be integrations with other Cloud-based APIs,
+
+00:01:51.160 --> 00:01:55.089
+application API traffic to AWS Cloud services,
+
+00:01:55.089 --> 00:01:59.185
+downloading patches and other system maintenance,
+
+00:01:59.185 --> 00:02:03.545
+and sending monitoring and metric data to external tools.
+
+00:02:03.545 --> 00:02:06.280
+In order to keep the environment secure,
+
+00:02:06.280 --> 00:02:10.955
+it is critical to control and restrict both Ingress and Egress traffic.
+
+00:02:10.955 --> 00:02:16.555
+Ingress traffic can be controlled and restricted using network ACLs or security groups,
+
+00:02:16.555 --> 00:02:19.900
+which are both effective firewalls, routing rules,
+
+00:02:19.900 --> 00:02:22.150
+and host-based endpoint security tools,
+
+00:02:22.150 --> 00:02:25.620
+which oftentimes contained firewall capabilities.
+
+00:02:25.620 --> 00:02:31.555
+Egress traffic and AWS is generally handled using Internet gateways and NAT gateways.
+
+00:02:31.555 --> 00:02:33.550
+As with Ingress traffic,
+
+00:02:33.550 --> 00:02:38.345
+Egress traffic should also be controlled and restricted for a number of reasons.
+
+00:02:38.345 --> 00:02:42.180
+In addition to adding security around Ingress and Egress,
+
+00:02:42.180 --> 00:02:46.010
+private access to VPC networks is also required either
+
+00:02:46.010 --> 00:02:50.365
+from user work locations or from corporate owned network spaces.
+
+00:02:50.365 --> 00:02:54.560
+This access is generally provided using VPN tunnels or
+
+00:02:54.560 --> 00:02:59.365
+dedicated network links from a co-location datacenter to the AWS datacenter.
+
+00:02:59.365 --> 00:03:03.740
+In subsequent sections, we will explore some methods and best practices to
+
+00:03:03.740 --> 00:03:10.200
+ensure that this Ingress and Egress traffic are secure, restricted, and controlled.
+

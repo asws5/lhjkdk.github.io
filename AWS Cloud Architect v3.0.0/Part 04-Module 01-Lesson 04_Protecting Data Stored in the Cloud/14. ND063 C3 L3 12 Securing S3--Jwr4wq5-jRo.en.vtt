@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.470
+Previously in this lesson,
+
+00:00:01.470 --> 00:00:05.550
+we talked about using encryption to protect our data stored in S3.
+
+00:00:05.550 --> 00:00:11.850
+The importance of ensuring that S3 buckets are configured securely cannot be understated.
+
+00:00:11.850 --> 00:00:15.180
+The vast majority of Cloud data breaches in
+
+00:00:15.180 --> 00:00:20.670
+the last few years consisted of private data being leaked from S3 buckets.
+
+00:00:20.670 --> 00:00:24.750
+I'd like to go over a few additional best practices around
+
+00:00:24.750 --> 00:00:28.680
+ensuring that S3 buckets are configured securely.
+
+00:00:28.680 --> 00:00:34.785
+For S3 buckets containing mission critical data ensure that you enable object versioning.
+
+00:00:34.785 --> 00:00:40.565
+Object versioning allows each version of a data object to be saved in an S3 bucket.
+
+00:00:40.565 --> 00:00:44.840
+Attackers often attempt to exfiltrate data from storage and
+
+00:00:44.840 --> 00:00:49.190
+then delete or corrupt the data in order to hold the original data for ransom.
+
+00:00:49.190 --> 00:00:51.685
+This is known as a ransomware attack,
+
+00:00:51.685 --> 00:00:56.150
+and enabling versioning can protect your business against this type of attack.
+
+00:00:56.150 --> 00:01:00.410
+Be sure to enable versioning with multi-factor authentication on
+
+00:01:00.410 --> 00:01:05.140
+delete to protect S3 objects from unauthorized deletion.
+
+00:01:05.140 --> 00:01:08.120
+Where possible, block the ability to open
+
+00:01:08.120 --> 00:01:11.555
+bucket and object permissions to allow public access.
+
+00:01:11.555 --> 00:01:16.805
+This can be done at an account level for all buckets or for a specific bucket.
+
+00:01:16.805 --> 00:01:22.685
+Exceptions to this recommendation include hosting static websites in S3.
+
+00:01:22.685 --> 00:01:28.370
+I recommend you provision S3 buckets which require public access in separate accounts and
+
+00:01:28.370 --> 00:01:34.405
+block public access at the account level for other accounts which hold sensitive data.
+
+00:01:34.405 --> 00:01:39.470
+If applications running in your Cloud environment need to access S3 buckets,
+
+00:01:39.470 --> 00:01:43.915
+consider setting up VPC endpoints for your S3 buckets.
+
+00:01:43.915 --> 00:01:48.140
+VPC endpoints allow API calls from applications to
+
+00:01:48.140 --> 00:01:52.685
+stay in the private VPC space without need to access the internet.
+
+00:01:52.685 --> 00:01:55.700
+This will allow you to block any requests to S3
+
+00:01:55.700 --> 00:01:58.865
+that do not originate from your VPC network.
+
+00:01:58.865 --> 00:02:01.820
+Use S3 bucket policies to define and
+
+00:02:01.820 --> 00:02:05.725
+enforce permissions on specific S3 buckets and objects.
+
+00:02:05.725 --> 00:02:11.480
+S3 bucket policies add an additional layer of protection on top of IAM policies.
+
+00:02:11.480 --> 00:02:13.355
+With S3 bucket policies,
+
+00:02:13.355 --> 00:02:18.635
+you can write statements that allow you to control who can access the S3 bucket,
+
+00:02:18.635 --> 00:02:20.990
+what actions that they can take,
+
+00:02:20.990 --> 00:02:25.160
+and what specific resources that statement applies to.
+
+00:02:25.160 --> 00:02:27.229
+Similar to IAM policies,
+
+00:02:27.229 --> 00:02:32.465
+you can also add additional conditions to any requests made to the buckets.
+
+00:02:32.465 --> 00:02:36.410
+Let's look at a few examples of bucket policies.
+
+00:02:36.410 --> 00:02:43.270
+You can use S3 bucket policies to restrict access to specific IAM users or roles.
+
+00:02:43.270 --> 00:02:50.690
+They can also be used to allow restricted access to data objects from other AWS accounts.
+
+00:02:50.690 --> 00:02:56.530
+S3 bucket policies can be used to enforce object encryption on right.
+
+00:02:56.530 --> 00:03:03.020
+S3 bucket policies can also be used to restrict actions to specific VPC endpoints,
+
+00:03:03.020 --> 00:03:06.985
+so that the bucket can only be accessed from within your VPC.
+
+00:03:06.985 --> 00:03:12.800
+Combining a good encryption strategy with the S3 best practices that we looked at,
+
+00:03:12.800 --> 00:03:18.060
+will ultimately lead to your data being secure and protected in the Cloud.
+

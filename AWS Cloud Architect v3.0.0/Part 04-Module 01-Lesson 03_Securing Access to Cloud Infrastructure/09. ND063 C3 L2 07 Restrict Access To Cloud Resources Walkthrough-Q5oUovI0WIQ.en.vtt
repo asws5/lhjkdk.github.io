@@ -1,0 +1,175 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.080
+In the cloud, we have many options to restrict and control network traffic
+
+00:00:04.080 --> 00:00:08.250
+destined to our resources deployed in our private VPC IP space.
+
+00:00:08.250 --> 00:00:11.369
+This includes EC2 instances, RDS databases,
+
+00:00:11.369 --> 00:00:15.015
+and other infrastructure services in our AWS VPC.
+
+00:00:15.015 --> 00:00:16.890
+In order to use these resources,
+
+00:00:16.890 --> 00:00:19.800
+we will need to allow network traffic to reach them.
+
+00:00:19.800 --> 00:00:22.710
+Our goal should be to limit this traffic by restricting
+
+00:00:22.710 --> 00:00:26.370
+connectivity to specific IP ranges and ports.
+
+00:00:26.370 --> 00:00:29.595
+This is traditionally done with the use of firewalls.
+
+00:00:29.595 --> 00:00:33.685
+There are number of ways that we can implement firewall functionality.
+
+00:00:33.685 --> 00:00:38.680
+AWS provides network ACLs that can be applied at a subnet level.
+
+00:00:38.680 --> 00:00:42.335
+Network ACLs allow you to add multiple firewall rules
+
+00:00:42.335 --> 00:00:46.600
+that determine whether to allow or deny a connection.
+
+00:00:46.600 --> 00:00:50.600
+The direction of traffic being outbound or inbound,
+
+00:00:50.600 --> 00:00:52.910
+source or destination site or block,
+
+00:00:52.910 --> 00:00:56.105
+or IP and port range in protocol,
+
+00:00:56.105 --> 00:01:00.920
+and the order and precedence of processing network ACL rules.
+
+00:01:00.920 --> 00:01:03.335
+Network ACLs are also stateless.
+
+00:01:03.335 --> 00:01:05.270
+This means that for a single connection,
+
+00:01:05.270 --> 00:01:09.640
+the inbound and outbound rules need to be configured to allow the traffic.
+
+00:01:09.640 --> 00:01:12.830
+AWS also provides security groups.
+
+00:01:12.830 --> 00:01:15.830
+Security groups are designed to restrict network traffic to
+
+00:01:15.830 --> 00:01:18.875
+specific cloud resources such as instances,
+
+00:01:18.875 --> 00:01:21.815
+load balancers, and database servers.
+
+00:01:21.815 --> 00:01:25.010
+The security group is applied at the resource level and
+
+00:01:25.010 --> 00:01:28.255
+not at the subnet level like network ACLs.
+
+00:01:28.255 --> 00:01:32.900
+The security group rule can allow traffic from another security group.
+
+00:01:32.900 --> 00:01:38.915
+For example, if a rule allows connections on port 80 from security group ABC,
+
+00:01:38.915 --> 00:01:42.635
+then any instances that are assigned to security group ABC,
+
+00:01:42.635 --> 00:01:45.530
+can't connect to the instance with this rule.
+
+00:01:45.530 --> 00:01:48.320
+Security group rules define allowed traffic.
+
+00:01:48.320 --> 00:01:50.690
+If it is not allowed, it is denied.
+
+00:01:50.690 --> 00:01:53.975
+Security group rules do not have an order of precedence.
+
+00:01:53.975 --> 00:01:56.105
+Since there are no explicit denies,
+
+00:01:56.105 --> 00:02:00.050
+all rules will be evaluated to determine if traffic is allowed.
+
+00:02:00.050 --> 00:02:02.435
+Security groups are stateful,
+
+00:02:02.435 --> 00:02:05.330
+so an inbound connection can be made without needing to
+
+00:02:05.330 --> 00:02:10.130
+explicitly define an egress rule for the return traffic of that connection.
+
+00:02:10.130 --> 00:02:13.220
+Host based firewalls allow server admins and
+
+00:02:13.220 --> 00:02:16.190
+developers to define at the operating system level,
+
+00:02:16.190 --> 00:02:19.280
+specific inbound and outbound sources and ports.
+
+00:02:19.280 --> 00:02:22.645
+Similar to network ACLs and security groups.
+
+00:02:22.645 --> 00:02:26.810
+Windows firewall, and Linux IP tables are examples of this.
+
+00:02:26.810 --> 00:02:31.960
+Many endpoint protection products also offer firewall capabilities.
+
+00:02:31.960 --> 00:02:35.930
+Multiple layers of security are always recommended,
+
+00:02:35.930 --> 00:02:41.845
+so it is advisable to configure host based firewalls on instances if possible.
+
+00:02:41.845 --> 00:02:47.300
+Commercial firewall products or appliances can also be deployed in cloud environments.
+
+00:02:47.300 --> 00:02:51.650
+These appliances offer full fledged functionality out of the box that may
+
+00:02:51.650 --> 00:02:56.665
+be desired by an organization depending on network security requirements.
+
+00:02:56.665 --> 00:03:01.445
+These products offer a richer set of features, including traffic inspection,
+
+00:03:01.445 --> 00:03:03.350
+intrusion detection and protection,
+
+00:03:03.350 --> 00:03:07.495
+Web application firewalls, routing, VPN, etc.
+
+00:03:07.495 --> 00:03:12.410
+Oftentimes, the complexity and cost of deploying these solutions make it easier to
+
+00:03:12.410 --> 00:03:17.815
+use the AWS native solutions such as security groups and network ACLs.
+
+00:03:17.815 --> 00:03:22.010
+However, depending on security compliance requirements,
+
+00:03:22.010 --> 00:03:26.435
+these are powerful tools to have from a network security perspective.
+
+00:03:26.435 --> 00:03:32.070
+Next, we will take a closer look at using network ACLs and security groups.
+

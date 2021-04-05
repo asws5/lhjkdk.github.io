@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.540
+In this lesson, we have highlighted methods to ensure that data stored
+
+00:00:03.540 --> 00:00:07.245
+in Cloud environments is protected from unauthorized access.
+
+00:00:07.245 --> 00:00:11.100
+We walked through how an application may use encryption keys to
+
+00:00:11.100 --> 00:00:15.525
+ensure that data is encrypted when written to disk or Cloud storage.
+
+00:00:15.525 --> 00:00:18.900
+We then took a closer look at the S3 service to
+
+00:00:18.900 --> 00:00:22.290
+understand common encryption methods and capabilities.
+
+00:00:22.290 --> 00:00:25.740
+We also explored some of the options and capabilities for
+
+00:00:25.740 --> 00:00:30.270
+key management using the AWS Key Management Service or KMS.
+
+00:00:30.270 --> 00:00:35.220
+Finally, you were able to put some of the concepts into practice to demonstrate how
+
+00:00:35.220 --> 00:00:37.080
+encryption keys can be managed and
+
+00:00:37.080 --> 00:00:42.435
+segregated and utilized between two different sample applications.
+
+00:00:42.435 --> 00:00:45.420
+You should now have a better understanding of
+
+00:00:45.420 --> 00:00:49.930
+capabilities to protect data stored in the Cloud.
+

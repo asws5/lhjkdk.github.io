@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.320
+As a cloud architect,
+
+00:00:01.320 --> 00:00:03.585
+you should be able to look at in architecture or
+
+00:00:03.585 --> 00:00:09.105
+AWS account and determine any holes or gaps related to access control.
+
+00:00:09.105 --> 00:00:14.055
+What are some of the key questions to ask around identity and access management?
+
+00:00:14.055 --> 00:00:16.860
+First and foremost, we need to be asking how
+
+00:00:16.860 --> 00:00:20.580
+users are managed in the AWS accounts we are working with.
+
+00:00:20.580 --> 00:00:25.065
+Is there a central trusted identity that is going to manage user provisioning,
+
+00:00:25.065 --> 00:00:28.725
+deprovisioning, credential enforcement, and role segmentation?
+
+00:00:28.725 --> 00:00:34.080
+Or are different teams managing user access disparately with a loose process?
+
+00:00:34.080 --> 00:00:36.150
+Is identity federation in place,
+
+00:00:36.150 --> 00:00:40.860
+so that the organization as a whole governs which users are part of which roles?
+
+00:00:40.860 --> 00:00:45.770
+Are processes in place at an organizational level to ensure that when
+
+00:00:45.770 --> 00:00:47.750
+a user no longer needs access than
+
+00:00:47.750 --> 00:00:51.065
+their accesses are revoked from all cloud environments?
+
+00:00:51.065 --> 00:00:53.420
+Are users part of the correct groups,
+
+00:00:53.420 --> 00:00:55.070
+allowing them to have permissions to
+
+00:00:55.070 --> 00:00:58.595
+only those actions that they need to do for their role?
+
+00:00:58.595 --> 00:01:01.750
+Are the permissions for these roles fine tuned to be the
+
+00:01:01.750 --> 00:01:05.450
+least privileged in order to reduce the blast radius?
+
+00:01:05.450 --> 00:01:08.660
+Are we using temporary credentials, one-time passwords,
+
+00:01:08.660 --> 00:01:12.490
+or multi-factor authentication for all layers of access?
+
+00:01:12.490 --> 00:01:16.820
+My approach to start thinking with the security mindset is to ask yourself,
+
+00:01:16.820 --> 00:01:20.660
+what if credentials of the user were to be stolen or compromised?
+
+00:01:20.660 --> 00:01:22.340
+What's the worst that can happen?
+
+00:01:22.340 --> 00:01:26.135
+In order to have a good sense of how secure you have designed the environment,
+
+00:01:26.135 --> 00:01:30.740
+make sure to identify areas of your infrastructure and architecture which would be
+
+00:01:30.740 --> 00:01:36.750
+vulnerable to data loss or other malicious activity in the event of unauthorized access.
+

@@ -1,0 +1,329 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise: Architecture Design</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Infrastructure</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Key Questions.html">02. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="03. Common Practices.html">03. Common Practices</a>
+    </li>
+    <li class="">
+      <a href="04. Common Practices Quizzes.html">04. Common Practices Quizzes</a>
+    </li>
+    <li class="">
+      <a href="05. Secure Access.html">05. Secure Access</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise Secure Access.html">06. Exercise: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="07. Solution Secure Access.html">07. Solution: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="08. Control Traffic.html">08. Control Traffic</a>
+    </li>
+    <li class="">
+      <a href="09. Restrict Access.html">09. Restrict Access</a>
+    </li>
+    <li class="">
+      <a href="10. Restriction Quizzes.html">10. Restriction Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise Restriction.html">11. Exercise: Restriction</a>
+    </li>
+    <li class="">
+      <a href="12. Solution Restriction.html">12. Solution: Restriction</a>
+    </li>
+    <li class="">
+      <a href="13. Egress Control.html">13. Egress Control</a>
+    </li>
+    <li class="">
+      <a href="14. Egress Control Quizzes.html">14. Egress Control Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Egress Control.html">15. Exercise: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Egress Control.html">16. Solution: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="17. Access to Cloud Networks.html">17. Access to Cloud Networks</a>
+    </li>
+    <li class="">
+      <a href="18. Access Quizzes.html">18. Access Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Architecture Design.html">19. Exercise: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="20. Solution Architecture Design.html">20. Solution: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="21. Lesson Conclusion.html">21. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">19. Exercise: Architecture Design</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Designing an Architecture Heading</p></h3>
+  <div>
+  <h2 id="exercise-designing-an-architecture">Exercise: Designing an Architecture</h2>
+<p>In this exercise, you will start with a simple reference architecture and use the design principles outlined in the lesson to improve the security posture of the environment.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Designing an Architecture Instructions</p></h3>
+  <div>
+  <p>Refer to a simple reference architecture and use the design principles outlined in the lesson to improve the security posture of the environment.</p>
+<p>For your convenience we have provided a starter architecture diagram file in "draw.io" format.<br />
+The file is available via <a href="https://cloud-architect-nanodegree-program.s3-us-west-2.amazonaws.com/cand-c3-l2-architecture-design.drawio" rel="noopener noreferrer" target="_blank">AWS S3 and is named "cand-c3-l2-architecture-design.drawio"</a>.</p>
+<p>You may import this file into <a href="https://app.diagrams.net/" rel="noopener noreferrer" target="_blank">draw.io</a> (or <a href="https://www.lucidchart.com" rel="noopener noreferrer" target="_blank">Lucidchart</a>) and make the necessary updates.</p>
+<p>This environment contains the following components:</p>
+<ul>
+<li>VPC with an internet gateway</li>
+<li>Public subnet hosting a NAT gateway</li>
+<li>Application instance Kubernetes cluster running our application containers in a private subnet.</li>
+<li>RDS database - Postgres - deployed in a private subnet</li>
+<li>Internet facing load balancer to accept web traffic (80 and 443) - deployed in a public subnet.</li>
+<li>Security groups assigned to the load balancer, instances, and RDS database.</li>
+</ul>
+<p>Your assignment is to improve the architecture so that it meets the following requirements for security and access:</p>
+<ol>
+<li><p>Developers need network connectivity to the Kubernetes cluster to manage on 6443. They do not need to login to any instances.</p></li>
+<li><p>Application containers need connectivity to the database on Postgres port.</p></li>
+<li><p>The data science team needs access to the database as well. They do not need access to the application cluster.</p></li>
+<li><p>The applications will need to connect to an external service such as Mailgun. At this time, we don’t know Mailgun’s IP ranges or what other services the application will need to connect to.</p></li>
+<li><p>We want to monitor network traffic from the application containers out to the internet.</p></li>
+<li><p>All access needs to be the least privilege. Security group rules should be as specific as possible.</p></li>
+<li><p>Team members do not have access to a corporate network.</p></li>
+</ol>
+<p>You may either complete a new version of the diagram or a writeup outlining each layer of security that you would incorporate into this design.</p>
+<p>Be sure to be specific about chosen tools and products and how they would help make this environment more secure.</p>
+<h3 id="hints-and-approach">Hints and Approach</h3>
+<ul>
+<li>Fine tune each security group to only allow access from IP ranges or security groups which need access. Ensure ports are specific.</li>
+<li>Stick with a bastion or VPN client based approach to allow team members access to the environment. A new security group should be set up for the VPN clients or bastion host users.</li>
+<li>Research container based IDS/IPS/host monitoring solutions, aqua, sysdig, alertlogic, twistlock are notable products. Just include a few sentences on how the chosen tool might meet the requirement.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Designing an Architecture Diagram</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/starter-image.png" alt="**Starting Architecture Diagram of Environment**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Starting Architecture Diagram of Environment</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Designing an Architecture</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Steps to begin redesigning your architecture.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--0">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--0"><p>Review and identify outbound internet traffic routing in the initial architecture.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--1">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--1"><p>Review security groups for load balancer, kubernetes cluster, and RDS database.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--2">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--2"><p>Modify architecture design to fulfill connectivity requirements for developers.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--3">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--3"><p>Modify architecture design to fulfill connectivity requirements for the analytics team.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--4">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--4"><p>Update security group rules to be least privilege based on specific connectivity requirements.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--5">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--5"><p>Add internet connectivity solution to control and monitor connections to internet sites such as <a href="https://www.mailgun.com/" rel="noopener noreferrer" target="_blank">mailgun.com</a>.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="147c0ae7-effa-49b6-95f3-807e442897a6--6">
+        <label for="147c0ae7-effa-49b6-95f3-807e442897a6--6"><p>Identify additional tooling for security monitoring related to the application containers running in the kubernetes cluster.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Wonderful! You have successfully applied cloud security best practices to a cloud architecture design.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="20. Solution Architecture Design.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('19. Exercise: Architecture Design')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

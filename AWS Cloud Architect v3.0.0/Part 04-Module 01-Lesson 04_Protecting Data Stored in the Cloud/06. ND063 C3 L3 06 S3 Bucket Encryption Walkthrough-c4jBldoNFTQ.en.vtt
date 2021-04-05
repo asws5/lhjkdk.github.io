@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.920
+As discussed previously, using client-side encryption allows the application to
+
+00:00:04.920 --> 00:00:10.080
+encrypt data prior to sending it to disk or other persistent Cloud storage.
+
+00:00:10.080 --> 00:00:13.860
+In many cases, client-side encryption may not be required.
+
+00:00:13.860 --> 00:00:18.750
+However, regardless of your choice to use client-side encryption as a best practice,
+
+00:00:18.750 --> 00:00:22.500
+we want to ensure that data is stored in the Cloud should at minimum make
+
+00:00:22.500 --> 00:00:26.730
+use of the Cloud providers server-side encryption capabilities.
+
+00:00:26.730 --> 00:00:29.895
+S3 buckets provisioned in AWS,
+
+00:00:29.895 --> 00:00:32.520
+support a few different methods of ensuring
+
+00:00:32.520 --> 00:00:36.285
+your data is encrypted when physically being stored on disk.
+
+00:00:36.285 --> 00:00:41.455
+The first method is server-side encryption with S3 managed keys.
+
+00:00:41.455 --> 00:00:46.970
+With this, we can specify that an object written to S3 will be encrypted
+
+00:00:46.970 --> 00:00:52.525
+by S3 and the S3 service will manage the encryption keys behind the scenes.
+
+00:00:52.525 --> 00:00:56.430
+Because the key management aspect is transparent to the caller,
+
+00:00:56.430 --> 00:00:59.105
+this is the simplest and easiest option.
+
+00:00:59.105 --> 00:01:02.120
+It is important to keep in mind that with this option,
+
+00:01:02.120 --> 00:01:05.629
+anyone with a read access permissions to the bucket and file,
+
+00:01:05.629 --> 00:01:10.610
+will be able to make calls to the service to retrieve the file unencrypted.
+
+00:01:10.610 --> 00:01:17.255
+The second method is server-side encryption with AWS managed master keys stored in KMS.
+
+00:01:17.255 --> 00:01:20.750
+With this option, the caller will need to specify that
+
+00:01:20.750 --> 00:01:25.180
+KMS will be managing encryption keys for the S3 service.
+
+00:01:25.180 --> 00:01:30.005
+Keys are provisioned in KMS automatically when this option is used.
+
+00:01:30.005 --> 00:01:36.065
+This also provides additional auditability of S3's use of the encryption keys.
+
+00:01:36.065 --> 00:01:39.050
+The third method is server-side encryption with
+
+00:01:39.050 --> 00:01:42.875
+a customer-managed master keys stored in KMS.
+
+00:01:42.875 --> 00:01:48.940
+Here the caller will also need to specify the key that will be used for encryption.
+
+00:01:48.940 --> 00:01:53.470
+Additionally, the caller needs to have permissions to use the key.
+
+00:01:53.470 --> 00:01:57.470
+This provides additional ability to control and restrict
+
+00:01:57.470 --> 00:02:01.520
+which principles can access or decrypt sensitive data.
+
+00:02:01.520 --> 00:02:07.775
+The last method of doing server-side encryption is with customer-provided keys.
+
+00:02:07.775 --> 00:02:12.410
+In this case, the customer can provide their own encryption keys to S3 and
+
+00:02:12.410 --> 00:02:17.810
+S3 will perform the encryption on the server-side without keeping the key itself,
+
+00:02:17.810 --> 00:02:22.540
+the key would then be provided with the request to decrypt the object.
+
+00:02:22.540 --> 00:02:27.305
+With this option, the burden of managing the keys falls on the customer.
+
+00:02:27.305 --> 00:02:30.910
+All of these options can be implemented in two ways.
+
+00:02:30.910 --> 00:02:37.710
+Encrypt on write of object API calls to S3 for uploading or copying file objects,
+
+00:02:37.710 --> 00:02:42.950
+we'll need to explicitly specify the type of server-side encryption desired.
+
+00:02:42.950 --> 00:02:46.100
+The application code will need to be aware of the
+
+00:02:46.100 --> 00:02:49.390
+desired server-side encryption setting that is chosen.
+
+00:02:49.390 --> 00:02:54.470
+Enable default object encryption in the S3 bucket configuration,
+
+00:02:54.470 --> 00:02:58.630
+this will automatically encrypt files that are written to S3.
+
+00:02:58.630 --> 00:03:03.590
+Default encryption will allow you to specify which type of server-side encryption will
+
+00:03:03.590 --> 00:03:08.960
+be used and designate a specific KMS key if you choose to do so.
+
+00:03:08.960 --> 00:03:14.570
+In this case, because the setting is enabled at the S3 bucket configuration level,
+
+00:03:14.570 --> 00:03:16.940
+the application code doesn't need to be aware
+
+00:03:16.940 --> 00:03:19.990
+of the type of encryption that is being used.
+
+00:03:19.990 --> 00:03:24.620
+To review, server-side encryption for AWS services is
+
+00:03:24.620 --> 00:03:26.630
+a very powerful and transparent way to
+
+00:03:26.630 --> 00:03:30.020
+ensure that security best practices are implemented.
+
+00:03:30.020 --> 00:03:33.215
+We have highlighted this with S3, however,
+
+00:03:33.215 --> 00:03:36.155
+other AWS services, for example,
+
+00:03:36.155 --> 00:03:40.110
+DynamoDB, also provide this functionality.
+

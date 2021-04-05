@@ -1,0 +1,303 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Egress Control</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Infrastructure</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Key Questions.html">02. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="03. Common Practices.html">03. Common Practices</a>
+    </li>
+    <li class="">
+      <a href="04. Common Practices Quizzes.html">04. Common Practices Quizzes</a>
+    </li>
+    <li class="">
+      <a href="05. Secure Access.html">05. Secure Access</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise Secure Access.html">06. Exercise: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="07. Solution Secure Access.html">07. Solution: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="08. Control Traffic.html">08. Control Traffic</a>
+    </li>
+    <li class="">
+      <a href="09. Restrict Access.html">09. Restrict Access</a>
+    </li>
+    <li class="">
+      <a href="10. Restriction Quizzes.html">10. Restriction Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise Restriction.html">11. Exercise: Restriction</a>
+    </li>
+    <li class="">
+      <a href="12. Solution Restriction.html">12. Solution: Restriction</a>
+    </li>
+    <li class="">
+      <a href="13. Egress Control.html">13. Egress Control</a>
+    </li>
+    <li class="">
+      <a href="14. Egress Control Quizzes.html">14. Egress Control Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Egress Control.html">15. Exercise: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Egress Control.html">16. Solution: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="17. Access to Cloud Networks.html">17. Access to Cloud Networks</a>
+    </li>
+    <li class="">
+      <a href="18. Access Quizzes.html">18. Access Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Architecture Design.html">19. Exercise: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="20. Solution Architecture Design.html">20. Solution: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="21. Lesson Conclusion.html">21. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">13. Egress Control</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Egress control Heading</p></h3>
+  <div>
+  <h2 id="egress-control">Egress Control</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L2 10 Egress Traffic To The Internet</p></h3>
+  <video controls>
+  <source src="13. ND063 C3 L2 10 Egress Traffic To The Internet-5sjAWmG1Iik.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="13. ND063 C3 L2 10 Egress Traffic To The Internet-5sjAWmG1Iik.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Egress control Notes</p></h3>
+  <div>
+  <p><strong>Using NACLs and security groups to restrict internet bound traffic to specific entities is not the best approach.</strong></p>
+<p>AWS provides a few different conduits for connecting to internet sites from our VPC subnets:</p>
+<ul>
+<li>Resources deployed in a subnet can be assigned to public IP addresses and will have internet bound traffic routed through an "internet gateway".  </li>
+<li>A NAT instance or NAT gateway can be deployed in public subnets so that instances in other subnets can use this device to gain access to the internet. </li>
+</ul>
+<p>From a security perspective, it is not practical to deploy all application resources that require internet connectivity into a public subnet. This widens the attack surface and leaves the environment open to exploitation.</p>
+<p>To solve this, a device such as the NAT gateway is the most common solution.</p>
+<p>The shortfall with the NAT gateway solution from a security perspective is that it is difficult to monitor and restrict traffic at the application layer to specific domains and sites. </p>
+<h3 id="securing-egress-traffic">Securing Egress Traffic</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L2 11 Securing Egress Traffic</p></h3>
+  <video controls>
+  <source src="13. ND063 C3 L2 11 Securing Egress Traffic-4T5a-5_Enlc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="13. ND063 C3 L2 11 Securing Egress Traffic-4T5a-5_Enlc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Securing Egress Traffic Notes</p></h3>
+  <div>
+  <h3 id="a-few-solutions">A Few Solutions</h3>
+<ul>
+<li><strong>Set Up a Web Proxy Layer</strong>: <br />
+This is the simplest way to log application internet traffic. Proxies can also be used to restrict traffic to allowed sites. There are a few drawbacks:</li>
+</ul>
+<ol>
+<li><p>Additional Configuration: applications and instances that require internet access will need to be configured to make use of an http proxy. </p></li>
+<li><p>The proxy farm itself will need to be configured, managed and maintained.</p></li>
+</ol>
+<ul>
+<li><p><strong>In-Line Gateway Appliance</strong>: <br />
+These appliances generally come from commercial vendors and provide a range of capabilities for controlling and inspecting outbound traffic out of the box.  Cost is the biggest barrier to this approach.</p></li>
+<li><p><strong>Host-Based IDS</strong>:<br />
+A host-based IDS is an agent based solution that runs on each instance. Providing many of the capabilities that the in-line gateway appliance provides including egress control and data loss prevention, intrusion detection and prevention. The biggest disadvantage is enforcing that  all hosts in your environment have the agent running.</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Egress control New Terms or Vocabulary</p></h3>
+  <div>
+  <h3 id="key-terms">Key Terms</h3>
+<h4 id="network-acl-nacl">Network ACL (NACL)</h4>
+<p>Firewall construct in AWS which allows controls to be placed on VPC subnet network traffic.</p>
+<h4 id="nat-gateway">NAT Gateway</h4>
+<p>A NAT Gateway is an AWS managed network component which allows instances in private subnets to connect to the Internet but does not allow connection attempts from the Internet to reach private instances. </p>
+<h4 id="proxy-layer-or-proxy-farm">Proxy Layer (or Proxy Farm)</h4>
+<p>A set of HTTP proxy servers designed to handle Internet-bound HTTP traffic.  This solution provides additional visibility and control of which Internet sites can be reached.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Egress control Further Research</p></h3>
+  <div>
+  <h3 id="additional-resources">Additional Resources</h3>
+<p>We highly advise <a href="https://aws.amazon.com/answers/networking/controlling-vpc-egress-traffic/" rel="noopener noreferrer" target="_blank">this article be reviewed in detail</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="14. Egress Control Quizzes.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Egress Control')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

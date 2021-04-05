@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.640
+Most cloud native patterns will, at minimum,
+
+00:00:02.640 --> 00:00:07.260
+tend to use a combination of network ACLs and security groups.
+
+00:00:07.260 --> 00:00:11.715
+Let's discuss some general guidelines around applying these controls.
+
+00:00:11.715 --> 00:00:15.900
+Here are some general guidelines for using network ACLs and security groups.
+
+00:00:15.900 --> 00:00:20.850
+Know and identify your trusted networks for your source and destination traffic.
+
+00:00:20.850 --> 00:00:26.655
+Apply ACLs for incoming traffic to all subnets based on trusted networks.
+
+00:00:26.655 --> 00:00:29.865
+This will typically be VPC to VPC traffic,
+
+00:00:29.865 --> 00:00:32.070
+on-premise traffic to VPCs,
+
+00:00:32.070 --> 00:00:35.610
+traffic to subnets which should not be Internet facing.
+
+00:00:35.610 --> 00:00:38.790
+The number of KCLs should be part of the network design of
+
+00:00:38.790 --> 00:00:42.265
+the Cloud environment and reflect an organization's policies.
+
+00:00:42.265 --> 00:00:45.170
+The network ACL will act as a safety net
+
+00:00:45.170 --> 00:00:48.080
+if instances are deployed with security groups that are
+
+00:00:48.080 --> 00:00:49.310
+not tight enough or if
+
+00:00:49.310 --> 00:00:54.310
+private application instances or unintentionally deployed to public subnets.
+
+00:00:54.310 --> 00:00:57.050
+Apply security groups to instances based on
+
+00:00:57.050 --> 00:01:00.154
+the role or functionality of that instance or application.
+
+00:01:00.154 --> 00:01:05.960
+For example, a MySQL database will take connections from application ABC.
+
+00:01:05.960 --> 00:01:08.870
+The application instances can be assigned
+
+00:01:08.870 --> 00:01:12.190
+a security group for allowing traffic to the application port and
+
+00:01:12.190 --> 00:01:15.470
+the database can be assigned a security group allowing traffic
+
+00:01:15.470 --> 00:01:19.495
+from the Application Security Group on the database port.
+
+00:01:19.495 --> 00:01:24.395
+Both application and database may be assigned a separate security group,
+
+00:01:24.395 --> 00:01:28.540
+allowing connections from a management subnet for administration.
+
+00:01:28.540 --> 00:01:31.700
+For both security groups and network ACLs,
+
+00:01:31.700 --> 00:01:35.300
+following the principle of least privilege only allows traffic from
+
+00:01:35.300 --> 00:01:39.260
+specific hosts or IP ranges to specific ports.
+
+00:01:39.260 --> 00:01:41.665
+The more specific, the better.
+
+00:01:41.665 --> 00:01:48.320
+Avoid assigning allows all for source IPs like 0.0.0.0/0,
+
+00:01:48.320 --> 00:01:51.470
+or all for destination ports.
+
+00:01:51.470 --> 00:01:54.745
+Determine the default security group for a VPC.
+
+00:01:54.745 --> 00:01:58.970
+Update the security group to not allow any outgoing or incoming traffic.
+
+00:01:58.970 --> 00:02:00.485
+It should never be used.
+
+00:02:00.485 --> 00:02:05.105
+However, when an instance is provisioned without a specific security group,
+
+00:02:05.105 --> 00:02:07.580
+the default group will be assigned.
+
+00:02:07.580 --> 00:02:11.390
+By now, you should have a decent field for the controls available to
+
+00:02:11.390 --> 00:02:15.960
+restrict network traffic in a Cloud environment and how they can be applied.
+

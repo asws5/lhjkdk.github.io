@@ -1,0 +1,331 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Leveraging IAM Roles</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Services</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Securing Access to Cloud Services.html">02. Securing Access to Cloud Services</a>
+    </li>
+    <li class="">
+      <a href="03. Key Questions.html">03. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="04. Leveraging IAM Roles.html">04. Leveraging IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="05. IAM Roles Quizzes.html">05. IAM Roles Quizzes</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise IAM Roles.html">06. Exercise: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="07. Solution IAM Roles.html">07. Solution: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="08. IAM Best Practices.html">08. IAM Best Practices</a>
+    </li>
+    <li class="">
+      <a href="09. Identity Federation.html">09. Identity Federation</a>
+    </li>
+    <li class="">
+      <a href="10. Identity Federation Quizzes.html">10. Identity Federation Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Least Privilege Access.html">11. Least Privilege Access</a>
+    </li>
+    <li class="">
+      <a href="12. Least Privilege Quizzes.html">12. Least Privilege Quizzes</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise Least Privilege.html">13. Exercise: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="14. Solution Least Privilege.html">14. Solution: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Conclusion.html">15. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Leveraging IAM Roles</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Leveraging IAM Roles Heading</p></h3>
+  <div>
+  <h2 id="leveraging-iam-roles">Leveraging IAM Roles</h2>
+<p>Understanding and leveraging capabilities provided by IAM roles is key to providing segmented and secure role based access control to the AWS control plane.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L1 04 Introduction To IAM Roles</p></h3>
+  <video controls>
+  <source src="04. ND063 C3 L1 04 Introduction To IAM Roles-rOW2pR4CZTc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND063 C3 L1 04 Introduction To IAM Roles-rOW2pR4CZTc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Intro to IAM Roles Notes</p></h3>
+  <div>
+  <p>Imagine a situation where keys in a config file or code were accidently pushed to a repository which is viewable by unauthorized parties, such as a public GitbHub repo. Or, imagine a situation where a user's laptop or server were compromised and keys were stolen. This could be disastrous depending on how users are given access to information and services.</p>
+<p>A much better alternative to managing sensitive keys all together is to provide access using <strong>Identity Access Management (IAM) roles</strong>. The key benefit to IAM roles is that all credentials are temporary once assumed and there is no need to store API keys permanently.</p>
+<h3 id="a-few-common-use-cases">A Few Common Use Cases</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L1 05 Leveraging IAM Roles Walkthrough</p></h3>
+  <video controls>
+  <source src="04. ND063 C3 L1 05 Leveraging IAM Roles Walkthrough-HiAk84i08uU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND063 C3 L1 05 Leveraging IAM Roles Walkthrough-HiAk84i08uU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Leveraging IAM Roles Notes</p></h3>
+  <div>
+  <h3 id="assuming-roles">Assuming Roles</h3>
+<p>Applications running on containers and servers can simply assume roles which are assigned to the server infrastructure without the need to handle API keys within code or config files.</p>
+<p>Additionally, IAM roles can be used to provide access to a multi AWS account structure without the need for managing users across many accounts - which is a common challenge.</p>
+<p>Another benefit is that IAM roles pave the way for devising an elevated privilege model or complete identity federation. This removes the risk associated with managing users and identities in AWS.</p>
+<p>Identity federation involves trusting a centralized identity provider that your organization is using to effectively shift user management and authorization from your AWS account to the identity provider.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Leveraging IAM Roles Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/2.-leveraging-iam-roles.png" alt="**Assuming Appropriates Roles for the Appropriate Task**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Assuming Appropriates Roles for the Appropriate Task</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>IAM Roles for Applications Notes</p></h3>
+  <div>
+  <h4 id="iam-roles-for-applications">IAM Roles for Applications</h4>
+<p>Applications running on instances or containers should use <strong>instance profile roles</strong> and not user api keys.</p>
+<p>Instance profile role is a special role that is assigned to EC2 instances which allow applications running on those instances to obtain temporary credentials aligned with that role.</p>
+<h4 id="iam-roles-for-users">IAM Roles for Users</h4>
+<p>All users should be using <strong>multi-factor authentication (MFA) protected role escalation</strong> or <strong>identity federation</strong>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Using IAM Roles With Applications</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/25.-iam-roles-and-applications.png" alt="
+**An Application can Leverage an IAM Role to Access AWS Services without Needing Permanent API Keys**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>An Application can Leverage an IAM Role to Access AWS Services without Needing Permanent API Keys</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>IAM Roles Demo Header</p></h3>
+  <div>
+  <h3 id="how-to-assume-a-role">How To Assume a Role</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L1 06 Leveraging IAM Roles Demo Video</p></h3>
+  <video controls>
+  <source src="04. ND063 C3 L1 06 Leveraging IAM Roles Demo Video-SysJuq0lkPA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND063 C3 L1 06 Leveraging IAM Roles Demo Video-SysJuq0lkPA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Leveraging IAM Roles New Terms or Vocabulary</p></h3>
+  <div>
+  <h3 id="key-terms">Key Terms</h3>
+<h4 id="iam-users">IAM Users</h4>
+<p>An IAM User is a resource that represents a person or application and allows that person to interact with AWS. It consists of a name, console login credentials, and API keys.</p>
+<h4 id="iam-roles">IAM Roles</h4>
+<p>An IAM Role is an identity in AWS that has permission policies to interact with AWS. A role can be assumed by anyone who needs it, such as, users, applications, or other AWS services and accounts.</p>
+<h4 id="instance-profile-roles">Instance Profile Roles</h4>
+<p>Instance profile role is a special role that is assigned to EC2 instances which allow application running on those instances to obtain temporary credentials aligned with that role.</p>
+<h4 id="identity-federation">Identity Federation</h4>
+<p>Identity federation involves trusting a centralized identity provider that your organization is using to effectively shift user management and authorization from your AWS account to the identity provider.</p>
+<h4 id="assume-role">Assume Role</h4>
+<p>When I say a server can "assume a role", I mean the application can obtain temporary credentials that are aligned to a role from AWS. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Leveraging IAM Roles Further Research</p></h3>
+  <div>
+  <h3 id="further-research">Further Research:</h3>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html" rel="noopener noreferrer" target="_blank">AWS Documentation for IAM Roles</a></p></li>
+<li><p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html" rel="noopener noreferrer" target="_blank">Use Cases for Roles</a></p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. IAM Roles Quizzes.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Leveraging IAM Roles')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

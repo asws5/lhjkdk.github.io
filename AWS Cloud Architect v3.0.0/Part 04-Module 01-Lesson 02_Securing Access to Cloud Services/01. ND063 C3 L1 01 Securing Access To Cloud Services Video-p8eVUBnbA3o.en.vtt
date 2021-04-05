@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.980
+In this lesson, we'll be covering
+
+00:00:01.980 --> 00:00:05.260
+best practices and strategies to ensure that access to Cloud,
+
+00:00:05.260 --> 00:00:08.400
+data, and services is locked down and secure.
+
+00:00:08.400 --> 00:00:10.260
+We will highlight the importance of
+
+00:00:10.260 --> 00:00:13.230
+a well-designed access model and how it can
+
+00:00:13.230 --> 00:00:16.545
+contribute to protecting from various security threats.
+
+00:00:16.545 --> 00:00:19.125
+Our focus in this lesson will be on examining
+
+00:00:19.125 --> 00:00:25.110
+Identity and Access Management capabilities within AWS or IAM for short.
+
+00:00:25.110 --> 00:00:30.850
+We'll cover Cloud security best practices around managing access to the AWS Cloud,
+
+00:00:30.850 --> 00:00:34.935
+with a focus on managing users, roles, and permissions.
+
+00:00:34.935 --> 00:00:36.635
+By the end of the course,
+
+00:00:36.635 --> 00:00:40.340
+you will have a greater understanding of how to use IAM roles to provide
+
+00:00:40.340 --> 00:00:45.925
+secure access to both users and applications that need to use AWS services.
+
+00:00:45.925 --> 00:00:51.425
+You'll get a chance to walk through security best practices such as identity federation.
+
+00:00:51.425 --> 00:00:57.304
+You will also be introduced to fine tuning access permissions for least privilege access.
+
+00:00:57.304 --> 00:00:59.690
+Securing access to Cloud services is
+
+00:00:59.690 --> 00:01:02.915
+an incredibly important topic when designing for security.
+
+00:01:02.915 --> 00:01:05.430
+I can't wait to get started.
+

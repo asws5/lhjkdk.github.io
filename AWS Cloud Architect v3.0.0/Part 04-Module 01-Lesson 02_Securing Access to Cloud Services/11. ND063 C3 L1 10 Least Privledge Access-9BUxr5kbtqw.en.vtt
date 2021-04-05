@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.975
+When creating IAM policies that provide permissions to users and roles,
+
+00:00:03.975 --> 00:00:07.950
+we want to follow the common security practice of granting least privilege
+
+00:00:07.950 --> 00:00:12.615
+in order to grant only the permissions required to perform the necessary tasks.
+
+00:00:12.615 --> 00:00:16.530
+Unfortunately, it is a very common practice to allow more permissions than
+
+00:00:16.530 --> 00:00:21.945
+necessary for reasons such as convenience or not knowing what permissions are required.
+
+00:00:21.945 --> 00:00:27.840
+Some of the noteworthy recent Cloud data breaches were partly related to users or roles,
+
+00:00:27.840 --> 00:00:30.420
+which were compromised and then the attacker used
+
+00:00:30.420 --> 00:00:35.290
+the overprivileged permissions to ultimately gain access to sensitive data.
+
+00:00:35.290 --> 00:00:41.445
+Previously, we discussed best practices around securing IAM access for users or roles.
+
+00:00:41.445 --> 00:00:46.040
+However, there will always be a risk that temporary credentials are compromised.
+
+00:00:46.040 --> 00:00:47.240
+For that very reason,
+
+00:00:47.240 --> 00:00:50.570
+it is critical to fine tune IAM policies to restrict and
+
+00:00:50.570 --> 00:00:54.260
+limit at minimum what actions can be done,
+
+00:00:54.260 --> 00:00:58.335
+what resources those actions can be invoked on,
+
+00:00:58.335 --> 00:01:02.990
+which principal or who can execute the action,
+
+00:01:02.990 --> 00:01:06.340
+and any additional conditions that are needed.
+
+00:01:06.340 --> 00:01:09.590
+For example, requiring MFA to be enabled
+
+00:01:09.590 --> 00:01:13.980
+or allowing calls from specific source IP addresses.
+

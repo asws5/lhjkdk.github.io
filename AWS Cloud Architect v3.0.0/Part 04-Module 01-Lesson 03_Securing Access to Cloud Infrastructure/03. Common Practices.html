@@ -1,0 +1,393 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Common Practices</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Infrastructure</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Key Questions.html">02. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="03. Common Practices.html">03. Common Practices</a>
+    </li>
+    <li class="">
+      <a href="04. Common Practices Quizzes.html">04. Common Practices Quizzes</a>
+    </li>
+    <li class="">
+      <a href="05. Secure Access.html">05. Secure Access</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise Secure Access.html">06. Exercise: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="07. Solution Secure Access.html">07. Solution: Secure Access</a>
+    </li>
+    <li class="">
+      <a href="08. Control Traffic.html">08. Control Traffic</a>
+    </li>
+    <li class="">
+      <a href="09. Restrict Access.html">09. Restrict Access</a>
+    </li>
+    <li class="">
+      <a href="10. Restriction Quizzes.html">10. Restriction Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise Restriction.html">11. Exercise: Restriction</a>
+    </li>
+    <li class="">
+      <a href="12. Solution Restriction.html">12. Solution: Restriction</a>
+    </li>
+    <li class="">
+      <a href="13. Egress Control.html">13. Egress Control</a>
+    </li>
+    <li class="">
+      <a href="14. Egress Control Quizzes.html">14. Egress Control Quizzes</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise Egress Control.html">15. Exercise: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="16. Solution Egress Control.html">16. Solution: Egress Control</a>
+    </li>
+    <li class="">
+      <a href="17. Access to Cloud Networks.html">17. Access to Cloud Networks</a>
+    </li>
+    <li class="">
+      <a href="18. Access Quizzes.html">18. Access Quizzes</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Architecture Design.html">19. Exercise: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="20. Solution Architecture Design.html">20. Solution: Architecture Design</a>
+    </li>
+    <li class="">
+      <a href="21. Lesson Conclusion.html">21. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Common Practices</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Common Practices for Accessing Servers in the Cloud Heading</p></h3>
+  <div>
+  <h2 id="common-practices-for-accessing-servers-in-the-cloud">Common Practices for Accessing Servers in the Cloud</h2>
+<p>In this section, we will discuss a few common approaches to providing console login access to cloud instances or servers.   </p>
+<p>While providing console access to cloud instances predicates common actions such as server configuration, application deployment, and operations, providing this access could lead to security breaches in the cloud.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L2 03 Common Practices For Accessing Servers In The Cloud Walkthrough</p></h3>
+  <video controls>
+  <source src="03. ND063 C3 L2 03 Common Practices For Accessing Servers In The Cloud Walkthrough-mUFzl0Tkz9Q.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND063 C3 L2 03 Common Practices For Accessing Servers In The Cloud Walkthrough-mUFzl0Tkz9Q.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Asymmetric Key Pairs Notes</p></h3>
+  <div>
+  <h3 id="common-practices-to-provide-access-to-cloud-instances">Common Practices to Provide Access to Cloud Instances:</h3>
+<h4 id="1-usage-of-asymmetric-key-pairs">1. Usage of Asymmetric Key Pairs</h4>
+<p>An asymmetric key pair consists of a public key and a private key. The biggest risk is that end users are responsible for maintaining and managing private keys.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Asymmetric Key Pairs Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/1.-asymmetric-key-pairs-image.png" alt="**Asymmetric Key Pairs**: A User has the Private Key and the Instance has the Public Key" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Asymmetric Key Pairs</strong>: A User has the Private Key and the Instance has the Public Key</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Passwords SSH Notes</p></h3>
+  <div>
+  <h4 id="2-passwords-are-enabled-for-ssh">2. Passwords are Enabled for SSH</h4>
+<p>This is highly discouraged as it can leave the server open to brute force SSH attacks.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Passwords SSH Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/2.-passwords-ssh-image.png" alt="**Many Vulnerability Scanners Flag this as a Misconfiguration**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Many Vulnerability Scanners Flag this as a Misconfiguration</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>PAM Tool Notes</p></h3>
+  <div>
+  <h4 id="3-using-a-privileged-access-management-pam-tool-with-identity-federation">3. Using a Privileged Access Management (PAM) Tool with Identity Federation</h4>
+<p>This can improve security by moving the responsibility of managing credentials and user privileges from the user to a trusted process used by the organization.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>PAM Tool Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/3.-pam-tool-image.png" alt="**PAM Tool with Identity Federation**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>PAM Tool with Identity Federation</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Native Tools Notes</p></h3>
+  <div>
+  <h4 id="4-use-cloud-providers-native-tools">4. Use Cloud Providers Native Tools</h4>
+<p>AWS provides a service called SSM (AWS Systems Manager). This service enables users to manage EC2 instances at the operating system level. The biggest risk is that SSM also has many other functions which may be used by other users.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Native Tools Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/4.-native-tools-image.png" alt="**No Internet Exposure is Required and Passwords/Private Keys Do Not Need to be Managed**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>No Internet Exposure is Required and Passwords/Private Keys Do Not Need to be Managed</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Open Vulnerability Notes</p></h3>
+  <div>
+  <h4 id="5-through-an-open-vulnerability">5. Through an Open Vulnerability</h4>
+<p>Oftentimes web servers and applications have security vulnerabilities which allow users to exploit those vulnerabilities with the intention of gaining console access to the instance.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Open Vulnerability Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/5.-open-vulnerability-image.png" alt="**Users Can Exploit Vulnerable Instances**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Users Can Exploit Vulnerable Instances</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Common practices for accessing servers in the cloud Notes</p></h3>
+  <div>
+  <h4 id="6-the-best-method-to-log-into-cloud-servers-and-instances">6. The Best Method to Log Into Cloud Servers and Instances…</h4>
+<p>… is to not login at all! This is called <strong>immutability</strong> and we will discuss it further in a future concept.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Common practices for accessing servers in the cloud Image</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/6.-common-practices-for-accessing-servers-in-the-cloud-image.png" alt="**Just Don&#x27;t Do It!**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Just Don't Do It!</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Common practices for accessing servers in the cloud New Terms or Vocabulary</p></h3>
+  <div>
+  <h3 id="key-terms">Key Terms</h3>
+<h4 id="key-pair">Key Pair</h4>
+<p>A key pair consists of a public key and a private key that authenticate and encrypt an SSH session. The public key can be hosted on cloud servers and the private key is held by the user. Only a user with the private key that corresponds to the public key will be able to authenticate to the SSH server.</p>
+<h4 id="privilege-access-management-pam-tool">Privilege Access Management (PAM) Tool</h4>
+<p>A privileged access management tool provides management of authentication, sessions, password storage, audit, and privilege escalation when it comes to logging into server infrastructure.</p>
+<h4 id="aws-systems-manager-ssm">AWS Systems Manager (SSM)</h4>
+<p>The AWS Systems Manager service provides the ability to manage EC2 instances at the operating system level - including patching, command execution, automation, state management, inventory.</p>
+<h4 id="session-manager">Session Manager</h4>
+<p>Session Manager is a feature within AWS Systems Manager which allows an authenticated IAM user or role the ability to start a terminal session on an EC2 instance.</p>
+<h4 id="open-vulnerability">Open Vulnerability</h4>
+<p>An exploitable vulnerability in the OS kernel, packages, or applications installed on an instance which could lead to a remote actor gaining unauthorized access.</p>
+<h4 id="immutability">Immutability</h4>
+<p>A deployment model where components do not undergo any changes from provisioning to deprovisioning.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Common practices for accessing servers in the cloud Further Research</p></h3>
+  <div>
+  <h3 id="additional-resources">Additional Resources</h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html" rel="noopener noreferrer" target="_blank">AWS SSM</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Common Practices Quizzes.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Common Practices')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

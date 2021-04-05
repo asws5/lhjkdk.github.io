@@ -1,0 +1,303 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise: Least Privilege</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Services</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Securing Access to Cloud Services.html">02. Securing Access to Cloud Services</a>
+    </li>
+    <li class="">
+      <a href="03. Key Questions.html">03. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="04. Leveraging IAM Roles.html">04. Leveraging IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="05. IAM Roles Quizzes.html">05. IAM Roles Quizzes</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise IAM Roles.html">06. Exercise: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="07. Solution IAM Roles.html">07. Solution: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="08. IAM Best Practices.html">08. IAM Best Practices</a>
+    </li>
+    <li class="">
+      <a href="09. Identity Federation.html">09. Identity Federation</a>
+    </li>
+    <li class="">
+      <a href="10. Identity Federation Quizzes.html">10. Identity Federation Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Least Privilege Access.html">11. Least Privilege Access</a>
+    </li>
+    <li class="">
+      <a href="12. Least Privilege Quizzes.html">12. Least Privilege Quizzes</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise Least Privilege.html">13. Exercise: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="14. Solution Least Privilege.html">14. Solution: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Conclusion.html">15. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">13. Exercise: Least Privilege</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>least Privilege Access Exercise Instructions</p></h3>
+  <div>
+  <h2 id="exercise-least-privilege-access">Exercise: Least Privilege Access</h2>
+<p>You have been tasked with setting up a new IAM policy that will be used by an application.</p>
+<p>We will use the Role that you had created in the previous exercise in this lesson (Exercise - Leveraging IAM roles): <code>cand-c3-iam-role</code></p>
+<ol>
+<li>Create a new S3 bucket for this exercise.  Call it <code>cand-c3-s3-app1-yourname</code> or similar. Note down the name of the bucket.</li>
+<li>Create a second bucket to test denial of access.  Call it <code>cand-c3-s3-offlimits-yourname</code> or similar.</li>
+<li>Upload a test file to both buckets.</li>
+<li>Go to the IAM service in the console and create a new IAM policy. Call the IAM policy <code>cand-c3-iam-policy-least-priv</code>.</li>
+<li>The IAM policy will need to be able to do the following:</li>
+</ol>
+<ul>
+<li>Upload objects to an S3 bucket</li>
+<li>Download objects from an S3 bucket</li>
+<li>List objects that are in the S3 bucket</li>
+<li>Only be able to perform these options on the new S3 bucket you have created.</li>
+<li>List S3 buckets</li>
+<li>Deny the ability to download files (s3:getObject) from any other S3 buckets that are not the S3 bucket you created.</li>
+<li>Helpful Examples: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_s3_rw-bucket-console.html" rel="noopener noreferrer" target="_blank">Example 1</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html" rel="noopener noreferrer" target="_blank">Example 2</a></li>
+</ul>
+<ol>
+<li>In the IAM console go to the role that you had created in the previous exercise: <code>cand-c3-iam-role</code></li>
+<li>Assign the new policy you created to the role and remove the managed policy that had previously been assigned to the role.</li>
+<li>Test the policy by assuming the role and attempting to download the file that you had uploaded from both buckets. <em>You should be denied downloading the file from the <code>offlimit</code> bucket</em>.</li>
+<li>Go back to your admin user.</li>
+<li>Add a managed policy to the <code>cand-c3-iam-role</code> which allows full S3 access.</li>
+<li>Assume the role and test the policy again. The original restriction should still be in place due to the deny you had added in the custom IAM policy.</li>
+</ol>
+<p>You have successfully fine-tuned a policy and achieved a level of least privilege access for a role!</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Least Privilege Access Exercise</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>You have been tasked with setting up a new IAM policy that will be used by an application. Check off each of these items as you complete them; full instructions for each step are above.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--0">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--0"><p>Create an S3 bucket called <code>cand-c3-s3-app1-yourname</code> or similar.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--1">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--1"><p>Create a second bucket called <code>cand-c3-s3-offlimits-yourname</code> or similar.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--2">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--2"><p>Upload a test file to both buckets.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--3">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--3"><p>Create a new IAM policy called <code>cand-c3-iam-policy-least-priv</code>.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--4">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--4"><p>Add the appropriate permissions to this policy (listed in the instructions above).</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--5">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--5"><p>Go to the role: <code>cand-c3-iam-role</code></p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--6">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--6"><p>Assign the new policy you created to the role and remove the managed policy that had previously been assigned to the role.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--7">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--7"><p>Test the policy.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--8">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--8"><p>Go back to your admin user.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--9">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--9"><p>Add a managed policy to the <code>cand-c3-iam-role</code> which allows full S3 access.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="1c02bc99-b3e5-4a76-8881-52e29629f9aa--10">
+        <label for="1c02bc99-b3e5-4a76-8881-52e29629f9aa--10"><p>Assume the role and test the policy again.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Great job!</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="14. Solution Least Privilege.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Exercise: Least Privilege')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

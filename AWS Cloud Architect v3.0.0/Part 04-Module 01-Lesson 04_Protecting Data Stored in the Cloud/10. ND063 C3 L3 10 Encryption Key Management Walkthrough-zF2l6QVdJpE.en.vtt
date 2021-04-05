@@ -1,0 +1,373 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.740
+Let's go ahead and walk through setting up a new customer master key in AWS,
+
+00:00:04.740 --> 00:00:07.320
+deciding permissions, using a key policy,
+
+00:00:07.320 --> 00:00:11.685
+and then testing to see if we can use the keys to encrypt or decrypt data.
+
+00:00:11.685 --> 00:00:14.475
+So I'll go ahead and log in to my database account,
+
+00:00:14.475 --> 00:00:18.525
+and I will assume a role that has permissions to manage KMS,
+
+00:00:18.525 --> 00:00:21.060
+and we'll call this the KMS-Admin-Role.
+
+00:00:21.060 --> 00:00:24.045
+So I'm already logged in. I'm going to assume a role
+
+00:00:24.045 --> 00:00:27.390
+that I've set up that's called KMS-Admin-Role.
+
+00:00:27.390 --> 00:00:32.745
+This role is specifically to manage KMS keys.
+
+00:00:32.745 --> 00:00:34.695
+I'm going to create a new key.
+
+00:00:34.695 --> 00:00:37.690
+So I'm going to go to the key management service.
+
+00:00:37.690 --> 00:00:40.025
+So I'll go ahead and create a new key.
+
+00:00:40.025 --> 00:00:42.800
+This key will be used for encryption operations
+
+00:00:42.800 --> 00:00:45.920
+for data related to a specific application.
+
+00:00:45.920 --> 00:00:48.290
+So I'm going to choose to make this a symmetric key,
+
+00:00:48.290 --> 00:00:52.820
+and I'm going to choose to have KMS create and manage the key material for me.
+
+00:00:52.820 --> 00:00:54.560
+As you can see, I have other operations here.
+
+00:00:54.560 --> 00:00:59.965
+I can import the key from an external source or I can use custom key store.
+
+00:00:59.965 --> 00:01:02.800
+Give my key a name.
+
+00:01:06.250 --> 00:01:11.390
+I will choose a role from my account to be able to have permissions to manage the key,
+
+00:01:11.390 --> 00:01:14.270
+which means that they can change permissions on the key or
+
+00:01:14.270 --> 00:01:18.035
+schedule the key for deletion if I choose this option.
+
+00:01:18.035 --> 00:01:25.710
+So I'm going to choose myself to manage the key.
+
+00:01:28.390 --> 00:01:34.265
+Next, I will need to designate roles that will need to be able to use the encryption key.
+
+00:01:34.265 --> 00:01:40.250
+So I'm going to choose cand-c3-application-ddb-read role.
+
+00:01:40.250 --> 00:01:44.255
+This is the application role that will be reading data from an encrypted table,
+
+00:01:44.255 --> 00:01:49.840
+so it'll need the ability to perform decrypt and encrypt operations on the data.
+
+00:01:49.840 --> 00:01:55.500
+So let's take a look at the key policy before we create the key.
+
+00:01:55.540 --> 00:02:04.975
+The first section here allows IAM principles to be assigned privileges to manage the key.
+
+00:02:04.975 --> 00:02:08.930
+What this means is that IAM policies can provide
+
+00:02:08.930 --> 00:02:13.025
+permissions to a user or role to perform actions on the key.
+
+00:02:13.025 --> 00:02:16.460
+If this is removed, then the key can only be managed through
+
+00:02:16.460 --> 00:02:22.300
+the key policy by the role or roles who have been designated as key admins.
+
+00:02:22.300 --> 00:02:31.080
+The second portion provides the ability for selected IAM principles to manage the key.
+
+00:02:31.360 --> 00:02:34.865
+In this case, this is the key admin role.
+
+00:02:34.865 --> 00:02:39.435
+The third section provides the ability to
+
+00:02:39.435 --> 00:02:45.425
+select which IAM principles can use the key for cryptographic operations.
+
+00:02:45.425 --> 00:02:51.280
+In this case, it's the application role.
+
+00:02:51.950 --> 00:02:56.230
+Finally, all the way at the bottom,
+
+00:02:56.230 --> 00:02:58.795
+we provide the ability for
+
+00:02:58.795 --> 00:03:05.015
+the same IAM principle to grant permission to AWS services to use the key.
+
+00:03:05.015 --> 00:03:11.620
+What this means is that if the application role is interacting with the DynamoDB service,
+
+00:03:11.620 --> 00:03:14.214
+it can grant the DynamoDB service
+
+00:03:14.214 --> 00:03:19.805
+its own permissions to use the encryption key to perform the underlying operations.
+
+00:03:19.805 --> 00:03:22.335
+Let's go ahead and create the key,
+
+00:03:22.335 --> 00:03:25.780
+and it's not let me create the key because I'm using
+
+00:03:25.780 --> 00:03:31.270
+a different role than the role I had assigned for managing the key.
+
+00:03:31.270 --> 00:03:33.670
+So I'm going to go back and I'm going to
+
+00:03:33.670 --> 00:03:41.990
+go back to the page which allows me to define who the key administrators are.
+
+00:03:42.740 --> 00:03:45.450
+I'm going to choose this role,
+
+00:03:45.450 --> 00:03:50.320
+KMS-Admin-Role. There it is.
+
+00:03:50.780 --> 00:03:55.065
+Now, let's just verify that it's the KMS-Admin-Role.
+
+00:03:55.065 --> 00:03:59.230
+Looks good, and the key was created.
+
+00:03:59.230 --> 00:04:01.345
+So this is the key that we just created,
+
+00:04:01.345 --> 00:04:05.640
+and we're going to use this for our application.
+
+00:04:05.640 --> 00:04:08.090
+So let's go ahead and take a look at
+
+00:04:08.090 --> 00:04:12.200
+the two DynamoDBs tables that I have created for this walk-through.
+
+00:04:12.200 --> 00:04:18.200
+I'm going to have to switch from my key admin role back to myself because
+
+00:04:18.200 --> 00:04:24.110
+the key admin role does not have permissions to view DynamoDB tables.
+
+00:04:24.110 --> 00:04:27.530
+Let's go into DynamoDB and take a look at our tables.
+
+00:04:27.530 --> 00:04:29.960
+So I have two tables here,
+
+00:04:29.960 --> 00:04:33.295
+recipes and user info.
+
+00:04:33.295 --> 00:04:36.260
+Now when a DynamoDB table is created,
+
+00:04:36.260 --> 00:04:38.900
+it will use DynamoDB default encryption.
+
+00:04:38.900 --> 00:04:43.925
+With default encryption, encryption is handled behind the scenes by AWS,
+
+00:04:43.925 --> 00:04:46.430
+and we can not manage the access to the encryption keys.
+
+00:04:46.430 --> 00:04:47.660
+So anyone with access to
+
+00:04:47.660 --> 00:04:52.830
+the DynamoDB tables will be able to view the data with this encryption setting.
+
+00:04:52.900 --> 00:04:58.730
+Both of these tables should be set to the default encryption setting.
+
+00:04:58.730 --> 00:05:04.580
+So let's just confirm that.So encryption type is set to default for this table.
+
+00:05:04.580 --> 00:05:07.850
+Let's look at the user_info table,
+
+00:05:07.850 --> 00:05:11.855
+and the encryption type is default here also.
+
+00:05:11.855 --> 00:05:18.500
+So I would like one of these tables to use the KMS key that I just created.
+
+00:05:18.500 --> 00:05:23.570
+So I'd like the user_info table to use the KMS key that I just created.
+
+00:05:23.570 --> 00:05:26.635
+So I'm going to manage the key from here,
+
+00:05:26.635 --> 00:05:30.975
+I'm going to change it from default to KMS- Customer managed, CMK.
+
+00:05:30.975 --> 00:05:33.430
+This is the key that we created.
+
+00:05:33.440 --> 00:05:36.450
+From the drop-down, I'll find the key that I created.
+
+00:05:36.450 --> 00:05:41.060
+So the first one here, cand-c3-application-key,
+
+00:05:41.210 --> 00:05:44.500
+takes a few minutes to update, there we go.
+
+00:05:44.500 --> 00:05:50.615
+So now you can see the master key that's using is from KMS.
+
+00:05:50.615 --> 00:05:53.815
+So now let's add some data to this table.
+
+00:05:53.815 --> 00:05:55.750
+Right now, there's no data in the table.
+
+00:05:55.750 --> 00:05:59.260
+I'm going to add a JSON record with
+
+00:05:59.260 --> 00:06:04.375
+some personal information such as a username and a phone number.
+
+00:06:04.375 --> 00:06:09.860
+Here's some personal information that we want to keep protected.
+
+00:06:09.930 --> 00:06:13.810
+So now I want to prove that this data is indeed secure.
+
+00:06:13.810 --> 00:06:16.960
+So I'm going to switch roles to
+
+00:06:16.960 --> 00:06:23.799
+a different role that has full permissions to read and write data to DynamoDB tables.
+
+00:06:23.799 --> 00:06:29.660
+This role does not have permissions to use the encryption key.
+
+00:06:29.960 --> 00:06:34.850
+So this is the role I'm going to use, it's the dynamodb-full.
+
+00:06:34.850 --> 00:06:37.959
+So this role has full permissions on DynamoDB,
+
+00:06:37.959 --> 00:06:43.180
+but it has not been granted permissions to use the encryption key.
+
+00:06:43.180 --> 00:06:45.850
+So as you can see,
+
+00:06:45.850 --> 00:06:52.340
+when this role tries to look at the data in the table,
+
+00:06:52.340 --> 00:06:54.690
+it does not have permissions.
+
+00:06:54.690 --> 00:06:58.655
+The reason for this is because it doesn't have permissions to perform
+
+00:06:58.655 --> 00:07:04.590
+decrypt operations on the data that was encrypted with that KMS key.
+
+00:07:05.570 --> 00:07:10.955
+You can still read the data in the other table which had default encryption.
+
+00:07:10.955 --> 00:07:14.660
+So let's see what happens if we have an application that will
+
+00:07:14.660 --> 00:07:18.649
+need to read data from the table.
+
+00:07:18.649 --> 00:07:24.480
+So I'm going to go onto my EC2 instance where I have an application running.
+
+00:07:25.610 --> 00:07:29.170
+Let's switch back to my admin user,
+
+00:07:33.830 --> 00:07:38.620
+and this is my EC2 instance where the application is going to run.
+
+00:07:38.620 --> 00:07:40.650
+As you can see, it has a role.
+
+00:07:40.650 --> 00:07:50.490
+I want to change this role to use a role that has permissions to read DynamoDB tables.
+
+00:07:56.350 --> 00:08:05.160
+So this role will allow the instance to use the encryption keys.
+
+00:08:07.460 --> 00:08:12.340
+So this is the application ddb-read role.
+
+00:08:12.340 --> 00:08:14.750
+Just to be on the safe side,
+
+00:08:14.750 --> 00:08:22.685
+I want to verify in KMS that that role does have access to use the key.
+
+00:08:22.685 --> 00:08:25.825
+So this is the key that I had created.
+
+00:08:25.825 --> 00:08:28.805
+As you can see, that's the role of the instance.
+
+00:08:28.805 --> 00:08:35.670
+So now I'm going to log into the instance and try to read data from that table.
+
+00:08:35.830 --> 00:08:42.364
+Let mes use the session manager to get onto the instance.
+
+00:08:42.364 --> 00:08:48.350
+So I'm going to use a command from the AWS CLI,
+
+00:08:48.350 --> 00:08:54.065
+and this would be analogous to an application running similar code.
+
+00:08:54.065 --> 00:09:02.665
+I'm going to try to view the data in the user_info table that I had created,
+
+00:09:02.665 --> 00:09:07.235
+had named the data_user_info_kms_encryption.
+
+00:09:07.235 --> 00:09:12.450
+As you can see, I'm able to list the contents of the table successfully.
+
+00:09:14.300 --> 00:09:18.320
+So in this walk-through, we have successfully demonstrated the use
+
+00:09:18.320 --> 00:09:22.670
+of a KMS customer master key policy in action.
+
+00:09:22.670 --> 00:09:27.800
+In the lecture notes, you'll find links to documentation and further examples of
+
+00:09:27.800 --> 00:09:33.360
+using key policies and other methods to secure access to encryption keys.
+

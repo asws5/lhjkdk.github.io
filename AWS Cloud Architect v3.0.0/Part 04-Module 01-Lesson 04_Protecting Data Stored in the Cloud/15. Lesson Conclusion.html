@@ -1,0 +1,259 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson Conclusion</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Protecting Data Stored in the Cloud</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Data Protection.html">01. Data Protection</a>
+    </li>
+    <li class="">
+      <a href="02. Protecting Data in the Cloud.html">02. Protecting Data in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="03. Protecting Data Stored in the Cloud.html">03. Protecting Data Stored in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="04. Data Encryption.html">04. Data Encryption</a>
+    </li>
+    <li class="">
+      <a href="05. Client-Side vs. Server-Side.html">05. Client-Side vs. Server-Side</a>
+    </li>
+    <li class="">
+      <a href="06. S3 Bucket Encryption.html">06. S3 Bucket Encryption</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise Encryption.html">07. Exercise: Encryption</a>
+    </li>
+    <li class="">
+      <a href="08. Solution Encryption.html">08. Solution: Encryption</a>
+    </li>
+    <li class="">
+      <a href="09. Key Management.html">09. Key Management</a>
+    </li>
+    <li class="">
+      <a href="10. Key Management Best Practices.html">10. Key Management Best Practices</a>
+    </li>
+    <li class="">
+      <a href="11. Key Management Quizzes.html">11. Key Management Quizzes</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Key Management.html">12. Exercise: Key Management</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Key Management.html">13. Solution: Key Management</a>
+    </li>
+    <li class="">
+      <a href="14. Securing S3.html">14. Securing S3</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Conclusion.html">15. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">15. Lesson Conclusion</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Lesson Conclusion Heading</p></h3>
+  <div>
+  <h2 id="lesson-conclusion">Lesson Conclusion</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L3 13 Lesson Conclusion Video</p></h3>
+  <video controls>
+  <source src="15. ND063 C3 L3 13 Lesson Conclusion Video-YTHLs40EflY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="15. ND063 C3 L3 13 Lesson Conclusion Video-YTHLs40EflY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Lesson Conclusion Text</p></h3>
+  <div>
+  <h3 id="what-weve-learned">What We've Learned</h3>
+<ul>
+<li>We highlighted methods to ensure data stored in cloud environments is protected from unauthorized access.</li>
+<li>We walked through how an application may use encryption keys to ensure that data is encrypted when written to disk or cloud storage.</li>
+<li>We took a closer look at the S3 service to understand common  encryption methods and capabilities.</li>
+<li>We explored some of the options and capabilities for key management using the AWS key management service or KMS.</li>
+<li>Finally, you were able to put some of the concepts into practice to demonstrate how encryption keys can be managed and segregated, and utilized between two different sample applications.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Glossary</p></h3>
+  <div>
+  <h3 id="glossary">Glossary</h3>
+<h4 id="aws-encryption-sdk">AWS Encryption SDK</h4>
+<p>Encryption libraries provided by AWS that an application can use to encrypt data prior to writing to storage. The SDK makes the process of using the AWS key management service seamless.</p>
+<h4 id="key-management-service-kms">Key Management Service (KMS)</h4>
+<p>AWS service that allows provisioning, storage and management of master encryption keys. KMS also provides the ability to manage permissions pertaining to cryptographic actions on encryption keys.</p>
+<h4 id="client-side-encryption">Client-Side Encryption</h4>
+<p>With client-side encryption, the application code will handle cryptographic operations on the data prior to persisting to a given storage medium.</p>
+<h4 id="server-side-encryption">Server-Side Encryption</h4>
+<p>With server-side encryption, the storage service being used will handle cryptographic operations on the data while handling read and write operations. This process is transparent to the application which persists the data.</p>
+<h4 id="key-management-service-kms-1">Key Management Service (KMS)</h4>
+<p>AWS service that allows provisioning, storage and management of master encryption keys. KMS also provides the ability to manage permissions pertaining to cryptographic actions on encryption keys.</p>
+<h4 id="customer-master-key-cmk">Customer Master Key (CMK)</h4>
+<p>The customer master key is the master encryption key that will be used to encrypt and store underlying data encryption keys in the KMS service. Other services or applications will select a CMK to use for their cryptographic operations.</p>
+<h4 id="aws-managed-cmk">AWS-Managed CMK</h4>
+<p>AWS-managed customer master keys are provisioned, rotated and managed by AWS.  AWS will provision a new master key for each AWS service in the AWS account at the time the service needs to start encrypting data.  These keys are not available to use by your applications for client-side encryption.<br />
+You may not change or assign permissions on these keys. </p>
+<h4 id="customer-managed-cmk">Customer-Managed CMK</h4>
+<p>Customer-managed master keys are provisioned and managed by the customer (you).  Once you provision a key, you may use that key with any AWS services or applications.</p>
+<p>You can manage permissions on customer managed CMKs to control which IAM users or roles can manage or use the encryption keys.  Permissions to use the keys can also be granted to AWS services and other AWS accounts.</p>
+<h4 id="default-encryption">Default Encryption</h4>
+<p>A configuration setting on an AWS resource, such as an S3 bucket, designating that the storage as a whole, or all objects written, will be encrypted by the service being used (e.g. S3).</p>
+<h4 id="key-rotation">Key Rotation</h4>
+<p>The process of changing data encryption keys used for cryptographic operations on a periodic basis.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('15. Lesson Conclusion')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.690
+Oftentimes, our applications will need to access services
+
+00:00:03.690 --> 00:00:07.860
+on the Internet that are outside of the private Cloud network where they are hosted.
+
+00:00:07.860 --> 00:00:10.500
+So far, we have focused on restricting traffic,
+
+00:00:10.500 --> 00:00:14.625
+subnets, and instances using network ACLs and security groups.
+
+00:00:14.625 --> 00:00:17.490
+These tools also provide us the ability to control
+
+00:00:17.490 --> 00:00:21.045
+outbound traffic at the IP address or site or block level.
+
+00:00:21.045 --> 00:00:26.265
+Unfortunately, due to the ever changing and dynamic nature of internet services,
+
+00:00:26.265 --> 00:00:31.810
+it is impractical to pin down specific IP ranges of the services we need to connect to.
+
+00:00:31.810 --> 00:00:35.450
+As a result, using network ACLs and security groups to
+
+00:00:35.450 --> 00:00:39.470
+restrict Internet-bound traffic is not the best approach.
+
+00:00:39.470 --> 00:00:45.445
+AWS provides a few different ways to connect to the internet from our VPC subnets.
+
+00:00:45.445 --> 00:00:49.190
+Resources deployed in the subset can be assigned to
+
+00:00:49.190 --> 00:00:51.065
+public IP addresses and will have
+
+00:00:51.065 --> 00:00:54.775
+Internet-bound traffic routed through an Internet gateway.
+
+00:00:54.775 --> 00:00:57.660
+A subnet that has Internet-bound traffic routed to
+
+00:00:57.660 --> 00:01:00.670
+the Internet gateway is referred to a public subnet.
+
+00:01:00.670 --> 00:01:02.435
+From a security perspective,
+
+00:01:02.435 --> 00:01:04.040
+it is not practical to deploy
+
+00:01:04.040 --> 00:01:09.050
+all application resources that require Internet connectivity into a public subnet.
+
+00:01:09.050 --> 00:01:14.215
+This widens the attack surface and leaves the environment open to exploitation.
+
+00:01:14.215 --> 00:01:18.605
+The other option is to use a NAT instance or a NAT gateway.
+
+00:01:18.605 --> 00:01:22.025
+A NAT gateway can be deployed in public subnets so that
+
+00:01:22.025 --> 00:01:25.920
+instances in private subnets can use it to access the Internet.
+
+00:01:25.920 --> 00:01:29.120
+These resources would not be exposed to the Internet.
+
+00:01:29.120 --> 00:01:32.090
+In this situation, private subnets would
+
+00:01:32.090 --> 00:01:35.570
+have Internet-bound traffic routed through the NAT gateway.
+
+00:01:35.570 --> 00:01:38.645
+Once the routing is enabled through the NAT gateway,
+
+00:01:38.645 --> 00:01:42.290
+it's generally all or none for Internet traffic depending on
+
+00:01:42.290 --> 00:01:46.900
+how outbound rules are set up on the network ACLs and security groups.
+
+00:01:46.900 --> 00:01:49.700
+The shortfall with the NAT gateway solution from
+
+00:01:49.700 --> 00:01:52.340
+a security perspective is that it is difficult to
+
+00:01:52.340 --> 00:01:58.195
+monitor and restrict traffic at the application layer to specific domains and sites.
+
+00:01:58.195 --> 00:02:01.940
+Next, we will take a look at a few example solutions that will
+
+00:02:01.940 --> 00:02:06.480
+provide additional security controls for Internet-bound traffic.
+

@@ -1,0 +1,315 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Client-Side vs. Server-Side</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Protecting Data Stored in the Cloud</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Data Protection.html">01. Data Protection</a>
+    </li>
+    <li class="">
+      <a href="02. Protecting Data in the Cloud.html">02. Protecting Data in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="03. Protecting Data Stored in the Cloud.html">03. Protecting Data Stored in the Cloud</a>
+    </li>
+    <li class="">
+      <a href="04. Data Encryption.html">04. Data Encryption</a>
+    </li>
+    <li class="">
+      <a href="05. Client-Side vs. Server-Side.html">05. Client-Side vs. Server-Side</a>
+    </li>
+    <li class="">
+      <a href="06. S3 Bucket Encryption.html">06. S3 Bucket Encryption</a>
+    </li>
+    <li class="">
+      <a href="07. Exercise Encryption.html">07. Exercise: Encryption</a>
+    </li>
+    <li class="">
+      <a href="08. Solution Encryption.html">08. Solution: Encryption</a>
+    </li>
+    <li class="">
+      <a href="09. Key Management.html">09. Key Management</a>
+    </li>
+    <li class="">
+      <a href="10. Key Management Best Practices.html">10. Key Management Best Practices</a>
+    </li>
+    <li class="">
+      <a href="11. Key Management Quizzes.html">11. Key Management Quizzes</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise Key Management.html">12. Exercise: Key Management</a>
+    </li>
+    <li class="">
+      <a href="13. Solution Key Management.html">13. Solution: Key Management</a>
+    </li>
+    <li class="">
+      <a href="14. Securing S3.html">14. Securing S3</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Conclusion.html">15. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Client-Side vs. Server-Side</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Data Encryption - Trade-Offs</p></h3>
+  <div>
+  <h2 id="client-side-vsserver-side">Client-Side vs.Server-Side</h2>
+<h3 id="client-side-encryption">Client-Side Encryption</h3>
+<h4 id="pros">Pros</h4>
+<p>The cloud provider, that is AWS,  or anyone with access to the underlying disk volumes will only see ciphered or encrypted data.  The data is effectively useless to them unless of course they have permissions or access to the encryption keys.</p>
+<h4 id="cons">Cons</h4>
+<p>The code will have additional complexity of using SDK's and libraries required to perform cryptographic functions. Some additional understanding of encryption is also needed to do this effectively. There is always the potential of this additional functionality being inadvertently omitted from the code .</p>
+<h3 id="server-side-encryption">Server-Side Encryption</h3>
+<h4 id="pros-1">Pros</h4>
+<p>For most use cases server-side encryption can be completely transparent to the developer or application code. So, from an implementation perspective, it is simpler and easier to use.</p>
+<h4 id="cons-1">Cons</h4>
+<p>Anyone with read access permissions to the service in question will perform a read and be able to see the plain text data.</p>
+<h3 id="best-practices">Best Practices</h3>
+<p>As a best practice it is highly advisable to leverage server-side encryption as a default deployment pattern for any AWS services being used to store data. </p>
+<p>The decision to use client-side encryption in your applications may be made on a case-by-case basis for sensitive data or to meet any compliance requirements.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Encrypting Data in S3</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/5.-encrypting-data-in-s3.png" alt="
+**Methods to Encrypt Data in S3**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Methods to Encrypt Data in S3</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Data Encryption Demo Header</p></h3>
+  <div>
+  <h3 id="encryption-demo">Encryption Demo</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND063 C3 L3 05 Application Data Encryption Walkthrough</p></h3>
+  <video controls>
+  <source src="05. ND063 C3 L3 05 Application Data Encryption Walkthrough-kZYVd0zKDPQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND063 C3 L3 05 Application Data Encryption Walkthrough-kZYVd0zKDPQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Application Data Encryption New Terms or Vocabulary</p></h3>
+  <div>
+  <h3 id="key-terms">Key Terms</h3>
+<h4 id="aws-encryption-sdk">AWS Encryption SDK</h4>
+<p>Encryption libraries provided by AWS that an application can use to encrypt data prior to writing to storage. The SDK makes the process of using the AWS key management service seamless.</p>
+<h4 id="key-management-service-kms">Key Management Service (KMS)</h4>
+<p>AWS service that allows provisioning, storage and management of master encryption keys. KMS also provides the ability to manage permissions pertaining to cryptographic actions on encryption keys.</p>
+<h4 id="client-side-encryption">Client-Side Encryption</h4>
+<p>With client-side encryption, the application code will handle cryptographic operations on the data prior to persisting to a given storage medium.</p>
+<h4 id="server-side-encryption">Server-Side Encryption</h4>
+<p>With server-side encryption, the storage service being used will handle cryptographic operations on the data while handling read and write operations.   This process is transparent to the application which is persisting the data.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Application Data Encryption</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>You are writing code for a service that will store users personally identifiable information in a Postgres database table using the RDS service in AWS.</p>
+<p>Choose two methods for ensuring that the sensitive data ends up encrypted at rest.</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="1012606" id="rbk1">
+      <label for="rbk1"><p>Store the data in S3 with server-side encryption enabled.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="1012606" id="rbk2">
+      <label for="rbk2"><p>Encrypt the personal information in the code prior to inserting it into the database table.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="1012606" id="rbk3">
+      <label for="rbk3"><p>Ensure that the RDS database instance is provisioned with SSD type disk volumes.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="1012606" id="rbk4">
+      <label for="rbk4"><p>Provision the RDS database instance with storage encryption enabled.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Encrypt the personal information in the code prior to inserting it into the database table.</li>
+      <li>Provision the RDS database instance with storage encryption enabled.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Application Data Encryption Further Research</p></h3>
+  <div>
+  <h3 id="additional-resources">Additional Resources</h3>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html" rel="noopener noreferrer" target="_blank">AWS Encryption SDK documentation</a></p></li>
+<li><p><a href="https://docs.aws.amazon.com/dynamodb-encryption-client/latest/devguide/client-server-side.html" rel="noopener noreferrer" target="_blank">Dynamo DB Client-Side and Server-Side Encryption guide</a></p></li>
+<li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingEncryption.html" rel="noopener noreferrer" target="_blank">S3 Client-Side and Server-Side Encryption Guide</a></p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. S3 Bucket Encryption.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Client-Side vs. Server-Side')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

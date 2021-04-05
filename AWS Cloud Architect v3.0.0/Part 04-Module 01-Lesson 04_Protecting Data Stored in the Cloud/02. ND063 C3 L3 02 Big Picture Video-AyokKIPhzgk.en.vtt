@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.090
+Encryption is fundamental when it comes to security.
+
+00:00:03.090 --> 00:00:06.090
+Ensuring the data is encrypted at all levels,
+
+00:00:06.090 --> 00:00:08.730
+at rest and in transit is crucial when it comes to
+
+00:00:08.730 --> 00:00:11.445
+designing both infrastructure and applications.
+
+00:00:11.445 --> 00:00:14.580
+The criticality of data encryption is magnified in
+
+00:00:14.580 --> 00:00:17.910
+the public cloud environments such as AWS because
+
+00:00:17.910 --> 00:00:21.180
+the underlying physical infrastructure and hardware is shared
+
+00:00:21.180 --> 00:00:25.125
+with other tenants and managed and owned by the Cloud provider.
+
+00:00:25.125 --> 00:00:28.560
+Infrastructure teams need to ensure that storage
+
+00:00:28.560 --> 00:00:32.200
+that will store data leverages encryption capabilities.
+
+00:00:32.200 --> 00:00:35.840
+Development teams need to ensure that applications encrypt
+
+00:00:35.840 --> 00:00:39.865
+sensitive data prior to persisting to the underlying storage.
+
+00:00:39.865 --> 00:00:43.580
+Protecting and managing encryption keys and certificates is
+
+00:00:43.580 --> 00:00:48.595
+a major component of every organization's information security program.
+
+00:00:48.595 --> 00:00:54.275
+Although risks can be reduced by tightening controls around cloud networks instances,
+
+00:00:54.275 --> 00:00:56.360
+and identity and access management,
+
+00:00:56.360 --> 00:00:58.580
+the risk still exists.
+
+00:00:58.580 --> 00:01:02.090
+Ensuring data is encrypted at all layers further
+
+00:01:02.090 --> 00:01:05.935
+reduces the risk of data falling into the wrong hands.
+
+00:01:05.935 --> 00:01:09.770
+The risk of data falling into the wrong hands can be reduced by
+
+00:01:09.770 --> 00:01:13.790
+tightening controls around Cloud networks and instances,
+
+00:01:13.790 --> 00:01:16.509
+identity and access management,
+
+00:01:16.509 --> 00:01:19.290
+and ensuring data is encrypted at rest,
+
+00:01:19.290 --> 00:01:22.220
+further protects your data and it reduces the risk
+
+00:01:22.220 --> 00:01:26.340
+of data being usable by those not entitled to see it.
+

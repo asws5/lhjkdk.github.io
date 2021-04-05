@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.300
+I'll walk through a quick example of this in action with
+
+00:00:03.300 --> 00:00:07.860
+an application that we'll use in IAM roles to access AWS services.
+
+00:00:07.860 --> 00:00:11.580
+As you can see, I'm logged into my AWS account
+
+00:00:11.580 --> 00:00:16.185
+and I will use the Management Console to demonstrate setting up an IAM role.
+
+00:00:16.185 --> 00:00:21.045
+First, I'll go into IAM and create a new IAM role.
+
+00:00:21.045 --> 00:00:26.595
+The IAM role will be used by an application running on an EC2 instance.
+
+00:00:26.595 --> 00:00:30.165
+This is also called an instance profile role.
+
+00:00:30.165 --> 00:00:35.040
+I will choose EC2 as the service that will be able to use the role.
+
+00:00:35.040 --> 00:00:39.755
+This effectively defines who we will trust assume the role.
+
+00:00:39.755 --> 00:00:46.435
+As you can see, other services such as Lambda can also be trusted to assume the role.
+
+00:00:46.435 --> 00:00:49.880
+We can also allow other AWS accounts,
+
+00:00:49.880 --> 00:00:55.070
+web identities, and SAML 2.0 identity providers to assume this role.
+
+00:00:55.070 --> 00:01:00.760
+Now let's define what actions that this role has permissions to perform.
+
+00:01:00.760 --> 00:01:06.860
+We will choose an existing policy that provides the role full permissions to S3 for now.
+
+00:01:06.860 --> 00:01:10.040
+I'm also going to assign my role of policy which will
+
+00:01:10.040 --> 00:01:14.250
+allow me to log into the instance to test the application.
+
+00:01:16.460 --> 00:01:22.530
+I'm going to give the role name, and I'm going to create the role.
+
+00:01:22.530 --> 00:01:24.860
+Now that I've created the role,
+
+00:01:24.860 --> 00:01:28.835
+I'm going to assign the role to my application server instance.
+
+00:01:28.835 --> 00:01:33.910
+So I'm going to go to the EC2 dashboard and find my application server.
+
+00:01:33.910 --> 00:01:37.340
+Here I have my application server running, and right now,
+
+00:01:37.340 --> 00:01:39.290
+it does not have a role assigned to it,
+
+00:01:39.290 --> 00:01:41.670
+so I'm going to assign the role.
+
+00:01:43.630 --> 00:01:47.215
+This is the role that I had just created.
+
+00:01:47.215 --> 00:01:50.475
+So now that instance has the role attached,
+
+00:01:50.475 --> 00:01:54.440
+I'm going to go ahead and login to the instance using
+
+00:01:54.440 --> 00:02:01.460
+Systems Manager and use the Session Manager feature to open an SSH session.
+
+00:02:01.460 --> 00:02:05.630
+From here, I will attempt to make calls to the AWS API.
+
+00:02:05.630 --> 00:02:07.580
+The application, in this case,
+
+00:02:07.580 --> 00:02:10.025
+will be the AWS CLI application.
+
+00:02:10.025 --> 00:02:14.200
+However, this can apply to any application code running on the instance.
+
+00:02:14.200 --> 00:02:16.655
+Because the instance is assigned the role,
+
+00:02:16.655 --> 00:02:20.840
+I do not need to use any explicit API keys to make my calls.
+
+00:02:20.840 --> 00:02:25.565
+So first, I will call the API to list my S3 buckets.
+
+00:02:25.565 --> 00:02:31.145
+So I've successfully been able to list my buckets that I know that the role is working.
+
+00:02:31.145 --> 00:02:37.050
+Next, I'll try to create a simple text file that I can write to a specific S3 bucket.
+
+00:02:37.640 --> 00:02:42.410
+So I'm going to copy this text file and upload it to,
+
+00:02:42.410 --> 00:02:50.520
+I'm going to choose this last S3 bucket, udacity-cand-c3-l1-walkthrough bucket.
+
+00:02:50.520 --> 00:02:56.600
+Copy the bucket name, and there it is.
+
+00:02:56.600 --> 00:03:02.910
+I was successfully able to interact with the AWS API using an instance profile role.
+

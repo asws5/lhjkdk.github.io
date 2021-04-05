@@ -1,0 +1,274 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.580
+Previously, we talked about obtaining console log
+
+00:00:02.580 --> 00:00:05.610
+and access to Cloud, servers, and instances.
+
+00:00:05.610 --> 00:00:11.025
+Oftentimes, engineering teams will need to establish network connectivity to these hosts
+
+00:00:11.025 --> 00:00:17.010
+and other endpoints running in private subnets such as RDS database instances, etc.
+
+00:00:17.010 --> 00:00:20.254
+Here, we will outline a few methods for establishing
+
+00:00:20.254 --> 00:00:23.495
+access to resources running in your Cloud environments.
+
+00:00:23.495 --> 00:00:26.824
+We'll be viewing this from the perspective of a developer
+
+00:00:26.824 --> 00:00:30.760
+or DevOps engineer who needs to manage the environment.
+
+00:00:30.760 --> 00:00:37.325
+Bastion hosts or jump hosts are set up in a public subnet to allow user to log in from
+
+00:00:37.325 --> 00:00:40.010
+either their home or office network and
+
+00:00:40.010 --> 00:00:44.725
+subsequently access or jump to resources in a private network.
+
+00:00:44.725 --> 00:00:47.810
+The host would need to be hardened and only allow
+
+00:00:47.810 --> 00:00:51.100
+access from the public IP address of the users.
+
+00:00:51.100 --> 00:00:54.485
+The pros are that it's simple,
+
+00:00:54.485 --> 00:00:59.245
+low cost method for getting into your Cloud VPC.
+
+00:00:59.245 --> 00:01:04.880
+On the other hand, exposing a server to the Internet makes it a common target for
+
+00:01:04.880 --> 00:01:07.580
+attackers who hope to gain access to the network by
+
+00:01:07.580 --> 00:01:10.700
+exploiting a vulnerability on the bastion host.
+
+00:01:10.700 --> 00:01:14.915
+Because of this, it will require additional effort to harden the bastion host,
+
+00:01:14.915 --> 00:01:19.510
+including adding security monitoring and performing penetration testing.
+
+00:01:19.510 --> 00:01:24.110
+A bastion host is not scalable for many users or larger teams,
+
+00:01:24.110 --> 00:01:26.720
+and it may not be practical if you have
+
+00:01:26.720 --> 00:01:30.950
+client applications that need to be run on a user's laptop or desktop.
+
+00:01:30.950 --> 00:01:34.880
+An example of this may be proprietary reporting tools
+
+00:01:34.880 --> 00:01:39.830
+or database client applications that run on a user's local machine.
+
+00:01:39.830 --> 00:01:45.085
+In this scenario, these tools would need to be installed on the bastion host itself.
+
+00:01:45.085 --> 00:01:48.575
+Another solution is a virtual desktop,
+
+00:01:48.575 --> 00:01:49.970
+similar to a bastion host,
+
+00:01:49.970 --> 00:01:54.305
+except that each user will get their own virtual desktop.
+
+00:01:54.305 --> 00:01:58.980
+AWS provides the work spaces service for this.
+
+00:01:59.600 --> 00:02:03.920
+The benefit here is that it allows users to install
+
+00:02:03.920 --> 00:02:07.850
+their desktop application clients in the Cloud environment
+
+00:02:07.850 --> 00:02:12.935
+without having direct connectivity to the VPC from their local laptop.
+
+00:02:12.935 --> 00:02:17.375
+Unfortunately, this does cost more than using a bastion host,
+
+00:02:17.375 --> 00:02:20.335
+especially when you have multiple users.
+
+00:02:20.335 --> 00:02:23.690
+Users will not have direct connectivity from
+
+00:02:23.690 --> 00:02:28.410
+their local machines to any of the backend services that are in the VPC.
+
+00:02:28.700 --> 00:02:32.720
+Client VPN solution allows a user to connect to
+
+00:02:32.720 --> 00:02:38.945
+the Cloud VPC using a secure VPN client to establish an encrypted tunnel.
+
+00:02:38.945 --> 00:02:42.530
+AWS provides a client VPN service although
+
+00:02:42.530 --> 00:02:46.160
+many firewall appliance vendors also have this capability.
+
+00:02:46.160 --> 00:02:51.620
+Open-source tools such as open VPN are also popular solutions.
+
+00:02:51.620 --> 00:02:54.870
+The client VPNs are easy to set up.
+
+00:02:54.870 --> 00:02:59.420
+They also have the ability to manage many users and roles,
+
+00:02:59.420 --> 00:03:04.250
+and using a client VPN places the user into the VPC so that they
+
+00:03:04.250 --> 00:03:09.485
+have direct access to resources that are deployed in the VPC.
+
+00:03:09.485 --> 00:03:13.070
+This will allow them to use their client applications under
+
+00:03:13.070 --> 00:03:17.515
+local machines to hit those resources that are in the VPC.
+
+00:03:17.515 --> 00:03:24.305
+Again, client VPN does incur some additional costs compared to a bastion host,
+
+00:03:24.305 --> 00:03:28.985
+and it's also going to force users to
+
+00:03:28.985 --> 00:03:34.225
+install proprietary VPN clients on their local machines.
+
+00:03:34.225 --> 00:03:36.515
+With the site-to-site VPN,
+
+00:03:36.515 --> 00:03:40.355
+we can connect a local trusted network's Internet-facing firewall
+
+00:03:40.355 --> 00:03:43.010
+with the AWS VPN service.
+
+00:03:43.010 --> 00:03:47.060
+This allows us to establish a VPN tunnel from
+
+00:03:47.060 --> 00:03:51.335
+the entire local network to the AWS VPC network,
+
+00:03:51.335 --> 00:03:55.250
+and this link would be established over the Internet, of course.
+
+00:03:55.250 --> 00:03:58.310
+Little benefit here is that there's no need to install
+
+00:03:58.310 --> 00:04:02.690
+any VPN client software on each user's local machine.
+
+00:04:02.690 --> 00:04:06.080
+But unfortunately, additional routing and
+
+00:04:06.080 --> 00:04:09.350
+configuration needs to be performed on the local network,
+
+00:04:09.350 --> 00:04:12.475
+which often leads to delays in the setup,
+
+00:04:12.475 --> 00:04:18.665
+and there's no authentication or role-based access for establishing that connectivity.
+
+00:04:18.665 --> 00:04:21.580
+Direct Connect link is a dedicated link from
+
+00:04:21.580 --> 00:04:24.690
+a corporate office network or co-location datacenter.
+
+00:04:24.690 --> 00:04:29.020
+This is a private connection that does not go over the public Internet.
+
+00:04:29.020 --> 00:04:31.735
+Additional setup may be needed to establish
+
+00:04:31.735 --> 00:04:35.515
+a dedicated MPLS connection to a co-location datacenter,
+
+00:04:35.515 --> 00:04:41.000
+which host AWS routers that can establish that link to the Direct Connect service.
+
+00:04:41.000 --> 00:04:44.515
+With the Direct Connect, you have dedicated bandwidth,
+
+00:04:44.515 --> 00:04:47.950
+and it's ideal for Cloud environments where applications in
+
+00:04:47.950 --> 00:04:52.265
+the data center need to integrate with applications in the Cloud environment.
+
+00:04:52.265 --> 00:04:59.875
+This is definitely going to be a higher cost and it does take more time to set up.
+
+00:04:59.875 --> 00:05:01.670
+Once it is setup,
+
+00:05:01.670 --> 00:05:06.005
+if users are not on the corporate local area network,
+
+00:05:06.005 --> 00:05:11.495
+the solutions such as VPN or VDI will still need to be implemented.
+
+00:05:11.495 --> 00:05:13.790
+So it's generally not an option for
+
+00:05:13.790 --> 00:05:18.980
+small or virtual teams that don't have a corporate network that they're working out of.
+
+00:05:18.980 --> 00:05:21.560
+So to summarize, among all the options,
+
+00:05:21.560 --> 00:05:24.680
+setting up a bastion host is generally the default path
+
+00:05:24.680 --> 00:05:28.310
+for smaller development teams that are starting out in the Cloud,
+
+00:05:28.310 --> 00:05:31.255
+since it is the quickest and cheapest solution.
+
+00:05:31.255 --> 00:05:36.110
+Unfortunately, Internet-facing bastion hosts are also a common target for attackers who
+
+00:05:36.110 --> 00:05:40.715
+hope to gain access to the network by exploiting a vulnerability on the bastion host.
+
+00:05:40.715 --> 00:05:42.410
+Due to this, you should make sure that
+
+00:05:42.410 --> 00:05:45.830
+the bastion host have had security hardening done on them.
+
+00:05:45.830 --> 00:05:50.630
+Should also make use of the session manager tool to access the bastion instead of
+
+00:05:50.630 --> 00:05:56.090
+accessing it directly in order to reduce the Internet-facing attack surface.
+
+00:05:56.090 --> 00:06:00.725
+As teams grow, you will need to consider a better security strategy,
+
+00:06:00.725 --> 00:06:04.800
+leveraging VPN and virtual desktop solutions.
+

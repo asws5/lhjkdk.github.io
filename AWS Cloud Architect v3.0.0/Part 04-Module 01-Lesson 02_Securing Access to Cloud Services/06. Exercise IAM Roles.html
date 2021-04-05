@@ -1,0 +1,316 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise: IAM Roles</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Securing Access to Cloud Services</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Securing Access.html">01. Securing Access</a>
+    </li>
+    <li class="">
+      <a href="02. Securing Access to Cloud Services.html">02. Securing Access to Cloud Services</a>
+    </li>
+    <li class="">
+      <a href="03. Key Questions.html">03. Key Questions</a>
+    </li>
+    <li class="">
+      <a href="04. Leveraging IAM Roles.html">04. Leveraging IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="05. IAM Roles Quizzes.html">05. IAM Roles Quizzes</a>
+    </li>
+    <li class="">
+      <a href="06. Exercise IAM Roles.html">06. Exercise: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="07. Solution IAM Roles.html">07. Solution: IAM Roles</a>
+    </li>
+    <li class="">
+      <a href="08. IAM Best Practices.html">08. IAM Best Practices</a>
+    </li>
+    <li class="">
+      <a href="09. Identity Federation.html">09. Identity Federation</a>
+    </li>
+    <li class="">
+      <a href="10. Identity Federation Quizzes.html">10. Identity Federation Quizzes</a>
+    </li>
+    <li class="">
+      <a href="11. Least Privilege Access.html">11. Least Privilege Access</a>
+    </li>
+    <li class="">
+      <a href="12. Least Privilege Quizzes.html">12. Least Privilege Quizzes</a>
+    </li>
+    <li class="">
+      <a href="13. Exercise Least Privilege.html">13. Exercise: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="14. Solution Least Privilege.html">14. Solution: Least Privilege</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Conclusion.html">15. Lesson Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">06. Exercise: IAM Roles</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Leverages IAM Roles Exercise Header</p></h3>
+  <div>
+  <h2 id="exercise-leverages-iam-roles">Exercise: Leverages IAM Roles</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Leveraging IAM Roles Exercise Instructions</p></h3>
+  <div>
+  <p>In this exercise, you will create a user and a role that can be assumed by that user. </p>
+<p>If you meet the prerequisites for this course, you should be familiar with many of these processes already. If you are not, we have linked to the AWS documentation in some steps, and you can find more information by navigating to the AWS documentation yourself.</p>
+<h3 id="instructions">Instructions</h3>
+<ol>
+<li>Log into your AWS account</li>
+<li>Create a new IAM user from the IAM service page. Call the user <code>cand-c3-iam-user</code>. </li>
+<li>Set up a secure password for console access and keep this password for use later.  Do not set up MFA at this time.</li>
+<li>Create an IAM policy called <code>cand-c3-iam-user-policy</code>. Paste the below JSON to create the IAM policy:</li>
+</ol>
+<pre><code class="json language-json">{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::[ACCOUNT-ID-WITHOUT-HYPHENS]:role/cand-c3-iam-role"
+  }
+}</code></pre>
+<ol start="4">
+<li>Assign the policy to the user you have created.</li>
+<li>Create an IAM role that can be assumed by this user.  Call the role <code>cand-c3-iam-role</code>.</li>
+<li>Use <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html" rel="noopener noreferrer" target="_blank">this guide to create the IAM role</a>. As you go through the instructions, ensure that MFA is required. Do not set the external ID.</li>
+<li>Once you create the role, go into the trust policy of the role. It should have the following condition:</li>
+</ol>
+<pre><code class="json language-json">"Condition": { "Bool": { "aws:MultiFactorAuthPresent": "true" } }</code></pre>
+<p>Also note down the role arn.</p>
+<ol start="8">
+<li>Assign the role a policy. We will use an existing AWS managed policy  called <code>AmazonS3ReadOnlyAccess</code>. This policy provides read only access to S3 buckets and data.</li>
+<li>Log out and log in with the new user. Attempt to go to the S3 service page to see what buckets are in the account. You should see an error stating you do not have permissions.<br />
+10: Attempt to assume the role you created. <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-console.html" rel="noopener noreferrer" target="_blank">Use this guide</a>. It will fail since you did not login using MFA.  </li>
+<li>Log out and log back in with the personal user you used to create the IAM user for this exercise.</li>
+<li>Setup MFA for the user. Log out and log back in with the user and MFA.</li>
+<li>Attempt to assume the role again. You should have been able to successfully assume the role.</li>
+<li>Try to go to the S3 page and see if you can list buckets, list objects within buckets,  or download objects from buckets.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Leveraging IAM Roles Exercise</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>In this exercise, you will create a user and a role that can be assumed by this user.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--0">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--0"><p>Create a new IAM user from the IAM service page.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--1">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--1"><p>Set up a secure password for console access.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--2">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--2"><p>Create an IAM policy called <code>cand-c3-iam-user-policy</code> and assign this policy to your user.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--3">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--3"><p>Create an IAM role that can be assumed by this user.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--4">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--4"><p>Check the trust policy of the role. Ensure it is <code>"true"</code>.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--5">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--5"><p>Assign the role a policy.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--6">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--6"><p>Logout and login with the new user and attempt to go to the S3 service page to see what buckets are in the account.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--7">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--7"><p>Attempt to assume the role you created.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--8">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--8"><p>Log out and log back in with your personal user you used to create the IAM user for this exercise.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--9">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--9"><p>Setup MFA for the user.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--10">
+        <label for="a78a8014-d7d0-4d6f-b524-ae3d91bf4cd7--10"><p>Go to the S3 page and see if you can list buckets, list objects within buckets, or download objects from buckets.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Great Job! In this exercise, you have demonstrated how to reduce the risk associated with an IAM user by leveraging a role that has elevated permissions.  </p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="07. Solution IAM Roles.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Exercise: IAM Roles')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

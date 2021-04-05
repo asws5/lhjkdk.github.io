@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.215
+In our previous lesson,
+
+00:00:01.215 --> 00:00:04.800
+we discussed access from an identity and permissions perspective,
+
+00:00:04.800 --> 00:00:07.560
+with respect to the AWS management plane.
+
+00:00:07.560 --> 00:00:11.295
+When designing and deploying Cloud networks and infrastructure,
+
+00:00:11.295 --> 00:00:15.405
+there are a few key questions to be asking related to security controls.
+
+00:00:15.405 --> 00:00:20.155
+Which trusted networks will traffic to your Cloud environment originate from?
+
+00:00:20.155 --> 00:00:22.835
+Determine specific subnets, servers,
+
+00:00:22.835 --> 00:00:26.350
+and other infrastructure components that need to be accessed.
+
+00:00:26.350 --> 00:00:31.055
+Which components in your environment will need network connectivity to other components?
+
+00:00:31.055 --> 00:00:32.855
+Determine which ports.
+
+00:00:32.855 --> 00:00:36.170
+An example would be a set of application servers that need to
+
+00:00:36.170 --> 00:00:40.060
+connect to a database on port 5432.
+
+00:00:40.060 --> 00:00:44.600
+Our security groups and network ACLs as specific as possible?
+
+00:00:44.600 --> 00:00:47.900
+For example, allowing a specific site or block with
+
+00:00:47.900 --> 00:00:52.510
+a /16 range is preferred over and allow all site or block.
+
+00:00:52.510 --> 00:00:55.805
+Which components will be taking traffic from the Internet?
+
+00:00:55.805 --> 00:00:57.890
+This is your attack surface.
+
+00:00:57.890 --> 00:01:01.040
+Can these components be moved to private subnets so
+
+00:01:01.040 --> 00:01:04.600
+that do not pose a risk of access attempts from the Internet?
+
+00:01:04.600 --> 00:01:06.780
+How is access to the servers managed?
+
+00:01:06.780 --> 00:01:10.175
+Are users managing keys and passwords themselves?
+
+00:01:10.175 --> 00:01:13.885
+Are the servers hardened to prevent unauthorized access?
+
+00:01:13.885 --> 00:01:16.455
+Have outbound traffic needs have been identified?
+
+00:01:16.455 --> 00:01:21.020
+Can applications use private endpoints to reduce the need to access the Internet?
+
+00:01:21.020 --> 00:01:23.900
+These are some of the things to think about when designing
+
+00:01:23.900 --> 00:01:27.820
+a Cloud environment that needs secure and tight access controls.
+
+00:01:27.820 --> 00:01:30.620
+Let's start with looking at methods we can use to
+
+00:01:30.620 --> 00:01:34.260
+gain access to our Cloud instances and servers.
+

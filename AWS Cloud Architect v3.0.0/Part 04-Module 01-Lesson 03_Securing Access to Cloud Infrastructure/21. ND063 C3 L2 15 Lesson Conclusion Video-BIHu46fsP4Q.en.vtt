@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.795
+In this lesson, we have explored a number of different methods
+
+00:00:03.795 --> 00:00:07.665
+to ensure secure access to Cloud infrastructure and resources.
+
+00:00:07.665 --> 00:00:10.560
+To recap, we have looked at methods for providing
+
+00:00:10.560 --> 00:00:13.980
+secure login access to Cloud hosts and Instances.
+
+00:00:13.980 --> 00:00:18.135
+We've also discussed the importance of controlling and restricting network traffic,
+
+00:00:18.135 --> 00:00:20.440
+including incoming ingress traffic,
+
+00:00:20.440 --> 00:00:25.580
+outbound egress traffic, and reviewed tools and products to help facilitate this.
+
+00:00:25.580 --> 00:00:27.680
+We looked at methods for providing
+
+00:00:27.680 --> 00:00:30.050
+engineer's secure network connectivity with
+
+00:00:30.050 --> 00:00:33.365
+Cloud resources deployed within the Cloud VPC.
+
+00:00:33.365 --> 00:00:36.005
+Finally, we tied it together by looking at
+
+00:00:36.005 --> 00:00:39.020
+a simple architecture and having you use some of
+
+00:00:39.020 --> 00:00:42.110
+the ideas we touched on to make the architecture more
+
+00:00:42.110 --> 00:00:45.605
+secure based on a set of connectivity requirements.
+
+00:00:45.605 --> 00:00:48.860
+I've enjoyed teaching you how to secure your Cloud infrastructure.
+
+00:00:48.860 --> 00:00:51.030
+See you in the next lesson.
+
